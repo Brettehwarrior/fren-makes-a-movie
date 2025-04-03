@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpustnxk14xmd"]
+
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/simple/rigid_body_cube.tscn" id="1_35tti"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hs12w"]
+
+[sub_resource type="Sky" id="Sky_35tti"]
+sky_material = SubResource("ProceduralSkyMaterial_hs12w")
+
+[sub_resource type="Environment" id="Environment_kpg22"]
+background_mode = 2
+sky = SubResource("Sky_35tti")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hs12w"]
+
+[node name="StateRecording" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16498, 6.95731)
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.717479, -0.662348, 0.215684, 0.367194, 0.622743, 0.690912, -0.59194, -0.416517, 0.690015, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_kpg22")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Ground" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(10.5994, 0, 0, 0, 1, 0, 0, 0, 10.5994, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground"]
+shape = SubResource("BoxShape3D_hs12w")
+
+[node name="RigidBodyCube" parent="." instance=ExtResource("1_35tti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31328, 4.0296, 1.35136)

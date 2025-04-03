@@ -14,7 +14,7 @@ func _physics_process(_delta: float) -> void:
 func _record_frame():
     var frame_image = get_viewport().get_texture().get_image()
     DirAccess.make_dir_recursive_absolute("user://recording")
-    frame_image.save_jpg("user://recording/frame_%04d.jpg" % _current_frame)
+    frame_image.save_jpg("user://recording/frame_%05d.jpg" % _current_frame)
     _current_frame += 1
 
     if _current_frame >= 200:

@@ -1,10 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://by3psqomflc8a"]
 
-[ext_resource type="Script" uid="uid://2hwlgf35qp2p" path="res://scenes/test/trent/recordable-camera.gd" id="1_6ek8t"]
+[ext_resource type="Script" uid="uid://2hwlgf35qp2p" path="res://scenes/test/trent/frame_capture_test/recordable-camera.gd" id="1_6ek8t"]
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/simple/rigid_body_cube.tscn" id="1_orsjv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ek8t"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jjdui"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjdui"]
 
@@ -25,13 +24,8 @@ transform = Transform3D(10.5994, 0, 0, 0, 1, 0, 0, 0, 10.5994, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
 shape = SubResource("BoxShape3D_6ek8t")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="RigidBodyCube" parent="." instance=ExtResource("1_orsjv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("BoxShape3D_jjdui")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jjdui")

@@ -15,6 +15,10 @@ run/main_scene="uid://l6xelh6grip2"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ReplayManager="*res://scenes/singleton/replay_manager/replay_manager.tscn"
+
 [rendering]
 
 renderer/rendering_method="mobile"
