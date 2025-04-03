@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://by3psqomflc8a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ek8t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jjdui"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjdui"]
+
+[sub_resource type="Sky" id="Sky_6ek8t"]
+sky_material = SubResource("ProceduralSkyMaterial_jjdui")
+
+[sub_resource type="Environment" id="Environment_jjdui"]
+background_mode = 2
+sky = SubResource("Sky_6ek8t")
+
+[node name="CameraTest" type="Node3D"]
+
+[node name="Node3D" type="StaticBody3D" parent="."]
+transform = Transform3D(10.5994, 0, 0, 0, 1, 0, 0, 0, 10.5994, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
+shape = SubResource("BoxShape3D_6ek8t")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_jjdui")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jjdui")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.947372, 0.163524, 0.275219, -0.293604, 0.101146, 0.950561, 0.127602, -0.981341, 0.143834, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.677313, 0, -0.735695, 0, 1, 0, 0.735695, 0, 0.677313, -4.39463, 1.67029, 2.55014)
