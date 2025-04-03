@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://by3psqomflc8a"]
+[gd_scene load_steps=7 format=3 uid="uid://by3psqomflc8a"]
+
+[ext_resource type="Script" uid="uid://2hwlgf35qp2p" path="res://scenes/test/trent/recordable-camera.gd" id="1_6ek8t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ek8t"]
 
@@ -38,5 +40,6 @@ environment = SubResource("Environment_jjdui")
 transform = Transform3D(0.947372, 0.163524, 0.275219, -0.293604, 0.101146, 0.950561, 0.127602, -0.981341, 0.143834, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="RecordableCamera" type="Camera3D" parent="."]
 transform = Transform3D(0.677313, 0, -0.735695, 0, 1, 0, 0.735695, 0, 0.677313, -4.39463, 1.67029, 2.55014)
+script = ExtResource("1_6ek8t")
