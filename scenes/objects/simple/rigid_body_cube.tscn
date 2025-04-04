@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7u8dyskxyrx6"]
+[gd_scene load_steps=3 format=3 uid="uid://b7u8dyskxyrx6"]
+
+[ext_resource type="Script" uid="uid://cmpp18xjewi4y" path="res://scenes/objects/simple/simple_rigid_body.gd" id="1_rvm5w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jjdui"]
 
-[node name="RigidBodyCube" type="RigidBody3D"]
+[node name="RigidBodyCube" type="RigidBody3D" groups=["replayable"]]
+script = ExtResource("1_rvm5w")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 

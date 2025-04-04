@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="joey-movie"
-run/main_scene="uid://l6xelh6grip2"
+run/main_scene="uid://bpustnxk14xmd"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 ReplayManager="*res://scenes/singleton/replay_manager/replay_manager.tscn"
+
+[global_group]
+
+replayable=""
 
 [rendering]
 
