@@ -57,15 +57,34 @@ func _tick_recording(nodes : Array[Node]) -> void:
 	
 	for node in nodes:
 		if node.has_method("_save_state"):
-			var node_state : Dictionary = node._save_state()
-			var node_frame_data = NodeFrameData.new(_current_recording_frame, node_state)
-
-			var node_path = str(node.get_path())
-			var frame_history : NodeFrameDataHistory = _recorded_objects.get_or_add(node_path, NodeFrameDataHistory.new())
-			
-			frame_history.list.append(node_frame_data)
+			_record_node_state(node)
 	
 	_current_recording_frame += 1
+
+
+func _record_node_state(node : Node) -> void:
+	var node_state : Dictionary = node._save_state()
+	var node_frame_data = NodeFrameData.new(_current_recording_frame, node_state)
+
+	var node_path = str(node.get_path())
+	var frame_history : NodeFrameDataHistory = _recorded_objects.get_or_add(node_path, NodeFrameDataHistory.new())
+	
+	frame_history.list.append(node_frame_data)
+
+
+func load_game_state(frame : int) -> void:
+	var replayable_nodes : Array[Node] = get_tree().get_nodes_in_group("replayable")
+
+	for node in replayable_nodes:
+		if node.has_method("_load_state"):
+			var node_path = str(node.get_path())
+			var frame_history : NodeFrameDataHistory = _recorded_objects.get(node_path)
+			var state_to_load : Dictionary
+			for frame_data in frame_history.list:
+				if frame_data.frame_index == frame:
+					state_to_load = frame_data.node_state
+					break
+			node._load_state(state_to_load)
 
 
 func start_recording() -> void:
@@ -76,3 +95,10 @@ func start_recording() -> void:
 func stop_recording() -> void:
 	_is_recording = false
 	stopped_recording.emit()
+
+
+func is_recording() -> bool:
+	return _is_recording
+
+func get_current_recording_frame() -> int:
+	return _current_recording_frame

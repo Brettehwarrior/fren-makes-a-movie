@@ -16,9 +16,3 @@ func _load_state(state : Dictionary) -> void:
 
 func _tick() -> void:
     pass #print("tick!")
-
-func _process(_delta: float) -> void:
-    if Input.is_action_just_pressed("ui_down"):
-        ReplayManager.start_recording()
-    elif Input.is_action_just_released("ui_down"):
-        ReplayManager.stop_recording()

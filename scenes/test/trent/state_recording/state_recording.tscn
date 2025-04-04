@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpustnxk14xmd"]
+[gd_scene load_steps=7 format=3 uid="uid://bpustnxk14xmd"]
 
 [ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/simple/rigid_body_cube.tscn" id="1_35tti"]
+[ext_resource type="PackedScene" uid="uid://bx6et0snsnu0t" path="res://scenes/test/trent/state_recording/test_recording_ui.tscn" id="2_kpg22"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hs12w"]
 
@@ -38,4 +39,17 @@ transform = Transform3D(10.5994, 0, 0, 0, 1, 0, 0, 0, 10.5994, 0, 0, 0)
 shape = SubResource("BoxShape3D_hs12w")
 
 [node name="RigidBodyCube" parent="." instance=ExtResource("1_35tti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31328, 4.0296, 1.35136)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154459, 6.58582, 2.41161)
+
+[node name="RigidBodyCube2" parent="." instance=ExtResource("1_35tti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1379, 6.58582, 0.262372)
+
+[node name="RigidBodyCube3" parent="." instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.0969662, 0.483693, -0.86985, 0.538332, 0.760582, 0.362923, 0.837136, -0.433077, -0.334138, 0.168108, 4.65854, 0.0184087)
+
+[node name="RigidBodyCube4" parent="." instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.0969662, 0.483693, -0.86985, 0.538332, 0.760582, 0.362923, 0.837136, -0.433077, -0.334138, 1.81534, 5.11259, 2.65557)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TestRecordingUI" parent="CanvasLayer" instance=ExtResource("2_kpg22")]
