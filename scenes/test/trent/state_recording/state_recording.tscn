@@ -16,8 +16,12 @@ sky = SubResource("Sky_35tti")
 
 [node name="StateRecording" type="Node3D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TestRecordingUI" parent="CanvasLayer" instance=ExtResource("2_kpg22")]
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16498, 6.95731)
+transform = Transform3D(1, 0, 0, 0, 0.939016, 0.343873, 0, -0.343873, 0.939016, 0, 7.5262, 10.4295)
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -31,25 +35,107 @@ environment = SubResource("Environment_kpg22")
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="Ground" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(10.5994, 0, 0, 0, 1, 0, 0, 0, 10.5994, 0, 0, 0)
+transform = Transform3D(21.6993, 0, 0, 0, 1, 0, 0, 0, 21.6993, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Ground"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground"]
 shape = SubResource("BoxShape3D_hs12w")
 
-[node name="RigidBodyCube" parent="." instance=ExtResource("1_35tti")]
+[node name="Rigidbodies" type="Node3D" parent="."]
+
+[node name="RigidBodyCube" parent="Rigidbodies" instance=ExtResource("1_35tti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154459, 6.58582, 2.41161)
 
-[node name="RigidBodyCube2" parent="." instance=ExtResource("1_35tti")]
+[node name="RigidBodyCube2" parent="Rigidbodies" instance=ExtResource("1_35tti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1379, 6.58582, 0.262372)
 
-[node name="RigidBodyCube3" parent="." instance=ExtResource("1_35tti")]
+[node name="RigidBodyCube3" parent="Rigidbodies" instance=ExtResource("1_35tti")]
 transform = Transform3D(-0.0969662, 0.483693, -0.86985, 0.538332, 0.760582, 0.362923, 0.837136, -0.433077, -0.334138, 0.168108, 4.65854, 0.0184087)
 
-[node name="RigidBodyCube4" parent="." instance=ExtResource("1_35tti")]
+[node name="RigidBodyCube4" parent="Rigidbodies" instance=ExtResource("1_35tti")]
 transform = Transform3D(-0.0969662, 0.483693, -0.86985, 0.538332, 0.760582, 0.362923, 0.837136, -0.433077, -0.334138, 1.81534, 5.11259, 2.65557)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="RigidBodyCube5" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.664932, 0.0326034, 0.746192, 0.491066, 0.73368, -0.469646, -0.562778, 0.678712, 0.471837, -0.99915, 5.88987, 3.23608)
 
-[node name="TestRecordingUI" parent="CanvasLayer" instance=ExtResource("2_kpg22")]
+[node name="RigidBodyCube6" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.664932, 0.0326034, 0.746192, 0.491066, 0.73368, -0.469646, -0.562778, 0.678712, 0.471837, -1.07862, 8.02495, 0.931899)
+
+[node name="RigidBodyCube7" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.577739, 0.0232626, -0.81589, -0.045811, 0.998942, -0.00395744, 0.814935, 0.0396631, 0.578194, -2.63328, 5.75822, 0.61728)
+
+[node name="RigidBodyCube8" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.577739, 0.0232626, -0.81589, -0.045811, 0.998942, -0.00395744, 0.814935, 0.0396631, 0.578194, 0.444642, 5.66171, 1.24273)
+
+[node name="RigidBodyCube9" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(1, 0, 0, 0, -0.932261, -0.361787, 0, 0.361787, -0.932261, -0.154459, 7.89616, -2.13152)
+
+[node name="RigidBodyCube10" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(1, 0, 0, 0, -0.932261, -0.361787, 0, 0.361787, -0.932261, 2.1379, 8.67372, -0.127876)
+
+[node name="RigidBodyCube11" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.0969662, 0.483693, -0.86985, -0.804731, -0.552379, -0.217452, -0.585667, 0.678909, 0.442805, 0.168108, 10.5587, -0.597703)
+
+[node name="RigidBodyCube12" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.0969662, 0.483693, -0.86985, -0.804731, -0.552379, -0.217452, -0.585667, 0.678909, 0.442805, 1.81534, 9.18133, -2.89196)
+
+[node name="RigidBodyCube13" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.664932, 0.0326033, 0.746192, -0.254196, -0.929531, 0.267128, 0.702317, -0.367301, -0.609787, -0.99915, 8.24668, -3.15193)
+
+[node name="RigidBodyCube14" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.664932, 0.0326033, 0.746192, -0.254196, -0.929531, 0.267128, 0.702317, -0.367301, -0.609787, -1.07862, 7.08985, -0.23139)
+
+[node name="RigidBodyCube15" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.577739, 0.0232626, -0.81589, -0.252125, -0.945624, -0.205494, -0.776305, 0.324428, -0.540459, -2.63328, 9.31686, -0.758156)
+
+[node name="RigidBodyCube16" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.577739, 0.0232626, -0.81589, -0.252125, -0.945624, -0.205494, -0.776305, 0.324428, -0.540459, 0.444642, 9.18055, -1.37616)
+
+[node name="RigidBodyCube17" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.993816, 0, -0.111035, -0.110871, 0.0543576, 0.992347, 0.00603562, 0.998522, -0.0540215, -0.188161, 15.6334, -0.844303)
+
+[node name="RigidBodyCube18" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.993816, 0, -0.111035, -0.110871, 0.0543576, 0.992347, 0.00603562, 0.998522, -0.0540215, -2.22771, 13.2465, -0.714362)
+
+[node name="RigidBodyCube19" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.00341492, -0.432615, 0.901572, 0.870742, -0.442047, -0.215412, 0.491728, 0.785773, 0.375187, -0.243004, 13.118, -2.6375)
+
+[node name="RigidBodyCube20" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.00341492, -0.432615, 0.901572, 0.870742, -0.442047, -0.215412, 0.491728, 0.785773, 0.375187, -2.17287, 15.577, -2.31664)
+
+[node name="RigidBodyCube21" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.598332, -0.107763, -0.793968, -0.6055, 0.709785, 0.359966, 0.524756, 0.696127, -0.489938, 0.55976, 16.5074, -1.58886)
+
+[node name="RigidBodyCube22" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.598332, -0.107763, -0.793968, -0.6055, 0.709785, 0.359966, 0.524756, 0.696127, -0.489938, 0.894589, 14.3457, 0.667059)
+
+[node name="RigidBodyCube23" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.664653, -0.0275228, 0.746645, 0.742153, 0.0910805, 0.664012, -0.0862803, 0.995463, -0.0401109, 2.47457, 14.0827, -1.5887)
+
+[node name="RigidBodyCube24" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.664653, -0.0275228, 0.746645, 0.742153, 0.0910805, 0.664012, -0.0862803, 0.995463, -0.0401109, -0.653771, 14.3568, -1.70028)
+
+[node name="RigidBodyCube25" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.993816, -0.0401712, 0.103514, -0.110871, 0.308343, -0.944792, 0.00603563, -0.950427, -0.31089, 0.316287, 11.1963, 0.709527)
+
+[node name="RigidBodyCube26" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.993816, -0.0401712, 0.103514, -0.110871, 0.308343, -0.944792, 0.00603563, -0.950427, -0.31089, -2.18438, 12.9727, 1.39154)
+
+[node name="RigidBodyCube27" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.161396, -0.556085, 0.815304, -0.614177, 0.59006, 0.524037, -0.772488, -0.585319, -0.246301, -0.174594, 12.8273, 3.28723)
+
+[node name="RigidBodyCube28" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(0.161396, -0.556085, 0.815304, -0.614177, 0.59006, 0.524037, -0.772488, -0.585319, -0.246301, -1.55689, 10.2931, 2.04577)
+
+[node name="RigidBodyCube29" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.738803, 0.0083817, -0.673869, 0.609403, -0.418632, -0.673331, -0.287747, -0.908117, 0.304179, 1.26906, 10.2964, 1.10956)
+
+[node name="RigidBodyCube30" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.738803, 0.0083817, -0.673869, 0.609403, -0.418632, -0.673331, -0.287747, -0.908117, 0.304179, 1.02375, 13.1405, -0.203813)
+
+[node name="RigidBodyCube31" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.487969, -0.0591418, 0.870855, -0.848124, 0.267964, -0.457034, -0.206328, -0.961612, -0.180918, 2.62729, 12.9112, 2.03897)
+
+[node name="RigidBodyCube32" parent="Rigidbodies" instance=ExtResource("1_35tti")]
+transform = Transform3D(-0.487969, -0.0591418, 0.870855, -0.848124, 0.267964, -0.457034, -0.206328, -0.961612, -0.180918, -0.362982, 11.9492, 1.95483)

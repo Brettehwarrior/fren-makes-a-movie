@@ -2,12 +2,14 @@ extends Node
 
 signal started_recording
 signal stopped_recording
+signal started_playback
 
 @export var ticks_per_second : float = 60 
 @onready var tick_rate : float = 1 / ticks_per_second
 var _time_since_last_tick : float = 0
 
 var _is_recording : bool = false
+var _is_playing_back : bool = false
 var _current_recording_frame : int = 0
 
 
@@ -110,8 +112,19 @@ func stop_recording() -> void:
 	stopped_recording.emit()
 
 
+func start_playback() -> void:
+	if _is_recording:
+		stop_recording()
+	started_playback.emit()
+
+
+func is_playing_back() -> bool:
+	return _is_playing_back
+
+
 func is_recording() -> bool:
 	return _is_recording
+
 
 func get_current_recording_frame() -> int:
 	return _current_recording_frame
