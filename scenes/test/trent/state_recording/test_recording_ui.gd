@@ -4,7 +4,7 @@ extends Control
 @export var frame_spin_box : SpinBox
 
 func _process(_delta: float) -> void:
-	frame_spin_box.max_value = ReplayManager.get_current_recording_frame()
+	frame_spin_box.max_value = ReplayManager.get_current_recording_frame() - 1
 
 	if ReplayManager.is_recording():
 		recording_status_label.text = "Recording\n[Frame %d]" % ReplayManager.get_current_recording_frame()

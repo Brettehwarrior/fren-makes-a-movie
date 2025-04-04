@@ -69,6 +69,13 @@ func _record_node_state(node : Node) -> void:
 	var node_path = str(node.get_path())
 	var frame_history : NodeFrameDataHistory = _recorded_objects.get_or_add(node_path, NodeFrameDataHistory.new())
 	
+	if len(frame_history.list) > 0:
+		var previous_recorded_frame_data = frame_history.list[-1]
+		var previous_frame_state_hash = previous_recorded_frame_data.node_state.hash()
+		var current_frame_state_hash = node_frame_data.node_state.hash()
+		if current_frame_state_hash == previous_frame_state_hash:
+			return
+
 	frame_history.list.append(node_frame_data)
 
 
@@ -79,11 +86,17 @@ func load_game_state(frame : int) -> void:
 		if node.has_method("_load_state"):
 			var node_path = str(node.get_path())
 			var frame_history : NodeFrameDataHistory = _recorded_objects.get(node_path)
-			var state_to_load : Dictionary
-			for frame_data in frame_history.list:
+			var last_checked_frame_data : NodeFrameData = frame_history.list[0]
+			var state_to_load : Dictionary = frame_history.list[0].node_state
+			for frame_data in frame_history.list: # TODO: If this is not fast enough can do binary search
 				if frame_data.frame_index == frame:
 					state_to_load = frame_data.node_state
 					break
+				elif frame_data.frame_index > frame:
+					break
+				last_checked_frame_data = frame_data
+				state_to_load = last_checked_frame_data.node_state
+
 			node._load_state(state_to_load)
 
 
