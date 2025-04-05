@@ -8,15 +8,19 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apg5y"]
 
-[node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("input", "camera_pivot", "camera") groups=["replayable"]]
+[node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("input", "camcorder_hold_position", "camera_pivot", "camera") groups=["replayable"]]
 script = ExtResource("1_vfnkm")
 input = NodePath("PlayerInput")
+camcorder_hold_position = NodePath("CamcorderHoldPoint")
 camera_pivot = NodePath("CameraPivot")
 camera = NodePath("CameraPivot/Camera3D")
 walk_acceleration = 700.0
 max_walk_speed = 5000.0
 walk_friction = 0.95
 rigid_body_push_force = 1.0
+
+[node name="CamcorderHoldPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192225, 0.342761, -0.342329)
 
 [node name="CameraFollowPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596922, 0)

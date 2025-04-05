@@ -142,8 +142,9 @@ transform = Transform3D(-0.487969, -0.0591418, 0.870855, -0.848124, 0.267964, -0
 [node name="RigidBodyCube32" parent="Rigidbodies" instance=ExtResource("3_oty8r")]
 transform = Transform3D(-0.487969, -0.0591418, 0.870855, -0.848124, 0.267964, -0.457034, -0.206328, -0.961612, -0.180918, -0.362982, 11.9492, 1.95483)
 
-[node name="Camcorder" parent="Rigidbodies" instance=ExtResource("4_x5xwp")]
-transform = Transform3D(0.846193, 0, 0.532876, 0, 1, 0, -0.532876, 0, 0.846193, 3.99712, 1.15126, 3.15825)
+[node name="Camcorder" parent="." instance=ExtResource("4_x5xwp")]
+transform = Transform3D(0.846193, 0, 0.532876, 0, 1, 0, -0.532876, 0, 0.846193, 4.02098, 1.67915, 3.15825)
 
-[node name="Fren" parent="." instance=ExtResource("5_72qkf")]
+[node name="Fren" parent="." node_paths=PackedStringArray("camcorder") instance=ExtResource("5_72qkf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52577, 6.27013)
+camcorder = NodePath("../Camcorder")

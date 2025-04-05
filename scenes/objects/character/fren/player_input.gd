@@ -35,3 +35,7 @@ func get_look_input() -> Vector2:
 		return controller_look_input
 
 	return _mouse_input * mouse_sensitivity
+
+
+func is_camera_drop_button_just_presed() -> bool:
+	return Input.is_action_just_pressed("camera_drop")

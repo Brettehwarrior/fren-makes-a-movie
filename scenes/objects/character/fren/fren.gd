@@ -1,12 +1,16 @@
 extends CharacterBody3D
 
 @export var input : PlayerInput
+@export var camcorder_hold_position : Node3D
 @export var camera_pivot : Node3D
 @export var camera : Node3D
 @export var walk_acceleration : float
 @export var max_walk_speed : float
 @export_range(0, 1) var walk_friction : float
 @export var rigid_body_push_force : float
+
+# TODO: Get Camcorder in smarter way
+@export var camcorder : Camcorder
 
 var _velocity : Vector3
 
@@ -29,6 +33,16 @@ func _process(delta: float) -> void:
 	if ReplayManager.is_playing_back():
 		return
 	
+	_process_camera(delta)
+	
+	if input.is_camera_drop_button_just_presed():
+		if camcorder.is_held():
+			camcorder.reset_follow_nodes()
+		else:
+			camcorder.set_follow_position_node(camcorder_hold_position)
+			camcorder.set_follow_rotation_node(camera)
+
+func _process_camera (delta : float) -> void:
 	var look_input : Vector2 = input.get_look_input()
 	rotate_y(-look_input.x * delta)
 	camera_pivot.rotation.y = rotation.y
@@ -42,9 +56,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	_process_horizontal_velocity(delta)
-
 	move_and_slide()
-
 	_push_rigid_bodies()
 
 func _process_horizontal_velocity(delta : float) -> void:
