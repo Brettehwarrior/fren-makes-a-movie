@@ -23,4 +23,3 @@ func _load_state(state : Dictionary) -> void:
 	rotation = state.rotation
 	linear_velocity = state.linear_velocity
 	angular_velocity = state.angular_velocity
-

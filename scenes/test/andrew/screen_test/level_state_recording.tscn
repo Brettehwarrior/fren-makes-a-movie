@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsnih5ng67ffc"]
+
+[ext_resource type="PackedScene" uid="uid://bx6et0snsnu0t" path="res://scenes/test/trent/state_recording/test_recording_ui.tscn" id="1_f1nlp"]
+[ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="2_c1oou"]
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="3_4susw"]
+[ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="4_1ef2t"]
+[ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="5_wf1ps"]
+[ext_resource type="PackedScene" uid="uid://uuveqstbile7" path="res://scenes/objects/screen/screen.tscn" id="6_c1oou"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hs12w"]
+
+[sub_resource type="Sky" id="Sky_35tti"]
+sky_material = SubResource("ProceduralSkyMaterial_hs12w")
+
+[sub_resource type="Environment" id="Environment_kpg22"]
+background_mode = 2
+sky = SubResource("Sky_35tti")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hs12w"]
+
+[node name="LevelStateRecording" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TestRecordingUI" parent="CanvasLayer" instance=ExtResource("1_f1nlp")]
+
+[node name="PlaybackUI" parent="CanvasLayer" instance=ExtResource("2_c1oou")]
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.717479, -0.662348, 0.215684, 0.367194, 0.622743, 0.690912, -0.59194, -0.416517, 0.690015, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_kpg22")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Screen" parent="Environment" groups=["replayable"] instance=ExtResource("6_c1oou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.377937, -0.989176, 8.97223, -9.96532)
+
+[node name="Ground" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(21.6993, 0, 0, 0, 1, 0, 0, 0, 21.6993, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground"]
+shape = SubResource("BoxShape3D_hs12w")
+
+[node name="Rigidbodies" type="Node3D" parent="."]
+
+[node name="RigidBodyCube" parent="Rigidbodies" instance=ExtResource("3_4susw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81285, 3.25679, 2.41161)
+
+[node name="RigidBodyCube2" parent="Rigidbodies" instance=ExtResource("3_4susw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1379, 2.00294, 0.262372)
+
+[node name="RigidBodyCube3" parent="Rigidbodies" instance=ExtResource("3_4susw")]
+transform = Transform3D(-0.0969662, 0.483693, -0.86985, 0.538332, 0.760582, 0.362923, 0.837136, -0.433077, -0.334138, 7.05726, 2.64622, 0.0184087)
+
+[node name="Camcorder" parent="." instance=ExtResource("4_1ef2t")]
+transform = Transform3D(0.846193, 0, 0.532876, 0, 1, 0, -0.532876, 0, 0.846193, 4.02098, 1.67915, 3.15825)
+
+[node name="Fren" parent="." node_paths=PackedStringArray("camcorder") instance=ExtResource("5_wf1ps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52577, 6.27013)
+camcorder = NodePath("../Camcorder")
