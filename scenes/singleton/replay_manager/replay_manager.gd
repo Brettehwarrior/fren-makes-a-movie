@@ -12,6 +12,7 @@ var _is_recording : bool = false
 var _is_playing_back : bool = false
 var _current_recording_frame : int = 0
 
+var _playback_camera : Camera3D
 var _playback_object_node_path : String
 
 class NodeFrameDataHistory:
@@ -109,10 +110,9 @@ func load_game_state(frame : int) -> void:
 
 			node._load_state(state_to_load)
 
-			if node_path == _playback_object_node_path:
-				var current_camera = get_viewport().get_camera_3d()
-				current_camera.position = node.position
-				current_camera.rotation = node.rotation
+			if _is_playing_back and node_path == _playback_object_node_path:
+				_playback_camera.position = node.position
+				_playback_camera.rotation = node.rotation
 
 
 func start_recording() -> void:
@@ -133,7 +133,14 @@ func register_camera(node : Node) -> void:
 func start_playback() -> void:
 	if _is_recording:
 		stop_recording()
+	
 	_is_playing_back = true
+
+	_playback_camera = Camera3D.new()
+	_playback_camera.name = "PlaybackCamera"
+	_playback_camera.make_current()
+	get_tree().root.add_child(_playback_camera)
+
 	load_game_state(0)
 	started_playback.emit()
 

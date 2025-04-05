@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpustnxk14xmd"]
+[gd_scene load_steps=10 format=3 uid="uid://bpustnxk14xmd"]
 
 [ext_resource type="PackedScene" uid="uid://bx6et0snsnu0t" path="res://scenes/test/trent/state_recording/test_recording_ui.tscn" id="1_51wbl"]
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="2_72qkf"]
 [ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="3_oty8r"]
 [ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="4_x5xwp"]
+[ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="5_72qkf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hs12w"]
 
@@ -23,9 +24,6 @@ sky = SubResource("Sky_35tti")
 [node name="TestRecordingUI" parent="CanvasLayer" instance=ExtResource("1_51wbl")]
 
 [node name="PlaybackUI" parent="CanvasLayer" instance=ExtResource("2_72qkf")]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.939016, 0.343873, 0, -0.343873, 0.939016, 0, 7.5262, 10.4295)
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -146,3 +144,6 @@ transform = Transform3D(-0.487969, -0.0591418, 0.870855, -0.848124, 0.267964, -0
 
 [node name="Camcorder" parent="Rigidbodies" instance=ExtResource("4_x5xwp")]
 transform = Transform3D(0.846193, 0, 0.532876, 0, 1, 0, -0.532876, 0, 0.846193, 3.99712, 1.15126, 3.15825)
+
+[node name="Fren" parent="." instance=ExtResource("5_72qkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52577, 6.27013)

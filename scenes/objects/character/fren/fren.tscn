@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://uefp4qdx4sqi"]
+
+[ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
+[ext_resource type="Script" uid="uid://clhekndnjdutt" path="res://scenes/objects/character/fren/player_input.gd" id="2_shp5y"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_51wbl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apg5y"]
+
+[node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("input", "camera_pivot") groups=["replayable"]]
+script = ExtResource("1_vfnkm")
+input = NodePath("PlayerInput")
+camera_pivot = NodePath("CameraPivot")
+walk_acceleration = 700.0
+max_walk_speed = 5000.0
+walk_friction = 0.96
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596922, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
+mesh = SubResource("CapsuleMesh_51wbl")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_apg5y")
+
+[node name="PlayerInput" type="Node" parent="."]
+script = ExtResource("2_shp5y")
