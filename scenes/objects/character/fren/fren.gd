@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var input : PlayerInput
 @export var camera_pivot : Node3D
+@export var camera : Node3D
 @export var walk_acceleration : float
 @export var max_walk_speed : float
 @export_range(0, 1) var walk_friction : float
@@ -29,7 +30,9 @@ func _process(delta: float) -> void:
 	
 	var look_input : Vector2 = input.get_look_input()
 	rotate_y(-look_input.x * delta)
-	camera_pivot.rotate_x(-look_input.y * delta)
+	camera_pivot.rotation.y = rotation.y
+	camera.rotate_x(-look_input.y * delta)
+	camera.rotation.x = clampf(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 
 
