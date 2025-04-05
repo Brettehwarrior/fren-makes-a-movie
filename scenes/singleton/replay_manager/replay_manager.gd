@@ -5,7 +5,7 @@ signal stopped_recording
 signal started_playback
 
 @export var ticks_per_second : float = 60 
-@onready var tick_rate : float = 1 / ticks_per_second
+@onready var _tick_rate : float = 1 / ticks_per_second
 var _time_since_last_tick : float = 0
 
 var _is_recording : bool = false
@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 func _process_tick(delta : float) -> void:
 	_time_since_last_tick += delta
 
-	var ticks_to_run : int = floor(_time_since_last_tick / tick_rate)
+	var ticks_to_run : int = floor(_time_since_last_tick / _tick_rate)
 
 	for _i in range(ticks_to_run):
 		_tick()
@@ -155,3 +155,7 @@ func is_recording() -> bool:
 
 func get_current_recording_frame() -> int:
 	return _current_recording_frame
+
+
+func get_tick_rate() -> float:
+	return _tick_rate
