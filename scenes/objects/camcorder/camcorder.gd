@@ -13,7 +13,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if _follow_position_node != null:
-		position += ((_follow_position_node.global_position - position) / _follow_speed_factor) * delta
+		# position += ((_follow_position_node.global_position - position) / _follow_speed_factor) * delta
+		position = _follow_position_node.global_position
 	if _follow_rotation_node != null:
 		rotation = _follow_rotation_node.global_rotation
 

@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 	if ReplayManager.is_playing_back():
 		return
 	
-	_process_camera(delta)
+	_process_camera_rotation(delta)
 	
 	if input.is_camera_drop_button_just_presed():
 		if camcorder.is_held():
@@ -42,13 +42,13 @@ func _process(delta: float) -> void:
 			camcorder.set_follow_position_node(camcorder_hold_position)
 			camcorder.set_follow_rotation_node(camera)
 
-func _process_camera (delta : float) -> void:
+
+func _process_camera_rotation (delta : float) -> void:
 	var look_input : Vector2 = input.get_look_input()
 	rotate_y(-look_input.x * delta)
 	camera_pivot.rotation.y = rotation.y
 	camera.rotate_x(-look_input.y * delta)
 	camera.rotation.x = clampf(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
-
 
 
 func _physics_process(delta: float) -> void:
