@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu7ubi8clos5r"]
+
+[ext_resource type="Script" uid="uid://rcl7uvpdhcbb" path="res://scenes/objects/camcorder/camcorder.gd" id="1_aa2of"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cfngs"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Camcorder" type="Node3D" groups=["replayable"]]
+script = ExtResource("1_aa2of")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Model"]
+transform = Transform3D(2.54444, 0, 0, 0, 2.54444, 0, 0, 0, 2.54444, 0.0523022, 7.67132e-09, 0.115285)
+size = Vector3(0.05, 0.05, 0.1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Model"]
+transform = Transform3D(2.54444, 0, 0, 0, 2.54444, 0, 0, 0, 2.54444, -0.0515327, 7.67132e-09, 0.0181914)
+size = Vector3(0.113867, 0.0427246, 0.00561523)
+
+[node name="Sprite3D" type="Sprite3D" parent="Model"]
+transform = Transform3D(0.211464, 0, 0, 0, 0.211464, 0, 0, 0, 0.211464, -0.102364, -3.02438e-08, 0.0286386)
+texture = SubResource("ViewportTexture_cfngs")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(64, 48)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]

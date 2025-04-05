@@ -22,6 +22,7 @@ ReplayManager="*res://scenes/singleton/replay_manager/replay_manager.tscn"
 [global_group]
 
 replayable=""
+tickable=""
 
 [rendering]
 

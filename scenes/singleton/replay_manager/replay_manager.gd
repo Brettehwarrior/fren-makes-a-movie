@@ -12,6 +12,7 @@ var _is_recording : bool = false
 var _is_playing_back : bool = false
 var _current_recording_frame : int = 0
 
+var _playback_object_node_path : String
 
 class NodeFrameDataHistory:
 	var list : Array[NodeFrameData]
@@ -41,9 +42,13 @@ func _process_tick(delta : float) -> void:
 
 
 func _tick() -> void:
-	var replayable_nodes : Array[Node] = get_tree().get_nodes_in_group("replayable")
+	var tickable_nodes : Array[Node] = get_tree().get_nodes_in_group("tickable")
+	_tick_nodes(tickable_nodes)
 
-	_tick_nodes(replayable_nodes)	
+	if _is_playing_back:
+		return
+	
+	var replayable_nodes : Array[Node] = get_tree().get_nodes_in_group("replayable")
 	_tick_recording(replayable_nodes)
 
 
@@ -101,6 +106,11 @@ func load_game_state(frame : int) -> void:
 
 			node._load_state(state_to_load)
 
+			if node_path == _playback_object_node_path:
+				var current_camera = get_viewport().get_camera_3d()
+				current_camera.position = node.position
+				current_camera.rotation = node.rotation
+
 
 func start_recording() -> void:
 	_is_recording = true
@@ -112,9 +122,16 @@ func stop_recording() -> void:
 	stopped_recording.emit()
 
 
+func register_camera(node : Node) -> void:
+	assert(_playback_object_node_path == "", "Tried to register second camera")
+	_playback_object_node_path = str(node.get_path())
+
+
 func start_playback() -> void:
 	if _is_recording:
 		stop_recording()
+	_is_playing_back = true
+	load_game_state(0)
 	started_playback.emit()
 
 
