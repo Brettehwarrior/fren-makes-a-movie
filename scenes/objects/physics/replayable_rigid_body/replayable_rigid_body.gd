@@ -1,3 +1,4 @@
+class_name ReplayableRigidBody3D
 extends RigidBody3D
 
 func _ready() -> void:
@@ -23,6 +24,3 @@ func _load_state(state : Dictionary) -> void:
 	linear_velocity = state.linear_velocity
 	angular_velocity = state.angular_velocity
 
-
-func _tick() -> void:
-	pass #print("tick!")

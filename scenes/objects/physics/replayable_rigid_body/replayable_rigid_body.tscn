@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce1pgl3v8ccy2"]
+
+[ext_resource type="Script" uid="uid://cmpp18xjewi4y" path="res://scenes/objects/physics/replayable_rigid_body/replayable_rigid_body.gd" id="1_t067w"]
+
+[node name="ReplayableRigidBody" type="RigidBody3D" groups=["replayable"]]
+script = ExtResource("1_t067w")

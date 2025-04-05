@@ -36,7 +36,10 @@ func _process(delta: float) -> void:
 
 func _process_tick(delta : float) -> void:
 	_time_since_last_tick += delta
-	if _time_since_last_tick >= tick_rate:
+
+	var ticks_to_run : int = floor(_time_since_last_tick / tick_rate)
+
+	for _i in range(ticks_to_run):
 		_tick()
 		_time_since_last_tick = 0
 
