@@ -16,6 +16,7 @@ camera = NodePath("CameraPivot/Camera3D")
 walk_acceleration = 700.0
 max_walk_speed = 5000.0
 walk_friction = 0.95
+rigid_body_push_force = 1.0
 
 [node name="CameraFollowPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596922, 0)
