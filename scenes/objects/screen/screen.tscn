@@ -15,14 +15,13 @@ viewport_path = NodePath("ScreenViewport")
 resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_btagw")
-albedo_texture_force_srgb = true
 
 [sub_resource type="FFmpegVideoStream" id="FFmpegVideoStream_btagw"]
 file = "res://scenes/test/andrew/screen_test/blueshell-h264.mp4"
 
 [node name="Screen" type="Node3D" node_paths=PackedStringArray("stream_player", "audio_origin_node")]
 script = ExtResource("1_btagw")
-stream_player = NodePath("ScreenViewport/ScreenVideoStreamPlayer")
+stream_player = NodePath("ScreenViewport/AspectRatioContainer/ScreenVideoStreamPlayer")
 audio_origin_node = NodePath("AudioPlaybackOrigin")
 volume_attenuation_curve = SubResource("Curve_btagw")
 max_attenuation_distance = 30.0
@@ -35,10 +34,20 @@ surface_material_override/0 = SubResource("StandardMaterial3D_biywn")
 [node name="ScreenViewport" type="SubViewport" parent="."]
 size = Vector2i(1280, 720)
 
-[node name="ScreenVideoStreamPlayer" type="VideoStreamPlayer" parent="ScreenViewport"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="ScreenViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.7
+stretch_mode = 3
+
+[node name="ScreenVideoStreamPlayer" type="VideoStreamPlayer" parent="ScreenViewport/AspectRatioContainer"]
+layout_mode = 2
 stream = SubResource("FFmpegVideoStream_btagw")
+expand = true
+loop = true
 
 [node name="AudioPlaybackOrigin" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
