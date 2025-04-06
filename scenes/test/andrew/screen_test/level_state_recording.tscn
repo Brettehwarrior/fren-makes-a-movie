@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsnih5ng67ffc"]
+[gd_scene load_steps=13 format=3 uid="uid://bsnih5ng67ffc"]
 
 [ext_resource type="PackedScene" uid="uid://bx6et0snsnu0t" path="res://scenes/test/trent/state_recording/test_recording_ui.tscn" id="1_f1nlp"]
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="2_c1oou"]
 [ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="3_4susw"]
 [ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="4_1ef2t"]
+[ext_resource type="PackedScene" uid="uid://u7e8wy4hdxen" path="res://scenes/objects/projector/projector.tscn" id="4_wf1ps"]
 [ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="5_wf1ps"]
 [ext_resource type="PackedScene" uid="uid://uuveqstbile7" path="res://scenes/objects/screen/screen.tscn" id="6_c1oou"]
+[ext_resource type="PackedScene" uid="uid://bsnaci63fmit2" path="res://scenes/objects/triggers/interaction_sphere.tscn" id="7_4susw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hs12w"]
 
@@ -48,13 +50,16 @@ transform = Transform3D(21.6993, 0, 0, 0, 1, 0, 0, 0, 21.6993, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground"]
 shape = SubResource("BoxShape3D_hs12w")
 
+[node name="Projector" parent="Environment" instance=ExtResource("4_wf1ps")]
+transform = Transform3D(0.0313373, 0, -0.024859, 0, 0.04, 0, 0.024859, 0, 0.0313373, 8.97143, 1.48478, 6.12105)
+
 [node name="Rigidbodies" type="Node3D" parent="."]
 
 [node name="RigidBodyCube" parent="Rigidbodies" instance=ExtResource("3_4susw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81285, 3.25679, 2.41161)
 
 [node name="RigidBodyCube2" parent="Rigidbodies" instance=ExtResource("3_4susw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1379, 2.00294, 0.262372)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1379, 1.04876, 0.262372)
 
 [node name="RigidBodyCube3" parent="Rigidbodies" instance=ExtResource("3_4susw")]
 transform = Transform3D(-0.0969662, 0.483693, -0.86985, 0.538332, 0.760582, 0.362923, 0.837136, -0.433077, -0.334138, 7.05726, 2.64622, 0.0184087)
@@ -65,3 +70,6 @@ transform = Transform3D(0.846193, 0, 0.532876, 0, 1, 0, -0.532876, 0, 0.846193, 
 [node name="Fren" parent="." node_paths=PackedStringArray("camcorder") instance=ExtResource("5_wf1ps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52577, 6.27013)
 camcorder = NodePath("../Camcorder")
+
+[node name="InteractableTrigger" parent="." instance=ExtResource("7_4susw")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, 2.1379, 1.04876, 0.262372)

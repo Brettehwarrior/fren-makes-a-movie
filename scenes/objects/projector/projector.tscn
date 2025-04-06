@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://u7e8wy4hdxen"]
+
+[ext_resource type="Texture2D" uid="uid://bxa30av8q5yy4" path="res://scenes/objects/projector/projector.png" id="1_nm2xf"]
+[ext_resource type="PackedScene" uid="uid://bsnaci63fmit2" path="res://scenes/objects/triggers/interaction_sphere.tscn" id="2_eqxdm"]
+
+[node name="Projector" type="Node3D"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_nm2xf")
+
+[node name="InteractableTrigger" parent="." instance=ExtResource("2_eqxdm")]
+transform = Transform3D(29.615, 0, 0, 0, 29.615, 0, 0, 0, 29.615, 0, 2.55688, 0)

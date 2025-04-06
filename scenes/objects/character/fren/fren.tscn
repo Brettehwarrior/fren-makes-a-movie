@@ -9,7 +9,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apg5y"]
 
-[node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("input", "camcorder_hold_position", "camera_pivot", "camera") groups=["replayable"]]
+[node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("input", "camcorder_hold_position", "camera_pivot", "camera") groups=["player", "replayable"]]
 script = ExtResource("1_vfnkm")
 input = NodePath("PlayerInput")
 camcorder_hold_position = NodePath("CameraPivot/Camera3D/CamcorderHoldPoint")
