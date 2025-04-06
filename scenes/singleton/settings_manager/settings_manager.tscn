@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://wegsouae2ifu" path="res://scenes/singleton/settings_manager/settings_manager.gd" id="1_pe4m4"]
 
-[node name="SettingsManager" type="Node" node_paths=PackedStringArray("menu_parent", "master_volume_slider", "master_volume_percentage_label", "mouse_sensitivity_slider", "mouse_sensitivity_label", "controller_sensitivity_slider", "controller_sensitivity_label")]
+[node name="SettingsManager" type="Node" node_paths=PackedStringArray("menu_parent", "master_volume_slider", "master_volume_percentage_label", "microphone_option_button", "mouse_sensitivity_slider", "mouse_sensitivity_label", "controller_sensitivity_slider", "controller_sensitivity_label")]
 script = ExtResource("1_pe4m4")
 menu_parent = NodePath("CanvasLayer/Control")
 master_volume_slider = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider")
 master_volume_percentage_label = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumePercentageLabel")
+microphone_option_button = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/MicrophoneOptionButton")
 mouse_sensitivity_slider = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/MouseSensitivitySlider")
 mouse_sensitivity_label = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/MouseSensitivityLabel")
 controller_sensitivity_slider = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ControllerSensitivitySlider")
@@ -68,6 +69,20 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "0%"
 
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Microphone:"
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MicrophoneOptionButton" type="OptionButton" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
 [node name="CONTROL SETTINGS" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "CONTROL SETTINGS"
@@ -127,6 +142,7 @@ size_flags_horizontal = 3
 text = "Save Settings"
 
 [connection signal="value_changed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="item_selected" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/MicrophoneOptionButton" to="." method="_on_microphone_option_button_item_selected"]
 [connection signal="value_changed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/MouseSensitivitySlider" to="." method="_on_mouse_sensitivity_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ControllerSensitivitySlider" to="." method="_on_controller_sensitivity_slider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/LoadDefaultSettingsButton" to="." method="_on_load_default_settings_button_pressed"]

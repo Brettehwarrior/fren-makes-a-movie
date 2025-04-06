@@ -1,9 +1,8 @@
 class_name PlayerInput
 extends Node
 
-
-var mouse_sensitivity : float = 1
-var controller_sensitivity : float = 1
+@onready var mouse_sensitivity : float = SettingsManager.mouse_sensitivity_slider.value
+@onready var controller_sensitivity : float = SettingsManager.controller_sensitivity_slider.value
 
 var _mouse_input : Vector2
 
