@@ -13,7 +13,7 @@ var _is_playing_back : bool = false
 var _current_recording_frame : int = 0
 
 var _playback_camera : Camera3D
-var _playback_object_node_path : String
+var _playback_object_id : String
 
 class NodeFrameDataHistory:
 	var list : Array[NodeFrameData]
@@ -77,8 +77,8 @@ func _record_node_state(node : Node) -> void:
 	var node_state : Dictionary = node._save_state()
 	var node_frame_data = NodeFrameData.new(_current_recording_frame, node_state)
 
-	var node_path = str(node.get_path())
-	var frame_history : NodeFrameDataHistory = _recorded_objects.get_or_add(node_path, NodeFrameDataHistory.new())
+	var node_id = _get_node_id(node)
+	var frame_history : NodeFrameDataHistory = _recorded_objects.get_or_add(node_id, NodeFrameDataHistory.new())
 	
 	if len(frame_history.list) > 0:
 		var previous_recorded_frame_data = frame_history.list[-1]
@@ -90,13 +90,18 @@ func _record_node_state(node : Node) -> void:
 	frame_history.list.append(node_frame_data)
 
 
+func _get_node_id(node : Node) -> String:
+	var id = str(node)
+	return id
+
+
 func load_game_state(frame : int) -> void:
 	var replayable_nodes : Array[Node] = get_tree().get_nodes_in_group("replayable")
 
 	for node in replayable_nodes:
 		if node.has_method("_load_state"):
-			var node_path = str(node.get_path())
-			var frame_history : NodeFrameDataHistory = _recorded_objects.get(node_path)
+			var node_id = _get_node_id(node)
+			var frame_history : NodeFrameDataHistory = _recorded_objects.get(node_id)
 			var last_checked_frame_data : NodeFrameData = frame_history.list[0]
 			var state_to_load : Dictionary = frame_history.list[0].node_state
 			for frame_data in frame_history.list: # TODO: If this is not fast enough can do binary search
@@ -110,7 +115,7 @@ func load_game_state(frame : int) -> void:
 
 			node._load_state(state_to_load)
 
-			if _is_playing_back and node_path == _playback_object_node_path:
+			if _is_playing_back and node_id == _playback_object_id:
 				_playback_camera.position = node.position
 				_playback_camera.rotation = node.rotation
 
@@ -126,8 +131,8 @@ func stop_recording() -> void:
 
 
 func register_playback_camera(node : Node) -> void:
-	assert(_playback_object_node_path == "", "Tried to register second camera")
-	_playback_object_node_path = str(node.get_path())
+	assert(_playback_object_id == "", "Tried to register second camera")
+	_playback_object_id = _get_node_id(node)
 
 
 func start_playback() -> void:

@@ -10,6 +10,7 @@ var _follow_rotation_node : Node3D
 
 func _ready() -> void:
 	ReplayManager.register_playback_camera(self)
+	print(self)
 
 
 func _process(delta: float) -> void:
