@@ -140,16 +140,23 @@ func register_playback_camera(node : Node) -> void:
 func start_playback() -> void:
 	if _is_recording:
 		stop_recording()
-	
+
+	_setup_playback_camera()
 	_is_playing_back = true
 
+	load_game_state(0)
+	started_playback.emit()
+
+
+func _setup_playback_camera() -> void:
 	_playback_camera = Camera3D.new()
 	_playback_camera.name = "PlaybackCamera"
 	_playback_camera.make_current()
 	get_tree().root.add_child(_playback_camera)
 
-	load_game_state(0)
-	started_playback.emit()
+	var audio_listener = AudioListener3D.new()
+	audio_listener.make_current()
+	_playback_camera.add_child(audio_listener)
 
 
 func is_playing_back() -> bool:

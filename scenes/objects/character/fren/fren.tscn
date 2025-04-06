@@ -23,12 +23,13 @@ rigid_body_push_force = 1.0
 [node name="PlayerInput" type="Node" parent="."]
 script = ExtResource("2_shp5y")
 
-[node name="MicrophoneRecordingReplayer" type="Node" parent="." node_paths=PackedStringArray("voice_stream_player") groups=["replayable"]]
+[node name="MicrophoneRecordingReplayer" type="Node3D" parent="." node_paths=PackedStringArray("voice_stream_player") groups=["replayable"]]
 script = ExtResource("3_r7wf4")
 voice_stream_player = NodePath("VoiceStreamPlayer")
 
 [node name="VoiceStreamPlayer" type="AudioStreamPlayer3D" parent="MicrophoneRecordingReplayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503789, 0)
+unit_size = 4.08
 
 [node name="CameraFollowPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596922, 0)
