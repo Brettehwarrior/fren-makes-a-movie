@@ -2,13 +2,16 @@ class_name PlayerInput
 extends Node
 
 
-@export var mouse_sensitivity : float = 1
+var mouse_sensitivity : float = 1
+var controller_sensitivity : float = 1
 
 var _mouse_input : Vector2
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	SettingsManager.changed_visibility.connect(_on_settings_changed_visibility)
+	SettingsManager.mouse_sensitivity_changed.connect(_on_settings_mouse_sensitivity_changed)
+	SettingsManager.controller_sensitivity_changed.connect(_on_settings_controller_sensitivity_changed)
 
 
 func _on_settings_changed_visibility(is_visible : bool) -> void:
@@ -16,6 +19,14 @@ func _on_settings_changed_visibility(is_visible : bool) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
+func _on_settings_mouse_sensitivity_changed(value : float) -> void:
+	mouse_sensitivity = value
+
+
+func _on_settings_controller_sensitivity_changed(value : float) -> void:
+	controller_sensitivity = value
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -35,7 +46,7 @@ func get_horizontal_input() -> Vector2:
 func get_look_input() -> Vector2:
 	var controller_look_input = Input.get_vector("look_left", "look_right", "look_down", "look_up")
 	if controller_look_input.length() > 0:
-		return controller_look_input
+		return controller_look_input * controller_sensitivity
 
 	return _mouse_input * mouse_sensitivity
 

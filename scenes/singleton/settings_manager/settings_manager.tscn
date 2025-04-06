@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" uid="uid://wegsouae2ifu" path="res://scenes/singleton/settings_manager/settings_manager.gd" id="1_pe4m4"]
 
-[node name="SettingsManager" type="Node" node_paths=PackedStringArray("menu_parent", "master_volume_slider", "master_volume_percentage_label")]
+[node name="SettingsManager" type="Node" node_paths=PackedStringArray("menu_parent", "master_volume_slider", "master_volume_percentage_label", "mouse_sensitivity_slider", "mouse_sensitivity_label", "controller_sensitivity_slider", "controller_sensitivity_label")]
 script = ExtResource("1_pe4m4")
 menu_parent = NodePath("CanvasLayer/Control")
 master_volume_slider = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider")
 master_volume_percentage_label = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumePercentageLabel")
+mouse_sensitivity_slider = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/MouseSensitivitySlider")
+mouse_sensitivity_label = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/MouseSensitivityLabel")
+controller_sensitivity_slider = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ControllerSensitivitySlider")
+controller_sensitivity_label = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ControllerSensitivityLabel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -40,7 +44,13 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
+
+[node name="AUDIO SETTINGS" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "AUDIO SETTINGS"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -50,14 +60,58 @@ layout_mode = 2
 text = "Master Volume:"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 size_flags_vertical = 4
 
 [node name="MasterVolumePercentageLabel" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0%"
+
+[node name="CONTROL SETTINGS" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CONTROL SETTINGS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Mouse Sensitivity:"
+
+[node name="MouseSensitivitySlider" type="HSlider" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 4.0
+step = 0.1
+value = 0.1
+
+[node name="MouseSensitivityLabel" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "x1"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Controller Sensitivity:"
+
+[node name="ControllerSensitivitySlider" type="HSlider" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 8.0
+step = 0.1
+value = 0.1
+
+[node name="ControllerSensitivityLabel" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "x1"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -73,5 +127,7 @@ size_flags_horizontal = 3
 text = "Save Settings"
 
 [connection signal="value_changed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/MouseSensitivitySlider" to="." method="_on_mouse_sensitivity_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ControllerSensitivitySlider" to="." method="_on_controller_sensitivity_slider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/LoadDefaultSettingsButton" to="." method="_on_load_default_settings_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/SaveSettingsButton" to="." method="_on_save_settings_button_pressed"]
