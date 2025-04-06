@@ -15,9 +15,14 @@ run/main_scene="uid://bsnih5ng67ffc"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/enable_input=true
+
 [autoload]
 
 ReplayManager="*res://scenes/singleton/replay_manager/replay_manager.tscn"
+MicrophoneManager="*res://scenes/singleton/microphone_manager/MicrophoneManager.tscn"
 
 [global_group]
 
