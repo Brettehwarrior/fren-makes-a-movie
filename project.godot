@@ -21,6 +21,7 @@ driver/enable_input=true
 
 [autoload]
 
+SettingsManager="*res://scenes/singleton/settings_manager/settings_manager.tscn"
 ReplayManager="*res://scenes/singleton/replay_manager/replay_manager.tscn"
 MicrophoneManager="*res://scenes/singleton/microphone_manager/MicrophoneManager.tscn"
 

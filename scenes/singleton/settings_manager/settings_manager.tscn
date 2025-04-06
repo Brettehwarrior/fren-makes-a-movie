@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://er55h5cit2jy"]
+
+[ext_resource type="Script" uid="uid://wegsouae2ifu" path="res://scenes/singleton/settings_manager/settings_manager.gd" id="1_pe4m4"]
+
+[node name="SettingsManager" type="Node" node_paths=PackedStringArray("master_volume_slider", "master_volume_percentage_label")]
+script = ExtResource("1_pe4m4")
+master_volume_slider = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider")
+master_volume_percentage_label = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumePercentageLabel")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -20.0
+offset_right = 80.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Master Volume:"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MasterVolumePercentageLabel" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0%"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LoadDefaultSettingsButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Load Default Settings"
+
+[node name="SaveSettingsButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save Settings"
+
+[connection signal="value_changed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/LoadDefaultSettingsButton" to="." method="_on_load_default_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/SaveSettingsButton" to="." method="_on_save_settings_button_pressed"]
