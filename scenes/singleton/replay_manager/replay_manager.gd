@@ -125,7 +125,7 @@ func stop_recording() -> void:
 	stopped_recording.emit()
 
 
-func register_camera(node : Node) -> void:
+func register_playback_camera(node : Node) -> void:
 	assert(_playback_object_node_path == "", "Tried to register second camera")
 	_playback_object_node_path = str(node.get_path())
 

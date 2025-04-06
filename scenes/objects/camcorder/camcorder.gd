@@ -2,13 +2,14 @@ class_name Camcorder
 extends Node3D
 
 @export var _follow_speed_factor : float
+@export var camera : Node3D
 
 var _follow_position_node : Node3D
 var _follow_rotation_node : Node3D
 
 
 func _ready() -> void:
-	ReplayManager.register_camera(self)
+	ReplayManager.register_playback_camera(self)
 
 
 func _process(delta: float) -> void:
@@ -17,6 +18,7 @@ func _process(delta: float) -> void:
 		position = _follow_position_node.global_position
 	if _follow_rotation_node != null:
 		rotation = _follow_rotation_node.global_rotation
+		camera.rotation = rotation
 
 
 func _input(event: InputEvent) -> void:

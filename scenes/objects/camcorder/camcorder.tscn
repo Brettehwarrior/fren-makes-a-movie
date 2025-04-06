@@ -8,9 +8,10 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_aa2of"]
 
-[node name="Camcorder" type="Node3D" groups=["replayable"]]
+[node name="Camcorder" type="Node3D" node_paths=PackedStringArray("camera") groups=["replayable"]]
 script = ExtResource("1_aa2of")
 _follow_speed_factor = 0.01
+camera = NodePath("SubViewport/Camera3D")
 
 [node name="Model" type="Node3D" parent="."]
 
