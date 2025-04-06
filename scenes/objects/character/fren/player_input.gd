@@ -17,7 +17,8 @@ func _on_settings_changed_visibility(is_visible : bool) -> void:
 	if is_visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if not ReplayManager.is_playing_back():
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _on_settings_mouse_sensitivity_changed(value : float) -> void:
