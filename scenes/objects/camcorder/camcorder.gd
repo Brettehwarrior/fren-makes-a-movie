@@ -22,10 +22,10 @@ func _process(_delta: float) -> void:
 	camera.rotation = global_rotation
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("camera_record"):
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("camera_record") and not ReplayManager.is_recording():
 		ReplayManager.start_recording()
-	elif event.is_action_released("camera_record"):
+	elif event.is_action_released("camera_record") and ReplayManager.is_recording():
 		ReplayManager.stop_recording()
 
 

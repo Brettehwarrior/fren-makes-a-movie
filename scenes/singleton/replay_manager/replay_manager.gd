@@ -121,11 +121,13 @@ func load_game_state(frame : int) -> void:
 
 
 func start_recording() -> void:
+	assert(not _is_recording, "Tried to start recording when already recording")
 	_is_recording = true
 	started_recording.emit()
 
 
 func stop_recording() -> void:
+	assert(_is_recording, "Tried to stop recording when wasn't recording")
 	_is_recording = false
 	stopped_recording.emit()
 

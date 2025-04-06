@@ -4,8 +4,9 @@
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_dkdsd"]
 
-[node name="MicrophoneManager" type="Node" node_paths=PackedStringArray("mic_volume_progress_bar")]
+[node name="MicrophoneManager" type="Node" node_paths=PackedStringArray("mic_stream_player", "mic_volume_progress_bar")]
 script = ExtResource("1_cjhow")
+mic_stream_player = NodePath("MicrophoneInputStreamPlayer")
 mic_volume_progress_bar = NodePath("CanvasLayer/Control/MarginContainer/ProgressBar")
 samples_for_current_volume = 15
 
@@ -42,7 +43,7 @@ max_value = 1.0
 fill_mode = 3
 show_percentage = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
+[node name="MicrophoneInputStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMicrophone_dkdsd")
 autoplay = true
 bus = &"Record"

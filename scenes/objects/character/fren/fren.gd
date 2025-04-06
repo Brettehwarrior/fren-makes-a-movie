@@ -26,7 +26,6 @@ func _load_state(state : Dictionary) -> void:
 	position = state.position
 	rotation = state.rotation
 	_velocity = state.velocity
-	pass
 
 
 func _process(delta: float) -> void:
@@ -59,7 +58,6 @@ func _physics_process(delta: float) -> void:
 	_push_rigid_bodies()
 
 func _process_horizontal_velocity(delta : float) -> void:
-	
 	var horizontal_input = input.get_horizontal_input()
 	var movement_vector = Vector3(horizontal_input.x, 0, horizontal_input.y)
 	var horizontal_acceleration = walk_acceleration * movement_vector * delta
