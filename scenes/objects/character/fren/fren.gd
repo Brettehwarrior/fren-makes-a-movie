@@ -40,7 +40,6 @@ func _process(delta: float) -> void:
 			camcorder.reset_follow_nodes()
 		else:
 			camcorder.set_follow_position_node(camcorder_hold_position)
-			camcorder.set_follow_rotation_node(camera)
 
 
 func _process_camera_rotation (delta : float) -> void:

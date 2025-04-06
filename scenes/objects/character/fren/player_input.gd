@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_mouse_input += event.relative
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_mouse_input = Vector2.ZERO
 
 
