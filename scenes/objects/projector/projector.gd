@@ -1,0 +1,12 @@
+extends Node3D
+
+@export var native_file_dialog : NativeFileDialog
+@export var screen : Node3D
+
+func _on_interaction_triggered() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	native_file_dialog.show()
+
+func _on_file_selected(path: String) -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	screen.load_movie(path)

@@ -24,6 +24,10 @@ driver/enable_input=true
 ReplayManager="*res://scenes/singleton/replay_manager/replay_manager.tscn"
 MicrophoneManager="*res://scenes/singleton/microphone_manager/MicrophoneManager.tscn"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/native_dialogs/plugin.cfg")
+
 [global_group]
 
 replayable=""
