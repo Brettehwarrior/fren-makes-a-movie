@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsnaci63fmit2"]
+
+[ext_resource type="Script" uid="uid://d1bght012feqc" path="res://scenes/objects/triggers/interaction_sphere.gd" id="1_hdfkw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pq3gl"]
+
+[node name="InteractableTrigger" type="Node3D"]
+script = ExtResource("1_hdfkw")
+
+[node name="InteractionLabel" type="Label3D" parent="."]
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.860084, 0)
+visible = false
+billboard = 1
+double_sided = false
+no_depth_test = true
+fixed_size = true
+modulate = Color(1, 1, 0, 1)
+text = "interact [E]"
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1.73, 0, 0, 0, 1.73, 0, 0, 0, 1.73, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_pq3gl")
+debug_color = Color(0.889795, 0.742921, 0.299164, 1)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]
