@@ -8,11 +8,14 @@ var _mouse_input : Vector2
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	SettingsManager.changed_visibility.connect(_on_settings_changed_visibility)
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
+func _on_settings_changed_visibility(is_visible : bool) -> void:
+	if is_visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _unhandled_input(event: InputEvent) -> void:

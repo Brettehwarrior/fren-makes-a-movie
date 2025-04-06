@@ -1,14 +1,24 @@
 extends Node
 
+signal changed_visibility(is_visible : bool)
+
 const CONFIG_FILE_PATH = "user://settings.cfg"
 
+@export var menu_parent : Control
 @export var master_volume_slider : Slider
 @export var master_volume_percentage_label : Label
 
 var _config_file : ConfigFile
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		menu_parent.visible = not menu_parent.visible
+		changed_visibility.emit(menu_parent.visible)
+
+
 func _ready() -> void:
+	menu_parent.visible = false
 	master_volume_slider.value = AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Master")) * 100
 	_load_or_make_config_file()
 

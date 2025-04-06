@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://wegsouae2ifu" path="res://scenes/singleton/settings_manager/settings_manager.gd" id="1_pe4m4"]
 
-[node name="SettingsManager" type="Node" node_paths=PackedStringArray("master_volume_slider", "master_volume_percentage_label")]
+[node name="SettingsManager" type="Node" node_paths=PackedStringArray("menu_parent", "master_volume_slider", "master_volume_percentage_label")]
 script = ExtResource("1_pe4m4")
+menu_parent = NodePath("CanvasLayer/Control")
 master_volume_slider = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider")
 master_volume_percentage_label = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumePercentageLabel")
 
