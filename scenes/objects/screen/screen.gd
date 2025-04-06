@@ -10,7 +10,7 @@ func _ready():
 	_playback_pause_timer = Timer.new()
 	_playback_pause_timer.timeout.connect(_on_playback_pause_timer_timeout)
 	add_child(_playback_pause_timer)
-	stream_player.volume = 0
+	# stream_player.volume = 0
 
 func _save_state() -> Dictionary:
 	var state = {}

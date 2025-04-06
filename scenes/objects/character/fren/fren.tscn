@@ -29,7 +29,10 @@ voice_stream_player = NodePath("VoiceStreamPlayer")
 
 [node name="VoiceStreamPlayer" type="AudioStreamPlayer3D" parent="MicrophoneRecordingReplayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503789, 0)
+attenuation_model = 2
 unit_size = 4.08
+bus = &"VoicePlayback"
+attenuation_filter_cutoff_hz = 20500.0
 
 [node name="CameraFollowPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596922, 0)
