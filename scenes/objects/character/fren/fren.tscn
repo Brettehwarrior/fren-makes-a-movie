@@ -48,7 +48,7 @@ speed_factor = 0.02
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 
 [node name="InteractionRaycast" type="RayCast3D" parent="CameraPivot/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -0.0876988, -0.966086, 0, 1.74567, -0.0485342, 0, -0.082678, -0.530174)
+transform = Transform3D(1, 0, 0, 0, -0.0120804, -0.967281, 0, 1.74783, -0.00668557, 0, -0.082678, -0.530174)
 collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true
