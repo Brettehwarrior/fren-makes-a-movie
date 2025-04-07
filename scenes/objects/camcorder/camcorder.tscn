@@ -8,9 +8,11 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_aa2of"]
 
-[node name="Camcorder" type="Node3D" node_paths=PackedStringArray("camera") groups=["replayable"]]
+[node name="Camcorder" type="Node3D" node_paths=PackedStringArray("camera", "viewfinder", "viewport") groups=["replayable"]]
 script = ExtResource("1_aa2of")
 camera = NodePath("SubViewport/Camera3D")
+viewfinder = NodePath("Model/Viewfinder")
+viewport = NodePath("Model/Viewfinder/Viewport")
 
 [node name="Model" type="Node3D" parent="."]
 
@@ -18,12 +20,15 @@ camera = NodePath("SubViewport/Camera3D")
 transform = Transform3D(2.54444, 0, 0, 0, 2.54444, 0, 0, 0, 2.54444, 0.00078823, 7.67132e-09, 0.115285)
 size = Vector3(0.05, 0.05, 0.1)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Model"]
+[node name="Viewfinder" type="Node3D" parent="Model"]
 transform = Transform3D(2.54444, 0, 0, 0, 2.54444, 0, 0, 0, 2.54444, -0.103047, 7.67132e-09, 0.0181914)
-size = Vector3(0.113867, 0.0427246, 0.00561523)
 
-[node name="Sprite3D" type="Sprite3D" parent="Model"]
-transform = Transform3D(0.211464, 0, 0, 0, 0.211464, 0, 0, 0, 0.211464, -0.153878, -3.02438e-08, 0.0286386)
+[node name="CSGBox3D2" type="CSGBox3D" parent="Model/Viewfinder"]
+transform = Transform3D(0.614372, 0, 0, 0, 1, 0, 0, 0, 1, -0.0173115, 0, 0)
+size = Vector3(0.106714, 0.0427246, 0.00561523)
+
+[node name="Viewport" type="Sprite3D" parent="Model/Viewfinder"]
+transform = Transform3D(0.0831083, 0, 0, 0, 0.0831083, 0, 0, 0, 0.0831083, -0.0185262, -1.49012e-08, 0.00410589)
 layers = 524288
 texture = SubResource("ViewportTexture_cfngs")
 
