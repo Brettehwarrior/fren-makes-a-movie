@@ -1,14 +1,21 @@
-[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://sjj22uyn28pq"]
+[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://sjj22uyn28pq"]
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
 resource_name = "LowPassFilter"
 
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_j3pel"]
 resource_name = "EQ"
-band_db/320_hz = 1.9
-band_db/1000_hz = 2.5
-band_db/3200_hz = 2.5
-band_db/10000_hz = 2.5
+band_db/32_hz = -60.0
+band_db/100_hz = -60.0
+band_db/3200_hz = 24.0
+band_db/10000_hz = -60.0
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
+resource_name = "Compressor"
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_j3pel"]
+resource_name = "Amplify"
+volume_db = -0.73
 
 [sub_resource type="AudioEffectRecord" id="AudioEffectRecord_g28q7"]
 resource_name = "Record"
@@ -30,6 +37,10 @@ bus/2/effect/0/effect = SubResource("AudioEffectLowPassFilter_j3pel")
 bus/2/effect/0/enabled = false
 bus/2/effect/1/effect = SubResource("AudioEffectEQ_j3pel")
 bus/2/effect/1/enabled = true
+bus/2/effect/2/effect = SubResource("AudioEffectCompressor_j3pel")
+bus/2/effect/2/enabled = true
+bus/2/effect/3/effect = SubResource("AudioEffectAmplify_j3pel")
+bus/2/effect/3/enabled = true
 bus/3/name = &"RecordOutput"
 bus/3/solo = false
 bus/3/mute = true
