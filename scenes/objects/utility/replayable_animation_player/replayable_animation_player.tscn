@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmorsto0jv04e"]
+
+[ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="1_glbkh"]
+
+[node name="ReplayableAnimationPlayer" type="AnimationPlayer" groups=["replayable"]]
+script = ExtResource("1_glbkh")

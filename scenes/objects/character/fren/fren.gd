@@ -1,4 +1,10 @@
+class_name Fren
 extends CharacterBody3D
+
+signal started_walking
+signal stopped_walking
+var _is_walking : bool = false
+var _was_walking_last_check : bool = false
 
 @export var input : PlayerInput
 @export var camcorder_hold_position : Node3D
@@ -73,6 +79,14 @@ func _process_horizontal_velocity(delta : float) -> void:
 
 	velocity.x *= walk_friction
 	velocity.z *= walk_friction
+
+	horizontal_velocity = Vector2(velocity.x, velocity.z)
+	_is_walking = horizontal_velocity.length() > 0 and horizontal_input.length() > 0
+	if _is_walking and not _was_walking_last_check:
+		started_walking.emit()
+	elif not _is_walking and _was_walking_last_check:
+		stopped_walking.emit()
+	_was_walking_last_check = _is_walking
 
 
 func _push_rigid_bodies() -> void:

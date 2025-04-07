@@ -108,6 +108,7 @@ interact={
 
 [layer_names]
 
+3d_render/layer_19="GameplayCameraInvisible"
 3d_render/layer_20="Subviewport"
 
 [rendering]
