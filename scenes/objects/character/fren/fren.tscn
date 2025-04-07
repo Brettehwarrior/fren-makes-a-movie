@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://uefp4qdx4sqi"]
+[gd_scene load_steps=17 format=3 uid="uid://uefp4qdx4sqi"]
 
 [ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
 [ext_resource type="Script" uid="uid://clhekndnjdutt" path="res://scenes/objects/character/fren/player_input.gd" id="2_shp5y"]
 [ext_resource type="Script" uid="uid://bdhk2p7abtyfv" path="res://scenes/objects/character/fren/microphone_recording_replayer.gd" id="3_r7wf4"]
-[ext_resource type="Script" path="res://scenes/objects/character/fren/fren_model.gd" id="5_ie4oo"]
-[ext_resource type="Script" uid="uid://b3llji6e8hblr" path="res://scenes/objects/character/fren/interaction_raycast.gd" id="5_svos0"]
+[ext_resource type="Script" uid="uid://bnfqrb8n758ev" path="res://scenes/objects/character/fren/noise_bob.gd" id="4_yyvds"]
+[ext_resource type="Script" uid="uid://bvql7tsjyo5pt" path="res://scenes/objects/character/fren/fren_model.gd" id="5_ie4oo"]
+[ext_resource type="Script" path="res://scenes/objects/character/fren/interaction_raycast.gd" id="5_svos0"]
 [ext_resource type="Texture2D" uid="uid://cbl7uy6ragqgx" path="res://scenes/objects/character/fren/images/fren.png" id="5_wj63f"]
 [ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="6_3nfu3"]
 [ext_resource type="Texture2D" uid="uid://cg08640xi5aqd" path="res://scenes/objects/character/fren/images/fren_open_mouth_style.png" id="7_we6ol"]
@@ -277,6 +278,9 @@ script = ExtResource("5_svos0")
 
 [node name="CamcorderHoldPoint" type="Node3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192225, -0.11995, -0.342329)
+script = ExtResource("4_yyvds")
+bob_speed = 15.0
+bob_intensity = 0.04
 
 [node name="FrenModel" type="Node3D" parent="." node_paths=PackedStringArray("fren", "animation_player", "front_sprite") groups=["replayable"]]
 script = ExtResource("5_ie4oo")
