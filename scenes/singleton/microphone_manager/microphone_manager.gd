@@ -25,6 +25,7 @@ func _process(_delta):
 func start_recording() -> void:
 	_record_effect.set_recording_active(true)
 
+
 func stop_recording() -> AudioStreamWAV:
 	_record_effect.set_recording_active(false)
 	_last_recorded_clip = _record_effect.get_recording()
@@ -48,3 +49,7 @@ func _get_average(list : Array[float]) -> float:
 		average += item
 	average /= len(list)
 	return average
+
+
+func get_current_mic_volume() -> float:
+	return _get_average(_recent_mic_volumes)
