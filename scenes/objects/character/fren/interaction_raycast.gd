@@ -1,6 +1,6 @@
 extends RayCast3D
 
-@export var _target_trigger : Node3D
+var _target_trigger : Node3D
 
 func _physics_process(delta: float) -> void:
 	if is_colliding():
