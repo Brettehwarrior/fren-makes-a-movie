@@ -71,6 +71,7 @@ func _save_current_settings() -> void:
 func _apply_settings_from_file() -> void:
 	master_volume_slider.value = _config_file.get_value("Audio", "master_volume", 1.0) * 100
 	microphone_option_button.selected = _config_file.get_value("Audio", "master_volume", 0)
+	AudioServer.input_device = _microphone_devices[microphone_option_button.selected]
 	mouse_sensitivity_slider.value = _config_file.get_value("Controls", "mouse_sensitvity", 1.0)
 	controller_sensitivity_slider.value = _config_file.get_value("Controls", "controller_sensitivity", 1.0)
 
