@@ -21,7 +21,6 @@ var _microphone_devices : Array = []
 
 var _config_file : ConfigFile
 
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		menu_parent.visible = not menu_parent.visible
@@ -101,3 +100,6 @@ func _on_controller_sensitivity_slider_value_changed(value: float) -> void:
 
 func _on_microphone_option_button_item_selected(index: int) -> void:
 	AudioServer.input_device = _microphone_devices[index]
+
+func is_showing():
+	return menu_parent.visible
