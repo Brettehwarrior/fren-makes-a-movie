@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://uefp4qdx4sqi"]
+[gd_scene load_steps=9 format=3 uid="uid://uefp4qdx4sqi"]
 
 [ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
 [ext_resource type="Script" uid="uid://clhekndnjdutt" path="res://scenes/objects/character/fren/player_input.gd" id="2_shp5y"]
 [ext_resource type="Script" uid="uid://bdhk2p7abtyfv" path="res://scenes/objects/character/fren/microphone_recording_replayer.gd" id="3_r7wf4"]
+[ext_resource type="Texture2D" uid="uid://cbl7uy6ragqgx" path="res://scenes/objects/character/fren/images/fren.png" id="5_wj63f"]
+[ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="6_3nfu3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_51wbl"]
 
@@ -52,8 +54,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192225, -0.11995, -0.342329
 [node name="Model" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
+visible = false
 mesh = SubResource("CapsuleMesh_51wbl")
 skeleton = NodePath("../..")
+
+[node name="SpriteParent" type="Node3D" parent="Model"]
+transform = Transform3D(-0.392617, 0, -7.45058e-09, 0, 0.392617, 0, 7.45058e-09, 0, -0.392617, 0, 0, 0)
+
+[node name="FrontSprite" type="Sprite3D" parent="Model/SpriteParent"]
+double_sided = false
+texture = ExtResource("5_wj63f")
+
+[node name="BackSprite" type="Sprite3D" parent="Model/SpriteParent"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+flip_h = true
+double_sided = false
+texture = ExtResource("6_3nfu3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_apg5y")

@@ -15,6 +15,7 @@ viewport_path = NodePath("ScreenViewport")
 resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_btagw")
+albedo_texture_force_srgb = true
 
 [sub_resource type="FFmpegVideoStream" id="FFmpegVideoStream_btagw"]
 file = "res://scenes/test/andrew/screen_test/blueshell-h264.mp4"
