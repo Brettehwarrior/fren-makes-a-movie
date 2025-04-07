@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo14vsfgv7h33"]
+
+[ext_resource type="Script" uid="uid://d1bght012feqc" path="res://scenes/objects/triggers/interaction/trigger_interaction.gd" id="1_c3b1c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c3b1c"]
+
+[node name="InteractionCube" type="Node3D"]
+script = ExtResource("1_c3b1c")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1.73, 0, 0, 0, 1.73, 0, 0, 0, 1.73, 0, 0, 0)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_c3b1c")
+debug_color = Color(0.889795, 0.742921, 0.299164, 1)

@@ -24,6 +24,7 @@ driver/enable_input=true
 SettingsManager="*res://scenes/singleton/settings_manager/settings_manager.tscn"
 ReplayManager="*res://scenes/singleton/replay_manager/replay_manager.tscn"
 MicrophoneManager="*res://scenes/singleton/microphone_manager/MicrophoneManager.tscn"
+InteractionManager="*res://scenes/singleton/interaction_manager/InteractionManager.tscn"
 
 [editor_plugins]
 
@@ -34,6 +35,7 @@ enabled=PackedStringArray("res://addons/native_dialogs/plugin.cfg")
 replayable=""
 tickable=""
 player=""
+interactable=""
 
 [input]
 
@@ -109,6 +111,8 @@ interact={
 [layer_names]
 
 3d_render/layer_20="Subviewport"
+3d_physics/layer_1="Default Collision Layer"
+3d_physics/layer_2="Interaction Layer"
 
 [rendering]
 

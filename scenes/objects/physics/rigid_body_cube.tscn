@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7u8dyskxyrx6"]
+[gd_scene load_steps=4 format=3 uid="uid://b7u8dyskxyrx6"]
 
 [ext_resource type="Script" uid="uid://cmpp18xjewi4y" path="res://scenes/objects/physics/replayable_rigid_body/replayable_rigid_body.gd" id="1_5fvtt"]
+[ext_resource type="PackedScene" uid="uid://bo14vsfgv7h33" path="res://scenes/objects/triggers/interaction/interaction_cube.tscn" id="2_lel71"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jjdui"]
 
@@ -12,3 +13,7 @@ metadata/_custom_type_script = "uid://cmpp18xjewi4y"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_jjdui")
+
+[node name="InteractionCube" parent="." instance=ExtResource("2_lel71")]
+transform = Transform3D(0.585, 0, 0, 0, 0.585, 0, 0, 0, 0.585, 0, 0, 0)
+interaction_name = "pick up"

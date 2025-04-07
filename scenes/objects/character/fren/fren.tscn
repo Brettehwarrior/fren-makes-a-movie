@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://uefp4qdx4sqi"]
+[gd_scene load_steps=8 format=3 uid="uid://uefp4qdx4sqi"]
 
 [ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
 [ext_resource type="Script" uid="uid://clhekndnjdutt" path="res://scenes/objects/character/fren/player_input.gd" id="2_shp5y"]
 [ext_resource type="Script" uid="uid://bdhk2p7abtyfv" path="res://scenes/objects/character/fren/microphone_recording_replayer.gd" id="3_r7wf4"]
+[ext_resource type="Script" uid="uid://b3llji6e8hblr" path="res://scenes/objects/character/fren/interaction_raycast.gd" id="5_wj63f"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_51wbl"]
 
@@ -45,6 +46,13 @@ follow_target = NodePath("../CameraFollowPoint")
 speed_factor = 0.02
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+
+[node name="InteractionRaycast" type="RayCast3D" parent="CameraPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0876988, -0.966086, 0, 1.74567, -0.0485342, 0, -0.082678, -0.530174)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+script = ExtResource("5_wj63f")
 
 [node name="CamcorderHoldPoint" type="Node3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192225, -0.11995, -0.342329)
