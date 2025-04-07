@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://4kxk4ly4sw2t"]
+
+[ext_resource type="Script" uid="uid://baxql3niso1i" path="res://scenes/singleton/interaction_manager/interaction_manager.gd" id="1_xs6a7"]
+
+[node name="InteractionManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xs6a7")

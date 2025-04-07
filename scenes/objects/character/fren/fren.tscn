@@ -1,14 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://uefp4qdx4sqi"]
+[gd_scene load_steps=8 format=3 uid="uid://uefp4qdx4sqi"]
 
 [ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
 [ext_resource type="Script" uid="uid://clhekndnjdutt" path="res://scenes/objects/character/fren/player_input.gd" id="2_shp5y"]
 [ext_resource type="Script" uid="uid://bdhk2p7abtyfv" path="res://scenes/objects/character/fren/microphone_recording_replayer.gd" id="3_r7wf4"]
-[ext_resource type="Script" uid="uid://bvql7tsjyo5pt" path="res://scenes/objects/character/fren/fren_model.gd" id="5_ie4oo"]
-[ext_resource type="Texture2D" uid="uid://cbl7uy6ragqgx" path="res://scenes/objects/character/fren/images/fren.png" id="5_wj63f"]
-[ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="6_3nfu3"]
-[ext_resource type="Texture2D" uid="uid://cg08640xi5aqd" path="res://scenes/objects/character/fren/images/fren_open_mouth_style.png" id="7_we6ol"]
-[ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="9_4hyim"]
+[ext_resource type="Script" uid="uid://b3llji6e8hblr" path="res://scenes/objects/character/fren/interaction_raycast.gd" id="5_wj63f"]
 
 [sub_resource type="Animation" id="Animation_4hyim"]
 resource_name = "hop"
@@ -266,6 +262,13 @@ speed_factor = 0.02
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 cull_mask = 786431
+
+[node name="InteractionRaycast" type="RayCast3D" parent="CameraPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0120804, -0.967281, 0, 1.74783, -0.00668557, 0, -0.082678, -0.530174)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+script = ExtResource("5_wj63f")
 
 [node name="CamcorderHoldPoint" type="Node3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192225, -0.11995, -0.342329)
