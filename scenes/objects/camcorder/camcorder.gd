@@ -20,7 +20,6 @@ func _on_replay_manager_started_playback() -> void:
 
 func _process(_delta: float) -> void:
 	camera.rotation = global_rotation
-	print(global_rotation)
 
 
 func _unhandled_input(event: InputEvent) -> void:

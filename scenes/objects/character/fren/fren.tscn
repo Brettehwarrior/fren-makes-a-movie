@@ -231,16 +231,17 @@ _data = {
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apg5y"]
 
-[node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("input", "camcorder_hold_position", "camera_pivot", "camera") groups=["player", "replayable"]]
+[node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("camcorder_hold_position", "camera_pivot", "camera", "input") groups=["player", "replayable"]]
 script = ExtResource("1_vfnkm")
-input = NodePath("PlayerInput")
 camcorder_hold_position = NodePath("CameraPivot/Camera3D/CamcorderHoldPoint")
 camera_pivot = NodePath("CameraPivot")
 camera = NodePath("CameraPivot/Camera3D")
+input = NodePath("PlayerInput")
 walk_acceleration = 700.0
 max_walk_speed = 5000.0
 walk_friction = 0.95
 rigid_body_push_force = 1.0
+metadata/_custom_type_script = "uid://c0trp0ylda0h0"
 
 [node name="PlayerInput" type="Node" parent="."]
 script = ExtResource("2_shp5y")
@@ -268,6 +269,7 @@ speed_factor = 0.02
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 cull_mask = 786431
+current = true
 
 [node name="InteractionRaycast" type="RayCast3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -0.00595921, -0.997734, 0, 1.78761, -0.00332607, 0, -0.0368287, 0)
