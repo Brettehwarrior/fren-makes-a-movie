@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://goa4rdkqnndq"]
+[gd_scene load_steps=3 format=3 uid="uid://goa4rdkqnndq"]
 
 [ext_resource type="Script" uid="uid://difk23hduhwgs" path="res://scenes/singleton/audio_manager/audio_manager.gd" id="1_idt7o"]
+[ext_resource type="PackedScene" uid="uid://c3spu8f0xv2yi" path="res://scenes/singleton/audio_manager/replayable_audio_stream_player.tscn" id="2_3siy3"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_idt7o")
+audio_stream_player_scene = ExtResource("2_3siy3")

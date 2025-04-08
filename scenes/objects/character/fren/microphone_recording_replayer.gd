@@ -16,11 +16,6 @@ func _save_state() -> Dictionary:
 
 
 func _load_state(state : Dictionary) -> void:
-	# if voice_stream_player.stream != _recorded_audio_clips[state.audio_clip_index]:
-	# 	voice_stream_player.stream = _recorded_audio_clips[state.audio_clip_index]
-	# if voice_stream_player.get_playback_position() != state.playback_position:
-	# 	voice_stream_player.seek(state.playback_position)
-	
 	if not voice_stream_player.playing:
 		voice_stream_player.stream = _recorded_audio_clips[state.audio_clip_index]
 		voice_stream_player.play(state.playback_position)
