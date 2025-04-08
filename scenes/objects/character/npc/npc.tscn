@@ -278,10 +278,12 @@ double_sided = false
 texture = ExtResource("4_uimbq")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08426, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.389925, 0)
 visible = false
 billboard = 1
 no_depth_test = true
+fixed_size = true
 text = "hello"
+font_size = 15
 
 [connection signal="interaction_triggered" from="InteractionSphere" to="." method="_on_interaction_sphere_interaction_triggered"]

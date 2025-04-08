@@ -16,7 +16,7 @@
 [sub_resource type="Sky" id="Sky_35tti"]
 sky_material = SubResource("ProceduralSkyMaterial_hs12w")
 
-[sub_resource type="Environment" id="Environment_kpg22"]
+[sub_resource type="Environment" id="Environment_3lfuh"]
 background_mode = 2
 sky = SubResource("Sky_35tti")
 
@@ -39,7 +39,7 @@ transform = Transform3D(0.717479, -0.662348, 0.215684, 0.367194, 0.622743, 0.690
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = SubResource("Environment_kpg22")
+environment = SubResource("Environment_3lfuh")
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -88,4 +88,12 @@ camcorder = NodePath("../Camcorder")
 
 [node name="NPC" parent="." instance=ExtResource("9_51a50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190555, 1.48154, -0.207104)
+npc_resource = ExtResource("10_3lfuh")
+
+[node name="NPC2" parent="." instance=ExtResource("9_51a50")]
+transform = Transform3D(0.448804, 0, -0.89363, 0, 1, 0, 0.89363, 0, 0.448804, -4.15937, 1.48154, 1.64763)
+npc_resource = ExtResource("10_3lfuh")
+
+[node name="NPC3" parent="." instance=ExtResource("9_51a50")]
+transform = Transform3D(-0.840954, 0, 0.541107, 0, 1, 0, -0.541107, 0, -0.840954, 3.33079, 1.48154, -2.48556)
 npc_resource = ExtResource("10_3lfuh")
