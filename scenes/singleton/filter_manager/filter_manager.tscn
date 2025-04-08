@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1wj5xj5equ7k"]
+
+[ext_resource type="Script" uid="uid://cgsl46sbs13kt" path="res://scenes/singleton/filter_manager/filter_manager.gd" id="1_4xag8"]
+[ext_resource type="PackedScene" uid="uid://cfb676al2tfqt" path="res://scenes/objects/filters/none.tscn" id="2_3b76f"]
+[ext_resource type="PackedScene" uid="uid://c3wlgaxilkv0i" path="res://scenes/objects/filters/mugmoment.tscn" id="3_3b76f"]
+[ext_resource type="PackedScene" uid="uid://dk2ksv6bcgne3" path="res://scenes/objects/filters/fisheye.tscn" id="3_8iqdp"]
+
+[node name="FilterManager" type="Control" groups=["replayable"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4xag8")
+filters = Array[PackedScene]([ExtResource("2_3b76f"), ExtResource("3_3b76f"), ExtResource("3_8iqdp")])
