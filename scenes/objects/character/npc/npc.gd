@@ -24,6 +24,8 @@ func _load_state(state : Dictionary) -> void:
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	_apply_resource_values(npc_resource)
 	quote_label.visible = false
 
