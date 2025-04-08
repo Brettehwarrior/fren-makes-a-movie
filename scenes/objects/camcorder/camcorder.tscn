@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu7ubi8clos5r"]
+[gd_scene load_steps=6 format=3 uid="uid://cu7ubi8clos5r"]
 
 [ext_resource type="Script" uid="uid://rcl7uvpdhcbb" path="res://scenes/objects/camcorder/camcorder.gd" id="1_aa2of"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_fv2dh"]
+[ext_resource type="Script" uid="uid://c2vn8vl8rrtb8" path="res://scenes/objects/camcorder/viewfinder_filter.gd" id="2_rwnbg"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_cfngs"]
 viewport_path = NodePath("SubViewport")
@@ -40,6 +41,9 @@ mesh = SubResource("CylinderMesh_aa2of")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(64, 48)
+
+[node name="Filter" type="CanvasLayer" parent="SubViewport"]
+script = ExtResource("2_rwnbg")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport" node_paths=PackedStringArray("follow_target")]
 cull_mask = 524287
