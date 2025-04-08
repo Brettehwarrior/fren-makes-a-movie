@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgew8orsu4aio"]
+
+[ext_resource type="Script" uid="uid://c0trp0ylda0h0" path="res://scenes/objects/character/base/replayable_character.gd" id="1_dorsk"]
+
+[node name="ReplayableCharacter" type="CharacterBody3D" groups=["replayable"]]
+script = ExtResource("1_dorsk")

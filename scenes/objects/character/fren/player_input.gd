@@ -1,5 +1,5 @@
 class_name PlayerInput
-extends Node
+extends CharacterInput
 
 @onready var mouse_sensitivity : float = SettingsManager.mouse_sensitivity_slider.value
 @onready var controller_sensitivity : float = SettingsManager.controller_sensitivity_slider.value
