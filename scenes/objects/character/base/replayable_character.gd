@@ -6,7 +6,7 @@ signal stopped_walking
 var _is_walking : bool = false
 var _was_walking_last_check : bool = false
 
-@export var input : PlayerInput
+@export var input : CharacterInput
 @export var walk_acceleration : float
 @export var max_walk_speed : float
 @export_range(0, 1) var walk_friction : float
@@ -28,6 +28,8 @@ func _load_state(state : Dictionary) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
 	if ReplayManager.is_playing_back():
 		return
 

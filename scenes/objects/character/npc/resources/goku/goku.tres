@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://c8swyj5aswisl"]
+
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="1_7xad7"]
+[ext_resource type="Texture2D" uid="uid://s7ah57ogxxnp" path="res://scenes/objects/character/npc/resources/goku/back.png" id="1_8u623"]
+[ext_resource type="Texture2D" uid="uid://ww33fkj844rb" path="res://scenes/objects/character/npc/resources/goku/front.png" id="2_0p02d"]
+
+[resource]
+script = ExtResource("1_7xad7")
+front_texture = ExtResource("2_0p02d")
+back_texture = ExtResource("1_8u623")
+quote = "Hey it's me Goku!"

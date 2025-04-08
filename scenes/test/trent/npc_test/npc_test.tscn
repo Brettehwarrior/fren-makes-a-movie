@@ -1,0 +1,91 @@
+[gd_scene load_steps=15 format=3 uid="uid://4kcpp3o5otiy"]
+
+[ext_resource type="PackedScene" uid="uid://bx6et0snsnu0t" path="res://scenes/test/trent/state_recording/test_recording_ui.tscn" id="1_u6rlp"]
+[ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="2_8unkn"]
+[ext_resource type="PackedScene" uid="uid://c0fj2okpr6ybt" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.tscn" id="3_ovwt6"]
+[ext_resource type="PackedScene" uid="uid://uuveqstbile7" path="res://scenes/objects/screen/screen.tscn" id="4_38qgj"]
+[ext_resource type="PackedScene" uid="uid://u7e8wy4hdxen" path="res://scenes/objects/projector/projector.tscn" id="5_mq2ub"]
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="6_05lst"]
+[ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="7_c1osk"]
+[ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="8_b0u2k"]
+[ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="9_51a50"]
+[ext_resource type="Resource" uid="uid://c8swyj5aswisl" path="res://scenes/objects/character/npc/resources/goku/goku.tres" id="10_3lfuh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hs12w"]
+
+[sub_resource type="Sky" id="Sky_35tti"]
+sky_material = SubResource("ProceduralSkyMaterial_hs12w")
+
+[sub_resource type="Environment" id="Environment_kpg22"]
+background_mode = 2
+sky = SubResource("Sky_35tti")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hs12w"]
+
+[node name="LevelStateRecording" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TestRecordingUI" parent="CanvasLayer" instance=ExtResource("1_u6rlp")]
+
+[node name="PlaybackUI" parent="CanvasLayer" instance=ExtResource("2_8unkn")]
+
+[node name="InteractionUi" parent="CanvasLayer" instance=ExtResource("3_ovwt6")]
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.717479, -0.662348, 0.215684, 0.367194, 0.622743, 0.690912, -0.59194, -0.416517, 0.690015, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_kpg22")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Screen" parent="Environment" groups=["replayable"] instance=ExtResource("4_38qgj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.377937, -0.989176, 8.97223, -9.96532)
+
+[node name="Ground" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(21.6993, 0, 0, 0, 1, 0, 0, 0, 21.6993, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground"]
+shape = SubResource("BoxShape3D_hs12w")
+
+[node name="Projector" parent="Environment" node_paths=PackedStringArray("screen") instance=ExtResource("5_mq2ub")]
+transform = Transform3D(0.0313373, 0, -0.024859, 0, 0.04, 0, 0.024859, 0, 0.0313373, 8.97143, 1.48478, 6.12105)
+screen = NodePath("../Screen")
+
+[node name="Rigidbodies" type="Node3D" parent="."]
+
+[node name="RigidBodyCube" parent="Rigidbodies" instance=ExtResource("6_05lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81285, 3.25679, 2.41161)
+
+[node name="RigidBodyCube2" parent="Rigidbodies" instance=ExtResource("6_05lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06315, 1.04876, 8.1286)
+
+[node name="RigidBodyCube4" parent="Rigidbodies" instance=ExtResource("6_05lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.632878, 1.04876, 7.6638)
+
+[node name="RigidBodyCube5" parent="Rigidbodies" instance=ExtResource("6_05lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.367122, 1.04876, 9.6638)
+
+[node name="RigidBodyCube6" parent="Rigidbodies" instance=ExtResource("6_05lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13959, 1.04876, 9.16368)
+
+[node name="RigidBodyCube3" parent="Rigidbodies" instance=ExtResource("6_05lst")]
+transform = Transform3D(-0.0969662, 0.483693, -0.86985, 0.538332, 0.760582, 0.362923, 0.837136, -0.433077, -0.334138, 7.05726, 2.64622, 0.0184087)
+
+[node name="Camcorder" parent="." node_paths=PackedStringArray("fren") instance=ExtResource("7_c1osk")]
+transform = Transform3D(0.846193, 0, 0.532876, 0, 1, 0, -0.532876, 0, 0.846193, 4.02098, 1.67915, 3.15825)
+fren = NodePath("../Fren")
+
+[node name="Fren" parent="." node_paths=PackedStringArray("camcorder") instance=ExtResource("8_b0u2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52577, 6.27013)
+camcorder = NodePath("../Camcorder")
+
+[node name="NPC" parent="." instance=ExtResource("9_51a50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190555, 1.48154, -0.207104)
+npc_resource = ExtResource("10_3lfuh")
