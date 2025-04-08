@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
 [ext_resource type="Script" uid="uid://clhekndnjdutt" path="res://scenes/objects/character/fren/player_input.gd" id="2_shp5y"]
 [ext_resource type="Script" uid="uid://bdhk2p7abtyfv" path="res://scenes/objects/character/fren/microphone_recording_replayer.gd" id="3_r7wf4"]
-[ext_resource type="Script" path="res://scenes/objects/character/fren/noise_bob.gd" id="4_yyvds"]
+[ext_resource type="Script" uid="uid://bnfqrb8n758ev" path="res://scenes/objects/character/fren/noise_bob.gd" id="4_yyvds"]
 [ext_resource type="Script" uid="uid://bvql7tsjyo5pt" path="res://scenes/objects/character/fren/fren_model.gd" id="5_ie4oo"]
 [ext_resource type="Script" path="res://scenes/objects/character/fren/interaction_raycast.gd" id="5_svos0"]
 [ext_resource type="Texture2D" uid="uid://cbl7uy6ragqgx" path="res://scenes/objects/character/fren/images/fren.png" id="5_wj63f"]

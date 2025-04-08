@@ -20,7 +20,7 @@ sky = SubResource("Sky_35tti")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hs12w"]
 
-[node name="LevelStateRecording" type="Node3D"]
+[node name="LevelStateRecording2" type="Node3D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

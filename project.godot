@@ -26,6 +26,7 @@ ReplayManager="*res://scenes/singleton/replay_manager/replay_manager.tscn"
 MicrophoneManager="*res://scenes/singleton/microphone_manager/MicrophoneManager.tscn"
 InteractionManager="*res://scenes/singleton/interaction_manager/InteractionManager.tscn"
 FilterManager="*res://scenes/singleton/filter_manager/filter_manager.tscn"
+AudioManager="*res://scenes/singleton/audio_manager/audio_manager.tscn"
 
 [editor_plugins]
 
