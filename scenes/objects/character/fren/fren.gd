@@ -8,6 +8,9 @@ extends ReplayableCharacter
 # TODO: Get Camcorder in smarter way
 @export var camcorder : Camcorder
 
+func _ready() -> void:
+	assert(camcorder != null, "Camcorder node is not attached to fren! This will break things!!")
+
 
 func _process(delta: float) -> void:
 	if ReplayManager.is_playing_back():
@@ -28,4 +31,3 @@ func _process_camera_rotation (delta : float) -> void:
 	camera_pivot.rotation.y = rotation.y
 	camera.rotate_x(-look_input.y * delta)
 	camera.rotation.x = clampf(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
-
