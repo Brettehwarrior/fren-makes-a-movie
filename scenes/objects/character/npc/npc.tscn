@@ -240,6 +240,7 @@ back_sprite = NodePath("Model/SpriteParentParent/SpriteParent/BackSprite")
 quote_label = NodePath("Label3D")
 poke_sound = SubResource("AudioStreamRandomizer_7elxb")
 input = NodePath("CharacterInput")
+gravity = null
 walk_acceleration = 700.0
 max_walk_speed = 5000.0
 walk_friction = 0.95

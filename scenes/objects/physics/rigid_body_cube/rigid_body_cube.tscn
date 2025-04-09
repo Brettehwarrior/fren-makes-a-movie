@@ -16,6 +16,6 @@ shape = SubResource("BoxShape3D_jjdui")
 
 [node name="InteractionCube" parent="." instance=ExtResource("2_lel71")]
 transform = Transform3D(0.585, 0, 0, 0, 0.585, 0, 0, 0, 0.585, 0, 0, 0)
-interaction_name = "pick up"
+interaction_name = "grab/release"
 
 [connection signal="interaction_triggered" from="InteractionCube" to="." method="_on_interaction_cube_interaction_triggered"]

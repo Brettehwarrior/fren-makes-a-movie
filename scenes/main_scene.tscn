@@ -404,11 +404,14 @@ max_walk_speed = 10000.0
 [node name="NPC" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97491, 3.18611, 36.0545)
 npc_resource = ExtResource("10_7nt27")
+gravity = null
 
 [node name="NPC2" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.448804, 0, -0.89363, 0, 1, 0, 0.89363, 0, 0.448804, -4.15937, -0.472647, 1.64763)
 npc_resource = ExtResource("10_7nt27")
+gravity = null
 
 [node name="NPC3" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.834828, 0, -0.55051, 0, 1, 0, 0.55051, 0, 0.834828, -7.36531, 3.08436, 50.2268)
 npc_resource = ExtResource("10_7nt27")
+gravity = null

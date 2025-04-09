@@ -7,6 +7,7 @@ var _is_walking : bool = false
 var _was_walking_last_check : bool = false
 
 @export var input : CharacterInput
+@export var gravity : float = -50
 @export var walk_acceleration : float
 @export var max_walk_speed : float
 @export_range(0, 1) var walk_friction : float
@@ -33,9 +34,17 @@ func _physics_process(delta: float) -> void:
 	if ReplayManager.is_playing_back():
 		return
 
+	_process_vertical_velocity(delta)
 	_process_horizontal_velocity(delta)
 	move_and_slide()
 	_push_rigid_bodies()
+
+
+func _process_vertical_velocity(delta : float) -> void:
+	velocity.y += gravity * delta
+	if is_on_floor():
+		velocity.y = 0
+
 
 func _process_horizontal_velocity(delta : float) -> void:
 	var horizontal_input = input.get_horizontal_input()
