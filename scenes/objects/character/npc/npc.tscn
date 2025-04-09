@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4uxs0tqsqujo"]
+[gd_scene load_steps=15 format=3 uid="uid://b4uxs0tqsqujo"]
 
 [ext_resource type="Script" uid="uid://ckhaemqcvycwp" path="res://scenes/objects/character/npc/npc.gd" id="1_uimbq"]
 [ext_resource type="AudioStream" uid="uid://djjq3pfq5mmqr" path="res://scenes/objects/character/npc/sound/poke.ogg" id="2_7elxb"]
@@ -8,6 +8,11 @@
 [ext_resource type="Script" uid="uid://c21eaqia3wvbg" path="res://scenes/objects/character/npc/character_model.gd" id="3_uimbq"]
 [ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="4_uimbq"]
 [ext_resource type="Script" uid="uid://vc6ry8e4vpdd" path="res://scenes/objects/character/base/character_input.gd" id="5_cha3l"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7elxb"]
+random_pitch = 1.15
+streams_count = 1
+stream_0/stream = ExtResource("2_7elxb")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_so5ra"]
 
@@ -233,7 +238,7 @@ script = ExtResource("1_uimbq")
 front_sprite = NodePath("Model/SpriteParentParent/SpriteParent/FrontSprite")
 back_sprite = NodePath("Model/SpriteParentParent/SpriteParent/BackSprite")
 quote_label = NodePath("Label3D")
-poke_sound = ExtResource("2_7elxb")
+poke_sound = SubResource("AudioStreamRandomizer_7elxb")
 input = NodePath("CharacterInput")
 walk_acceleration = 700.0
 max_walk_speed = 5000.0

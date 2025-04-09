@@ -5,4 +5,4 @@ extends Node3D
 func play_footstep_sound() -> void:
 	if ReplayManager.is_playing_back():
 		return
-	AudioManager.play_oneshot(footstep_stream, global_position, -5)
+	AudioManager.play_oneshot(footstep_stream, global_position, -24)

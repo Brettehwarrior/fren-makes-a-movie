@@ -6,4 +6,3 @@
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_idt7o")
 audio_stream_player_scene = ExtResource("2_3siy3")
-audio_stream_player_count = 2
