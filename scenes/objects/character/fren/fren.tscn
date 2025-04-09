@@ -1,16 +1,29 @@
-[gd_scene load_steps=17 format=3 uid="uid://uefp4qdx4sqi"]
+[gd_scene load_steps=23 format=3 uid="uid://uefp4qdx4sqi"]
 
 [ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
 [ext_resource type="Script" uid="uid://clhekndnjdutt" path="res://scenes/objects/character/fren/player_input.gd" id="2_shp5y"]
+[ext_resource type="Script" uid="uid://k3nx3c5vkyrt" path="res://scenes/objects/character/fren/fren_audio_player.gd" id="3_pbddu"]
 [ext_resource type="Script" uid="uid://bdhk2p7abtyfv" path="res://scenes/objects/character/fren/microphone_recording_replayer.gd" id="3_r7wf4"]
+[ext_resource type="AudioStream" uid="uid://dlcwml6lhebiw" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart0.ogg" id="4_nuk4b"]
 [ext_resource type="Script" uid="uid://bnfqrb8n758ev" path="res://scenes/objects/character/fren/noise_bob.gd" id="4_yyvds"]
 [ext_resource type="Script" uid="uid://bvql7tsjyo5pt" path="res://scenes/objects/character/fren/fren_model.gd" id="5_ie4oo"]
+[ext_resource type="AudioStream" uid="uid://bvwidkrdv5r2b" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart1.ogg" id="5_qcc3i"]
 [ext_resource type="Script" path="res://scenes/objects/character/fren/interaction_raycast.gd" id="5_svos0"]
 [ext_resource type="Texture2D" uid="uid://cbl7uy6ragqgx" path="res://scenes/objects/character/fren/images/fren.png" id="5_wj63f"]
 [ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="6_3nfu3"]
+[ext_resource type="AudioStream" uid="uid://d02ckrycdd4rv" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart2.ogg" id="6_f4rrs"]
+[ext_resource type="AudioStream" uid="uid://br6so1qxv2j7b" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart4.ogg" id="7_63bhk"]
 [ext_resource type="Texture2D" uid="uid://cg08640xi5aqd" path="res://scenes/objects/character/fren/images/fren_open_mouth_style.png" id="7_we6ol"]
 [ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="9_4hyim"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pbddu"]
+random_pitch = 1.22
+streams_count = 4
+stream_0/stream = ExtResource("4_nuk4b")
+stream_1/stream = ExtResource("5_qcc3i")
+stream_2/stream = ExtResource("6_f4rrs")
+stream_3/stream = ExtResource("7_63bhk")
 
 [sub_resource type="Animation" id="Animation_svos0"]
 length = 0.001
@@ -151,6 +164,23 @@ tracks/5/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.556533, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0.4297, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../AudioPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep_sound"
+}, {
+"args": [],
+"method": &"play_footstep_sound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_yyvds"]
 resource_name = "idle"
@@ -245,6 +275,10 @@ metadata/_custom_type_script = "uid://c0trp0ylda0h0"
 
 [node name="PlayerInput" type="Node" parent="."]
 script = ExtResource("2_shp5y")
+
+[node name="AudioPlayer" type="Node3D" parent="."]
+script = ExtResource("3_pbddu")
+footstep_stream = SubResource("AudioStreamRandomizer_pbddu")
 
 [node name="MicrophoneRecordingReplayer" type="Node3D" parent="." node_paths=PackedStringArray("voice_stream_player") groups=["replayable"]]
 script = ExtResource("3_r7wf4")

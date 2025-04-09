@@ -13,10 +13,11 @@ func _ready() -> void:
 		_audio_stream_players.append(stream_player)
 
 
-func play_oneshot(audio_stream : AudioStream, volume_linear : float = 1) -> void:
+func play_oneshot(audio_stream : AudioStream, play_position : Vector3, volume_db : float = 1) -> void:
 	var stream_player : AudioStreamPlayer3D = _audio_stream_players[_audio_stream_player_index]
 	stream_player.stream = audio_stream
-	stream_player.volume_linear = volume_linear
+	stream_player.volume_db = volume_db
+	stream_player.position = play_position
 	stream_player.play()
 	_audio_stream_player_index += 1
-	_audio_stream_player_index %= (audio_stream_player_count - 1)
+	_audio_stream_player_index %= (audio_stream_player_count)
