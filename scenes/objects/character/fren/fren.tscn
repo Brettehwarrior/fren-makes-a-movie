@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://uefp4qdx4sqi"]
+[gd_scene load_steps=25 format=3 uid="uid://uefp4qdx4sqi"]
 
 [ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://d02ckrycdd4rv" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart2.ogg" id="6_f4rrs"]
 [ext_resource type="AudioStream" uid="uid://br6so1qxv2j7b" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart4.ogg" id="7_63bhk"]
 [ext_resource type="Texture2D" uid="uid://cg08640xi5aqd" path="res://scenes/objects/character/fren/images/fren_open_mouth_style.png" id="7_we6ol"]
+[ext_resource type="Script" uid="uid://b1txlrrc36s2o" path="res://scenes/objects/character/fren/physics_object_holder.gd" id="8_qcc3i"]
 [ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="9_4hyim"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pbddu"]
@@ -24,6 +25,9 @@ stream_0/stream = ExtResource("4_nuk4b")
 stream_1/stream = ExtResource("5_qcc3i")
 stream_2/stream = ExtResource("6_f4rrs")
 stream_3/stream = ExtResource("7_63bhk")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qcc3i"]
+radius = 0.1
 
 [sub_resource type="Animation" id="Animation_svos0"]
 length = 0.001
@@ -317,6 +321,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192225, -0.11995, -0.342329
 script = ExtResource("4_yyvds")
 bob_speed = 15.0
 bob_intensity = 0.04
+
+[node name="PhysicsObjectHolder" type="Node3D" parent="CameraPivot/Camera3D" node_paths=PackedStringArray("joint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.174243, -0.979808)
+script = ExtResource("8_qcc3i")
+joint = NodePath("Generic6DOFJoint3D")
+
+[node name="JointPivot" type="RigidBody3D" parent="CameraPivot/Camera3D/PhysicsObjectHolder"]
+collision_layer = 0
+collision_mask = 0
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraPivot/Camera3D/PhysicsObjectHolder/JointPivot"]
+shape = SubResource("SphereShape3D_qcc3i")
+
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="CameraPivot/Camera3D/PhysicsObjectHolder"]
+node_b = NodePath("../JointPivot")
+linear_spring_x/enabled = true
+linear_spring_y/enabled = true
+linear_spring_z/enabled = true
 
 [node name="FrenModel" type="Node3D" parent="." node_paths=PackedStringArray("fren", "animation_player", "front_sprite") groups=["replayable"]]
 script = ExtResource("5_ie4oo")

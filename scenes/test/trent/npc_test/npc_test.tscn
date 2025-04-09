@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0fj2okpr6ybt" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.tscn" id="3_ovwt6"]
 [ext_resource type="PackedScene" uid="uid://uuveqstbile7" path="res://scenes/objects/screen/screen.tscn" id="4_38qgj"]
 [ext_resource type="PackedScene" uid="uid://u7e8wy4hdxen" path="res://scenes/objects/projector/projector.tscn" id="5_mq2ub"]
-[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="6_05lst"]
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube/rigid_body_cube.tscn" id="6_05lst"]
 [ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="7_c1osk"]
 [ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="8_b0u2k"]
 [ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="9_51a50"]

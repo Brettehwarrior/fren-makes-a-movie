@@ -12,11 +12,13 @@ func on_interaction_triggered():
 	interaction_triggered.emit()
 
 func on_interaction_range_entered():
-	print("enter")
+	if ReplayManager.is_playing_back():
+		return
 	InteractionManager.set_interaction_display(interaction_name, interaction_keybind)
 	interaction_range_entered.emit()
 
 func on_interaction_range_exited():
-	print("exit")
+	if ReplayManager.is_playing_back():
+		return
 	InteractionManager.clear_interaction_display()
 	interaction_range_exited.emit()

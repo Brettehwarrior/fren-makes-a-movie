@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bx6et0snsnu0t" path="res://scenes/test/trent/state_recording/test_recording_ui.tscn" id="1_51wbl"]
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="2_72qkf"]
-[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="3_oty8r"]
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube/rigid_body_cube.tscn" id="3_oty8r"]
 [ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="4_x5xwp"]
 [ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="5_72qkf"]
 

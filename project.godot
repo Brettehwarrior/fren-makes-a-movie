@@ -27,6 +27,7 @@ MicrophoneManager="*res://scenes/singleton/microphone_manager/MicrophoneManager.
 InteractionManager="*res://scenes/singleton/interaction_manager/InteractionManager.tscn"
 FilterManager="*res://scenes/singleton/filter_manager/filter_manager.tscn"
 AudioManager="*res://scenes/singleton/audio_manager/audio_manager.tscn"
+EventBus="*res://scenes/singleton/event_bus/event_bus.tscn"
 
 [editor_plugins]
 

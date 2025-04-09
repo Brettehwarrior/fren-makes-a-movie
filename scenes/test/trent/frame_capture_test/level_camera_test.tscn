@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://by3psqomflc8a"]
 
-[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="1_p4nj2"]
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube/rigid_body_cube.tscn" id="1_p4nj2"]
 [ext_resource type="Script" uid="uid://2hwlgf35qp2p" path="res://scenes/test/trent/frame_capture_test/recordable-camera.gd" id="2_qrtxf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ek8t"]

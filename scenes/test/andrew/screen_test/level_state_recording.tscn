@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bx6et0snsnu0t" path="res://scenes/test/trent/state_recording/test_recording_ui.tscn" id="1_f1nlp"]
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="2_c1oou"]
 [ext_resource type="PackedScene" uid="uid://c0fj2okpr6ybt" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.tscn" id="3_1ef2t"]
-[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="3_4susw"]
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube/rigid_body_cube.tscn" id="3_4susw"]
 [ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="4_1ef2t"]
 [ext_resource type="PackedScene" uid="uid://u7e8wy4hdxen" path="res://scenes/objects/projector/projector.tscn" id="4_wf1ps"]
 [ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="5_wf1ps"]
