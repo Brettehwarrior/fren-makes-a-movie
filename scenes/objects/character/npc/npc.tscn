@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4uxs0tqsqujo"]
+[gd_scene load_steps=16 format=3 uid="uid://b4uxs0tqsqujo"]
 
 [ext_resource type="Script" uid="uid://ckhaemqcvycwp" path="res://scenes/objects/character/npc/npc.gd" id="1_uimbq"]
 [ext_resource type="AudioStream" uid="uid://djjq3pfq5mmqr" path="res://scenes/objects/character/npc/sound/poke.ogg" id="2_7elxb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c21eaqia3wvbg" path="res://scenes/objects/character/npc/character_model.gd" id="3_uimbq"]
 [ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="4_uimbq"]
 [ext_resource type="Script" uid="uid://vc6ry8e4vpdd" path="res://scenes/objects/character/base/character_input.gd" id="5_cha3l"]
+[ext_resource type="Script" uid="uid://btqxhatd6ywhn" path="res://scenes/objects/character/npc/interaction_label.gd" id="9_ww5d3"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7elxb"]
 random_pitch = 1.15
@@ -292,5 +293,6 @@ no_depth_test = true
 fixed_size = true
 text = "hello"
 font_size = 15
+script = ExtResource("9_ww5d3")
 
 [connection signal="interaction_triggered" from="InteractionSphere" to="." method="_on_interaction_sphere_interaction_triggered"]

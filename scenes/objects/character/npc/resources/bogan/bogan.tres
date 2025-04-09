@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://gevmoasx08f7"]
+
+[ext_resource type="Texture2D" uid="uid://c14sib4mgcabo" path="res://scenes/objects/character/npc/resources/bogan/back.png" id="1_8l0u8"]
+[ext_resource type="Texture2D" uid="uid://gk2fqfgmtu6o" path="res://scenes/objects/character/npc/resources/bogan/front.png" id="2_av8eu"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="3_trrb2"]
+
+[resource]
+script = ExtResource("3_trrb2")
+front_texture = ExtResource("2_av8eu")
+back_texture = ExtResource("1_8l0u8")
+quote = "My mooscles are getting stronker"
