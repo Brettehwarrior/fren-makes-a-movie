@@ -449,27 +449,34 @@ max_walk_speed = 10000.0
 [node name="NPC" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97491, 3.18611, 36.0545)
 npc_resource = ExtResource("10_7nt27")
+dialogue_timeout = 1.0
 
 [node name="NPCEvilFren" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(-0.23289, 0, 0.261271, 0, 0.35, 0, -0.261271, 0, -0.23289, 0.327496, 11.4937, 27.2963)
 npc_resource = ExtResource("11_r6p65")
+dialogue_timeout = 1.0
 
 [node name="NPC2" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.448804, 0, -0.89363, 0, 1, 0, 0.89363, 0, 0.448804, -4.15937, -0.472647, 1.64763)
 npc_resource = ExtResource("10_7nt27")
+dialogue_timeout = 1.0
 
 [node name="NPC3" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.834828, 0, -0.55051, 0, 1, 0, 0.55051, 0, 0.834828, -7.36531, 3.08436, 50.2268)
 npc_resource = ExtResource("10_7nt27")
+dialogue_timeout = 1.0
 
 [node name="NPCPhoebe" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(-0.261989, 0.01406, 0.2083, -0.00774199, 0.333355, -0.0322386, -0.208631, -0.0300263, -0.260378, 4.17814, 3.35231, 31.8625)
 npc_resource = ExtResource("11_4w45t")
+dialogue_timeout = 3.5
 
 [node name="NPCBogan" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.335396, 0, 0.217967, 0, 0.4, 0, -0.217967, 0, 0.335396, 4.23101, 3.68221, 46.6996)
 npc_resource = ExtResource("11_e1cbu")
+dialogue_timeout = 1.0
 
 [node name="NPCGenji" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.00717156, 0, 0.269905, 0, 0.27, 0, -0.269905, 0, 0.00717156, 5.37812, 3.24597, 44.9766)
 npc_resource = ExtResource("12_mngbo")
+dialogue_timeout = 1.0

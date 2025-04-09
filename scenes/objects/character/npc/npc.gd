@@ -11,7 +11,7 @@ extends ReplayableCharacter
 @export var back_sprite : Sprite3D
 @export var quote_label : Label3D
 @export var poke_sound : AudioStream
-
+@export var dialogue_timeout : float = 1.0
 
 func _save_state() -> Dictionary:
 	var state : Dictionary = super._save_state()
@@ -40,5 +40,5 @@ func _apply_resource_values(resource : NPCResource) -> void:
 func _on_interaction_sphere_interaction_triggered() -> void:
 	quote_label.visible = true
 	AudioManager.play_oneshot(poke_sound, position)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(dialogue_timeout).timeout
 	quote_label.visible = false
