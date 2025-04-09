@@ -10,6 +10,7 @@ extends ReplayableCharacter
 @export var front_sprite : Sprite3D
 @export var back_sprite : Sprite3D
 @export var quote_label : Label3D
+@export var poke_sound : AudioStream
 
 
 func _save_state() -> Dictionary:
@@ -38,5 +39,6 @@ func _apply_resource_values(resource : NPCResource) -> void:
 
 func _on_interaction_sphere_interaction_triggered() -> void:
 	quote_label.visible = true
+	AudioManager.play_oneshot(poke_sound, position)
 	await get_tree().create_timer(1.0).timeout
 	quote_label.visible = false

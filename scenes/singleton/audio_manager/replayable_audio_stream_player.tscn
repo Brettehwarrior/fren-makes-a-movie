@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3spu8f0xv2yi"]
+
+[ext_resource type="Script" uid="uid://dacwebvikrgyi" path="res://scenes/singleton/audio_manager/replayable_audio_stream_player.gd" id="1_flt8f"]
+
+[node name="ReplayableAudioStreamPlayer" type="AudioStreamPlayer3D" groups=["replayable"]]
+unit_size = 4.03
+script = ExtResource("1_flt8f")
