@@ -1,15 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://0xxoibbl3k5h"]
+[gd_scene load_steps=21 format=3 uid="uid://0xxoibbl3k5h"]
 
 [ext_resource type="PackedScene" uid="uid://bx6et0snsnu0t" path="res://scenes/test/trent/state_recording/test_recording_ui.tscn" id="1_6wevv"]
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="2_e1cbu"]
 [ext_resource type="PackedScene" uid="uid://c0fj2okpr6ybt" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.tscn" id="3_mngbo"]
 [ext_resource type="PackedScene" uid="uid://uuveqstbile7" path="res://scenes/objects/screen/screen.tscn" id="4_4w45t"]
 [ext_resource type="PackedScene" uid="uid://u7e8wy4hdxen" path="res://scenes/objects/projector/projector.tscn" id="5_r6p65"]
-[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube/rigid_body_cube.tscn" id="6_si52b"]
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="6_si52b"]
 [ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="7_01n6w"]
 [ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="8_6u1mn"]
 [ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="9_bcnxi"]
 [ext_resource type="Resource" uid="uid://c8swyj5aswisl" path="res://scenes/objects/character/npc/resources/goku/goku.tres" id="10_7nt27"]
+[ext_resource type="Resource" uid="uid://icvaylmmx8li" path="res://scenes/objects/character/npc/resources/phoebe/phoebe.tres" id="11_4w45t"]
+[ext_resource type="Resource" uid="uid://gevmoasx08f7" path="res://scenes/objects/character/npc/resources/bogan/bogan.tres" id="11_e1cbu"]
+[ext_resource type="Resource" uid="uid://ddujbe6dsl00j" path="res://scenes/objects/character/npc/resources/evilfren/evilfren.tres" id="11_r6p65"]
+[ext_resource type="Resource" uid="uid://k88fq6i0m2io" path="res://scenes/objects/character/npc/resources/genji/genji.tres" id="12_mngbo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6f3i"]
 
@@ -260,15 +264,51 @@ shape = SubResource("BoxShape3D_adb74")
 transform = Transform3D(46.1364, 0, 0, 0, -1.01412, 3.07278e-06, 0, -8.86571e-08, -35.1485, -7.15168, 1.65232, 43.8396)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Blockout/Lobby/Box12"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.61569e-11, 0, 0, 1, 0, 1.19209e-07, 0.0625)
+size = Vector3(1, 1, 0.875)
 material = SubResource("StandardMaterial3D_6wevv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Blockout/Lobby/Box12"]
+shape = SubResource("BoxShape3D_adb74")
+
+[node name="Box19" type="StaticBody3D" parent="Environment/Blockout/Lobby"]
+transform = Transform3D(46.1364, 0, 0, 0, -1.01412, 2.49828e-06, 0, -8.86571e-08, -28.577, -7.15168, 9.47032, 45.6228)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Blockout/Lobby/Box19"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.02318e-11, 0, -2.22045e-16, 1, 0.000869289, -0.022933, 0.0630665)
+size = Vector3(1, 1, 0.875)
+material = SubResource("StandardMaterial3D_6wevv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Blockout/Lobby/Box19"]
+shape = SubResource("BoxShape3D_adb74")
+
+[node name="Box20" type="StaticBody3D" parent="Environment/Blockout/Lobby"]
+transform = Transform3D(20.3938, 0, 0, 0, -1.01412, 6.63696e-07, 0, -8.86571e-08, -7.5918, -19.595, 9.47032, 30.0142)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Blockout/Lobby/Box20"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.18234e-11, 0, -8.88178e-15, 0.999999, 0, 0, 0.0625)
+size = Vector3(1, 1, 0.875)
+material = SubResource("StandardMaterial3D_6wevv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Blockout/Lobby/Box20"]
+shape = SubResource("BoxShape3D_adb74")
+
+[node name="Box21" type="StaticBody3D" parent="Environment/Blockout/Lobby"]
+transform = Transform3D(10.4997, 0, 0, 0, -1.01412, 6.63696e-07, 0, -8.86571e-08, -7.5918, 11.2035, 9.47032, 30.0142)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Blockout/Lobby/Box21"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.04592e-11, 0, 0, 1, 0, 1.19209e-07, 0.0625)
+size = Vector3(1, 1, 0.875)
+material = SubResource("StandardMaterial3D_6wevv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Blockout/Lobby/Box21"]
 shape = SubResource("BoxShape3D_adb74")
 
 [node name="Box13" type="StaticBody3D" parent="Environment/Blockout/Lobby"]
 transform = Transform3D(46.1364, 0, 0, 0, -14.435, 7.60985e-08, 0, -1.26195e-06, -0.870466, -7.15168, 8.51159, 61.1799)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Blockout/Lobby/Box13"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.88178e-16, 0, 0, 1, 0, 0, 5.58324)
 material = SubResource("StandardMaterial3D_6wevv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Blockout/Lobby/Box13"]
@@ -278,6 +318,8 @@ shape = SubResource("BoxShape3D_adb74")
 transform = Transform3D(-2.70067e-06, -1.23091e-06, -0.849, -3.12724e-06, -14.08, 7.42219e-08, -35.7714, 1.23091e-06, 6.40977e-08, 16.0691, 8.51159, 44.0976)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Blockout/Lobby/Box14"]
+transform = Transform3D(1, 1.06581e-14, 0, -7.10543e-14, 1, -2.26655e-15, 9.09495e-13, 4.5052e-13, 1, 0.0749513, -1.19209e-07, 0)
+size = Vector3(0.850098, 1, 1)
 material = SubResource("StandardMaterial3D_6wevv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Blockout/Lobby/Box14"]
@@ -314,13 +356,15 @@ shape = SubResource("BoxShape3D_adb74")
 transform = Transform3D(1.12424e-06, -5.38049e-14, 0.849, -2.24848e-06, -14.08, 0, 25.7196, -1.23091e-06, -3.7111e-08, -30.0571, 8.51159, 50.2502)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Blockout/Lobby/Box17"]
+transform = Transform3D(1, 6.03961e-14, 3.33067e-16, 1.42109e-14, 1, 2.62051e-21, -7.50333e-12, 1.49078e-19, 1, -0.127014, 0, 0)
+size = Vector3(0.745972, 1, 1)
 material = SubResource("StandardMaterial3D_6wevv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Blockout/Lobby/Box17"]
 shape = SubResource("BoxShape3D_adb74")
 
 [node name="Bathroom" type="Node3D" parent="Environment/Blockout"]
-transform = Transform3D(-2.32398e-08, 0, -0.543041, 0, 1, 0, 0.531665, 0, -2.37371e-08, -15.8971, 0, 42.3767)
+transform = Transform3D(-1.45122e-08, 0, -0.339, 0, 0.624, 0, 0.332, 0, -1.48182e-08, -21.1763, 0.783165, 41.5167)
 
 [node name="Box12" type="StaticBody3D" parent="Environment/Blockout/Bathroom"]
 transform = Transform3D(46.1364, 0, 0, 0, -1.01412, 3.07278e-06, 0, -8.86571e-08, -35.1485, -7.15168, 1.65232, 43.8396)
@@ -368,6 +412,7 @@ material = SubResource("StandardMaterial3D_e1cbu")
 shape = SubResource("BoxShape3D_adb74")
 
 [node name="Rigidbodies" type="Node3D" parent="."]
+visible = false
 
 [node name="RigidBodyCube" parent="Rigidbodies" instance=ExtResource("6_si52b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81285, 3.25679, 2.41161)
@@ -404,14 +449,34 @@ max_walk_speed = 10000.0
 [node name="NPC" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97491, 3.18611, 36.0545)
 npc_resource = ExtResource("10_7nt27")
-gravity = null
+dialogue_timeout = 1.0
+
+[node name="NPCEvilFren" parent="." instance=ExtResource("9_bcnxi")]
+transform = Transform3D(-0.748574, 0, 0.839799, 0, 1.125, 0, -0.839799, 0, -0.748574, 0.327496, 11.4937, 27.2963)
+npc_resource = ExtResource("11_r6p65")
+dialogue_timeout = 1.0
 
 [node name="NPC2" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.448804, 0, -0.89363, 0, 1, 0, 0.89363, 0, 0.448804, -4.15937, -0.472647, 1.64763)
 npc_resource = ExtResource("10_7nt27")
-gravity = null
+dialogue_timeout = 1.0
 
 [node name="NPC3" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.834828, 0, -0.55051, 0, 1, 0, 0.55051, 0, 0.834828, -7.36531, 3.08436, 50.2268)
 npc_resource = ExtResource("10_7nt27")
-gravity = null
+dialogue_timeout = 1.0
+
+[node name="NPCPhoebe" parent="." instance=ExtResource("9_bcnxi")]
+transform = Transform3D(-0.985391, 0.0528826, 0.783459, -0.0291191, 1.25381, -0.121255, -0.784701, -0.112935, -0.979331, 4.17814, 3.26573, 31.8359)
+npc_resource = ExtResource("11_4w45t")
+dialogue_timeout = 3.5
+
+[node name="NPCBogan" parent="." instance=ExtResource("9_bcnxi")]
+transform = Transform3D(1.3332, 0, 0.866419, 0, 1.59, 0, -0.866419, 0, 1.3332, 4.23101, 3.68221, 46.6996)
+npc_resource = ExtResource("11_e1cbu")
+dialogue_timeout = 1.0
+
+[node name="NPCGenji" parent="." instance=ExtResource("9_bcnxi")]
+transform = Transform3D(0.0294831, 0, 1.10961, 0, 1.11, 0, -1.10961, 0, 0.0294831, 5.37812, 3.24597, 44.9766)
+npc_resource = ExtResource("12_mngbo")
+dialogue_timeout = 1.0

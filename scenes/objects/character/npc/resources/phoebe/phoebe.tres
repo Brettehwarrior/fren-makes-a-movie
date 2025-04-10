@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://icvaylmmx8li"]
+
+[ext_resource type="Texture2D" uid="uid://fgfr7wofvq1x" path="res://scenes/objects/character/npc/resources/phoebe/back-1080.png" id="1_5db4n"]
+[ext_resource type="Texture2D" uid="uid://botcqfg4lg3oe" path="res://scenes/objects/character/npc/resources/phoebe/front-1080.png" id="2_b68tl"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="3_s25x5"]
+
+[resource]
+script = ExtResource("3_s25x5")
+front_texture = ExtResource("2_b68tl")
+back_texture = ExtResource("1_5db4n")
+quote = "You're gonna need a key to go in there, sparky."

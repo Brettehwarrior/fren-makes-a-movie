@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4uxs0tqsqujo"]
+[gd_scene load_steps=19 format=3 uid="uid://b4uxs0tqsqujo"]
 
 [ext_resource type="Script" uid="uid://ckhaemqcvycwp" path="res://scenes/objects/character/npc/npc.gd" id="1_uimbq"]
 [ext_resource type="AudioStream" uid="uid://djjq3pfq5mmqr" path="res://scenes/objects/character/npc/sound/poke.ogg" id="2_7elxb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c21eaqia3wvbg" path="res://scenes/objects/character/npc/character_model.gd" id="3_uimbq"]
 [ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="4_uimbq"]
 [ext_resource type="Script" uid="uid://vc6ry8e4vpdd" path="res://scenes/objects/character/base/character_input.gd" id="5_cha3l"]
+[ext_resource type="Script" uid="uid://btqxhatd6ywhn" path="res://scenes/objects/character/npc/interaction_label.gd" id="9_ww5d3"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7elxb"]
 random_pitch = 1.15
@@ -233,6 +234,20 @@ _data = {
 &"idle": SubResource("Animation_yyvds")
 }
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_ww5d3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cphdn"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("3_cha3l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duoge"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("4_uimbq")
+
 [node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("front_sprite", "back_sprite", "quote_label", "input") groups=["replayable"]]
 script = ExtResource("1_uimbq")
 front_sprite = NodePath("Model/SpriteParentParent/SpriteParent/FrontSprite")
@@ -275,23 +290,27 @@ metadata/_custom_type_script = "uid://fummbphajlig"
 [node name="SpriteParent" type="Node3D" parent="Model/SpriteParentParent"]
 transform = Transform3D(-0.392617, 0, -7.45058e-09, 0, 0.392617, 0, 7.45058e-09, 0, -0.392617, 0, 0, 0)
 
-[node name="FrontSprite" type="Sprite3D" parent="Model/SpriteParentParent/SpriteParent"]
-double_sided = false
-texture = ExtResource("3_cha3l")
+[node name="FrontSprite" type="MeshInstance3D" parent="Model/SpriteParentParent/SpriteParent"]
+transform = Transform3D(2.475, 0, 0, 0, -1.08186e-07, -2.475, 0, 2.475, -1.08186e-07, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ww5d3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cphdn")
 
-[node name="BackSprite" type="Sprite3D" parent="Model/SpriteParentParent/SpriteParent"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-flip_h = true
-double_sided = false
-texture = ExtResource("4_uimbq")
+[node name="BackSprite" type="MeshInstance3D" parent="Model/SpriteParentParent/SpriteParent"]
+transform = Transform3D(-2.475, -2.16371e-07, 9.45789e-15, 0, -1.08186e-07, -2.475, 2.16371e-07, -2.475, 1.08186e-07, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ww5d3")
+surface_material_override/0 = SubResource("StandardMaterial3D_duoge")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.389925, 0)
 visible = false
+sorting_offset = 1.0
 billboard = 1
 no_depth_test = true
 fixed_size = true
+render_priority = 1
+outline_render_priority = 0
 text = "hello"
 font_size = 15
+script = ExtResource("9_ww5d3")
 
 [connection signal="interaction_triggered" from="InteractionSphere" to="." method="_on_interaction_sphere_interaction_triggered"]
