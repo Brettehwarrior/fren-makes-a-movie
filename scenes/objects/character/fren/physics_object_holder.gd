@@ -11,8 +11,16 @@ func _ready() -> void:
 
 func _on_physics_object_interacted_with(object : ReplayableRigidBody3D) -> void:
 	if _currently_held_object == null:
-		_currently_held_object = object
-		joint.node_a = _currently_held_object.get_path()
+		_grab_object(object)
 	else:
-		_currently_held_object = null
-		joint.node_a = ""
+		_drop_object()
+
+func _grab_object(object : ReplayableRigidBody3D) -> void:
+	_currently_held_object = object
+	joint.node_a = _currently_held_object.get_path()
+	joint.position += (joint.position - object.position)
+
+func _drop_object() -> void:
+	_currently_held_object = null
+	joint.node_a = ""
+	joint.position = Vector3.ZERO

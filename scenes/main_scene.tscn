@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0fj2okpr6ybt" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.tscn" id="3_mngbo"]
 [ext_resource type="PackedScene" uid="uid://uuveqstbile7" path="res://scenes/objects/screen/screen.tscn" id="4_4w45t"]
 [ext_resource type="PackedScene" uid="uid://u7e8wy4hdxen" path="res://scenes/objects/projector/projector.tscn" id="5_r6p65"]
-[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube.tscn" id="6_si52b"]
+[ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube/rigid_body_cube.tscn" id="6_si52b"]
 [ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="7_01n6w"]
 [ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="8_6u1mn"]
 [ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="9_bcnxi"]
@@ -412,7 +412,6 @@ material = SubResource("StandardMaterial3D_e1cbu")
 shape = SubResource("BoxShape3D_adb74")
 
 [node name="Rigidbodies" type="Node3D" parent="."]
-visible = false
 
 [node name="RigidBodyCube" parent="Rigidbodies" instance=ExtResource("6_si52b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81285, 3.25679, 2.41161)
@@ -449,22 +448,18 @@ max_walk_speed = 10000.0
 [node name="NPC" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97491, 3.18611, 36.0545)
 npc_resource = ExtResource("10_7nt27")
-dialogue_timeout = 1.0
 
 [node name="NPCEvilFren" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(-0.748574, 0, 0.839799, 0, 1.125, 0, -0.839799, 0, -0.748574, 0.327496, 11.4937, 27.2963)
 npc_resource = ExtResource("11_r6p65")
-dialogue_timeout = 1.0
 
 [node name="NPC2" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.448804, 0, -0.89363, 0, 1, 0, 0.89363, 0, 0.448804, -4.15937, -0.472647, 1.64763)
 npc_resource = ExtResource("10_7nt27")
-dialogue_timeout = 1.0
 
 [node name="NPC3" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.834828, 0, -0.55051, 0, 1, 0, 0.55051, 0, 0.834828, -7.36531, 3.08436, 50.2268)
 npc_resource = ExtResource("10_7nt27")
-dialogue_timeout = 1.0
 
 [node name="NPCPhoebe" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(-0.985391, 0.0528826, 0.783459, -0.0291191, 1.25381, -0.121255, -0.784701, -0.112935, -0.979331, 4.17814, 3.26573, 31.8359)
@@ -474,9 +469,7 @@ dialogue_timeout = 3.5
 [node name="NPCBogan" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(1.3332, 0, 0.866419, 0, 1.59, 0, -0.866419, 0, 1.3332, 4.23101, 3.68221, 46.6996)
 npc_resource = ExtResource("11_e1cbu")
-dialogue_timeout = 1.0
 
 [node name="NPCGenji" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.0294831, 0, 1.10961, 0, 1.11, 0, -1.10961, 0, 0.0294831, 5.37812, 3.24597, 44.9766)
 npc_resource = ExtResource("12_mngbo")
-dialogue_timeout = 1.0
