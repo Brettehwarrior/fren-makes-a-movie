@@ -4,11 +4,11 @@
 [ext_resource type="AudioStream" uid="uid://djjq3pfq5mmqr" path="res://scenes/objects/character/npc/sound/poke.ogg" id="2_7elxb"]
 [ext_resource type="PackedScene" uid="uid://bsnaci63fmit2" path="res://scenes/objects/triggers/interaction/interaction_sphere.tscn" id="2_exslj"]
 [ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="2_t3kos"]
-[ext_resource type="Texture2D" uid="uid://cbl7uy6ragqgx" path="res://scenes/objects/character/fren/images/fren.png" id="3_cha3l"]
 [ext_resource type="Script" uid="uid://c21eaqia3wvbg" path="res://scenes/objects/character/npc/character_model.gd" id="3_uimbq"]
-[ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="4_uimbq"]
 [ext_resource type="Script" uid="uid://vc6ry8e4vpdd" path="res://scenes/objects/character/base/character_input.gd" id="5_cha3l"]
 [ext_resource type="ArrayMesh" uid="uid://c3b0nuv7dtfdo" path="res://assets/models/plane_bottom.obj" id="7_flrmq"]
+[ext_resource type="Texture2D" uid="uid://c2wtossor5drj" path="res://scenes/objects/character/npc/resources/genji/front-1080.png" id="8_cphdn"]
+[ext_resource type="Texture2D" uid="uid://dkk46rb1ivup" path="res://scenes/objects/character/npc/resources/genji/back-1080.png" id="9_duoge"]
 [ext_resource type="Script" path="res://scenes/objects/character/npc/interaction_label.gd" id="9_ww5d3"]
 [ext_resource type="ArrayMesh" uid="uid://c6h0iua44octy" path="res://assets/models/plane_top.obj" id="10_cphdn"]
 
@@ -237,24 +237,28 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0r4fn"]
+resource_local_to_scene = true
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("3_cha3l")
+albedo_texture = ExtResource("8_cphdn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5f62"]
+resource_local_to_scene = true
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("4_uimbq")
+albedo_texture = ExtResource("9_duoge")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjfdu"]
+resource_local_to_scene = true
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("3_cha3l")
+albedo_texture = ExtResource("8_cphdn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdxkm"]
+resource_local_to_scene = true
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("4_uimbq")
+albedo_texture = ExtResource("9_duoge")
 
 [node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("front_sprite_top", "front_sprite_bottom", "back_sprite_top", "back_sprite_bottom", "quote_label", "input") groups=["replayable"]]
 script = ExtResource("1_uimbq")
