@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c14sib4mgcabo"
-path.s3tc="res://.godot/imported/back.png-24f3b092ab2cd69a417d3daa036fbb6c.s3tc.ctex"
+uid="uid://botcqfg4lg3oe"
+path.s3tc="res://.godot/imported/front-1080.png-09292b85d4782a9f36ea8ef99163cdbe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/objects/character/npc/resources/bogan/back.png"
-dest_files=["res://.godot/imported/back.png-24f3b092ab2cd69a417d3daa036fbb6c.s3tc.ctex"]
+source_file="res://scenes/objects/character/npc/resources/phoebe/front-1080.png"
+dest_files=["res://.godot/imported/front-1080.png-09292b85d4782a9f36ea8ef99163cdbe.s3tc.ctex"]
 
 [params]
 

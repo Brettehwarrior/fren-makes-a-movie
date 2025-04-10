@@ -7,8 +7,8 @@ extends ReplayableCharacter
 	set(value):
 		npc_resource = value
 		_apply_resource_values(value)
-@export var front_sprite : Sprite3D
-@export var back_sprite : Sprite3D
+@export var front_sprite : MeshInstance3D
+@export var back_sprite : MeshInstance3D
 @export var quote_label : Label3D
 @export var poke_sound : AudioStream
 @export var dialogue_timeout : float = 1.0
@@ -32,8 +32,8 @@ func _ready() -> void:
 
 
 func _apply_resource_values(resource : NPCResource) -> void:
-	front_sprite.texture = resource.front_texture
-	back_sprite.texture = resource.back_texture
+	front_sprite.get_active_material(0).albedo_texture = resource.front_texture
+	back_sprite.get_active_material(0).albedo_texture = resource.back_texture
 	quote_label.text = npc_resource.quote
 
 

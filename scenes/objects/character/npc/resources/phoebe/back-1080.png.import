@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjccha6lvwc0t"
-path.s3tc="res://.godot/imported/front.png-debca0023178634b3ab7353981ea00fd.s3tc.ctex"
+uid="uid://fgfr7wofvq1x"
+path.s3tc="res://.godot/imported/back-1080.png-ea59276aabd4f37c9fcc3369bfb1021d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/objects/character/npc/resources/genji/front.png"
-dest_files=["res://.godot/imported/front.png-debca0023178634b3ab7353981ea00fd.s3tc.ctex"]
+source_file="res://scenes/objects/character/npc/resources/phoebe/back-1080.png"
+dest_files=["res://.godot/imported/back-1080.png-ea59276aabd4f37c9fcc3369bfb1021d.s3tc.ctex"]
 
 [params]
 

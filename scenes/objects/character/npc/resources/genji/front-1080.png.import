@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gk2fqfgmtu6o"
-path.s3tc="res://.godot/imported/front.png-b6413a346cabf806f532488aa07590d8.s3tc.ctex"
+uid="uid://c2wtossor5drj"
+path.s3tc="res://.godot/imported/front-1080.png-ac1fa14cde6c685dc5930b6391d281ad.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/objects/character/npc/resources/bogan/front.png"
-dest_files=["res://.godot/imported/front.png-b6413a346cabf806f532488aa07590d8.s3tc.ctex"]
+source_file="res://scenes/objects/character/npc/resources/genji/front-1080.png"
+dest_files=["res://.godot/imported/front-1080.png-ac1fa14cde6c685dc5930b6391d281ad.s3tc.ctex"]
 
 [params]
 
