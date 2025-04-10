@@ -89,17 +89,11 @@ camcorder = NodePath("../Camcorder")
 [node name="NPC" parent="." instance=ExtResource("9_51a50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190555, 1.48154, -0.207104)
 npc_resource = ExtResource("10_3lfuh")
-dialogue_timeout = null
-gravity = -50.0
 
 [node name="NPC2" parent="." instance=ExtResource("9_51a50")]
 transform = Transform3D(0.448804, 0, -0.89363, 0, 1, 0, 0.89363, 0, 0.448804, -4.15937, 1.48154, 1.64763)
 npc_resource = ExtResource("10_3lfuh")
-dialogue_timeout = null
-gravity = -50.0
 
 [node name="NPC3" parent="." instance=ExtResource("9_51a50")]
 transform = Transform3D(-0.840954, 0, 0.541107, 0, 1, 0, -0.541107, 0, -0.840954, 3.33079, 1.48154, -2.48556)
 npc_resource = ExtResource("10_3lfuh")
-dialogue_timeout = null
-gravity = -50.0
