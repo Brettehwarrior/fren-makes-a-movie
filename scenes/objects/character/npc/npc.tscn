@@ -235,6 +235,8 @@ _data = {
 }
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ww5d3"]
+subdivide_width = 3
+subdivide_depth = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cphdn"]
 resource_local_to_scene = true
