@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs6u4l08gmv0e"]
+
+[ext_resource type="Script" uid="uid://dxygniad11rib" path="res://scenes/objects/static/exit_door/exit_door.gd" id="1_8q72p"]
+[ext_resource type="Texture2D" uid="uid://py68luswwopo" path="res://scenes/objects/static/exit_door/exit.png" id="1_je4x7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5772m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8q72p"]
+transparency = 1
+albedo_texture = ExtResource("1_je4x7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_je4x7"]
+size = Vector3(0.39917, 2.19775, 1)
+
+[node name="ExitDoor" type="Node3D"]
+script = ExtResource("1_8q72p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1.42462, -1, -4.37114e-08, -6.22719e-08, 0, 1, 0)
+mesh = SubResource("PlaneMesh_5772m")
+surface_material_override/0 = SubResource("StandardMaterial3D_8q72p")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0635986, 1.02759, 0)
+shape = SubResource("BoxShape3D_je4x7")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

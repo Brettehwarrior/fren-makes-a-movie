@@ -154,6 +154,7 @@ func start_playback() -> void:
 
 	_setup_playback_camera()
 	_is_playing_back = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 	load_game_state(0)
 	started_playback.emit()

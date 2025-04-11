@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://0xxoibbl3k5h"]
+[gd_scene load_steps=24 format=3 uid="uid://0xxoibbl3k5h"]
 
 [ext_resource type="PackedScene" uid="uid://co4epjb213cq" path="res://scenes/ui/recording_progress_indicator/recording_progress_indicator.tscn" id="1_fjsje"]
+[ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="2_74g7m"]
 [ext_resource type="PackedScene" uid="uid://c0fj2okpr6ybt" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.tscn" id="3_80of5"]
 [ext_resource type="PackedScene" uid="uid://uuveqstbile7" path="res://scenes/objects/screen/screen.tscn" id="4_ihnaw"]
 [ext_resource type="PackedScene" uid="uid://d31asox2n08ro" path="res://scenes/objects/static/theater_light.tscn" id="5_a0vla"]
@@ -14,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://ddujbe6dsl00j" path="res://scenes/objects/character/npc/resources/evilfren/evilfren.tres" id="13_ck6ag"]
 [ext_resource type="Resource" uid="uid://icvaylmmx8li" path="res://scenes/objects/character/npc/resources/phoebe/phoebe.tres" id="14_lpfc0"]
 [ext_resource type="Resource" uid="uid://gevmoasx08f7" path="res://scenes/objects/character/npc/resources/bogan/bogan.tres" id="15_2yy5a"]
+[ext_resource type="PackedScene" uid="uid://bs6u4l08gmv0e" path="res://scenes/objects/static/exit_door/exit_door.tscn" id="16_or7qe"]
 [ext_resource type="Resource" uid="uid://k88fq6i0m2io" path="res://scenes/objects/character/npc/resources/genji/genji.tres" id="16_scjqn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6f3i"]
@@ -36,6 +38,8 @@ albedo_color = Color(0.996284, 0.943544, 0.975858, 1)
 [node name="Movieplex" type="Node3D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlaybackUI" parent="CanvasLayer" instance=ExtResource("2_74g7m")]
 
 [node name="RecordingProgressIndicator" parent="CanvasLayer" instance=ExtResource("1_fjsje")]
 
@@ -583,3 +587,22 @@ stand_height = -0.378
 transform = Transform3D(0.0294831, 0, 1.10961, 0, 1.11, 0, -1.10961, 0, 0.0294831, 5.37812, 3.24597, 44.9766)
 npc_resource = ExtResource("16_scjqn")
 stand_height = -0.378
+
+[node name="ExitDoor" parent="." instance=ExtResource("16_or7qe")]
+transform = Transform3D(-0.0644801, 0, 0.997919, 0, 1, 0, -0.997919, 0, -0.0644801, -2.33069, 2.66511, 54.7553)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9172, 5.30446, 40.0354)
+omni_range = 37.7302
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.04089, 5.30446, 40.0354)
+omni_range = 37.7302
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85787, 5.30446, 48.7051)
+omni_range = 37.7302
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17501, 13.8883, 28.5004)
+omni_range = 37.7302
