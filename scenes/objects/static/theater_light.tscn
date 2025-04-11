@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://d31asox2n08ro"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_beuv2"]
+
+[node name="TheaterLight" type="Node3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.190688, 0)
+light_color = Color(0.99878, 0.939898, 0.845472, 1)
+light_energy = 1.838
+light_bake_mode = 1
+spot_range = 30.5705
+spot_angle = 29.5395
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.63423, 0, 0, 0, 0.329111, 0, 0, 0, 1.63423, 0, 0, 0)
+mesh = SubResource("CylinderMesh_beuv2")

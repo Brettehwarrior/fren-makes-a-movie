@@ -1,10 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://0xxoibbl3k5h"]
+[gd_scene load_steps=23 format=3 uid="uid://0xxoibbl3k5h"]
 
 [ext_resource type="PackedScene" uid="uid://bx6et0snsnu0t" path="res://scenes/test/trent/state_recording/test_recording_ui.tscn" id="1_6wevv"]
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="2_e1cbu"]
 [ext_resource type="PackedScene" uid="uid://c0fj2okpr6ybt" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.tscn" id="3_mngbo"]
 [ext_resource type="PackedScene" uid="uid://uuveqstbile7" path="res://scenes/objects/screen/screen.tscn" id="4_4w45t"]
 [ext_resource type="PackedScene" uid="uid://u7e8wy4hdxen" path="res://scenes/objects/projector/projector.tscn" id="5_r6p65"]
+[ext_resource type="PackedScene" uid="uid://d31asox2n08ro" path="res://scenes/objects/static/theater_light.tscn" id="5_si52b"]
+[ext_resource type="PackedScene" uid="uid://dknewdalu1xoh" path="res://scenes/objects/static/seat/seat_row.tscn" id="6_01n6w"]
 [ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube/rigid_body_cube.tscn" id="6_si52b"]
 [ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="7_01n6w"]
 [ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="8_6u1mn"]
@@ -258,6 +260,112 @@ transform = Transform3D(1.56521e-13, -0.01266, 5.74181, 31.178, -4.4331e-08, -8.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Blockout/ScreeningRoom/Box10"]
 shape = SubResource("BoxShape3D_adb74")
 
+[node name="TheaterLights" type="Node3D" parent="Environment/Blockout/ScreeningRoom"]
+
+[node name="TheaterLight" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1786, 25.8589, 21.0521)
+
+[node name="TheaterLight2" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1786, 23.3277, 11.5452)
+
+[node name="TheaterLight3" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1786, 20.6462, 2.46863)
+
+[node name="TheaterLight4" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1786, 18.15, -6.2971)
+
+[node name="TheaterLight5" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14663, 25.8589, 21.0521)
+
+[node name="TheaterLight6" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14663, 23.3277, 11.5452)
+
+[node name="TheaterLight7" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14663, 20.6462, 2.46863)
+
+[node name="TheaterLight8" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14663, 18.15, -6.2971)
+
+[node name="TheaterLight9" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79281, 25.8589, 21.0521)
+
+[node name="TheaterLight10" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79281, 23.3277, 11.5452)
+
+[node name="TheaterLight11" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79281, 20.6462, 2.46863)
+
+[node name="TheaterLight12" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79281, 18.15, -6.2971)
+
+[node name="TheaterLight13" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.862, 25.8589, 21.0521)
+
+[node name="TheaterLight14" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.862, 23.3277, 11.5452)
+
+[node name="TheaterLight15" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.862, 20.6462, 2.46863)
+
+[node name="TheaterLight16" parent="Environment/Blockout/ScreeningRoom/TheaterLights" instance=ExtResource("5_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.862, 18.15, -6.2971)
+
+[node name="Seats" type="Node3D" parent="Environment/Blockout/ScreeningRoom"]
+
+[node name="SeatRow" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950143, 3, 7)
+
+[node name="SeatRow2" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99992, 3, 7)
+
+[node name="SeatRow3" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950143, 3.59635, 9.9449)
+
+[node name="SeatRow4" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99992, 3.59635, 9.9449)
+
+[node name="SeatRow5" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950142, 3.99229, 12.8818)
+
+[node name="SeatRow6" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99992, 3.99229, 12.8818)
+
+[node name="SeatRow13" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950143, 1.6235, -1.8275)
+
+[node name="SeatRow14" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99992, 1.6235, -1.8275)
+
+[node name="SeatRow15" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950143, 2.21984, 1.11741)
+
+[node name="SeatRow16" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99992, 2.21984, 1.11741)
+
+[node name="SeatRow17" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950142, 2.61579, 4.05433)
+
+[node name="SeatRow18" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99992, 2.61579, 4.05433)
+
+[node name="SeatRow7" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950142, 4.58864, 15.8267)
+
+[node name="SeatRow8" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99992, 4.58864, 15.8267)
+
+[node name="SeatRow9" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950142, 4.89896, 18.6414)
+
+[node name="SeatRow10" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99992, 4.89896, 18.6414)
+
+[node name="SeatRow11" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950142, 5.49531, 21.5863)
+
+[node name="SeatRow12" parent="Environment/Blockout/ScreeningRoom/Seats" instance=ExtResource("6_01n6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99992, 5.49531, 21.5863)
+
 [node name="Lobby" type="Node3D" parent="Environment/Blockout"]
 
 [node name="Box12" type="StaticBody3D" parent="Environment/Blockout/Lobby"]
@@ -448,28 +556,56 @@ max_walk_speed = 10000.0
 [node name="NPC" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97491, 3.18611, 36.0545)
 npc_resource = ExtResource("10_7nt27")
+sit_angle = null
+sit_angle_speed = null
+sit_height = null
+sit_height_speed = null
 
 [node name="NPCEvilFren" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(-0.748574, 0, 0.839799, 0, 1.125, 0, -0.839799, 0, -0.748574, 0.327496, 11.4937, 27.2963)
 npc_resource = ExtResource("11_r6p65")
+sit_angle = null
+sit_angle_speed = null
+sit_height = null
+sit_height_speed = null
 
 [node name="NPC2" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.448804, 0, -0.89363, 0, 1, 0, 0.89363, 0, 0.448804, -4.15937, -0.472647, 1.64763)
 npc_resource = ExtResource("10_7nt27")
+sit_angle = null
+sit_angle_speed = null
+sit_height = null
+sit_height_speed = null
 
 [node name="NPC3" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.834828, 0, -0.55051, 0, 1, 0, 0.55051, 0, 0.834828, -7.36531, 3.08436, 50.2268)
 npc_resource = ExtResource("10_7nt27")
+sit_angle = null
+sit_angle_speed = null
+sit_height = null
+sit_height_speed = null
 
 [node name="NPCPhoebe" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(-0.985391, 0.0528826, 0.783459, -0.0291191, 1.25381, -0.121255, -0.784701, -0.112935, -0.979331, 4.17814, 3.26573, 31.8359)
 npc_resource = ExtResource("11_4w45t")
 dialogue_timeout = 3.5
+sit_angle = null
+sit_angle_speed = null
+sit_height = null
+sit_height_speed = null
 
 [node name="NPCBogan" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(1.3332, 0, 0.866419, 0, 1.59, 0, -0.866419, 0, 1.3332, 4.23101, 3.68221, 46.6996)
 npc_resource = ExtResource("11_e1cbu")
+sit_angle = null
+sit_angle_speed = null
+sit_height = null
+sit_height_speed = null
 
 [node name="NPCGenji" parent="." instance=ExtResource("9_bcnxi")]
 transform = Transform3D(0.0294831, 0, 1.10961, 0, 1.11, 0, -1.10961, 0, 0.0294831, 5.37812, 3.24597, 44.9766)
 npc_resource = ExtResource("12_mngbo")
+sit_angle = null
+sit_angle_speed = null
+sit_height = null
+sit_height_speed = null

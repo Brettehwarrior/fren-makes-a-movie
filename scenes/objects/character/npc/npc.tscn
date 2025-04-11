@@ -4,13 +4,13 @@
 [ext_resource type="AudioStream" uid="uid://djjq3pfq5mmqr" path="res://scenes/objects/character/npc/sound/poke.ogg" id="2_7elxb"]
 [ext_resource type="PackedScene" uid="uid://bsnaci63fmit2" path="res://scenes/objects/triggers/interaction/interaction_sphere.tscn" id="2_exslj"]
 [ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="2_t3kos"]
+[ext_resource type="Texture2D" uid="uid://cbl7uy6ragqgx" path="res://scenes/objects/character/fren/images/fren.png" id="3_cha3l"]
 [ext_resource type="Script" uid="uid://c21eaqia3wvbg" path="res://scenes/objects/character/npc/character_model.gd" id="3_uimbq"]
+[ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="4_uimbq"]
 [ext_resource type="Script" uid="uid://vc6ry8e4vpdd" path="res://scenes/objects/character/base/character_input.gd" id="5_cha3l"]
-[ext_resource type="ArrayMesh" uid="uid://c3b0nuv7dtfdo" path="res://assets/models/plane_bottom.obj" id="7_flrmq"]
-[ext_resource type="Texture2D" uid="uid://c2wtossor5drj" path="res://scenes/objects/character/npc/resources/genji/front-1080.png" id="8_cphdn"]
-[ext_resource type="Texture2D" uid="uid://dkk46rb1ivup" path="res://scenes/objects/character/npc/resources/genji/back-1080.png" id="9_duoge"]
+[ext_resource type="ArrayMesh" uid="uid://bbtgcsyxs7o0u" path="res://assets/models/plane_30_top.mtl.obj" id="8_flrmq"]
+[ext_resource type="ArrayMesh" uid="uid://v7i30h6ljmvi" path="res://assets/models/plane_30_bottom.mtl.obj" id="9_cphdn"]
 [ext_resource type="Script" path="res://scenes/objects/character/npc/interaction_label.gd" id="9_ww5d3"]
-[ext_resource type="ArrayMesh" uid="uid://c6h0iua44octy" path="res://assets/models/plane_top.obj" id="10_cphdn"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7elxb"]
 random_pitch = 1.15
@@ -236,31 +236,27 @@ _data = {
 &"idle": SubResource("Animation_yyvds")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0r4fn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cphdn"]
 resource_local_to_scene = true
 transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("8_cphdn")
+albedo_texture = ExtResource("3_cha3l")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5f62"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duoge"]
 resource_local_to_scene = true
 transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("9_duoge")
+albedo_texture = ExtResource("4_uimbq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjfdu"]
 resource_local_to_scene = true
 transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("8_cphdn")
+albedo_texture = ExtResource("3_cha3l")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdxkm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww5d3"]
 resource_local_to_scene = true
 transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("9_duoge")
+albedo_texture = ExtResource("4_uimbq")
 
-[node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("front_sprite_top", "front_sprite_bottom", "back_sprite_top", "back_sprite_bottom", "quote_label", "input") groups=["replayable"]]
+[node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("front_sprite_top", "front_sprite_bottom", "back_sprite_top", "back_sprite_bottom", "quote_label", "sit_pivot", "sit_body_slide_node", "input") groups=["replayable"]]
 script = ExtResource("1_uimbq")
 front_sprite_top = NodePath("Model/SpriteParentParent/SpriteParent/Top/FrontSpriteTop")
 front_sprite_bottom = NodePath("Model/SpriteParentParent/SpriteParent/Bottom/FrontSpriteBottom")
@@ -268,6 +264,8 @@ back_sprite_top = NodePath("Model/SpriteParentParent/SpriteParent/Top/BackSprite
 back_sprite_bottom = NodePath("Model/SpriteParentParent/SpriteParent/Bottom/BackSpriteBottom")
 quote_label = NodePath("Label3D")
 poke_sound = SubResource("AudioStreamRandomizer_7elxb")
+sit_pivot = NodePath("Model/SpriteParentParent/SpriteParent/Bottom")
+sit_body_slide_node = NodePath("Model/SpriteParentParent/SpriteParent")
 input = NodePath("CharacterInput")
 walk_acceleration = 700.0
 max_walk_speed = 5000.0
@@ -301,37 +299,36 @@ metadata/_custom_type_script = "uid://fummbphajlig"
 [node name="SpriteParentParent" type="Node3D" parent="Model"]
 
 [node name="SpriteParent" type="Node3D" parent="Model/SpriteParentParent"]
-transform = Transform3D(-0.392617, 0, -7.45058e-09, 0, 0.392617, 0, 7.45058e-09, 0, -0.392617, 0, 0, 0)
+transform = Transform3D(-0.392617, 0, -7.45058e-09, 0, 0.392617, 0, 7.45058e-09, 0, -0.392617, 0, -0.37779, 0)
 
 [node name="Top" type="Node3D" parent="Model/SpriteParentParent/SpriteParent"]
 transform = Transform3D(1, 0, 1.77636e-15, 0, 1, 0, -1.77636e-15, 0, 1, 0, 0, 0)
 
 [node name="FrontSpriteTop" type="MeshInstance3D" parent="Model/SpriteParentParent/SpriteParent/Top"]
 transform = Transform3D(2.54701, -4.83339e-08, 4.83339e-08, 4.83339e-08, -1.11333e-07, -2.54701, 4.83339e-08, 2.54701, -1.11333e-07, 0, 0, 0)
-mesh = ExtResource("10_cphdn")
+mesh = ExtResource("8_flrmq")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_0r4fn")
+surface_material_override/0 = SubResource("StandardMaterial3D_cphdn")
 
 [node name="BackSpriteTop" type="MeshInstance3D" parent="Model/SpriteParentParent/SpriteParent/Top"]
-transform = Transform3D(-2.54701, 4.83339e-08, -2.71001e-07, 2.71001e-07, -1.11333e-07, -2.54701, -4.83339e-08, -2.54701, 1.11333e-07, 0, 0, 0)
-mesh = ExtResource("10_cphdn")
+transform = Transform3D(-2.54701, -1.74333e-07, -4.83339e-08, 4.83339e-08, -1.11333e-07, -2.54701, 1.74333e-07, -2.54701, 1.11333e-07, 0, 0, 0)
+mesh = ExtResource("8_flrmq")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_f5f62")
+surface_material_override/0 = SubResource("StandardMaterial3D_duoge")
 
 [node name="Bottom" type="Node3D" parent="Model/SpriteParentParent/SpriteParent"]
-transform = Transform3D(1, 1.66636e-08, 9.89708e-09, -1.66636e-08, 0.478462, 0.878108, 9.89707e-09, -0.878108, 0.478462, 0, 0, 0)
 
 [node name="FrontSpriteBottom" type="MeshInstance3D" parent="Model/SpriteParentParent/SpriteParent/Bottom"]
-transform = Transform3D(2.54701, 0, 0, 0, -1.11333e-07, -2.54701, 0, 2.54701, -1.11333e-07, 0, 0, 0)
-mesh = ExtResource("7_flrmq")
-skeleton = NodePath("../../../../..")
+transform = Transform3D(2.54701, -4.83339e-08, 4.83339e-08, 4.83339e-08, -1.11333e-07, -2.54701, 4.83339e-08, 2.54701, -1.11333e-07, 0, 0, 0)
+mesh = ExtResource("9_cphdn")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_fjfdu")
 
 [node name="BackSpriteBottom" type="MeshInstance3D" parent="Model/SpriteParentParent/SpriteParent/Bottom"]
-transform = Transform3D(-2.54701, 4.83339e-08, -2.71001e-07, 2.71001e-07, -1.11333e-07, -2.54701, -4.83339e-08, -2.54701, 1.11333e-07, 0, 0, 0)
-mesh = ExtResource("7_flrmq")
+transform = Transform3D(-2.54701, 2.71001e-07, -4.83339e-08, 4.83339e-08, -1.11333e-07, -2.54701, -2.71001e-07, -2.54701, 1.11333e-07, 0, 0, 0)
+mesh = ExtResource("9_cphdn")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_wdxkm")
+surface_material_override/0 = SubResource("StandardMaterial3D_ww5d3")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.389925, 0)

@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://ojpotsy5lnk3"]
+
+[ext_resource type="ArrayMesh" uid="uid://bvdkhqd15rt8c" path="res://assets/models/chair.obj" id="1_2l1t0"]
+[ext_resource type="Script" uid="uid://xs4nydnggmco" path="res://scenes/objects/static/seat/seat.gd" id="1_as6tk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2l1t0"]
+size = Vector3(0.918945, 2.21292, 0.319336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_riyte"]
+size = Vector3(0.0457764, 1.43543, 0.817261)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sk36r"]
+size = Vector3(0.195557, 1.35962, 0.259766)
+
+[node name="Seat" type="Node3D"]
+script = ExtResource("1_as6tk")
+
+[node name="Model" type="Node3D" parent="."]
+transform = Transform3D(0.580171, 0, 0, 0, 0.580171, 0, 0, 0, 0.580171, -0.0342041, 0, 0.621754)
+
+[node name="Chair" type="MeshInstance3D" parent="Model"]
+mesh = ExtResource("1_2l1t0")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05896, 0.897537, 0.340332)
+shape = SubResource("BoxShape3D_2l1t0")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62332, 0.508793, 0.589294)
+shape = SubResource("BoxShape3D_riyte")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.554094, 0.508793, 0.589294)
+shape = SubResource("BoxShape3D_riyte")
+
+[node name="SitTriggerArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SitTriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.660522, 0.932495)
+shape = SubResource("BoxShape3D_sk36r")
+
+[connection signal="body_entered" from="SitTriggerArea" to="." method="_on_sit_trigger_area_body_entered"]
+[connection signal="body_exited" from="SitTriggerArea" to="." method="_on_sit_trigger_area_body_exited"]
