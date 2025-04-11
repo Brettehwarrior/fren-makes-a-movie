@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://buho77g7qakbu"]
+
+[ext_resource type="Texture2D" uid="uid://xekygxldijgt" path="res://scenes/ui/menus/logo.png" id="1_kx65a"]
+[ext_resource type="Script" uid="uid://dfn176rig7x82" path="res://scenes/ui/menus/main_menu/main_menu.gd" id="1_peecx"]
+[ext_resource type="PackedScene" uid="uid://ojpotsy5lnk3" path="res://scenes/objects/static/seat/seat.tscn" id="2_flk2s"]
+[ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="3_gm7d7"]
+
+[sub_resource type="Environment" id="Environment_kx65a"]
+background_mode = 1
+background_color = Color(0.0962781, 0.0700394, 0.103372, 1)
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_peecx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -500.135
+offset_top = -193.5
+offset_bottom = 193.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+custom_minimum_size = Vector2(500.135, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_kx65a")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="StartButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Make a Movie!"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit :("
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64545, 2.11139, 1.35237)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kx65a")
+
+[node name="Seat" parent="." instance=ExtResource("2_flk2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475577, 0, -2.98666)
+
+[node name="NPC" parent="." instance=ExtResource("3_gm7d7")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0.404377, 0.888256, -2.14699)
+stand_height = -0.378
+gravity = 0.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.114, 3.00541, -0.34147)
+
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

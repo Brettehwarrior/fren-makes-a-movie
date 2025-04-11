@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://co4epjb213cq"]
+
+[ext_resource type="Script" uid="uid://bml733xx684gc" path="res://scenes/ui/recording_progress_indicator/recording_progress_indicator.gd" id="1_4gqpr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7yj3"]
+bg_color = Color(0.822455, 0.52525, 0.0950012, 1)
+
+[node name="RecordingProgressIndicator" type="Control" node_paths=PackedStringArray("recording_progress_bar")]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_4gqpr")
+recording_progress_bar = NodePath("MarginContainer/HBoxContainer/ProgressBar")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "0:00"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/fill = SubResource("StyleBoxFlat_a7yj3")
+max_value = 1.0
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "0:00"

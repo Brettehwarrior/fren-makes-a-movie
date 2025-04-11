@@ -4,9 +4,13 @@ signal started_recording
 signal stopped_recording
 signal started_playback
 
+
 @export var ticks_per_second : float = 60 
 @onready var _tick_rate : float = 1 / ticks_per_second
 var _time_since_last_tick : float = 0
+
+@export var maximum_seconds : float = 60
+@onready var _maximum_recording_frames : int = maximum_seconds / _tick_rate
 
 var _is_recording : bool = false
 var _is_playing_back : bool = false
@@ -66,6 +70,10 @@ func _tick_recording(nodes : Array[Node]) -> void:
 	if not _is_recording:
 		return
 	
+	if _current_recording_frame >= _maximum_recording_frames:
+		stop_recording()
+		return
+	
 	for node in nodes:
 		if node.has_method("_save_state"):
 			_record_node_state(node)
@@ -122,6 +130,9 @@ func load_game_state(frame : int) -> void:
 
 func start_recording() -> void:
 	assert(not _is_recording, "Tried to start recording when already recording")
+	if _current_recording_frame >= _maximum_recording_frames:
+		print("Tried to record but max frames achieved")
+		return
 	_is_recording = true
 	started_recording.emit()
 
@@ -173,3 +184,15 @@ func get_current_recording_frame() -> int:
 
 func get_tick_rate() -> float:
 	return _tick_rate
+
+
+func get_maximum_seconds() -> float:
+	return maximum_seconds
+
+
+func get_current_seconds() -> float:
+	return _current_recording_frame * _tick_rate
+
+
+func get_recording_progress_percentage() -> float:
+	return float(_current_recording_frame) / float(_maximum_recording_frames)

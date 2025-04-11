@@ -46,6 +46,8 @@ func _ready() -> void:
 
 
 func _apply_resource_values(resource : NPCResource) -> void:
+	if not npc_resource:
+		return
 	front_sprite_top.get_active_material(0).albedo_texture = resource.front_texture
 	front_sprite_bottom.get_active_material(0).albedo_texture = resource.front_texture
 	back_sprite_top.get_active_material(0).albedo_texture = resource.back_texture
