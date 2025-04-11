@@ -19,9 +19,10 @@ extends ReplayableCharacter
 @export var sit_angle_speed : float = 270.0
 @export var sit_body_slide_node : Node3D
 @export var sit_height : float = 0.1
+@export var stand_height : float = -0.378
 @export var sit_height_speed : float = 0.3
 
-var _target_sit_height : float = 0.0
+var _target_sit_height : float = stand_height
 var _target_sit_angle : float = 0.0
 
 func _save_state() -> Dictionary:
@@ -78,4 +79,4 @@ func start_sitting() -> void:
 func stop_sitting() -> void:
 	print("i am stopping to sit now")
 	_target_sit_angle = 0
-	_target_sit_height = 0
+	_target_sit_height = stand_height
