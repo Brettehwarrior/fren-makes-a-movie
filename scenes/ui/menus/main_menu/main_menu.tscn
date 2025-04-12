@@ -65,9 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475577, 0, -2.98666)
 
 [node name="NPC" parent="." instance=ExtResource("3_gm7d7")]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0.404377, 0.888256, -2.14699)
-npc_resource = null
 gravity = 0.0
-jump_speed = 8.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.114, 3.00541, -0.34147)
