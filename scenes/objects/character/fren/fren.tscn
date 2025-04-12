@@ -373,6 +373,7 @@ linear_spring_y/enabled = true
 linear_spring_z/enabled = true
 
 [node name="FrenModel" type="Node3D" parent="." node_paths=PackedStringArray("fren", "animation_player", "front_sprite_top", "sit_pivot", "sit_body_slide_node") groups=["replayable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00387359, 1.19209e-07, 0.0187931)
 script = ExtResource("5_ie4oo")
 fren = NodePath("..")
 animation_player = NodePath("ReplayableAnimationPlayer")
