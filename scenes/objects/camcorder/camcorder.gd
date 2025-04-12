@@ -8,6 +8,8 @@ extends Node3D
 
 @export var pickup_stream : AudioStream
 @export var drop_stream : AudioStream
+@export var start_recording_stream : AudioStream
+@export var stop_recording_stream : AudioStream
 
 var _parent_node : Node3D
 var _original_parent_node : Node
@@ -49,8 +51,10 @@ func _viewfinder_follow_player(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("camera_record") and not ReplayManager.is_recording():
+		AudioManager.play_oneshot_not_recorded(start_recording_stream, global_position, -2)
 		ReplayManager.start_recording()
 	elif event.is_action_released("camera_record") and ReplayManager.is_recording():
+		AudioManager.play_oneshot_not_recorded(stop_recording_stream, global_position, -2)
 		ReplayManager.stop_recording()
 
 

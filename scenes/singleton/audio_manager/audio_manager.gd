@@ -29,7 +29,7 @@ func play_oneshot_not_recorded(audio_stream : AudioStream, global_position : Vec
 	var audio_stream_player = AudioStreamPlayer3D.new()
 	audio_stream_player.stream = audio_stream
 	audio_stream_player.volume_db = volume_db
-	audio_stream_player.global_position = global_position
 	audio_stream_player.finished.connect(func():audio_stream_player.queue_free())
 	add_child(audio_stream_player)
+	audio_stream_player.global_position = global_position
 	audio_stream_player.play()

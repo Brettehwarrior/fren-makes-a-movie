@@ -1,12 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://cu7ubi8clos5r"]
+[gd_scene load_steps=21 format=3 uid="uid://cu7ubi8clos5r"]
 
 [ext_resource type="Script" uid="uid://rcl7uvpdhcbb" path="res://scenes/objects/camcorder/camcorder.gd" id="1_aa2of"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_fv2dh"]
 [ext_resource type="AudioStream" uid="uid://dqegna402jcju" path="res://scenes/objects/camcorder/sound/pickup.ogg" id="2_kp810"]
 [ext_resource type="Script" uid="uid://c2vn8vl8rrtb8" path="res://scenes/objects/camcorder/viewfinder_filter.gd" id="2_rwnbg"]
 [ext_resource type="AudioStream" uid="uid://bjljglvrvhrw8" path="res://scenes/objects/camcorder/sound/drop.ogg" id="3_vjjfh"]
+[ext_resource type="AudioStream" uid="uid://wvpawohscu7h" path="res://scenes/objects/camcorder/sound/camera_on.ogg" id="4_o2xt1"]
 [ext_resource type="Texture2D" uid="uid://bcbbqavsheh7c" path="res://scenes/objects/camcorder/model/camcorder.png" id="4_o6cc1"]
 [ext_resource type="ArrayMesh" uid="uid://bhwy7ieptpgoh" path="res://scenes/objects/camcorder/model/camcorder.obj" id="5_bdoeg"]
+[ext_resource type="AudioStream" uid="uid://cut1xanx4b4am" path="res://scenes/objects/camcorder/sound/camera_off.ogg" id="5_fxmys"]
 [ext_resource type="PackedScene" uid="uid://co4epjb213cq" path="res://scenes/ui/recording_progress_indicator/recording_progress_indicator.tscn" id="6_bdoeg"]
 [ext_resource type="Texture2D" uid="uid://86ahtbqmil13" path="res://scenes/objects/camcorder/model/camcorder_screen.png" id="6_opf5w"]
 [ext_resource type="ArrayMesh" uid="uid://bxs4fbwl46uvj" path="res://scenes/objects/camcorder/model/camcorder_screen.obj" id="7_kp810"]
@@ -47,6 +49,8 @@ viewfinder = NodePath("Model/Viewfinder")
 viewport = NodePath("Model/Viewfinder/ViewportScreenParent")
 pickup_stream = SubResource("AudioStreamRandomizer_o2xt1")
 drop_stream = SubResource("AudioStreamRandomizer_fxmys")
+start_recording_stream = ExtResource("4_o2xt1")
+stop_recording_stream = ExtResource("5_fxmys")
 
 [node name="Model" type="Node3D" parent="."]
 
