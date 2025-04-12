@@ -92,6 +92,7 @@ size = Vector2i(320, 240)
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
 
 [node name="RecordingProgressIndicator" parent="SubViewport/CanvasLayer" instance=ExtResource("6_bdoeg")]
+always_show_progress_bar = true
 
 [node name="Filter" type="CanvasLayer" parent="SubViewport"]
 script = ExtResource("2_rwnbg")
