@@ -29,7 +29,7 @@ func format_time(seconds: float) -> String:
 
 
 func _on_replay_manager_started_playback() -> void:
-	visible = false
+	queue_free()
 
 
 func _on_replay_manager_started_recording() -> void:
