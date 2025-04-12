@@ -3,6 +3,7 @@ extends Node
 signal started_recording
 signal stopped_recording
 signal started_playback
+signal playback_camera_created(viewport : SubViewport)
 
 
 @export var ticks_per_second : float = 60 
@@ -16,6 +17,7 @@ var _is_recording : bool = false
 var _is_playing_back : bool = false
 var _current_recording_frame : int = 0
 
+var _playback_subviewport : SubViewport
 var _playback_camera : Camera3D
 var _playback_object_id : String
 
@@ -161,14 +163,21 @@ func start_playback() -> void:
 
 
 func _setup_playback_camera() -> void:
+	_playback_subviewport = SubViewport.new()
+	_playback_subviewport.size = Vector2i(720, 480)
+	_playback_subviewport.name = "PlaybackViewport"
+	get_tree().root.add_child(_playback_subviewport) # TODO: For playing a second time this will have to be destroyed
+
 	_playback_camera = Camera3D.new()
 	_playback_camera.name = "PlaybackCamera"
 	_playback_camera.make_current()
-	get_tree().root.add_child(_playback_camera)
+	_playback_subviewport.add_child(_playback_camera)
 
 	var audio_listener = AudioListener3D.new()
 	audio_listener.make_current()
 	_playback_camera.add_child(audio_listener)
+
+	playback_camera_created.emit(_playback_subviewport)
 
 
 func is_playing_back() -> bool:

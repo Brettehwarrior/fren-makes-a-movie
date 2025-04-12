@@ -4,77 +4,98 @@
 [ext_resource type="Texture2D" uid="uid://dlaprxlk8bweb" path="res://scenes/playback/playback_ui/images/play_arrow.svg" id="1_w5pia"]
 [ext_resource type="Texture2D" uid="uid://dh2scsp7nggxy" path="res://scenes/playback/playback_ui/images/pause.svg" id="3_vm3ey"]
 
-[node name="PlaybackUI" type="Control" node_paths=PackedStringArray("play_pause_button", "frame_slider", "current_frame_label", "total_frames_label") groups=["tickable"]]
+[node name="PlaybackUI" type="Control" node_paths=PackedStringArray("video_playback_texture", "play_pause_button", "frame_slider", "current_frame_label", "total_frames_label") groups=["tickable"]]
 layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 script = ExtResource("1_3dwwi")
-play_pause_button = NodePath("MarginContainer/PanelContainer/MarginContainer/HBoxContainer/PlayPauseButton")
+video_playback_texture = NodePath("VideoPlaybackContainer/VideoPlaybackTexture")
+play_pause_button = NodePath("VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/PlayPauseButton")
 play_icon = ExtResource("1_w5pia")
 pause_icon = ExtResource("3_vm3ey")
-frame_slider = NodePath("MarginContainer/PanelContainer/MarginContainer/HBoxContainer/FrameSlider")
-current_frame_label = NodePath("MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer/CurrentFrameLabel")
-total_frames_label = NodePath("MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer/TotalFramesLabel")
+frame_slider = NodePath("VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider")
+current_frame_label = NodePath("VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer/CurrentFrameLabel")
+total_frames_label = NodePath("VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer/TotalFramesLabel")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+
+[node name="VideoPlaybackContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -38.0
+offset_right = 106.5
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoPlaybackTexture" type="TextureRect" parent="VideoPlaybackContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VideoPlaybackContainer"]
+layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="Timeline" type="PanelContainer" parent="VideoPlaybackContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VideoPlaybackContainer/MarginContainer/Timeline"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer"]
 layout_mode = 2
 
-[node name="PlayPauseButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="PlayPauseButton" type="Button" parent="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 icon = ExtResource("1_w5pia")
 
-[node name="FrameSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="FrameSlider" type="HSlider" parent="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Frame"
 
-[node name="CurrentFrameLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="CurrentFrameLabel" type="Label" parent="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "999"
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "/"
 
-[node name="TotalFramesLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="TotalFramesLabel" type="Label" parent="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "999"
 
-[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/PlayPauseButton" to="." method="_on_play_pause_button_pressed"]
-[connection signal="drag_started" from="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_drag_started"]
-[connection signal="value_changed" from="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_value_changed"]
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[connection signal="pressed" from="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/PlayPauseButton" to="." method="_on_play_pause_button_pressed"]
+[connection signal="drag_started" from="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_drag_started"]
+[connection signal="value_changed" from="VideoPlaybackContainer/MarginContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_value_changed"]

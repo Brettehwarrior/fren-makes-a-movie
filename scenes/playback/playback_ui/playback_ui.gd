@@ -1,5 +1,7 @@
 extends Control
 
+@export var video_playback_texture : TextureRect
+
 @export var play_pause_button : Button
 @export var play_icon : Texture2D
 @export var pause_icon : Texture2D
@@ -14,6 +16,11 @@ var _is_playing : bool = false
 func _ready() -> void:
 	visible = false
 	ReplayManager.started_playback.connect(_initialize)
+	ReplayManager.playback_camera_created.connect(_on_playback_camera_created)
+
+
+func _on_playback_camera_created(subviewport : SubViewport) -> void:
+	video_playback_texture.texture = subviewport.get_texture()
 
 
 func _initialize() -> void:
