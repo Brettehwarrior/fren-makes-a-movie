@@ -1,8 +1,56 @@
 extends Node3D
 
+@export var confirm_ui : Node # Are you sure?
+@export var idiot_ui : Node # You haven't filmed anything yet, dummy
 
-func _on_area_3d_body_entered(body:Node3D) -> void:
-	if not body is Fren:
-		return
+var _dialog_showing : bool = false
+
+
+func _ready() -> void:
+	_hide_confirm()
+	_hide_idiot()
+
+
+func _on_interaction_triggered() -> void:
+	_show_confirm()
+
+
+func _show_confirm() -> void:
+	if not _dialog_showing:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		confirm_ui.show()
+		_dialog_showing = true
+	
+
+func _hide_confirm() -> void:
+	_dialog_showing = false
+	confirm_ui.hide()
+	
+	
+func _show_idiot() -> void:
+	_dialog_showing = true
+	idiot_ui.show()
+	
+
+func _hide_idiot() -> void:
+	_dialog_showing = false
+	idiot_ui.hide()
+
+
+func _on_complete_movie_pressed() -> void:
 	if ReplayManager.get_current_recording_frame() > 0:
+		_hide_confirm()
 		ReplayManager.start_playback()
+	else:
+		_hide_confirm()
+		_show_idiot()
+
+
+func _on_continue_filming_pressed() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	_hide_confirm()
+
+
+func _on_forgor_pressed() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	_hide_idiot()
