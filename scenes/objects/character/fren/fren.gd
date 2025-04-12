@@ -4,6 +4,7 @@ extends ReplayableCharacter
 @export var camcorder_hold_position : Node3D
 @export var camera_pivot : Node3D
 @export var camera : Node3D
+@export var model : FrenModel
 
 # TODO: Get Camcorder in smarter way
 @export var camcorder : Camcorder
@@ -31,3 +32,11 @@ func _process_camera_rotation (delta : float) -> void:
 	camera_pivot.rotation.y = rotation.y
 	camera.rotate_x(-look_input.y * delta)
 	camera.rotation.x = clampf(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+
+func start_sitting() -> void:
+	model.start_sitting()
+
+
+func stop_sitting() -> void:
+	model.stop_sitting()

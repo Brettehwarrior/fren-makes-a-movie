@@ -293,11 +293,12 @@ albedo_texture = ExtResource("6_3nfu3")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apg5y"]
 
-[node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("camcorder_hold_position", "camera_pivot", "camera", "input") groups=["player", "replayable"]]
+[node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("camcorder_hold_position", "camera_pivot", "camera", "model", "input") groups=["player", "replayable"]]
 script = ExtResource("1_vfnkm")
 camcorder_hold_position = NodePath("CameraPivot/Camera3D/CamcorderHoldPoint")
 camera_pivot = NodePath("CameraPivot")
 camera = NodePath("CameraPivot/Camera3D")
+model = NodePath("FrenModel")
 input = NodePath("PlayerInput")
 walk_acceleration = 700.0
 max_walk_speed = 5000.0
@@ -371,7 +372,7 @@ linear_spring_x/enabled = true
 linear_spring_y/enabled = true
 linear_spring_z/enabled = true
 
-[node name="FrenModel" type="Node3D" parent="." node_paths=PackedStringArray("fren", "animation_player", "front_sprite_top") groups=["replayable"]]
+[node name="FrenModel" type="Node3D" parent="." node_paths=PackedStringArray("fren", "animation_player", "front_sprite_top", "sit_pivot", "sit_body_slide_node") groups=["replayable"]]
 script = ExtResource("5_ie4oo")
 fren = NodePath("..")
 animation_player = NodePath("ReplayableAnimationPlayer")
@@ -379,6 +380,8 @@ open_mouth_mic_threshold = 0.2
 normal_texture = ExtResource("5_wj63f")
 speaking_texture = ExtResource("7_we6ol")
 front_sprite_top = NodePath("SpriteParentParent/SpriteParent/Top/FrontSpriteTop")
+sit_pivot = NodePath("SpriteParentParent/SpriteParent/Bottom")
+sit_body_slide_node = NodePath("SpriteParentParent/SpriteParent")
 
 [node name="ReplayableAnimationPlayer" type="AnimationPlayer" parent="FrenModel" groups=["replayable"]]
 libraries = {
