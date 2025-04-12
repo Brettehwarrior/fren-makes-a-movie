@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7iyqulbaea21"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f8cub"]
+sky_top_color = Color(0.364199, 0.534777, 0.666339, 1)
+sky_horizon_color = Color(0.794663, 0.80117, 0.811447, 1)
+ground_bottom_color = Color(0.175959, 0.178186, 0.141758, 1)
+
+[sub_resource type="Sky" id="Sky_vsdhb"]
+sky_material = SubResource("ProceduralSkyMaterial_f8cub")
+
+[sub_resource type="Environment" id="Environment_thc71"]
+background_mode = 2
+sky = SubResource("Sky_vsdhb")
+ambient_light_source = 2
+ambient_light_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[node name="Theater" type="Node3D"]
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_thc71")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.730019, 0.469531, -0.496601, 0, 0.726635, 0.687024, 0.683427, -0.501541, 0.530457, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Lobby" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Lobby"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(9.07642, 1, 6.33984)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Lobby"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84076, 0)
+size = Vector3(9.46875, 5.68152, 7.11816)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Lobby/CSGBox3D2"]
+operation = 2
+size = Vector3(9.03101, 5.3877, 6.5)
