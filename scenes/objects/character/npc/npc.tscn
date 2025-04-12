@@ -258,6 +258,7 @@ albedo_texture = ExtResource("4_uimbq")
 
 [node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("front_sprite_top", "front_sprite_bottom", "back_sprite_top", "back_sprite_bottom", "quote_label", "sit_pivot", "sit_body_slide_node", "input") groups=["replayable"]]
 script = ExtResource("1_uimbq")
+npc_resource = 0.0
 front_sprite_top = NodePath("Model/SpriteParentParent/SpriteParent/Top/FrontSpriteTop")
 front_sprite_bottom = NodePath("Model/SpriteParentParent/SpriteParent/Bottom/FrontSpriteBottom")
 back_sprite_top = NodePath("Model/SpriteParentParent/SpriteParent/Top/BackSpriteTop")
@@ -266,8 +267,8 @@ quote_label = NodePath("Label3D")
 poke_sound = SubResource("AudioStreamRandomizer_7elxb")
 sit_pivot = NodePath("Model/SpriteParentParent/SpriteParent/Bottom")
 sit_body_slide_node = NodePath("Model/SpriteParentParent/SpriteParent")
-stand_height = null
 input = NodePath("CharacterInput")
+jump_speed = null
 walk_acceleration = 700.0
 max_walk_speed = 5000.0
 walk_friction = 0.95

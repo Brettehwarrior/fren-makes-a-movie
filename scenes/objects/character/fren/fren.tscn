@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://uefp4qdx4sqi"]
+[gd_scene load_steps=33 format=3 uid="uid://uefp4qdx4sqi"]
 
 [ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://ba83woyyx74vy" path="res://assets/sounds/boing.wav" id="8_f4rrs"]
 [ext_resource type="Script" uid="uid://b1txlrrc36s2o" path="res://scenes/objects/character/fren/physics_object_holder.gd" id="8_qcc3i"]
 [ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="9_4hyim"]
+[ext_resource type="ArrayMesh" uid="uid://bbtgcsyxs7o0u" path="res://assets/models/plane_30_top.mtl.obj" id="19_4ubh3"]
+[ext_resource type="ArrayMesh" uid="uid://v7i30h6ljmvi" path="res://assets/models/plane_30_bottom.mtl.obj" id="20_s7h14"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pbddu"]
 random_pitch = 1.22
@@ -269,6 +271,26 @@ _data = {
 &"idle": SubResource("Animation_yyvds")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6lmp"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("5_wj63f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkcol"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("6_3nfu3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncwuc"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("5_wj63f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_478ll"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("6_3nfu3")
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apg5y"]
 
 [node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("camcorder_hold_position", "camera_pivot", "camera", "input") groups=["player", "replayable"]]
@@ -349,14 +371,14 @@ linear_spring_x/enabled = true
 linear_spring_y/enabled = true
 linear_spring_z/enabled = true
 
-[node name="FrenModel" type="Node3D" parent="." node_paths=PackedStringArray("fren", "animation_player", "front_sprite") groups=["replayable"]]
+[node name="FrenModel" type="Node3D" parent="." node_paths=PackedStringArray("fren", "animation_player", "front_sprite_top") groups=["replayable"]]
 script = ExtResource("5_ie4oo")
 fren = NodePath("..")
 animation_player = NodePath("ReplayableAnimationPlayer")
 open_mouth_mic_threshold = 0.2
 normal_texture = ExtResource("5_wj63f")
 speaking_texture = ExtResource("7_we6ol")
-front_sprite = NodePath("SpriteParentParent/SpriteParent/FrontSprite")
+front_sprite_top = NodePath("SpriteParentParent/SpriteParent/Top/FrontSpriteTop")
 
 [node name="ReplayableAnimationPlayer" type="AnimationPlayer" parent="FrenModel" groups=["replayable"]]
 libraries = {
@@ -368,19 +390,40 @@ metadata/_custom_type_script = "uid://fummbphajlig"
 [node name="SpriteParentParent" type="Node3D" parent="FrenModel"]
 
 [node name="SpriteParent" type="Node3D" parent="FrenModel/SpriteParentParent"]
-transform = Transform3D(-0.392617, 0, -7.45058e-09, 0, 0.392617, 0, 7.45058e-09, 0, -0.392617, 0, 0, 0)
+transform = Transform3D(-0.392617, 0, -7.45058e-09, 0, 0.392617, 0, 7.45058e-09, 0, -0.392617, 0, -0.37779, 0)
 
-[node name="FrontSprite" type="Sprite3D" parent="FrenModel/SpriteParentParent/SpriteParent"]
-layers = 262144
-double_sided = false
-texture = ExtResource("5_wj63f")
+[node name="Top" type="Node3D" parent="FrenModel/SpriteParentParent/SpriteParent"]
+transform = Transform3D(1, 0, 1.77636e-15, 0, 1, 0, -1.77636e-15, 0, 1, 0, 0, 0)
 
-[node name="BackSprite" type="Sprite3D" parent="FrenModel/SpriteParentParent/SpriteParent"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+[node name="FrontSpriteTop" type="MeshInstance3D" parent="FrenModel/SpriteParentParent/SpriteParent/Top"]
+transform = Transform3D(2.54701, -4.83339e-08, 4.83339e-08, 4.83339e-08, -1.11333e-07, -2.54701, 4.83339e-08, 2.54701, -1.11333e-07, 0, 0, 0)
 layers = 262144
-flip_h = true
-double_sided = false
-texture = ExtResource("6_3nfu3")
+mesh = ExtResource("19_4ubh3")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_d6lmp")
+
+[node name="BackSpriteTop" type="MeshInstance3D" parent="FrenModel/SpriteParentParent/SpriteParent/Top"]
+transform = Transform3D(-2.54701, -1.74333e-07, -4.83339e-08, 4.83339e-08, -1.11333e-07, -2.54701, 1.74333e-07, -2.54701, 1.11333e-07, 0, 0, 0)
+layers = 262144
+mesh = ExtResource("19_4ubh3")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vkcol")
+
+[node name="Bottom" type="Node3D" parent="FrenModel/SpriteParentParent/SpriteParent"]
+
+[node name="FrontSpriteBottom" type="MeshInstance3D" parent="FrenModel/SpriteParentParent/SpriteParent/Bottom"]
+transform = Transform3D(2.54701, -4.83339e-08, 4.83339e-08, 4.83339e-08, -1.11333e-07, -2.54701, 4.83339e-08, 2.54701, -1.11333e-07, 0, 0, 0)
+layers = 262144
+mesh = ExtResource("20_s7h14")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ncwuc")
+
+[node name="BackSpriteBottom" type="MeshInstance3D" parent="FrenModel/SpriteParentParent/SpriteParent/Bottom"]
+transform = Transform3D(-2.54701, 2.71001e-07, -4.83339e-08, 4.83339e-08, -1.11333e-07, -2.54701, -2.71001e-07, -2.54701, 1.11333e-07, 0, 0, 0)
+layers = 262144
+mesh = ExtResource("20_s7h14")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_478ll")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_apg5y")
