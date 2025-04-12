@@ -9,11 +9,19 @@ func _ready() -> void:
 	EventBus.physics_object_interacted_with.connect(_on_physics_object_interacted_with)
 
 
+func _input(event: InputEvent) -> void:
+	if ReplayManager.is_playing_back():
+		return
+	
+	if event.is_action_released("interact"):
+		_drop_object()
+
+
 func _on_physics_object_interacted_with(object : ReplayableRigidBody3D) -> void:
 	if _currently_held_object == null:
 		_grab_object(object)
-	else:
-		_drop_object()
+	# else:
+	# 	_drop_object()
 
 func _grab_object(object : ReplayableRigidBody3D) -> void:
 	_currently_held_object = object

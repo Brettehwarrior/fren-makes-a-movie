@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdqqbpodeexhl"]
+
+[ext_resource type="Script" uid="uid://b5jtr3qkgcnjm" path="res://scenes/objects/physics/grabbable_rigid_body.gd" id="1_f6v67"]
+[ext_resource type="PackedScene" uid="uid://bo14vsfgv7h33" path="res://scenes/objects/triggers/interaction/interaction_cube.tscn" id="2_f6v67"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_44fru"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_44fru"]
+size = Vector3(1.24634, 2.09958, 0.113281)
+
+[node name="Door" type="Node3D"]
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(0.866025, -0.5, 0, -2.18557e-08, -3.78552e-08, 1, -0.5, -0.866025, -4.37114e-08, -0.655664, 0.917534, 0)
+node_b = NodePath("../RigidBodyDoor")
+
+[node name="RigidBodyDoor" type="RigidBody3D" parent="." groups=["replayable"]]
+script = ExtResource("1_f6v67")
+metadata/_custom_type_script = "uid://cmpp18xjewi4y"
+
+[node name="Model" type="Node3D" parent="RigidBodyDoor"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBodyDoor/Model"]
+transform = Transform3D(1.25922, 0, 0, 0, 2.12431, 0, 0, 0, 0.120828, 0, 1.09152, 0)
+mesh = SubResource("BoxMesh_44fru")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBodyDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09465, 0)
+shape = SubResource("BoxShape3D_44fru")
+
+[node name="InteractionCube" parent="RigidBodyDoor" instance=ExtResource("2_f6v67")]
+transform = Transform3D(0.740427, 0, 0, 0, 1.23806, 0, 0, 0, 0.0884994, 0, 1.08625, 0)
+interaction_name = "grab (sort of)"
+
+[connection signal="interaction_triggered" from="RigidBodyDoor/InteractionCube" to="RigidBodyDoor" method="_on_interaction_cube_interaction_triggered"]

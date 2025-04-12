@@ -5,7 +5,7 @@ signal interaction_range_entered
 signal interaction_range_exited
 
 @export var interaction_name : String = "interact"
-@export var interaction_keybind : String = "E"
+@export var interaction_keybind : String = "LMB"
 @export var interaction_input_action : String = "interact"
 
 func on_interaction_triggered():
