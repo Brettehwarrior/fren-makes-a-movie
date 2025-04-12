@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cu7ubi8clos5r"]
+[gd_scene load_steps=22 format=3 uid="uid://cu7ubi8clos5r"]
 
 [ext_resource type="Script" uid="uid://rcl7uvpdhcbb" path="res://scenes/objects/camcorder/camcorder.gd" id="1_aa2of"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_fv2dh"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://co4epjb213cq" path="res://scenes/ui/recording_progress_indicator/recording_progress_indicator.tscn" id="6_bdoeg"]
 [ext_resource type="Texture2D" uid="uid://86ahtbqmil13" path="res://scenes/objects/camcorder/model/camcorder_screen.png" id="6_opf5w"]
 [ext_resource type="ArrayMesh" uid="uid://bxs4fbwl46uvj" path="res://scenes/objects/camcorder/model/camcorder_screen.obj" id="7_kp810"]
+[ext_resource type="PackedScene" uid="uid://h8sowgw3wb6k" path="res://scenes/objects/camcorder/border.tscn" id="11_fxmys"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o2xt1"]
 random_pitch = 1.14
@@ -93,6 +94,8 @@ size = Vector2i(320, 240)
 
 [node name="RecordingProgressIndicator" parent="SubViewport/CanvasLayer" instance=ExtResource("6_bdoeg")]
 always_show_progress_bar = true
+
+[node name="Border" parent="SubViewport/CanvasLayer" instance=ExtResource("11_fxmys")]
 
 [node name="Filter" type="CanvasLayer" parent="SubViewport"]
 script = ExtResource("2_rwnbg")
