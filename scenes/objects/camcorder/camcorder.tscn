@@ -59,7 +59,6 @@ transform = Transform3D(-2.26582e-09, 0, -0.051836, 0, 0.051836, 0, 0.051836, 0,
 transform = Transform3D(-5.82673e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1.333, -4.37114e-08, 1.91069e-15, 0, 0, 0)
 layers = 524288
 mesh = SubResource("PlaneMesh_o6cc1")
-skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Camcorder/Model/Viewfinder/CamcorderScreen")
 surface_material_override/0 = SubResource("StandardMaterial3D_bdoeg")
 
 [node name="Tripod" type="Node3D" parent="."]
