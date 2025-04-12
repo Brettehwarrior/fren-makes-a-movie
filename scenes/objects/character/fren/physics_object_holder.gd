@@ -18,10 +18,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_physics_object_interacted_with(object : ReplayableRigidBody3D) -> void:
-	if _currently_held_object == null:
-		_grab_object(object)
-	# else:
-	# 	_drop_object()
+	_grab_object(object)
 
 func _grab_object(object : ReplayableRigidBody3D) -> void:
 	_currently_held_object = object

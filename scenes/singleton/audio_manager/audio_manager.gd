@@ -14,6 +14,8 @@ func _ready() -> void:
 
 
 func play_oneshot(audio_stream : AudioStream, play_position : Vector3, volume_db : float = 1) -> void:
+	if ReplayManager.is_playing_back():
+		return
 	var stream_player : AudioStreamPlayer3D = _audio_stream_players[_audio_stream_player_index]
 	stream_player.stream = audio_stream
 	stream_player.volume_db = volume_db

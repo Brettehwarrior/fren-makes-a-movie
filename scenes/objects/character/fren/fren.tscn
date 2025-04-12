@@ -1,9 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://uefp4qdx4sqi"]
+[gd_scene load_steps=27 format=3 uid="uid://uefp4qdx4sqi"]
 
 [ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
 [ext_resource type="Script" uid="uid://clhekndnjdutt" path="res://scenes/objects/character/fren/player_input.gd" id="2_shp5y"]
-[ext_resource type="Script" uid="uid://k3nx3c5vkyrt" path="res://scenes/objects/character/fren/fren_audio_player.gd" id="3_pbddu"]
+[ext_resource type="Script" uid="uid://k3nx3c5vkyrt" path="res://scenes/objects/character/base/character_audio_player.gd" id="3_pbddu"]
 [ext_resource type="Script" uid="uid://bdhk2p7abtyfv" path="res://scenes/objects/character/fren/microphone_recording_replayer.gd" id="3_r7wf4"]
 [ext_resource type="AudioStream" uid="uid://dlcwml6lhebiw" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart0.ogg" id="4_nuk4b"]
 [ext_resource type="Script" uid="uid://bnfqrb8n758ev" path="res://scenes/objects/character/fren/noise_bob.gd" id="4_yyvds"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://d02ckrycdd4rv" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart2.ogg" id="6_f4rrs"]
 [ext_resource type="AudioStream" uid="uid://br6so1qxv2j7b" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart4.ogg" id="7_63bhk"]
 [ext_resource type="Texture2D" uid="uid://cg08640xi5aqd" path="res://scenes/objects/character/fren/images/fren_open_mouth_style.png" id="7_we6ol"]
+[ext_resource type="AudioStream" uid="uid://ba83woyyx74vy" path="res://assets/sounds/boing.wav" id="8_f4rrs"]
 [ext_resource type="Script" uid="uid://b1txlrrc36s2o" path="res://scenes/objects/character/fren/physics_object_holder.gd" id="8_qcc3i"]
 [ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="9_4hyim"]
 
@@ -25,6 +26,11 @@ stream_0/stream = ExtResource("4_nuk4b")
 stream_1/stream = ExtResource("5_qcc3i")
 stream_2/stream = ExtResource("6_f4rrs")
 stream_3/stream = ExtResource("7_63bhk")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_63bhk"]
+random_pitch = 1.31
+streams_count = 1
+stream_0/stream = ExtResource("8_f4rrs")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qcc3i"]
 radius = 0.1
@@ -280,9 +286,11 @@ metadata/_custom_type_script = "uid://c0trp0ylda0h0"
 [node name="PlayerInput" type="Node" parent="."]
 script = ExtResource("2_shp5y")
 
-[node name="AudioPlayer" type="Node3D" parent="."]
+[node name="AudioPlayer" type="Node3D" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("3_pbddu")
+character = NodePath("..")
 footstep_stream = SubResource("AudioStreamRandomizer_pbddu")
+jump_stream = SubResource("AudioStreamRandomizer_63bhk")
 
 [node name="MicrophoneRecordingReplayer" type="Node3D" parent="." node_paths=PackedStringArray("voice_stream_player") groups=["replayable"]]
 script = ExtResource("3_r7wf4")

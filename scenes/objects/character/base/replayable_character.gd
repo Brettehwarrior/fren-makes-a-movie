@@ -3,11 +3,14 @@ extends CharacterBody3D
 
 signal started_walking
 signal stopped_walking
+signal jumped
+
 var _is_walking : bool = false
 var _was_walking_last_check : bool = false
 
 @export var input : CharacterInput
 @export var gravity : float = -50
+@export var jump_speed : float = 8
 @export var walk_acceleration : float
 @export var max_walk_speed : float
 @export_range(0, 1) var walk_friction : float
@@ -44,6 +47,9 @@ func _process_vertical_velocity(delta : float) -> void:
 	velocity.y += gravity * delta
 	if is_on_floor():
 		velocity.y = 0
+		if input.is_jump_just_pressed():
+			velocity.y = jump_speed
+			jumped.emit()
 
 
 func _process_horizontal_velocity(delta : float) -> void:

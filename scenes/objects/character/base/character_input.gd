@@ -12,3 +12,7 @@ func get_look_input() -> Vector2:
 
 func is_camera_drop_button_just_presed() -> bool:
 	return false
+
+
+func is_jump_just_pressed() -> bool:
+	return false
