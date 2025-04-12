@@ -348,7 +348,7 @@ collide_with_areas = true
 script = ExtResource("5_svos0")
 
 [node name="CamcorderHoldPoint" type="Node3D" parent="CameraPivot/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192225, -0.11995, -0.342329)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192225, -0.0758141, -0.269213)
 script = ExtResource("4_yyvds")
 bob_speed = 15.0
 bob_intensity = 0.04

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu7ubi8clos5r"]
+[gd_scene load_steps=14 format=3 uid="uid://cu7ubi8clos5r"]
 
 [ext_resource type="Script" uid="uid://rcl7uvpdhcbb" path="res://scenes/objects/camcorder/camcorder.gd" id="1_aa2of"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_fv2dh"]
@@ -14,8 +14,16 @@ albedo_texture = ExtResource("4_o6cc1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2xt1"]
 albedo_texture = ExtResource("6_opf5w")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cfngs"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_o6cc1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o6cc1"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdoeg"]
+resource_local_to_scene = true
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_o6cc1")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_aa2of"]
 
@@ -23,7 +31,7 @@ viewport_path = NodePath("SubViewport")
 script = ExtResource("1_aa2of")
 camera = NodePath("SubViewport/Camera3D")
 viewfinder = NodePath("Model/Viewfinder")
-viewport = NodePath("Model/Viewfinder/CamcorderScreen/Viewport")
+viewport = NodePath("Model/Viewfinder/CamcorderScreen/ViewportScreenParent")
 
 [node name="Model" type="Node3D" parent="."]
 
@@ -49,10 +57,15 @@ material_override = SubResource("StandardMaterial3D_o2xt1")
 mesh = ExtResource("7_kp810")
 skeleton = NodePath("../../..")
 
-[node name="Viewport" type="Sprite3D" parent="Model/Viewfinder/CamcorderScreen"]
-transform = Transform3D(-1.02406e-07, 0, 0.91342, 0, 2.34278, 0, -2.34278, 0, -3.99268e-08, -1.30898, -0.0216663, 2.18129)
+[node name="ViewportScreenParent" type="Node3D" parent="Model/Viewfinder/CamcorderScreen"]
+transform = Transform3D(0.569715, 0, 1.77636e-15, 0, 0.569715, 0, -1.77636e-15, 0, 0.569715, -1.30906, -0.0294153, 2.15407)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model/Viewfinder/CamcorderScreen/ViewportScreenParent"]
+transform = Transform3D(-5.82673e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1.333, -4.37114e-08, 1.91069e-15, 0, 0, 0)
 layers = 524288
-texture = SubResource("ViewportTexture_cfngs")
+mesh = SubResource("PlaneMesh_o6cc1")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Camcorder/Model/Viewfinder/CamcorderScreen")
+surface_material_override/0 = SubResource("StandardMaterial3D_bdoeg")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Model/Viewfinder"]
 transform = Transform3D(0.614372, 0, 0, 0, 1, 0, 0, 0, 1, -0.0173115, 0, 0)
@@ -66,7 +79,7 @@ transform = Transform3D(0.0298916, 0, 0, 0, 0.592619, 0, 0, 0, 0.0313932, 0, -0.
 mesh = SubResource("CylinderMesh_aa2of")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(64, 48)
+size = Vector2i(320, 240)
 
 [node name="Filter" type="CanvasLayer" parent="SubViewport"]
 script = ExtResource("2_rwnbg")
