@@ -6,6 +6,9 @@ extends Node3D
 @export var viewport : Node3D
 @export var fren : Node3D
 
+@export var pickup_stream : AudioStream
+@export var drop_stream : AudioStream
+
 var _parent_node : Node3D
 var _original_parent_node : Node
 
@@ -43,6 +46,7 @@ func _viewfinder_follow_player(delta: float) -> void:
 		
 		viewfinder.rotation_degrees.x = lerp(viewfinder.rotation_degrees.x, target_rotation, delta * 10.0)
 
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("camera_record") and not ReplayManager.is_recording():
 		ReplayManager.start_recording()
@@ -65,6 +69,7 @@ func _load_state(state : Dictionary) -> void:
 func reset_follow_nodes() -> void:
 	_parent_node = _original_parent_node
 	reparent(_original_parent_node)
+	AudioManager.play_oneshot(drop_stream, global_position)
 	EventBus.camcorder_dropped.emit()
 
 func set_follow_position_node(node : Node3D) -> void:
@@ -72,6 +77,7 @@ func set_follow_position_node(node : Node3D) -> void:
 	reparent(node)
 	position = Vector3.ZERO
 	rotation = Vector3.ZERO
+	AudioManager.play_oneshot(pickup_stream, global_position)
 	EventBus.camcorder_picked_up.emit()
 
 
