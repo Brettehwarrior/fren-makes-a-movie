@@ -65,12 +65,14 @@ func _load_state(state : Dictionary) -> void:
 func reset_follow_nodes() -> void:
 	_parent_node = _original_parent_node
 	reparent(_original_parent_node)
+	EventBus.camcorder_dropped.emit()
 
 func set_follow_position_node(node : Node3D) -> void:
 	_parent_node = node
 	reparent(node)
 	position = Vector3.ZERO
 	rotation = Vector3.ZERO
+	EventBus.camcorder_picked_up.emit()
 
 
 func is_held() -> bool:

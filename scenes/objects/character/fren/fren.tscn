@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://uefp4qdx4sqi"]
+[gd_scene load_steps=39 format=3 uid="uid://uefp4qdx4sqi"]
 
 [ext_resource type="Script" uid="uid://cdf2k03bg8rf8" path="res://scenes/objects/character/fren/fren.gd" id="1_vfnkm"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_7jc7l"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bnfqrb8n758ev" path="res://scenes/objects/character/fren/noise_bob.gd" id="4_yyvds"]
 [ext_resource type="Script" uid="uid://bvql7tsjyo5pt" path="res://scenes/objects/character/fren/fren_model.gd" id="5_ie4oo"]
 [ext_resource type="AudioStream" uid="uid://bvwidkrdv5r2b" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart1.ogg" id="5_qcc3i"]
-[ext_resource type="Script" path="res://scenes/objects/character/fren/interaction_raycast.gd" id="5_svos0"]
+[ext_resource type="Script" uid="uid://b3llji6e8hblr" path="res://scenes/objects/character/fren/interaction_raycast.gd" id="5_svos0"]
 [ext_resource type="Texture2D" uid="uid://cbl7uy6ragqgx" path="res://scenes/objects/character/fren/images/fren.png" id="5_wj63f"]
 [ext_resource type="Texture2D" uid="uid://bo1pwslwavdxq" path="res://scenes/objects/character/fren/images/fren_back.png" id="6_3nfu3"]
 [ext_resource type="AudioStream" uid="uid://d02ckrycdd4rv" path="res://scenes/objects/character/fren/sound/squidward_mouth_fart2.ogg" id="6_f4rrs"]
@@ -18,6 +18,10 @@
 [ext_resource type="AudioStream" uid="uid://ba83woyyx74vy" path="res://assets/sounds/boing.wav" id="8_f4rrs"]
 [ext_resource type="Script" uid="uid://b1txlrrc36s2o" path="res://scenes/objects/character/fren/physics_object_holder.gd" id="8_qcc3i"]
 [ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="9_4hyim"]
+[ext_resource type="Texture2D" uid="uid://byiislknm03jh" path="res://scenes/objects/character/fren/images/frenhand.png" id="13_s7h14"]
+[ext_resource type="Script" uid="uid://nfwydv3ippb6" path="res://scenes/objects/character/fren/hand_plane.gd" id="14_d6lmp"]
+[ext_resource type="Texture2D" uid="uid://bfnobymuypive" path="res://scenes/objects/character/fren/images/frenhand_record_off.png" id="15_ncwuc"]
+[ext_resource type="Texture2D" uid="uid://cybyag2ld8o6t" path="res://scenes/objects/character/fren/images/frenhand_record_on.png" id="16_478ll"]
 [ext_resource type="ArrayMesh" uid="uid://bbtgcsyxs7o0u" path="res://assets/models/plane_30_top.mtl.obj" id="19_4ubh3"]
 [ext_resource type="ArrayMesh" uid="uid://v7i30h6ljmvi" path="res://assets/models/plane_30_bottom.mtl.obj" id="20_s7h14"]
 
@@ -33,6 +37,12 @@ stream_3/stream = ExtResource("7_63bhk")
 random_pitch = 1.31
 streams_count = 1
 stream_0/stream = ExtResource("8_f4rrs")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p2c81"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7h14"]
+transparency = 1
+albedo_texture = ExtResource("13_s7h14")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qcc3i"]
 radius = 0.1
@@ -352,6 +362,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192225, -0.0758141, -0.2692
 script = ExtResource("4_yyvds")
 bob_speed = 15.0
 bob_intensity = 0.04
+
+[node name="HandPlane" type="MeshInstance3D" parent="CameraPivot/Camera3D/CamcorderHoldPoint"]
+transform = Transform3D(0.163699, -0.0551497, -0.0611582, -0.0254626, 0.095523, -0.154293, 0.0783164, 0.146333, 0.0776703, -0.0247952, -0.0884363, -0.0703919)
+layers = 524288
+mesh = SubResource("PlaneMesh_p2c81")
+surface_material_override/0 = SubResource("StandardMaterial3D_s7h14")
+script = ExtResource("14_d6lmp")
+holding_camera_texture = ExtResource("13_s7h14")
+remote_camera_off_texture = ExtResource("15_ncwuc")
+remote_camera_on_texture = ExtResource("16_478ll")
 
 [node name="PhysicsObjectHolder" type="Node3D" parent="CameraPivot/Camera3D" node_paths=PackedStringArray("joint")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.174243, -0.979808)
