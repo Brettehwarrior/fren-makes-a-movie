@@ -16,7 +16,7 @@ func _on_interaction_triggered() -> void:
 
 
 func _show_confirm() -> void:
-	if not _dialog_showing:
+	if not _dialog_showing and not ReplayManager.is_playing_back():
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		confirm_ui.show()
 		_dialog_showing = true
@@ -28,8 +28,9 @@ func _hide_confirm() -> void:
 	
 	
 func _show_idiot() -> void:
-	_dialog_showing = true
-	idiot_ui.show()
+	if not ReplayManager.is_playing_back():
+		_dialog_showing = true
+		idiot_ui.show()
 	
 
 func _hide_idiot() -> void:

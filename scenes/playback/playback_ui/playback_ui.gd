@@ -2,6 +2,8 @@ extends Control
 
 @export var video_playback_texture : TextureRect
 
+@export var timeline : Control
+
 @export var play_pause_button : Button
 @export var play_icon : Texture2D
 @export var pause_icon : Texture2D
@@ -11,13 +13,28 @@ extends Control
 @export var total_frames_label : Label
 
 var _is_playing : bool = false
+var _timeline_opacity : float
+var _timeline_hide_cooldown : float = 1.0
+var _timeline_hide_timer : float
 
 
 func _ready() -> void:
 	visible = false
 	ReplayManager.started_playback.connect(_initialize)
 	ReplayManager.playback_camera_created.connect(_on_playback_camera_created)
+	
 
+func _process(delta: float) -> void:
+	if ReplayManager.is_playing_back() and timeline.get_global_rect().has_point(timeline.get_global_mouse_position()):
+		_timeline_opacity = 1.0
+		_timeline_hide_timer = _timeline_hide_cooldown
+	else:
+		if _timeline_hide_timer <= 0:
+			_timeline_opacity = 0.0
+		else:
+			_timeline_hide_timer -= delta
+	
+	timeline.modulate.a = lerp(timeline.modulate.a, _timeline_opacity, delta * 20)
 
 func _on_playback_camera_created(subviewport : SubViewport) -> void:
 	video_playback_texture.texture = subviewport.get_texture()

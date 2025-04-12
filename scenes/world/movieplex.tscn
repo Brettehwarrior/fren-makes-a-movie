@@ -548,7 +548,7 @@ transform = Transform3D(0.846193, 0, 0.532876, 0, 1, 0, -0.532876, 0, 0.846193, 
 fren = NodePath("../Fren")
 
 [node name="Fren" parent="." node_paths=PackedStringArray("camcorder") instance=ExtResource("10_eicng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00851, 0.179236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34632, 49.1541)
 camcorder = NodePath("../Camcorder")
 walk_acceleration = 1000.0
 max_walk_speed = 10000.0
