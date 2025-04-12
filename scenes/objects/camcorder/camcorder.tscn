@@ -1,11 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu7ubi8clos5r"]
+[gd_scene load_steps=21 format=3 uid="uid://cu7ubi8clos5r"]
 
 [ext_resource type="Script" uid="uid://rcl7uvpdhcbb" path="res://scenes/objects/camcorder/camcorder.gd" id="1_aa2of"]
 [ext_resource type="Script" uid="uid://dvkql0y4ma8qm" path="res://scenes/objects/character/fren/smooth_follow.gd" id="2_fv2dh"]
+[ext_resource type="AudioStream" uid="uid://dqegna402jcju" path="res://scenes/objects/camcorder/sound/pickup.ogg" id="2_kp810"]
 [ext_resource type="Script" uid="uid://c2vn8vl8rrtb8" path="res://scenes/objects/camcorder/viewfinder_filter.gd" id="2_rwnbg"]
+[ext_resource type="AudioStream" uid="uid://bjljglvrvhrw8" path="res://scenes/objects/camcorder/sound/drop.ogg" id="3_vjjfh"]
+[ext_resource type="AudioStream" uid="uid://wvpawohscu7h" path="res://scenes/objects/camcorder/sound/camera_on.ogg" id="4_o2xt1"]
+[ext_resource type="Texture2D" uid="uid://bcbbqavsheh7c" path="res://scenes/objects/camcorder/model/camcorder.png" id="4_o6cc1"]
+[ext_resource type="ArrayMesh" uid="uid://bhwy7ieptpgoh" path="res://scenes/objects/camcorder/model/camcorder.obj" id="5_bdoeg"]
+[ext_resource type="AudioStream" uid="uid://cut1xanx4b4am" path="res://scenes/objects/camcorder/sound/camera_off.ogg" id="5_fxmys"]
+[ext_resource type="PackedScene" uid="uid://co4epjb213cq" path="res://scenes/ui/recording_progress_indicator/recording_progress_indicator.tscn" id="6_bdoeg"]
+[ext_resource type="Texture2D" uid="uid://86ahtbqmil13" path="res://scenes/objects/camcorder/model/camcorder_screen.png" id="6_opf5w"]
+[ext_resource type="ArrayMesh" uid="uid://bxs4fbwl46uvj" path="res://scenes/objects/camcorder/model/camcorder_screen.obj" id="7_kp810"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cfngs"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o2xt1"]
+random_pitch = 1.14
+streams_count = 1
+stream_0/stream = ExtResource("2_kp810")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fxmys"]
+random_pitch = 1.14
+streams_count = 1
+stream_0/stream = ExtResource("3_vjjfh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjjfh"]
+albedo_texture = ExtResource("4_o6cc1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2xt1"]
+albedo_texture = ExtResource("6_opf5w")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o6cc1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o6cc1"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdoeg"]
+resource_local_to_scene = true
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_o6cc1")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_aa2of"]
 
@@ -13,25 +46,39 @@ viewport_path = NodePath("SubViewport")
 script = ExtResource("1_aa2of")
 camera = NodePath("SubViewport/Camera3D")
 viewfinder = NodePath("Model/Viewfinder")
-viewport = NodePath("Model/Viewfinder/Viewport")
+viewport = NodePath("Model/Viewfinder/ViewportScreenParent")
+pickup_stream = SubResource("AudioStreamRandomizer_o2xt1")
+drop_stream = SubResource("AudioStreamRandomizer_fxmys")
+start_recording_stream = ExtResource("4_o2xt1")
+stop_recording_stream = ExtResource("5_fxmys")
 
 [node name="Model" type="Node3D" parent="."]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Model"]
-transform = Transform3D(2.54444, 0, 0, 0, 2.54444, 0, 0, 0, 2.54444, 0.00078823, 7.67132e-09, 0.115285)
-size = Vector3(0.05, 0.05, 0.1)
+[node name="Camcorder" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(-3.97712e-09, 0, -0.0909859, 0, 0.0909859, 0, 0.0909859, 0, -3.97712e-09, -5.55112e-17, -0.0424849, 0.141862)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_vjjfh")
+mesh = ExtResource("5_bdoeg")
+skeleton = NodePath("../..")
 
 [node name="Viewfinder" type="Node3D" parent="Model"]
-transform = Transform3D(2.54444, 0, 0, 0, 2.54444, 0, 0, 0, 2.54444, -0.103047, 7.67132e-09, 0.0181914)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0977023, -0.0508367, -0.00679439)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Model/Viewfinder"]
-transform = Transform3D(0.614372, 0, 0, 0, 1, 0, 0, 0, 1, -0.0173115, 0, 0)
-size = Vector3(0.106714, 0.0427246, 0.00561523)
-
-[node name="Viewport" type="Sprite3D" parent="Model/Viewfinder"]
-transform = Transform3D(0.0831083, 0, 0, 0, 0.0831083, 0, 0, 0, 0.0831083, -0.0185262, -1.49012e-08, 0.00410589)
+[node name="CamcorderScreen" type="MeshInstance3D" parent="Model/Viewfinder"]
+transform = Transform3D(-3.97712e-09, 0, -0.0909859, 0, 0.0909859, 0, 0.0909859, 0, -3.97712e-09, 0.0913732, 0.00615153, 0.141862)
 layers = 524288
-texture = SubResource("ViewportTexture_cfngs")
+material_override = SubResource("StandardMaterial3D_o2xt1")
+mesh = ExtResource("7_kp810")
+skeleton = NodePath("../../..")
+
+[node name="ViewportScreenParent" type="Node3D" parent="Model/Viewfinder"]
+transform = Transform3D(-2.26582e-09, 0, -0.051836, 0, 0.051836, 0, 0.051836, 0, -2.26582e-09, -0.104617, 0.00347515, 0.022756)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model/Viewfinder/ViewportScreenParent"]
+transform = Transform3D(-5.82673e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1.333, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+layers = 524288
+mesh = SubResource("PlaneMesh_o6cc1")
+surface_material_override/0 = SubResource("StandardMaterial3D_bdoeg")
 
 [node name="Tripod" type="Node3D" parent="."]
 
@@ -40,7 +87,12 @@ transform = Transform3D(0.0298916, 0, 0, 0, 0.592619, 0, 0, 0, 0.0313932, 0, -0.
 mesh = SubResource("CylinderMesh_aa2of")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(64, 48)
+size = Vector2i(320, 240)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
+
+[node name="RecordingProgressIndicator" parent="SubViewport/CanvasLayer" instance=ExtResource("6_bdoeg")]
+always_show_progress_bar = true
 
 [node name="Filter" type="CanvasLayer" parent="SubViewport"]
 script = ExtResource("2_rwnbg")
