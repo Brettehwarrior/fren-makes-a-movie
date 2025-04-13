@@ -63,7 +63,7 @@ environment = SubResource("Environment_xdqt8")
 [node name="ScreeningRoom" type="Node3D" parent="Environment/Blockout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.84217, 0)
 
-[node name="Screen" parent="Environment/Blockout/ScreeningRoom" groups=["replayable"] instance=ExtResource("4_ihnaw")]
+[node name="Screen" parent="Environment/Blockout/ScreeningRoom" instance=ExtResource("4_ihnaw")]
 transform = Transform3D(0.999994, 0, -0.00131925, 0, 1, 0, 0.00349065, 0, 0.377935, -0.989176, 8.97223, -10.447)
 
 [node name="Box" type="StaticBody3D" parent="Environment/Blockout/ScreeningRoom"]

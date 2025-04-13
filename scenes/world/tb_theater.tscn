@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=25 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://uuveqstbile7" path="res://scenes/objects/screen/screen.tscn" id="12_rpk3x"]
 [ext_resource type="PackedScene" uid="uid://u7e8wy4hdxen" path="res://scenes/objects/projector/projector.tscn" id="13_u1vj1"]
 [ext_resource type="PackedScene" uid="uid://bs6u4l08gmv0e" path="res://scenes/objects/static/exit_door/exit_door.tscn" id="14_a6wf5"]
+[ext_resource type="PackedScene" uid="uid://cbsk20muwxr5f" path="res://scenes/objects/static/poster/movie_poster.tscn" id="15_6ftul"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6wf5"]
 albedo_texture = ExtResource("2_7lx3j")
@@ -137,69 +138,81 @@ shadow_enabled = true
 [node name="InteractionUi" parent="CanvasLayer" instance=ExtResource("3_mjyw7")]
 metadata/_edit_use_anchors_ = true
 
-[node name="Fren" parent="." node_paths=PackedStringArray("camcorder") instance=ExtResource("2_mkgah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.357336, 1.03428, -45.1537)
-camcorder = NodePath("../Camcorder")
+[node name="Lobby" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04198, 0, -7.07603)
 
-[node name="Camcorder" parent="." node_paths=PackedStringArray("fren") instance=ExtResource("3_m8yqr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01784, 2.23228, -3.88346)
-fren = NodePath("../Fren")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00992, 1.61493, -5.58862)
+[node name="OmniLight3D" type="OmniLight3D" parent="Lobby"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0519, 1.61493, 1.48741)
 light_energy = 0.337
 omni_range = 11.373
 omni_attenuation = -0.54
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7202, 1.61493, -20.1231)
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lobby"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26507, 1.61493, 1.48741)
 light_energy = 0.337
 omni_range = 11.373
 omni_attenuation = -0.54
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5605, 1.61493, -20.1231)
+[node name="ExitDoor" parent="Lobby" instance=ExtResource("14_a6wf5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.96085, 0.487169, 6.99344)
+
+[node name="Hallway" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.4558)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7202, 1.61493, 0.332714)
 light_energy = 0.337
 omni_range = 11.373
 omni_attenuation = -0.54
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30705, 1.61493, -5.58862)
+[node name="OmniLight3D4" type="OmniLight3D" parent="Hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5605, 1.61493, 0.332714)
 light_energy = 0.337
 omni_range = 11.373
 omni_attenuation = -0.54
 
-[node name="FullSeatRow" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250954, 0.290665, -47.4859)
+[node name="MoviePoster" parent="Hallway" instance=ExtResource("15_6ftul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88589, 1.6573, 2.16264)
 
-[node name="SeatRow" parent="FullSeatRow" instance=ExtResource("11_owch3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114093, -0.984991, 1.09183)
+[node name="ScreenRoom" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0421, 4.75973, -51.0298)
 
-[node name="SeatRow2" parent="FullSeatRow" instance=ExtResource("11_owch3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8291, -0.984991, 1.09183)
-
-[node name="FullSeatRow2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250954, 0.97808, -44.636)
-
-[node name="SeatRow" parent="FullSeatRow2" instance=ExtResource("11_owch3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114093, -0.984991, 1.09183)
-
-[node name="SeatRow2" parent="FullSeatRow2" instance=ExtResource("11_owch3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8291, -0.984991, 1.09183)
-
-[node name="Screen" parent="." instance=ExtResource("12_rpk3x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0421, 6.94425, -60.706)
-
-[node name="Projector" parent="." node_paths=PackedStringArray("screen") instance=ExtResource("13_u1vj1")]
-transform = Transform3D(0.000683003, 0, -0.0459275, 0, 0.0459325, 0, 0.0459275, 0, 0.000683003, -9.42597, 7.55411, -29.7778)
+[node name="Projector" parent="ScreenRoom" node_paths=PackedStringArray("screen") instance=ExtResource("13_u1vj1")]
+transform = Transform3D(0.000683003, 0, -0.0459275, 0, 0.0459325, 0, 0.0459275, 0, 0.000683003, -0.38387, 2.79438, 21.252)
 screen = NodePath("../Screen")
 
-[node name="ExitDoor" parent="." instance=ExtResource("14_a6wf5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.91887, 0.487169, -0.0825901)
+[node name="Screen" parent="ScreenRoom" instance=ExtResource("12_rpk3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18452, -9.67624)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.942921, 0.333017, 0, -0.333017, -0.942921, -8.33921, 8.81717, -60.5314)
+[node name="SpotLight3D" type="SpotLight3D" parent="ScreenRoom/Screen"]
+transform = Transform3D(1, 0, 0, 0, -0.942921, 0.333017, 0, -0.333017, -0.942921, 0.70289, 1.87292, 0.174603)
 light_color = Color(0.94902, 1, 1, 1)
 light_energy = 3.47
 shadow_enabled = true
 spot_range = 40.5056
+
+[node name="FullSeatRow" type="Node3D" parent="ScreenRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29305, -4.46906, 3.54386)
+
+[node name="SeatRow" parent="ScreenRoom/FullSeatRow" instance=ExtResource("11_owch3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114093, -0.984991, 1.09183)
+
+[node name="SeatRow2" parent="ScreenRoom/FullSeatRow" instance=ExtResource("11_owch3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8291, -0.984991, 1.09183)
+
+[node name="FullSeatRow2" type="Node3D" parent="ScreenRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29305, -3.78165, 6.39376)
+
+[node name="SeatRow" parent="ScreenRoom/FullSeatRow2" instance=ExtResource("11_owch3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114093, -0.984991, 1.09183)
+
+[node name="SeatRow2" parent="ScreenRoom/FullSeatRow2" instance=ExtResource("11_owch3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8291, -0.984991, 1.09183)
+
+[node name="Fren" parent="ScreenRoom" node_paths=PackedStringArray("camcorder") instance=ExtResource("2_mkgah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59317, -3.72545, 6.54468)
+camcorder = NodePath("../Camcorder")
+
+[node name="Camcorder" parent="ScreenRoom" node_paths=PackedStringArray("fren") instance=ExtResource("3_m8yqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.39021, -3.95581, 5.0296)
+fren = NodePath("../Fren")

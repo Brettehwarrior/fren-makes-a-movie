@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbsk20muwxr5f"]
+
+[ext_resource type="ArrayMesh" uid="uid://c6svwandiicg0" path="res://scenes/objects/static/poster/movie-poster.obj" id="1_og3k2"]
+[ext_resource type="Texture2D" uid="uid://x8i76axkx615" path="res://scenes/objects/static/poster/textures/movieposter.png" id="2_b2qu7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b2qu7"]
+size = Vector3(1.36328, 2.25293, 0.388672)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_og3k2"]
+albedo_color = Color(0.264071, 0.294424, 0.309395, 1)
+metallic_specular = 0.44
+roughness = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_og3k2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2qu7"]
+shading_mode = 0
+albedo_texture = ExtResource("2_b2qu7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ak516"]
+shading_mode = 0
+albedo_color = Color(0.0668796, 0.085791, 0.116278, 1)
+
+[node name="MoviePoster" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.106445, 0)
+shape = SubResource("BoxShape3D_b2qu7")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Movie-poster" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(0.683283, 0, 0, 0, 0.683283, 0, 0, 0, 0.683283, 0, 0, 0)
+mesh = ExtResource("1_og3k2")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_og3k2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model/Movie-poster"]
+transform = Transform3D(-0.852892, 4.88638e-15, -1.11787e-07, 7.45622e-08, 5.58937e-08, -1.2787, 0, -1.2787, -5.58937e-08, 0, 0, -0.243176)
+mesh = SubResource("PlaneMesh_og3k2")
+surface_material_override/0 = SubResource("StandardMaterial3D_b2qu7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model/Movie-poster"]
+transform = Transform3D(-0.852892, 4.88638e-15, -1.44059e-08, 7.45622e-08, 5.58937e-08, -0.164784, 0, -1.2787, -7.20295e-09, 0, -1.58433, -0.243176)
+mesh = SubResource("PlaneMesh_og3k2")
+surface_material_override/0 = SubResource("StandardMaterial3D_ak516")
+
+[node name="Label3D" type="Label3D" parent="Model/Movie-poster/MeshInstance3D2"]
+transform = Transform3D(1, 1.31069e-07, 1.68906e-08, -5.8311e-08, -4.37114e-08, 0.128869, 4.52484e-07, -7.75984, -4.37114e-08, 0, 0.000995874, 0)
+text = "COMING SOON"
