@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw1tvapvx2eve"]
+[gd_scene load_steps=14 format=3 uid="uid://bw1tvapvx2eve"]
 
 [ext_resource type="Script" uid="uid://bwdpuqgwf4ot6" path="res://scenes/playback/playback_ui/playback_ui.gd" id="1_3dwwi"]
 [ext_resource type="Texture2D" uid="uid://dlaprxlk8bweb" path="res://scenes/playback/playback_ui/images/play_arrow.svg" id="1_w5pia"]
@@ -8,8 +8,22 @@
 [ext_resource type="Texture2D" uid="uid://b2s1dbji7m4j4" path="res://scenes/playback/playback_ui/images/fecaltube-v6.png" id="4_eu52w"]
 [ext_resource type="Theme" uid="uid://b4l78dhnoil7e" path="res://themes/fecaltube-titlebar.tres" id="5_0kj7c"]
 [ext_resource type="Texture2D" uid="uid://y1d45wa7fjko" path="res://scenes/playback/playback_ui/images/fren-avatar.png" id="6_y8a5x"]
+[ext_resource type="FontFile" uid="uid://bkqeh171koaqc" path="res://themes/fonts/DynaPuff.ttf" id="8_y8a5x"]
 
-[node name="PlaybackUI" type="Control" node_paths=PackedStringArray("video_playback_texture", "timeline", "play_pause_button", "frame_slider", "current_frame_label", "total_frames_label") groups=["tickable"]]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8a5x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajfg7"]
+content_margin_left = 77.0
+content_margin_right = 38.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajfg7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8a5x"]
+content_margin_right = 77.0
+bg_color = Color(1, 1, 1, 1)
+
+[node name="PlaybackUI" type="Control" node_paths=PackedStringArray("video_playback_texture", "timeline", "viewcount_field", "play_pause_button", "frame_slider", "current_frame_label", "total_frames_label") groups=["tickable"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +33,7 @@ grow_vertical = 2
 script = ExtResource("1_3dwwi")
 video_playback_texture = NodePath("VideoPlaybackContainer/VideoPlaybackTexture")
 timeline = NodePath("TimelineContainer/Timeline")
+viewcount_field = NodePath("VideoPlaybackContainer/Titlebar/Views")
 play_pause_button = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxContainer/PlayPauseButton")
 play_icon = ExtResource("1_w5pia")
 pause_icon = ExtResource("3_vm3ey")
@@ -45,32 +60,73 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="BoxContainer" type="HBoxContainer" parent="VideoPlaybackContainer"]
+[node name="Navbar" type="HBoxContainer" parent="VideoPlaybackContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TextureRect" type="TextureRect" parent="VideoPlaybackContainer/BoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VideoPlaybackContainer/Navbar"]
 layout_mode = 2
 texture = ExtResource("4_eu52w")
 
-[node name="ColorRect2" type="ColorRect" parent="VideoPlaybackContainer/BoxContainer"]
+[node name="ColorRect2" type="ColorRect" parent="VideoPlaybackContainer/Navbar"]
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.0823529, 0.372549, 0.85098, 1)
 
-[node name="Option1" type="Button" parent="VideoPlaybackContainer/BoxContainer"]
+[node name="TitleScreen" type="Button" parent="VideoPlaybackContainer/Navbar"]
 layout_mode = 2
 theme = ExtResource("5_0kj7c")
-text = "      Option1      "
+text = "      Return to Title Screen       "
 
-[node name="NewMovie2" type="Button" parent="VideoPlaybackContainer/BoxContainer"]
+[node name="NewMovie" type="Button" parent="VideoPlaybackContainer/Navbar"]
 layout_mode = 2
 theme = ExtResource("5_0kj7c")
 text = "      New Movie      "
 
-[node name="TextureRect2" type="TextureRect" parent="VideoPlaybackContainer/BoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="VideoPlaybackContainer/Navbar"]
 layout_mode = 2
 texture = ExtResource("6_y8a5x")
+
+[node name="Titlebar" type="HBoxContainer" parent="VideoPlaybackContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="LineEdit" parent="VideoPlaybackContainer/Titlebar"]
+layout_mode = 2
+theme_override_colors/selection_color = Color(0.882353, 0.470588, 0.411765, 1)
+theme_override_colors/caret_color = Color(0, 0, 1, 1)
+theme_override_colors/font_placeholder_color = Color(0.31, 0.31, 0.31, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_y8a5x")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y8a5x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ajfg7")
+text = "Fren's epic movie! (click to edit title)"
+max_length = 40
+expand_to_text_length = true
+context_menu_enabled = false
+
+[node name="ColorRect2" type="ColorRect" parent="VideoPlaybackContainer/Titlebar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Views" type="LineEdit" parent="VideoPlaybackContainer/Titlebar"]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.31, 0.31, 0.31, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0.337255, 0.780392, 1)
+theme_override_colors/font_color = Color(0, 0.338216, 0.781333, 1)
+theme_override_fonts/font = ExtResource("8_y8a5x")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ajfg7")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_y8a5x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y8a5x")
+text = "200 views"
+max_length = 60
+editable = false
+expand_to_text_length = true
+context_menu_enabled = false
+selecting_enabled = false
 
 [node name="VideoPlaybackTexture" type="TextureRect" parent="VideoPlaybackContainer"]
 layout_mode = 2
@@ -136,6 +192,8 @@ text = "999"
 
 [node name="SubViewport" type="SubViewport" parent="."]
 
+[connection signal="pressed" from="VideoPlaybackContainer/Navbar/TitleScreen" to="." method="_on_title_screen_pressed"]
+[connection signal="pressed" from="VideoPlaybackContainer/Navbar/NewMovie" to="." method="_on_new_movie_pressed"]
 [connection signal="pressed" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/PlayPauseButton" to="." method="_on_play_pause_button_pressed"]
 [connection signal="drag_started" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_drag_started"]
 [connection signal="value_changed" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_value_changed"]
