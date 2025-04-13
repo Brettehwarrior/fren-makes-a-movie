@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://co4epjb213cq" path="res://scenes/ui/recording_progress_indicator/recording_progress_indicator.tscn" id="2_wyrxf"]
 [ext_resource type="PackedScene" uid="uid://c0fj2okpr6ybt" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.tscn" id="3_ruyiy"]
 [ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="3_xmywc"]
-[ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://scenes/world/textures/frenfloor.tres" id="4_wyrxf"]
+[ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="4_wyrxf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f8cub"]
 sky_top_color = Color(0.364199, 0.534777, 0.666339, 1)

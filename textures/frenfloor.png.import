@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq4ew5sli4mc0"
-path.s3tc="res://.godot/imported/frenfloor.png-71119dd3f1786e709341c25738172296.s3tc.ctex"
+path.s3tc="res://.godot/imported/frenfloor.png-b6742aacd8b752465dd07ec2bf80dedc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/world/textures/frenfloor.png"
-dest_files=["res://.godot/imported/frenfloor.png-71119dd3f1786e709341c25738172296.s3tc.ctex"]
+source_file="res://textures/frenfloor.png"
+dest_files=["res://.godot/imported/frenfloor.png-b6742aacd8b752465dd07ec2bf80dedc.s3tc.ctex"]
 
 [params]
 

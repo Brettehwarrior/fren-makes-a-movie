@@ -1,19 +1,24 @@
-[gd_scene load_steps=3 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=6 format=4 uid="uid://b0yn02quwna2s"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_gbkb4"]
+[ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
+[ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="2_mkgah"]
+[ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="3_m8yqr"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mkgah"]
 _surfaces = [{
 "aabb": AABB(-5, -1, -5.5, 10, 2, 11),
-"attribute_data": PackedByteArray("AABwxAAAIMMAAHDEAAAgQwAAIEQAACBDAAAgRAAAIMMAAEjEAAAgwwAASEQAACDDAABIRAAAIEMAAEjEAAAgQwAAcMQAACDEAABIxAAAcEQAAEhEAABwRAAAIEQAACDEAABwxAAAIMQAACBEAAAgxAAASEQAAHBEAABIxAAAcEQAAHDEAAAgwwAAcMQAACBDAAAgRAAAIEMAACBEAAAgwwAAcMQAACDDAAAgRAAAIMMAACBEAAAgQwAAcMQAACBD"),
+"attribute_data": PackedByteArray("AADwvwAAoL4AAPC/AACgPgAAoD8AAKA+AACgPwAAoL4AAMi/AACgvgAAyD8AAKC+AADIPwAAoD4AAMi/AACgPgAA8L8AAKC/AADIvwAA8D8AAMg/AADwPwAAoD8AAKC/AADwvwAAoL8AAKA/AACgvwAAyD8AAPA/AADIvwAA8D8AAPC/AACgvgAA8L8AAKA+AACgPwAAoD4AAKA/AACgvgAA8L8AAKC+AACgPwAAoL4AAKA/AACgPgAA8L8AAKA+"),
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": ExtResource("1_lexdd"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
 "vertex_data": PackedByteArray("AACgwAAAgD8AAJDAAACgwAAAgL8AAJDAAACgQAAAgL8AALDAAACgQAAAgD8AALDAAACgwAAAgD8AAJDAAACgwAAAgD8AALBAAACgwAAAgL8AALBAAACgwAAAgL8AAJDAAACgQAAAgL8AALDAAACgwAAAgL8AAJDAAACgwAAAgL8AALBAAACgQAAAgL8AAJBAAACgQAAAgD8AALDAAACgQAAAgD8AAJBAAACgwAAAgD8AALBAAACgwAAAgD8AAJDAAACgQAAAgD8AALDAAACgQAAAgL8AALDAAACgQAAAgL8AAJBAAACgQAAAgD8AAJBAAACgwAAAgD8AALBAAACgQAAAgD8AAJBAAACgQAAAgL8AAJBAAACgwAAAgL8AALBAAABc9P///z8AAFz0////PwAAXPT///8/AABc9P///z8AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD/f/8//38AAP9//z//fwAA/3//P/9/AAD/f/8//3////9//7//f////3//v/9/////f/+//3////9//7////9//3//P////3//f/8/////f/9//z////9//3//P6KL/3////+/oov/f////7+ii/9/////v6KL/3////+/")
 }]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lexdd"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m8yqr"]
 data = PackedVector3Array(-5, 1, -4.5, -5, -1, -4.5, 5, -1, -5.5, -5, 1, -4.5, 5, -1, -5.5, 5, 1, -5.5, -5, 1, -4.5, -5, 1, 5.5, -5, -1, 5.5, -5, 1, -4.5, -5, -1, 5.5, -5, -1, -4.5, 5, -1, -5.5, -5, -1, -4.5, -5, -1, 5.5, 5, -1, -5.5, -5, -1, 5.5, 5, -1, 4.5, 5, 1, -5.5, 5, 1, 4.5, -5, 1, 5.5, 5, 1, -5.5, -5, 1, 5.5, -5, 1, -4.5, 5, 1, -5.5, 5, -1, -5.5, 5, -1, 4.5, 5, 1, -5.5, 5, -1, 4.5, 5, 1, 4.5, -5, 1, 5.5, 5, 1, 4.5, 5, -1, 4.5, -5, 1, 5.5, 5, -1, 4.5, -5, -1, 5.5)
 
 [node name="TbTheater" type="Node3D"]
@@ -25,9 +30,17 @@ map_resource = "res://scenes/world/map/test.map"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -0.5)
 
 [node name="entity_0_geometry" type="MeshInstance3D" parent="TBLoader/Default Layer"]
-mesh = SubResource("ArrayMesh_gbkb4")
+mesh = SubResource("ArrayMesh_mkgah")
 
 [node name="entity_0_geometry_col" type="StaticBody3D" parent="TBLoader/Default Layer"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TBLoader/Default Layer/entity_0_geometry_col"]
-shape = SubResource("ConcavePolygonShape3D_lexdd")
+shape = SubResource("ConcavePolygonShape3D_m8yqr")
+
+[node name="Fren" parent="." node_paths=PackedStringArray("camcorder") instance=ExtResource("2_mkgah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01666, 1.97779, -4.2422)
+camcorder = NodePath("../Camcorder")
+
+[node name="Camcorder" parent="." node_paths=PackedStringArray("fren") instance=ExtResource("3_m8yqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01784, 2.23228, -3.88346)
+fren = NodePath("../Fren")
