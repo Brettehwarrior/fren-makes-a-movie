@@ -44,11 +44,15 @@ func _process(delta: float) -> void:
 func _process_tick(delta : float) -> void:
 	_time_since_last_tick += delta
 
-	var ticks_to_run : int = floor(_time_since_last_tick / _tick_rate)
-
-	for _i in range(ticks_to_run):
+	if _time_since_last_tick >= _tick_rate:
 		_tick()
 		_time_since_last_tick = 0
+
+	# var ticks_to_run : int = floor(_time_since_last_tick / _tick_rate)
+
+	# for _i in range(ticks_to_run):
+	# 	_tick()
+	# 	_time_since_last_tick = 0
 
 
 func _tick() -> void:
@@ -113,7 +117,6 @@ func load_game_state(frame : int) -> void:
 			var frame_history : NodeFrameDataHistory = _recorded_objects.get(node_id)
 			var state_to_load : Dictionary = {}
 			
-			# Binary search for the closest frame <= requested frame
 			var list = frame_history.list
 			var low = 0
 			var high = list.size() - 1

@@ -4,3 +4,4 @@
 
 [node name="ReplayManager" type="Node"]
 script = ExtResource("1_vnf38")
+ticks_per_second = 30.0
