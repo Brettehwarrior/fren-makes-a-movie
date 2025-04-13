@@ -31,7 +31,7 @@ EventBus="*res://scenes/singleton/event_bus/event_bus.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/native_dialogs/plugin.cfg")
+enabled=PackedStringArray("res://addons/native_dialogs/plugin.cfg", "res://addons/tbloader/plugin.cfg")
 
 [global_group]
 
