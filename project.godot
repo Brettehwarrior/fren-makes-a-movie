@@ -141,8 +141,3 @@ sprint={
 3d_render/layer_20="Subviewport"
 3d_physics/layer_1="Default Collision Layer"
 3d_physics/layer_2="Interaction Layer"
-
-[rendering]
-
-limits/opengl/max_renderable_lights=64
-limits/opengl/max_lights_per_object=64
