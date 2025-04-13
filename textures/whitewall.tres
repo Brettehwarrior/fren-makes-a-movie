@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dtik0r2bdtg77"]
+
+[ext_resource type="Texture2D" uid="uid://bfp0vhyjkw4fp" path="res://textures/whitewall.png" id="1_dybih"]
+
+[resource]
+albedo_texture = ExtResource("1_dybih")
+uv1_triplanar = true

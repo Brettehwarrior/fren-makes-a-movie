@@ -86,8 +86,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bdoeg")
 transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -0.104617, 0.00347515, 0.022756)
 light_color = Color(0.921569, 1, 1, 1)
 light_energy = 0.811
-spot_range = 0.318528
-spot_angle = 73.5958
+spot_range = 0.36771
+spot_angle = 67.7785
 
 [node name="Tripod" type="Node3D" parent="."]
 
