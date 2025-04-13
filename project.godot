@@ -144,4 +144,5 @@ sprint={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+limits/opengl/max_renderable_lights=64
+limits/opengl/max_lights_per_object=64
