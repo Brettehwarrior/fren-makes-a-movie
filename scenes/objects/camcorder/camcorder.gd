@@ -11,6 +11,8 @@ extends Node3D
 @export var start_recording_stream : AudioStream
 @export var stop_recording_stream : AudioStream
 
+@export var audio_listener : AudioListener3D
+
 var _parent_node : Node3D
 var _original_parent_node : Node
 
@@ -26,6 +28,7 @@ func _ready() -> void:
 
 func _on_replay_manager_started_playback() -> void:
 	reset_follow_nodes()
+	audio_listener.make_current()
 
 
 func _process(delta: float) -> void:

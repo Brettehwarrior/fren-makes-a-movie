@@ -70,7 +70,7 @@ func _process_sit(delta) -> void:
 
 func _on_interaction_sphere_interaction_triggered() -> void:
 	quote_label.visible = true
-	AudioManager.play_oneshot(poke_sound, position)
+	AudioManager.play_oneshot(poke_sound, global_position, 5)
 	await get_tree().create_timer(dialogue_timeout).timeout
 	quote_label.visible = false
 

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc5s2oyk8m46c"]
+
+[ext_resource type="Script" uid="uid://xs4nydnggmco" path="res://scenes/objects/static/seat/seat.gd" id="1_7yrew"]
+[ext_resource type="ArrayMesh" uid="uid://cxus1ck611wtn" path="res://assets/models/toilet.obj" id="1_8b5xc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2w8bi"]
+size = Vector3(0.523682, 0.636108, 0.279508)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8b5xc"]
+size = Vector3(0.195557, 1.35962, 0.259766)
+
+[node name="Toilet" type="StaticBody3D"]
+script = ExtResource("1_7yrew")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Toilet" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(0.547092, 0, 0, 0, 0.547092, 0, 0, 0, 0.547092, 0, 0, 0)
+mesh = ExtResource("1_8b5xc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.400818, -0.300795)
+shape = SubResource("BoxShape3D_2w8bi")
+
+[node name="SitTriggerArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.716398)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SitTriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.660522, 0.932495)
+shape = SubResource("BoxShape3D_8b5xc")
+
+[connection signal="body_entered" from="SitTriggerArea" to="." method="_on_sit_trigger_area_body_entered"]
+[connection signal="body_exited" from="SitTriggerArea" to="." method="_on_sit_trigger_area_body_exited"]

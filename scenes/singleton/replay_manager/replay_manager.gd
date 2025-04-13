@@ -187,10 +187,6 @@ func _setup_playback_camera() -> void:
 	_playback_camera.make_current()
 	_playback_subviewport.add_child(_playback_camera)
 
-	var audio_listener = AudioListener3D.new()
-	audio_listener.make_current()
-	_playback_camera.add_child(audio_listener)
-
 	playback_camera_created.emit(_playback_subviewport)
 
 
