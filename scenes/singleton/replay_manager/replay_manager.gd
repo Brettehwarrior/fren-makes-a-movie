@@ -104,7 +104,6 @@ func _get_node_id(node : Node) -> String:
 	var id = str(node)
 	return id
 
-
 func load_game_state(frame : int) -> void:
 	var replayable_nodes : Array[Node] = get_tree().get_nodes_in_group("replayable")
 
@@ -112,16 +111,28 @@ func load_game_state(frame : int) -> void:
 		if node.has_method("_load_state"):
 			var node_id = _get_node_id(node)
 			var frame_history : NodeFrameDataHistory = _recorded_objects.get(node_id)
-			var last_checked_frame_data : NodeFrameData = frame_history.list[0]
-			var state_to_load : Dictionary = frame_history.list[0].node_state
-			for frame_data in frame_history.list: # TODO: If this is not fast enough can do binary search
+			var state_to_load : Dictionary = {}
+			
+			# Binary search for the closest frame <= requested frame
+			var list = frame_history.list
+			var low = 0
+			var high = list.size() - 1
+			var closest_index = 0
+
+			while low <= high:
+				var mid = (low + high) / 2
+				var frame_data = list[mid]
+				
 				if frame_data.frame_index == frame:
-					state_to_load = frame_data.node_state
+					closest_index = mid
 					break
-				elif frame_data.frame_index > frame:
-					break
-				last_checked_frame_data = frame_data
-				state_to_load = last_checked_frame_data.node_state
+				elif frame_data.frame_index < frame:
+					closest_index = mid
+					low = mid + 1
+				else:
+					high = mid - 1
+
+			state_to_load = list[closest_index].node_state
 
 			node._load_state(state_to_load)
 
