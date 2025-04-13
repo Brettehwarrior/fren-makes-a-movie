@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://b1txlrrc36s2o" path="res://scenes/objects/character/fren/physics_object_holder.gd" id="8_qcc3i"]
 [ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="9_4hyim"]
 [ext_resource type="Texture2D" uid="uid://byiislknm03jh" path="res://scenes/objects/character/fren/images/frenhand.png" id="13_s7h14"]
-[ext_resource type="Script" uid="uid://nfwydv3ippb6" path="res://scenes/objects/character/fren/hand_plane.gd" id="14_d6lmp"]
+[ext_resource type="Script" path="res://scenes/objects/character/fren/hand_plane.gd" id="14_d6lmp"]
 [ext_resource type="Texture2D" uid="uid://bfnobymuypive" path="res://scenes/objects/character/fren/images/frenhand_record_off.png" id="15_ncwuc"]
 [ext_resource type="Texture2D" uid="uid://cybyag2ld8o6t" path="res://scenes/objects/character/fren/images/frenhand_record_on.png" id="16_478ll"]
 [ext_resource type="ArrayMesh" uid="uid://bbtgcsyxs7o0u" path="res://assets/models/plane_30_top.mtl.obj" id="19_4ubh3"]
@@ -393,6 +393,9 @@ node_b = NodePath("../JointPivot")
 linear_spring_x/enabled = true
 linear_spring_y/enabled = true
 linear_spring_z/enabled = true
+
+[node name="AudioListener3D" type="AudioListener3D" parent="CameraPivot/Camera3D"]
+current = true
 
 [node name="FrenModel" type="Node3D" parent="." node_paths=PackedStringArray("fren", "animation_player", "front_sprite_top", "sit_pivot", "sit_body_slide_node") groups=["replayable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00387359, 1.19209e-07, 0.0187931)

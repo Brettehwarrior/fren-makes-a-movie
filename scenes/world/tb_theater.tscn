@@ -199,6 +199,9 @@ transform = Transform3D(-0.637827, 0, -0.770179, 0, 1, 0, 0.770179, 0, -0.637827
 npc_resource = ExtResource("14_ow31s")
 sprint_acceleration = 0.0
 
+[node name="Door" parent="Lobby" instance=ExtResource("12_j2kf4")]
+transform = Transform3D(-4.4315e-08, 0, 1.01381, 0, 1.01381, 0, -1.01381, 0, -4.4315e-08, -9.02771, 0.083692, 0.238165)
+
 [node name="Bathroom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3313, 0, -7.67703)
 
@@ -237,6 +240,42 @@ omni_attenuation = -0.54
 
 [node name="MoviePoster" parent="Hallway" instance=ExtResource("15_6ftul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88589, 1.6573, 2.16264)
+
+[node name="HallLights" type="Node3D" parent="Hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.71722, 2.08583, -13.2597)
+
+[node name="TheaterLight" parent="Hallway/HallLights" instance=ExtResource("25_ba6py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, -5.47139)
+
+[node name="TheaterLight2" parent="Hallway/HallLights" instance=ExtResource("25_ba6py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, -2.16716)
+
+[node name="TheaterLight3" parent="Hallway/HallLights" instance=ExtResource("25_ba6py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 1.38773)
+
+[node name="TheaterLight4" parent="Hallway/HallLights" instance=ExtResource("25_ba6py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 5.25305)
+
+[node name="HallLights2" type="Node3D" parent="Hallway"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.53108, 10.1086, -6.9382)
+
+[node name="TheaterLight" parent="Hallway/HallLights2" instance=ExtResource("25_ba6py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, -5.47139)
+
+[node name="TheaterLight2" parent="Hallway/HallLights2" instance=ExtResource("25_ba6py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, -2.16716)
+
+[node name="TheaterLight3" parent="Hallway/HallLights2" instance=ExtResource("25_ba6py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 1.38773)
+
+[node name="TheaterLight4" parent="Hallway/HallLights2" instance=ExtResource("25_ba6py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 5.25305)
+
+[node name="Door" parent="Hallway" instance=ExtResource("12_j2kf4")]
+transform = Transform3D(1.01381, 0, 0, 0, 1.01381, 0, 0, 0, 1.01381, 0.810175, -0.902245, -3.58874)
+
+[node name="Door2" parent="Hallway" instance=ExtResource("12_j2kf4")]
+transform = Transform3D(1.01381, 0, 0, 0, 1.01381, 0, 0, 0, 1.01381, 5.27392, -0.902245, -3.58874)
 
 [node name="ScreenRoom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0421, 4.75973, -51.0298)
@@ -654,36 +693,3 @@ sprint_acceleration = 0.0
 transform = Transform3D(0.177445, 0, 0.984131, 0, 1, 0, -0.984131, 0, 0.177445, 9.29922, 2.71808, 25.2193)
 npc_resource = ExtResource("24_pnmlv")
 sprint_acceleration = 0.0
-
-[node name="HallLights" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.71722, 2.08583, -33.7155)
-
-[node name="TheaterLight" parent="HallLights" instance=ExtResource("25_ba6py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, -5.47139)
-
-[node name="TheaterLight2" parent="HallLights" instance=ExtResource("25_ba6py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, -2.16716)
-
-[node name="TheaterLight3" parent="HallLights" instance=ExtResource("25_ba6py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 1.38773)
-
-[node name="TheaterLight4" parent="HallLights" instance=ExtResource("25_ba6py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 5.25305)
-
-[node name="HallLights2" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.53108, 10.1086, -27.394)
-
-[node name="TheaterLight" parent="HallLights2" instance=ExtResource("25_ba6py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, -5.47139)
-
-[node name="TheaterLight2" parent="HallLights2" instance=ExtResource("25_ba6py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, -2.16716)
-
-[node name="TheaterLight3" parent="HallLights2" instance=ExtResource("25_ba6py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 1.38773)
-
-[node name="TheaterLight4" parent="HallLights2" instance=ExtResource("25_ba6py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 5.25305)
-
-[node name="Door" parent="." instance=ExtResource("12_j2kf4")]
-transform = Transform3D(-4.4315e-08, 0, 1.01381, 0, 1.01381, 0, -1.01381, 0, -4.4315e-08, -13.0697, 0.083692, -6.83786)

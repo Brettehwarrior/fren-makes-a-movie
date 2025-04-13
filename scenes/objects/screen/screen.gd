@@ -9,6 +9,7 @@ var _playback_pause_timer : Timer
 var _previously_loaded_stream_position : float
 var _previously_loaded_movie : String
 
+@onready var _active_camera : Camera3D = get_viewport().get_camera_3d()
 
 func _ready():
 	play_at_position(500.0) # Debug stuff, delete me
@@ -17,15 +18,19 @@ func _ready():
 	add_child(_playback_pause_timer)
 	
 	ReplayManager.started_playback.connect(_on_replay_manager_start_playback)
+	ReplayManager.playback_camera_created.connect(_on_replay_manager_playback_camera_created)
 
 
 func _on_replay_manager_start_playback() -> void:
 	stream_player.bus = "CameraRecordedPlayback"
 
 
+func _on_replay_manager_playback_camera_created(viewport : SubViewport) -> void:
+	_active_camera = viewport.get_camera_3d()
+
+
 func _process(_delta: float) -> void:
-	var active_camera = get_viewport().get_camera_3d()
-	var distance_to_camera = (audio_origin_node.global_position - active_camera.global_position).length()
+	var distance_to_camera = (audio_origin_node.global_position - _active_camera.global_position).length()
 	var distance_percentage = remap(distance_to_camera, 0, max_attenuation_distance, 0, 1)
 	stream_player.volume = volume_attenuation_curve.sample(distance_percentage)
 

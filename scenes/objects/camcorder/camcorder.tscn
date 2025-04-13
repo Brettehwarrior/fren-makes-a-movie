@@ -43,7 +43,7 @@ albedo_texture = SubResource("ViewportTexture_o6cc1")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_aa2of"]
 
-[node name="Camcorder" type="Node3D" node_paths=PackedStringArray("camera", "viewfinder", "viewport") groups=["replayable"]]
+[node name="Camcorder" type="Node3D" node_paths=PackedStringArray("camera", "viewfinder", "viewport", "audio_listener") groups=["replayable"]]
 script = ExtResource("1_aa2of")
 camera = NodePath("SubViewport/Camera3D")
 viewfinder = NodePath("Model/Viewfinder")
@@ -52,6 +52,7 @@ pickup_stream = SubResource("AudioStreamRandomizer_o2xt1")
 drop_stream = SubResource("AudioStreamRandomizer_fxmys")
 start_recording_stream = ExtResource("4_o2xt1")
 stop_recording_stream = ExtResource("5_fxmys")
+audio_listener = NodePath("AudioListener3D")
 
 [node name="Model" type="Node3D" parent="."]
 
@@ -112,3 +113,5 @@ cull_mask = 524287
 script = ExtResource("2_fv2dh")
 follow_target = NodePath("../..")
 speed_factor = 0.02
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
