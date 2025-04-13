@@ -4,3 +4,4 @@
 
 [node name="ReplayableCharacter" type="CharacterBody3D" groups=["replayable"]]
 script = ExtResource("1_dorsk")
+sprint_acceleration = 3000.0

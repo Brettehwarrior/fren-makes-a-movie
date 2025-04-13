@@ -16,3 +16,7 @@ func is_camera_drop_button_just_presed() -> bool:
 
 func is_jump_just_pressed() -> bool:
 	return false
+
+
+func is_sprint_held() -> bool:
+	return false

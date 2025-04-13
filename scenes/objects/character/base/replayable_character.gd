@@ -12,6 +12,7 @@ var _was_walking_last_check : bool = false
 @export var gravity : float = -50
 @export var jump_speed : float = 8
 @export var walk_acceleration : float
+@export var sprint_acceleration : float
 @export var max_walk_speed : float
 @export_range(0, 1) var walk_friction : float
 @export var rigid_body_push_force : float
@@ -55,7 +56,8 @@ func _process_vertical_velocity(delta : float) -> void:
 func _process_horizontal_velocity(delta : float) -> void:
 	var horizontal_input = input.get_horizontal_input()
 	var movement_vector = Vector3(horizontal_input.x, 0, horizontal_input.y)
-	var horizontal_acceleration = walk_acceleration * movement_vector * delta
+	var acc = sprint_acceleration if input.is_sprint_held() else walk_acceleration
+	var horizontal_acceleration = acc * movement_vector * delta
 	horizontal_acceleration = horizontal_acceleration.rotated(Vector3.UP, -rotation.y)
 	velocity.x += horizontal_acceleration.x * delta
 	velocity.z -= horizontal_acceleration.z * delta

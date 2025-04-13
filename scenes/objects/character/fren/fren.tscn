@@ -312,6 +312,7 @@ camera = NodePath("CameraPivot/Camera3D")
 model = NodePath("FrenModel")
 input = NodePath("PlayerInput")
 walk_acceleration = 700.0
+sprint_acceleration = 1800.0
 max_walk_speed = 5000.0
 walk_friction = 0.95
 rigid_body_push_force = 1.0

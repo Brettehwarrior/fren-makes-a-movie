@@ -57,3 +57,7 @@ func is_camera_drop_button_just_presed() -> bool:
 
 func is_jump_just_pressed() -> bool:
 	return Input.is_action_just_pressed("jump")
+
+
+func is_sprint_held() -> bool:
+	return Input.is_action_pressed("sprint")
