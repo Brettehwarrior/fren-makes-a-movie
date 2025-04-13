@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://enhhfusp705x"]
+
+[ext_resource type="PackedScene" uid="uid://bc5s2oyk8m46c" path="res://scenes/objects/static/toilet/toilet.tscn" id="1_5neh1"]
+[ext_resource type="Script" uid="uid://cxj114jc5i0bt" path="res://scenes/objects/static/toilet/skibidi_toilet.gd" id="1_pfp0b"]
+[ext_resource type="AudioStream" uid="uid://dj771fb64xg01" path="res://scenes/objects/static/toilet/bad-to-the-bone.mp3" id="2_bfoov"]
+[ext_resource type="Texture2D" uid="uid://bjesro86eq37b" path="res://scenes/objects/static/toilet/skibidi.png" id="2_uyjit"]
+[ext_resource type="Script" uid="uid://blr2qrocai5b2" path="res://scenes/objects/static/toilet/skibidi_mesh.gd" id="4_hdner"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_5neh1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfp0b"]
+transparency = 1
+albedo_texture = ExtResource("2_uyjit")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5neh1"]
+size = Vector3(2.27039, 1.7359, 1)
+
+[node name="SkibidiToilet" type="Node3D" node_paths=PackedStringArray("skibidi_node")]
+script = ExtResource("1_pfp0b")
+riff_stream = ExtResource("2_bfoov")
+skibidi_node = NodePath("skibidi_mesh")
+
+[node name="Toilet3" parent="." instance=ExtResource("1_5neh1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="skibidi_mesh" type="MeshInstance3D" parent="." groups=["replayable"]]
+transform = Transform3D(-5.5961e-08, 0, 1.28024, 0, 1.28024, 0, -1.28024, 0, -5.5961e-08, 0.201863, 1.08636, -0.0567212)
+visible = false
+mesh = SubResource("QuadMesh_5neh1")
+surface_material_override/0 = SubResource("StandardMaterial3D_pfp0b")
+script = ExtResource("4_hdner")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.635193, 0.890533, 0)
+shape = SubResource("BoxShape3D_5neh1")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

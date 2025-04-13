@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://upqlw6vcngmn"]
+[gd_scene load_steps=7 format=3 uid="uid://upqlw6vcngmn"]
 
 [ext_resource type="PackedScene" uid="uid://bdqqbpodeexhl" path="res://scenes/objects/physics/rigid_body_door/rigid_body_door.tscn" id="1_7xrsk"]
-[ext_resource type="PackedScene" uid="uid://bc5s2oyk8m46c" path="res://scenes/objects/static/toilet.tscn" id="2_2vedv"]
+[ext_resource type="PackedScene" uid="uid://bc5s2oyk8m46c" path="res://scenes/objects/static/toilet/toilet.tscn" id="2_2vedv"]
+[ext_resource type="PackedScene" uid="uid://enhhfusp705x" path="res://scenes/objects/static/toilet/skibidi_toilet.tscn" id="3_yassw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7xrsk"]
 
@@ -85,7 +86,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7xrsk")
 shape = SubResource("BoxShape3D_7xrsk")
 
 [node name="Door" parent="." instance=ExtResource("1_7xrsk")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.99108, 0, 5.9471)
+transform = Transform3D(0.895308, 0, 0.445448, 0, 1, 0, -0.445448, 0, 0.895308, -2.17322, 0, 6.20603)
 
 [node name="Door2" parent="." instance=ExtResource("1_7xrsk")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.99108, 0, 3.93692)
@@ -108,8 +109,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.173
 [node name="Toilet2" parent="." instance=ExtResource("2_2vedv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.17302, 0, 3.81747)
 
-[node name="Toilet3" parent="." instance=ExtResource("2_2vedv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.17302, 0, 5.88522)
+[node name="SkibidiToilet" parent="." instance=ExtResource("3_yassw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9989, 0, 5.71743)
 
 [node name="Toilet4" parent="." instance=ExtResource("2_2vedv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.17302, 0, -0.752979)
