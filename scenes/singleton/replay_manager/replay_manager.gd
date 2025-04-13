@@ -126,8 +126,8 @@ func load_game_state(frame : int) -> void:
 			node._load_state(state_to_load)
 
 			if _is_playing_back and node_id == _playback_object_id:
-				_playback_camera.position = node.position
-				_playback_camera.rotation = node.rotation
+				_playback_camera.global_position = node.global_position
+				_playback_camera.global_rotation = node.global_rotation
 
 
 func start_recording() -> void:
