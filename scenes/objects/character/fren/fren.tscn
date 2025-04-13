@@ -42,6 +42,7 @@ stream_0/stream = ExtResource("8_f4rrs")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7h14"]
 transparency = 1
+shading_mode = 0
 albedo_texture = ExtResource("13_s7h14")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qcc3i"]
