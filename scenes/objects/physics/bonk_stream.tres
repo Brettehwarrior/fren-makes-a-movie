@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://cj1the2e87ck2"]
+
+[ext_resource type="AudioStream" uid="uid://d01krgso0l2b0" path="res://scenes/objects/physics/bonk.mp3" id="1_a2xuf"]
+
+[resource]
+random_pitch = 1.44
+streams_count = 1
+stream_0/stream = ExtResource("1_a2xuf")

@@ -192,10 +192,12 @@ transform = Transform3D(-0.741754, 0, -0.670673, 0, 1, 0, 0.670673, 0, -0.741754
 [node name="NPC12" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.876643, 0, -0.481142, 0, 1, 0, 0.481142, 0, -0.876643, -0.208145, 1.04031, -5.71635)
 npc_resource = ExtResource("13_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.637827, 0, -0.770179, 0, 1, 0, 0.770179, 0, -0.637827, -1.9861, 1.04031, -4.97155)
 npc_resource = ExtResource("14_ow31s")
+sprint_acceleration = 0.0
 
 [node name="Bathroom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3313, 0, -7.67703)
@@ -316,46 +318,57 @@ spot_angle = 18.446
 [node name="NPC" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0433, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1618, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35024, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45746, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.65093, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9053, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9502, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="Row5" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.09666, -2.33657)
@@ -363,46 +376,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.09666, -2.33657)
 [node name="NPC" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0433, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1618, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35024, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05096, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8699, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="Row2" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17387, 2.72798)
@@ -410,38 +434,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17387, 2.72798)
 [node name="NPC3" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75101, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77397, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59712, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60329, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC12" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.306331, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05096, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="Row3" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15356, 5.0533)
@@ -449,46 +482,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15356, 5.0533)
 [node name="NPC" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0433, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1618, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35024, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73685, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.50673, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9502, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="Row4" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32743, 7.78128)
@@ -496,42 +540,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32743, 7.78128)
 [node name="NPC" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.88855, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66889, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1618, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35024, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05096, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9502, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="Row6" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.27126, 10.3855)
@@ -539,54 +593,67 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.27126, 10.3855)
 [node name="NPC" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81633, -3.62459, 6.18765)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1618, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66184, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35024, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61537, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80885, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95308, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8207, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+sprint_acceleration = 0.0
 
 [node name="NPC2" parent="ScreenRoom/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.879, 0.718083, 19.3268)
 npc_resource = ExtResource("23_qlc2b")
+sprint_acceleration = 0.0
 
 [node name="NPC" parent="ScreenRoom/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.177445, 0, 0.984131, 0, 1, 0, -0.984131, 0, 0.177445, 9.29922, 2.71808, 25.2193)
 npc_resource = ExtResource("24_pnmlv")
+sprint_acceleration = 0.0
 
 [node name="HallLights" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.71722, 2.08583, -33.7155)
@@ -617,3 +684,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 1.38773)
 
 [node name="TheaterLight4" parent="HallLights2" instance=ExtResource("25_ba6py")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206941, 0.892714, 5.25305)
+
+[node name="Door" parent="." instance=ExtResource("12_j2kf4")]
+transform = Transform3D(-4.4315e-08, 0, 1.01381, 0, 1.01381, 0, -1.01381, 0, -4.4315e-08, -13.0697, 0.083692, -6.83786)

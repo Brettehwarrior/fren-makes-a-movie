@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdqqbpodeexhl"]
+[gd_scene load_steps=8 format=3 uid="uid://bdqqbpodeexhl"]
 
 [ext_resource type="Script" uid="uid://b5jtr3qkgcnjm" path="res://scenes/objects/physics/grabbable_rigid_body.gd" id="1_f6v67"]
+[ext_resource type="ArrayMesh" uid="uid://chd2xiq0hgasb" path="res://assets/models/door_rect.obj" id="2_1h803"]
 [ext_resource type="PackedScene" uid="uid://bo14vsfgv7h33" path="res://scenes/objects/triggers/interaction/interaction_cube.tscn" id="2_f6v67"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_44fru"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1h803"]
+albedo_color = Color(0.0882476, 0.387752, 0.509768, 1)
+metallic = 0.16
+roughness = 0.45
+
+[sub_resource type="BoxMesh" id="BoxMesh_1h803"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjgc6"]
+albedo_color = Color(0.738541, 0.83978, 0.860312, 1)
+metallic = 0.55
+roughness = 0.54
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_44fru"]
 size = Vector3(1.24634, 2.09958, 0.113281)
@@ -20,9 +31,16 @@ metadata/_custom_type_script = "uid://cmpp18xjewi4y"
 
 [node name="Model" type="Node3D" parent="RigidBodyDoor"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBodyDoor/Model"]
-transform = Transform3D(1.25922, 0, 0, 0, 2.12431, 0, 0, 0, 0.120828, 0, 1.09152, 0)
-mesh = SubResource("BoxMesh_44fru")
+[node name="DoorRect" type="MeshInstance3D" parent="RigidBodyDoor/Model"]
+transform = Transform3D(1.39045, 0, 0, 0, 1.39045, 0, 0, 0, 1.39045, 0.203471, 1.43723, 0)
+mesh = ExtResource("2_1h803")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1h803")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RigidBodyDoor/Model"]
+transform = Transform3D(0.140967, 0, 0, 0, 0.679885, 0, 0, 0, 0.232808, 0.895, 1.141, 0)
+mesh = SubResource("BoxMesh_1h803")
+surface_material_override/0 = SubResource("StandardMaterial3D_rjgc6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBodyDoor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09465, 0)
