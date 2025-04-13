@@ -44,11 +44,15 @@ func _process(delta: float) -> void:
 func _process_tick(delta : float) -> void:
 	_time_since_last_tick += delta
 
-	var ticks_to_run : int = floor(_time_since_last_tick / _tick_rate)
-
-	for _i in range(ticks_to_run):
+	if _time_since_last_tick >= _tick_rate:
 		_tick()
 		_time_since_last_tick = 0
+
+	# var ticks_to_run : int = floor(_time_since_last_tick / _tick_rate)
+
+	# for _i in range(ticks_to_run):
+	# 	_tick()
+	# 	_time_since_last_tick = 0
 
 
 func _tick() -> void:
@@ -104,7 +108,6 @@ func _get_node_id(node : Node) -> String:
 	var id = str(node)
 	return id
 
-
 func load_game_state(frame : int) -> void:
 	var replayable_nodes : Array[Node] = get_tree().get_nodes_in_group("replayable")
 
@@ -112,22 +115,33 @@ func load_game_state(frame : int) -> void:
 		if node.has_method("_load_state"):
 			var node_id = _get_node_id(node)
 			var frame_history : NodeFrameDataHistory = _recorded_objects.get(node_id)
-			var last_checked_frame_data : NodeFrameData = frame_history.list[0]
-			var state_to_load : Dictionary = frame_history.list[0].node_state
-			for frame_data in frame_history.list: # TODO: If this is not fast enough can do binary search
+			var state_to_load : Dictionary = {}
+			
+			var list = frame_history.list
+			var low = 0
+			var high = list.size() - 1
+			var closest_index = 0
+
+			while low <= high:
+				var mid = (low + high) / 2
+				var frame_data = list[mid]
+				
 				if frame_data.frame_index == frame:
-					state_to_load = frame_data.node_state
+					closest_index = mid
 					break
-				elif frame_data.frame_index > frame:
-					break
-				last_checked_frame_data = frame_data
-				state_to_load = last_checked_frame_data.node_state
+				elif frame_data.frame_index < frame:
+					closest_index = mid
+					low = mid + 1
+				else:
+					high = mid - 1
+
+			state_to_load = list[closest_index].node_state
 
 			node._load_state(state_to_load)
 
 			if _is_playing_back and node_id == _playback_object_id:
-				_playback_camera.position = node.position
-				_playback_camera.rotation = node.rotation
+				_playback_camera.global_position = node.global_position
+				_playback_camera.global_rotation = node.global_rotation
 
 
 func start_recording() -> void:

@@ -13,5 +13,5 @@ spot_range = 30.5705
 spot_angle = 29.5395
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.63423, 0, 0, 0, 0.329111, 0, 0, 0, 1.63423, 0, 0, 0)
+transform = Transform3D(0.802198, 0, 0, 0, 0.161551, 0, 0, 0, 0.802198, 0, 0, 0)
 mesh = SubResource("CylinderMesh_beuv2")

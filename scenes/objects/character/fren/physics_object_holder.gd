@@ -6,6 +6,7 @@ var _currently_held_object : ReplayableRigidBody3D
 
 
 func _ready() -> void:
+	ReplayManager.started_playback.connect(_drop_object)
 	EventBus.physics_object_interacted_with.connect(_on_physics_object_interacted_with)
 
 
@@ -20,7 +21,10 @@ func _input(event: InputEvent) -> void:
 func _on_physics_object_interacted_with(object : ReplayableRigidBody3D) -> void:
 	_grab_object(object)
 
+
 func _grab_object(object : ReplayableRigidBody3D) -> void:
+	if ReplayManager.is_playing_back():
+		return
 	_currently_held_object = object
 	joint.node_a = _currently_held_object.get_path()
 	joint.position += (joint.position - object.position)

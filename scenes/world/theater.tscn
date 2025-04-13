@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7iyqulbaea21"]
+
+[ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_ieoac"]
+[ext_resource type="PackedScene" uid="uid://bt7js6fqiwcco" path="res://scenes/objects/physics/rigid_body_door/csg_door.tscn" id="1_vsdhb"]
+[ext_resource type="PackedScene" uid="uid://uefp4qdx4sqi" path="res://scenes/objects/character/fren/fren.tscn" id="2_thc71"]
+[ext_resource type="PackedScene" uid="uid://co4epjb213cq" path="res://scenes/ui/recording_progress_indicator/recording_progress_indicator.tscn" id="2_wyrxf"]
+[ext_resource type="PackedScene" uid="uid://c0fj2okpr6ybt" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.tscn" id="3_ruyiy"]
+[ext_resource type="PackedScene" uid="uid://cu7ubi8clos5r" path="res://scenes/objects/camcorder/camcorder.tscn" id="3_xmywc"]
+[ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="4_wyrxf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f8cub"]
+sky_top_color = Color(0.364199, 0.534777, 0.666339, 1)
+sky_horizon_color = Color(0.794663, 0.80117, 0.811447, 1)
+ground_bottom_color = Color(0.175959, 0.178186, 0.141758, 1)
+
+[sub_resource type="Sky" id="Sky_wyrxf"]
+sky_material = SubResource("ProceduralSkyMaterial_f8cub")
+
+[sub_resource type="Environment" id="Environment_thc71"]
+background_mode = 2
+sky = SubResource("Sky_wyrxf")
+ambient_light_source = 2
+ambient_light_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[node name="Theater" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlaybackUI" parent="CanvasLayer" instance=ExtResource("1_ieoac")]
+
+[node name="RecordingProgressIndicator" parent="CanvasLayer" instance=ExtResource("2_wyrxf")]
+
+[node name="InteractionUi" parent="CanvasLayer" instance=ExtResource("3_ruyiy")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_thc71")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.730019, 0.469531, -0.496601, 0, 0.726635, 0.687024, 0.683427, -0.501541, 0.530457, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Lobby" type="Node3D" parent="."]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Lobby"]
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="Lobby/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.91083, -0.5, 6.94087)
+use_collision = true
+size = Vector3(24.8981, 1, 20.2216)
+material = ExtResource("4_wyrxf")
+
+[node name="Walls" type="CSGBox3D" parent="Lobby/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95459, 1.84076, 7.88384)
+use_collision = true
+size = Vector3(25.3779, 5.68152, 17)
+
+[node name="Carve" type="CSGBox3D" parent="Lobby/CSGCombiner3D/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.50494)
+operation = 2
+size = Vector3(20.7539, 5.3877, 11.5099)
+
+[node name="CsgDoor" parent="Lobby/CSGCombiner3D/Walls" instance=ExtResource("1_vsdhb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89037, -0.696136, -3.40589)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Lobby/CSGCombiner3D/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.692627, 8.70117)
+operation = 2
+size = Vector3(12.498, 2.38525, 1)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lobby"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50831, 1.85103, 7.27467)
+
+[node name="Fren" parent="Lobby" node_paths=PackedStringArray("camcorder") instance=ExtResource("2_thc71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.05768, 2.03968, 8.05401)
+camcorder = NodePath("../Camcorder")
+
+[node name="Camcorder" parent="Lobby" node_paths=PackedStringArray("fren") instance=ExtResource("3_xmywc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3588, 1.21632, 5.80525)
+fren = NodePath("../Fren")

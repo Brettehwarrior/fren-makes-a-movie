@@ -18,7 +18,7 @@ extends ReplayableCharacter
 @export var sit_angle : float = -90.0
 @export var sit_angle_speed : float = 400.0
 @export var sit_body_slide_node : Node3D
-@export var sit_height : float = 0.1
+@export var sit_height : float = 0.0
 @export var stand_height : float = -0.378
 @export var sit_height_speed : float = 1.2
 
