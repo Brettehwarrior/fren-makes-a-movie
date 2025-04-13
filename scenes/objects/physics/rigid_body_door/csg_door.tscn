@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bdqqbpodeexhl" path="res://scenes/objects/physics/rigid_body_door/rigid_body_door.tscn" id="1_w3jef"]
 
 [node name="CSGDoor" type="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00195313, 1.08789, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.088, 0)
 operation = 2
 size = Vector3(1.26367, 2.13281, 0.810303)
 
