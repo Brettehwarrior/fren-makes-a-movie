@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://vc6ry8e4vpdd" path="res://scenes/objects/character/base/character_input.gd" id="5_cha3l"]
 [ext_resource type="ArrayMesh" uid="uid://bbtgcsyxs7o0u" path="res://assets/models/plane_30_top.mtl.obj" id="8_flrmq"]
 [ext_resource type="ArrayMesh" uid="uid://v7i30h6ljmvi" path="res://assets/models/plane_30_bottom.mtl.obj" id="9_cphdn"]
-[ext_resource type="Script" path="res://scenes/objects/character/npc/interaction_label.gd" id="9_ww5d3"]
+[ext_resource type="Script" uid="uid://btqxhatd6ywhn" path="res://scenes/objects/character/npc/interaction_label.gd" id="9_ww5d3"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7elxb"]
 random_pitch = 1.15
