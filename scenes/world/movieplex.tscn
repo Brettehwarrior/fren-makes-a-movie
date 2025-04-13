@@ -556,52 +556,45 @@ max_walk_speed = 10000.0
 [node name="NPC" parent="." instance=ExtResource("11_1rmv7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97491, 3.18611, 36.0545)
 npc_resource = ExtResource("12_63uuh")
-jump_speed = 8.0
 sit_height = 0.1
-sprint_acceleration = null
+sprint_acceleration = 0.0
 
 [node name="NPCEvilFren" parent="." instance=ExtResource("11_1rmv7")]
 transform = Transform3D(-0.748574, 0, 0.839799, 0, 1.125, 0, -0.839799, 0, -0.748574, 0.327496, 11.4937, 27.2963)
 npc_resource = ExtResource("13_ck6ag")
-jump_speed = 8.0
 sit_height = 0.1
-sprint_acceleration = null
+sprint_acceleration = 0.0
 
 [node name="NPC2" parent="." instance=ExtResource("11_1rmv7")]
 transform = Transform3D(0.448804, 0, -0.89363, 0, 1, 0, 0.89363, 0, 0.448804, -4.15937, -0.472647, 1.64763)
 npc_resource = ExtResource("12_63uuh")
-jump_speed = 8.0
 sit_height = 0.1
-sprint_acceleration = null
+sprint_acceleration = 0.0
 
 [node name="NPC3" parent="." instance=ExtResource("11_1rmv7")]
 transform = Transform3D(0.834828, 0, -0.55051, 0, 1, 0, 0.55051, 0, 0.834828, -7.36531, 3.08436, 50.2268)
 npc_resource = ExtResource("12_63uuh")
-jump_speed = 8.0
 sit_height = 0.1
-sprint_acceleration = null
+sprint_acceleration = 0.0
 
 [node name="NPCPhoebe" parent="." instance=ExtResource("11_1rmv7")]
 transform = Transform3D(-0.985391, 0.0528826, 0.783459, -0.0291191, 1.25381, -0.121255, -0.784701, -0.112935, -0.979331, 4.17814, 3.26573, 31.8359)
 npc_resource = ExtResource("14_lpfc0")
 dialogue_timeout = 3.5
-jump_speed = 8.0
 sit_height = 0.1
-sprint_acceleration = null
+sprint_acceleration = 0.0
 
 [node name="NPCBogan" parent="." instance=ExtResource("11_1rmv7")]
 transform = Transform3D(1.3332, 0, 0.866419, 0, 1.59, 0, -0.866419, 0, 1.3332, 4.23101, 3.68221, 46.6996)
 npc_resource = ExtResource("15_2yy5a")
-jump_speed = 8.0
 sit_height = 0.1
-sprint_acceleration = null
+sprint_acceleration = 0.0
 
 [node name="NPCGenji" parent="." instance=ExtResource("11_1rmv7")]
 transform = Transform3D(0.0294831, 0, 1.10961, 0, 1.11, 0, -1.10961, 0, 0.0294831, 5.37812, 3.24597, 44.9766)
 npc_resource = ExtResource("16_scjqn")
-jump_speed = 8.0
 sit_height = 0.1
-sprint_acceleration = null
+sprint_acceleration = 0.0
 
 [node name="ExitDoor" parent="." instance=ExtResource("16_or7qe")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.33069, 2.66511, 55.8674)
