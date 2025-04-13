@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5tvudte8qpog"]
+
+[ext_resource type="PackedScene" uid="uid://dknewdalu1xoh" path="res://scenes/objects/static/seat/seat_row.tscn" id="1_7v3su"]
+
+[node name="FullSeatRow" type="Node3D"]
+
+[node name="SeatRow" parent="." instance=ExtResource("1_7v3su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114093, -0.984991, 1.09183)
+
+[node name="SeatRow2" parent="." instance=ExtResource("1_7v3su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8291, -0.984991, 1.09183)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.586605, -0.482921, 0)
+light_color = Color(0.995181, 0.868368, 0.714967, 1)
+light_energy = 0.337
+omni_range = 1.69465
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3404, -0.511661, 0)
+light_color = Color(0.995181, 0.868368, 0.714967, 1)
+light_energy = 0.337
+omni_range = 1.69465
