@@ -14,6 +14,7 @@ config/name="fren makes a movie"
 run/main_scene="uid://clk7jbnw3l2uv"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="uid://crlxq4wslqjmp"
+config/windows_native_icon="res://assets/icons/frenvlc.ico"
 
 [audio]
 
@@ -39,6 +40,10 @@ replayable=""
 tickable=""
 player=""
 interactable=""
+
+[gui]
+
+theme/custom="uid://kposa3bvkm8n"
 
 [input]
 

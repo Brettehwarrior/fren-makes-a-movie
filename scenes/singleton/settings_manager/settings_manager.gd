@@ -109,3 +109,4 @@ func is_showing():
 
 func _on_close_button_pressed() -> void:
 	menu_parent.visible = false
+	changed_visibility.emit(menu_parent.visible)
