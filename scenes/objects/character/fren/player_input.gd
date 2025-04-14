@@ -7,6 +7,8 @@ extends CharacterInput
 var _mouse_input : Vector2
 var _ignore_mouse_input : bool
 
+var _previous_mouse_state
+
 func _ready() -> void:
 	_ignore_mouse_input = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -19,10 +21,14 @@ func _ready() -> void:
 
 func _on_settings_changed_visibility(is_visible : bool) -> void:
 	if is_visible:
+		_previous_mouse_state = Input.mouse_mode
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		if not ReplayManager.is_playing_back():
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			if _previous_mouse_state:
+				Input.mouse_mode = _previous_mouse_state
+			else:
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _on_settings_mouse_sensitivity_changed(value : float) -> void:

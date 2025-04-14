@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://8brep5qbcog0"]
+
+[ext_resource type="Texture2D" uid="uid://c76x565oc80bm" path="res://scenes/objects/static/outside/tree.png" id="1_64ffx"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_n0mjd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6wbc"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_64ffx")
+
+[node name="Tree" type="Node3D"]
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.37255, 0, -8.19375e-07, 0, 9.37255, 0, 8.19375e-07, 0, -9.37255, -0.56277, 4.20472, 0)
+mesh = SubResource("QuadMesh_n0mjd")
+surface_material_override/0 = SubResource("StandardMaterial3D_c6wbc")

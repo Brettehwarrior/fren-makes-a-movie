@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dviwtwi8t6wrr"
+path="res://.godot/imported/outsidedoor.obj-2c550c3d36edf15cfb0a11e98944ebf9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/outsidedoor.obj-2c550c3d36edf15cfb0a11e98944ebf9.mesh"]
+
+source_file="res://scenes/objects/static/exit_door/outsidedoor.obj"
+dest_files=["res://.godot/imported/outsidedoor.obj-2c550c3d36edf15cfb0a11e98944ebf9.mesh", "res://.godot/imported/outsidedoor.obj-2c550c3d36edf15cfb0a11e98944ebf9.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

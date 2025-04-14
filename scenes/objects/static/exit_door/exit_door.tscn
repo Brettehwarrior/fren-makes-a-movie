@@ -1,36 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs6u4l08gmv0e"]
+[gd_scene load_steps=7 format=3 uid="uid://bs6u4l08gmv0e"]
 
 [ext_resource type="Script" uid="uid://dxygniad11rib" path="res://scenes/objects/static/exit_door/exit_door.gd" id="1_8q72p"]
-[ext_resource type="Texture2D" uid="uid://py68luswwopo" path="res://scenes/objects/static/exit_door/exit.png" id="1_je4x7"]
+[ext_resource type="ArrayMesh" uid="uid://dviwtwi8t6wrr" path="res://scenes/objects/static/exit_door/outsidedoor.obj" id="3_cfljt"]
 [ext_resource type="PackedScene" uid="uid://bo14vsfgv7h33" path="res://scenes/objects/triggers/interaction/interaction_cube.tscn" id="3_pp4nk"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_5772m"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_pp4nk"]
+size = Vector3(0.15332, 2.82669, 1.94824)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8q72p"]
-transparency = 1
-albedo_texture = ExtResource("1_je4x7")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_je4x7"]
-size = Vector3(0.39917, 2.19775, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pp4nk"]
+albedo_color = Color(0.520505, 0.600092, 0.676755, 1)
+metallic = 0.16
+roughness = 0.38
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp4nk"]
 bg_color = Color(0, 0, 0, 0.443137)
 
-[node name="ExitDoor" type="Node3D" node_paths=PackedStringArray("confirm_ui", "idiot_ui")]
+[node name="ExitDoor" type="StaticBody3D" node_paths=PackedStringArray("confirm_ui", "idiot_ui")]
 script = ExtResource("1_8q72p")
 confirm_ui = NodePath("CanvasLayer/Control/Confirm")
 idiot_ui = NodePath("CanvasLayer/Control/Idiot")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1.42462, -1, -4.37114e-08, -6.22719e-08, 0, 1, 0)
-mesh = SubResource("PlaneMesh_5772m")
-surface_material_override/0 = SubResource("StandardMaterial3D_8q72p")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24107, -0.106445)
+shape = SubResource("BoxShape3D_pp4nk")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Model" type="Node3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0635986, 1.02759, 0)
-shape = SubResource("BoxShape3D_je4x7")
+[node name="Outsidedoor" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(-3.5466e-08, 0, -0.811368, 0, 0.811368, 0, 0.811368, 0, -3.5466e-08, -0.0168967, 1.2221, -0.107064)
+mesh = ExtResource("3_cfljt")
+surface_material_override/0 = SubResource("StandardMaterial3D_pp4nk")
 
 [node name="InteractionCube" parent="." instance=ExtResource("3_pp4nk")]
 transform = Transform3D(0.415, 0, 0, 0, 1.505, 0, 0, 0, 1, 0, 1.062, -0.09)
@@ -114,7 +113,6 @@ alignment = 1
 layout_mode = 2
 text = "whoops, i forgor"
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="interaction_triggered" from="InteractionCube" to="." method="_on_interaction_triggered"]
 [connection signal="pressed" from="CanvasLayer/Control/Confirm/VBoxContainer/HBoxContainer/CompleteMovie" to="." method="_on_complete_movie_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Confirm/VBoxContainer/HBoxContainer/ContinueFilming" to="." method="_on_continue_filming_pressed"]
