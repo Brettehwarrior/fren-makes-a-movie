@@ -30,6 +30,7 @@ script = ExtResource("1_f6v67")
 metadata/_custom_type_script = "uid://cmpp18xjewi4y"
 
 [node name="Model" type="Node3D" parent="RigidBodyDoor"]
+transform = Transform3D(1.07714, 0, 0, 0, 1.07714, 0, 0, 0, 1.07714, -0.0144734, 0, 0)
 
 [node name="DoorRect" type="MeshInstance3D" parent="RigidBodyDoor/Model"]
 transform = Transform3D(1.39045, 0, 0, 0, 1.39045, 0, 0, 0, 1.39045, 0.203471, 1.43723, 0)

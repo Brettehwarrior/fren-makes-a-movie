@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="joey-movie"
+config/name="fren makes a movie"
 run/main_scene="uid://clk7jbnw3l2uv"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://crlxq4wslqjmp"
 
 [audio]
 

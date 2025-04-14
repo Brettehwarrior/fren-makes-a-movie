@@ -12,7 +12,7 @@ var _previously_loaded_movie : String
 @onready var _active_camera : Camera3D = get_viewport().get_camera_3d()
 
 func _ready():
-	play_at_position(500.0) # Debug stuff, delete me
+	play_at_position(583.2) # Debug stuff, delete me?
 	_playback_pause_timer = Timer.new()
 	_playback_pause_timer.timeout.connect(_on_playback_pause_timer_timeout)
 	add_child(_playback_pause_timer)

@@ -22,5 +22,6 @@ filters = PackedStringArray("*.mp4, *.m4v, *.mkv, *.mov ; Video files (*.mp4, *.
 transform = Transform3D(15.3499, 0, 0, 0, 24.035, 0, 0, 0, 24.035, 0, 0, 0)
 interaction_name = "select video from filesystem"
 
+[connection signal="canceled" from="NativeFileDialog" to="." method="_on_native_file_dialog_canceled"]
 [connection signal="file_selected" from="NativeFileDialog" to="." method="_on_file_selected"]
 [connection signal="interaction_triggered" from="InteractionSphere" to="." method="_on_interaction_triggered"]
