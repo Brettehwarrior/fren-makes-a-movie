@@ -1,6 +1,10 @@
 class_name MainScene
 extends Node
 
+signal loaded_menu
+signal loaded_level
+
+
 static var instance : MainScene
 
 @export var initial_world : PackedScene
@@ -57,6 +61,7 @@ static func load_main_level_world() -> void:
 	if main_level_world == null:
 		main_level_world = ResourceLoader.load_threaded_get(instance.main_level_world_uid)
 	instance._set_world(instance.main_level_world)
+	instance.loaded_level.emit()
 
 
 static func load_story_world() -> void:
@@ -65,3 +70,4 @@ static func load_story_world() -> void:
 
 static func load_initial_world() -> void:
 	instance._set_world(instance.initial_world)
+	instance.loaded_menu.emit()
