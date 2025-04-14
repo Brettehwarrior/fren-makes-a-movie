@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=106 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -127,6 +127,34 @@ background_mode = 2
 sky = SubResource("Sky_vsdhb")
 ambient_light_source = 2
 ambient_light_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[sub_resource type="Resource" id="Resource_hrp27"]
+script = ExtResource("31_hiqbs")
+front_texture = ExtResource("32_sl7pw")
+back_texture = ExtResource("29_d6fkp")
+quote = "if only someone could pick up these boxes ;)"
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"
+
+[sub_resource type="Resource" id="Resource_mx3nu"]
+script = ExtResource("31_hiqbs")
+front_texture = ExtResource("34_8ox74")
+back_texture = ExtResource("29_d6fkp")
+quote = "don't go through this door >:("
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"
+
+[sub_resource type="Resource" id="Resource_hu2l4"]
+script = ExtResource("31_hiqbs")
+front_texture = ExtResource("33_hiqbs")
+back_texture = ExtResource("29_d6fkp")
+quote = "clearly you haven't visited fecalfunny.com"
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"
+
+[sub_resource type="Resource" id="Resource_ctw8i"]
+script = ExtResource("31_hiqbs")
+front_texture = ExtResource("30_sl7pw")
+back_texture = ExtResource("29_d6fkp")
+quote = "based and fecal pilled"
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ftul"]
 size = Vector3(0.360352, 0.493164, 0.673828)
@@ -519,6 +547,7 @@ npc_resource = ExtResource("18_7v8es")
 [node name="GrandDad" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.772579, 0, -0.976292, 0, 1.245, 0, 0.976292, 0, -0.772579, -7.25413, 1.22457, -3.63173)
 npc_resource = ExtResource("19_pjqyx")
+dialogue_timeout = 2.0
 
 [node name="Billy" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.623061, 0, 1.05471, 0, 1.225, 0, -1.05471, 0, 0.623061, 10.882, 1.26796, 1.24361)
@@ -538,6 +567,26 @@ ghost = true
 transform = Transform3D(-0.755911, 0, -0.654674, 0, 1, 0, 0.654674, 0, -0.755911, -17.6688, -0.103561, -16.1454)
 npc_resource = ExtResource("20_aih61")
 ghost = true
+
+[node name="Chat1" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.732507, 0, -0.680759, 0, 1, 0, 0.680759, 0, 0.732507, -0.525178, 0.75127, 0.754412)
+npc_resource = SubResource("Resource_hrp27")
+dialogue_timeout = 2.0
+
+[node name="Chat2" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+transform = Transform3D(-0.841859, 0, -0.539696, 0, 1, 0, 0.539696, 0, -0.841859, 3.45193, -0.256363, -16.6032)
+npc_resource = SubResource("Resource_mx3nu")
+dialogue_timeout = 2.0
+
+[node name="Chat3" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.489854, 0, 0.871804, 0, 1, 0, -0.871804, 0, 0.489854, 6.47178, 0.75127, -2.63957)
+npc_resource = SubResource("Resource_hu2l4")
+dialogue_timeout = 2.0
+
+[node name="Chat4" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.670957, 0, -0.741496, 0, 1, 0, 0.741496, 0, 0.670957, -8.15609, 0.75127, 6.08169)
+npc_resource = SubResource("Resource_ctw8i")
+dialogue_timeout = 2.0
 
 [node name="Door" parent="Lobby" instance=ExtResource("12_j2kf4")]
 transform = Transform3D(-4.4315e-08, 0, 1.01381, 0, 1.01381, 0, -1.01381, 0, -4.4315e-08, -9.1402, 0.0549996, 0.272289)
