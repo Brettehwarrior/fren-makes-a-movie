@@ -216,3 +216,15 @@ func get_current_seconds() -> float:
 
 func get_recording_progress_percentage() -> float:
 	return float(_current_recording_frame) / float(_maximum_recording_frames)
+
+
+func reset() -> void:
+	if is_recording():
+		stop_recording()
+	_is_playing_back = false
+	_playback_camera.queue_free()
+	_playback_subviewport.queue_free()
+	_current_recording_frame = 0
+	_playback_object_id = ""
+	
+	_recorded_objects = {}

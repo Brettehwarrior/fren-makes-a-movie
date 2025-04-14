@@ -35,3 +35,7 @@ static func load_main_level_world() -> void:
 
 static func load_story_world() -> void:
 	instance._set_world(instance.story_world)
+
+
+static func load_initial_world() -> void:
+	instance._set_world(instance.initial_world)

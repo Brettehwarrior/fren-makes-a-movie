@@ -73,15 +73,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.0823529, 0.372549, 0.85098, 1)
 
-[node name="TitleScreen" type="Button" parent="VideoPlaybackContainer/Navbar"]
-layout_mode = 2
-theme = ExtResource("5_0kj7c")
-text = "      Return to Title Screen       "
-
 [node name="NewMovie" type="Button" parent="VideoPlaybackContainer/Navbar"]
 layout_mode = 2
 theme = ExtResource("5_0kj7c")
-text = "      New Movie      "
+text = "Make Another Movie      "
 
 [node name="TextureRect2" type="TextureRect" parent="VideoPlaybackContainer/Navbar"]
 layout_mode = 2
@@ -192,7 +187,6 @@ text = "999"
 
 [node name="SubViewport" type="SubViewport" parent="."]
 
-[connection signal="pressed" from="VideoPlaybackContainer/Navbar/TitleScreen" to="." method="_on_title_screen_pressed"]
 [connection signal="pressed" from="VideoPlaybackContainer/Navbar/NewMovie" to="." method="_on_new_movie_pressed"]
 [connection signal="pressed" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/PlayPauseButton" to="." method="_on_play_pause_button_pressed"]
 [connection signal="drag_started" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_drag_started"]

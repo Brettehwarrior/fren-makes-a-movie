@@ -96,9 +96,6 @@ func _on_frame_slider_drag_started() -> void:
 	_update_play_pause_button_icon()
 
 
-func _on_title_screen_pressed() -> void:
-	pass
-
-
 func _on_new_movie_pressed() -> void:
-	pass
+	ReplayManager.reset()
+	MainScene.load_initial_world()
