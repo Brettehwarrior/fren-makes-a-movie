@@ -89,3 +89,7 @@ func _push_rigid_bodies() -> void:
 			collider.apply_central_impulse(-collision.get_normal() * rigid_body_push_force)
 			if input.get_horizontal_input().length() > 0:
 				velocity += Vector3(push_amount.x, 0, push_amount.z)
+		elif collider is CharacterBody3D:
+			var push_amount = -collision.get_normal() * rigid_body_push_force
+			collider.velocity += Vector3(push_amount.x, 0, push_amount.z)
+			# velocity += Vector3(push_amount.x, 0, push_amount.z)
