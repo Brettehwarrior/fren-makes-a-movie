@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://b2xugpyl881cg"]
+
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="1_t4wsu"]
+[ext_resource type="Texture2D" uid="uid://b1ciyj8dx707s" path="res://scenes/objects/character/npc/resources/alien/alien-back.png" id="1_yqy6r"]
+[ext_resource type="Texture2D" uid="uid://bddgkdd06g72c" path="res://scenes/objects/character/npc/resources/alien/alien-front.png" id="2_226wb"]
+
+[resource]
+script = ExtResource("1_t4wsu")
+front_texture = ExtResource("2_226wb")
+back_texture = ExtResource("1_yqy6r")
+quote = "bogos binted"
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"

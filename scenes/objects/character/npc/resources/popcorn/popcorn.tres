@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://bvlljbmdbs6dv"]
+
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="1_feuuf"]
+[ext_resource type="Texture2D" uid="uid://d17vebmhyegum" path="res://scenes/objects/character/npc/resources/popcorn/popcorn.png" id="1_tvx6x"]
+
+[resource]
+script = ExtResource("1_feuuf")
+front_texture = ExtResource("1_tvx6x")
+back_texture = ExtResource("1_tvx6x")
+quote = "It's a living"
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"

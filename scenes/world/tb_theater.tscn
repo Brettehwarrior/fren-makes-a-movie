@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=122 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -34,6 +34,7 @@
 [ext_resource type="Resource" uid="uid://2hb0c0gayiku" path="res://scenes/objects/character/npc/resources/granddad/granddad.tres" id="19_pjqyx"]
 [ext_resource type="Resource" uid="uid://dlsl0einyhcby" path="res://scenes/objects/character/npc/resources/skeletons/skeleton3.tres" id="20_aih61"]
 [ext_resource type="Resource" path="res://scenes/objects/character/npc/resources/chat/smile/chat_smile.tres" id="20_m7bad"]
+[ext_resource type="Resource" uid="uid://b2xugpyl881cg" path="res://scenes/objects/character/npc/resources/alien/alien.tres" id="22_iusvq"]
 [ext_resource type="Resource" uid="uid://c8swyj5aswisl" path="res://scenes/objects/character/npc/resources/goku/goku.tres" id="23_qlc2b"]
 [ext_resource type="Resource" path="res://scenes/objects/character/npc/resources/chat/mad/chat_mad.tres" id="24_78r2x"]
 [ext_resource type="Resource" path="res://scenes/objects/character/npc/resources/chat/joey/chat_joey.tres" id="24_g2t6t"]
@@ -59,10 +60,13 @@
 [ext_resource type="PackedScene" uid="uid://n7q54k0k1brj" path="res://scenes/objects/static/poster/movie_poster_objective_kill.tscn" id="38_7lqi2"]
 [ext_resource type="PackedScene" uid="uid://b06jddp5ra45n" path="res://scenes/objects/static/ceiling_light.tscn" id="41_vvd3d"]
 [ext_resource type="Texture2D" uid="uid://y1nmithpixd0" path="res://scenes/objects/static/outside/parkinglot.png" id="42_n0mjd"]
+[ext_resource type="Resource" uid="uid://bvlljbmdbs6dv" path="res://scenes/objects/character/npc/resources/popcorn/popcorn.tres" id="42_r77iw"]
 [ext_resource type="PackedScene" uid="uid://8brep5qbcog0" path="res://scenes/objects/static/outside/tree.tscn" id="43_hi7ld"]
 [ext_resource type="PackedScene" uid="uid://bfebo0xsrp5pr" path="res://scenes/objects/static/exit_sign.tscn" id="43_x1evf"]
 [ext_resource type="PackedScene" uid="uid://c3spu8f0xv2yi" path="res://scenes/singleton/audio_manager/replayable_audio_stream_player.tscn" id="60_xtvxu"]
 [ext_resource type="AudioStream" uid="uid://dv02vxy63d50b" path="res://assets/sounds/theelevatorbossanova.mp3" id="61_eb0hy"]
+[ext_resource type="Texture2D" uid="uid://b1ciyj8dx707s" path="res://scenes/objects/character/npc/resources/alien/alien-back.png" id="66_g1kxr"]
+[ext_resource type="Texture2D" uid="uid://bddgkdd06g72c" path="res://scenes/objects/character/npc/resources/alien/alien-front.png" id="67_m0u34"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj2fo"]
 albedo_texture = ExtResource("3_ftjvy")
@@ -480,6 +484,13 @@ metadata/_custom_type_script = "uid://djhn27qp2g1mq"
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi7ld"]
 albedo_texture = ExtResource("42_n0mjd")
 
+[sub_resource type="Resource" id="Resource_mskm0"]
+script = ExtResource("31_hiqbs")
+front_texture = ExtResource("67_m0u34")
+back_texture = ExtResource("66_g1kxr")
+quote = "estoy poopin"
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"
+
 [node name="TbTheater" type="Node3D"]
 
 [node name="TBLoader" type="TBLoader" parent="."]
@@ -766,6 +777,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7014, 3.9814, -0.344158)
 
 [node name="CeilingLight2" parent="Hallway" instance=ExtResource("41_vvd3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09353, 3.9814, -0.344158)
+
+[node name="NPC" parent="Hallway" instance=ExtResource("19_biprm")]
+transform = Transform3D(-7.51685e-08, 0, 1.71965, 0, 1.71965, 0, -1.71965, 0, -7.51685e-08, 8.2764, 1.95266, 9.99234)
+npc_resource = ExtResource("42_r77iw")
 
 [node name="ScreenRoom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0421, 4.75973, -51.0298)
@@ -1286,9 +1301,28 @@ transform = Transform3D(1.1223, 0, 0, 0, 1.1223, 0, 0, 0, 1.1223, -13.078, -1.43
 [node name="Tree14" parent="Outside/Trees2" instance=ExtResource("43_hi7ld")]
 transform = Transform3D(1.1223, 0, 0, 0, 1.1223, 0, 0, 0, 1.1223, 13.0097, -2.38419e-06, 14.7716)
 
+[node name="NPC2" parent="Outside" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.995983, 0, 0.0895375, 0, 1, 0, -0.0895375, 0, 0.995983, -1.06966, 0.998159, 11.7326)
+npc_resource = ExtResource("22_iusvq")
+ghost = true
+
+[node name="NPC3" parent="Outside" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.995983, 0, 0.0895375, 0, 1, 0, -0.0895375, 0, 0.995983, -2.87714, 0.998159, 11.7326)
+npc_resource = ExtResource("22_iusvq")
+ghost = true
+
+[node name="NPC4" parent="Outside" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.99642, 0, -0.0845474, 0, 1, 0, 0.0845474, 0, 0.99642, -4.72365, 0.998159, 11.7326)
+npc_resource = ExtResource("22_iusvq")
+ghost = true
+
 [node name="ReplayableAudioStreamPlayer" parent="." instance=ExtResource("60_xtvxu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70494, 4.52532, -6.24456)
 stream = ExtResource("61_eb0hy")
 volume_db = -19.2
 autoplay = true
 max_distance = 28.0
+
+[node name="NPC" parent="." instance=ExtResource("19_biprm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.1944, 1.04025, -5.41957)
+npc_resource = SubResource("Resource_mskm0")
