@@ -11,6 +11,7 @@ extends ReplayableCharacter
 
 func _ready() -> void:
 	assert(camcorder != null, "Camcorder node is not attached to fren! This will break things!!")
+	EventBus.global_fren_reference = self
 
 
 func _process(delta: float) -> void:

@@ -25,6 +25,9 @@ extends ReplayableCharacter
 var _target_sit_height : float = stand_height
 var _target_sit_angle : float = 0.0
 
+var _look_angle_time : float = 0
+var _target_look_angle : float
+
 func _save_state() -> Dictionary:
 	var state : Dictionary = super._save_state()
 	state.quote_visible = quote_label.visible
@@ -45,6 +48,7 @@ func _ready() -> void:
 		return
 	_apply_resource_values(npc_resource)
 	quote_label.visible = false
+	_target_look_angle = rad_to_deg(rotation.y)
 
 
 func _apply_resource_values(resource : NPCResource) -> void:
@@ -61,6 +65,7 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	_process_sit(delta)
+	_process_look_angle(delta)
 
 
 func _process_sit(delta) -> void:
@@ -68,9 +73,23 @@ func _process_sit(delta) -> void:
 	sit_body_slide_node.position.y = move_toward(sit_body_slide_node.position.y, _target_sit_height, sit_height_speed * delta)
 
 
+func _process_look_angle(delta : float) -> void:
+	_look_angle_time = move_toward(_look_angle_time, 0.2, delta)
+	rotation.y = lerp_angle(rotation.y, deg_to_rad(_target_look_angle), _look_angle_time)
+
+
 func _on_interaction_sphere_interaction_triggered() -> void:
 	quote_label.visible = true
 	AudioManager.play_oneshot(poke_sound, global_position, 5)
+
+	var h_global_position = Vector2(global_position.x, global_position.z)
+	var fren_h_global_position = Vector2(EventBus.global_fren_reference.global_position.x, EventBus.global_fren_reference.global_position.z)
+
+	_target_look_angle = - 90 - rad_to_deg((fren_h_global_position - h_global_position).angle())
+
+	print("new angle = %f" % _target_look_angle)
+
+	_look_angle_time = 0
 	await get_tree().create_timer(dialogue_timeout).timeout
 	quote_label.visible = false
 
@@ -78,6 +97,7 @@ func _on_interaction_sphere_interaction_triggered() -> void:
 func start_sitting() -> void:
 	_target_sit_angle = sit_angle
 	_target_sit_height = sit_height
+
 
 func stop_sitting() -> void:
 	_target_sit_angle = 0
