@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b06jddp5ra45n"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7lqi2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lqi2"]
+shading_mode = 0
+
+[node name="CeilingLight" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.82011, 0, 0, 0, -1, -5.79067e-08, 0, 8.74228e-08, -0.662375, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7lqi2")
+surface_material_override/0 = SubResource("StandardMaterial3D_7lqi2")

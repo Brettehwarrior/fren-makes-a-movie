@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=117 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -57,6 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://dt82afg5h5da4" path="res://scenes/objects/static/counter.tscn" id="36_qex1g"]
 [ext_resource type="ArrayMesh" uid="uid://bg7k2tqedcw88" path="res://assets/models/1.obj" id="37_r4ygf"]
 [ext_resource type="PackedScene" uid="uid://n7q54k0k1brj" path="res://scenes/objects/static/poster/movie_poster_objective_kill.tscn" id="38_7lqi2"]
+[ext_resource type="PackedScene" uid="uid://b06jddp5ra45n" path="res://scenes/objects/static/ceiling_light.tscn" id="41_vvd3d"]
 [ext_resource type="Texture2D" uid="uid://y1nmithpixd0" path="res://scenes/objects/static/outside/parkinglot.png" id="42_n0mjd"]
 [ext_resource type="PackedScene" uid="uid://8brep5qbcog0" path="res://scenes/objects/static/outside/tree.tscn" id="43_hi7ld"]
 [ext_resource type="PackedScene" uid="uid://bfebo0xsrp5pr" path="res://scenes/objects/static/exit_sign.tscn" id="43_x1evf"]
@@ -585,7 +586,7 @@ transform = Transform3D(0.77454, 0, 0.745461, 0, 1.075, 0, -0.745461, 0, 0.77454
 npc_resource = ExtResource("16_xswd7")
 
 [node name="Jerma" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
-transform = Transform3D(0.683744, 0, 0.269665, 0, 0.735, 0, -0.269665, 0, 0.683744, -0.791343, -0.35479, -15.5092)
+transform = Transform3D(-0.103283, 0, 0.727707, 0, 0.735, 0, -0.727707, 0, -0.103283, -14.1165, -0.354791, -15.8225)
 npc_resource = ExtResource("18_7v8es")
 
 [node name="GrandDad" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
@@ -659,6 +660,24 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.000
 
 [node name="MoviePoster4" parent="Lobby" instance=ExtResource("38_7lqi2")]
 transform = Transform3D(-4.56956e-08, 0, -1, 0, 1, 0, 1, 0, -4.56956e-08, -8.8375, 2.27191, 3.84217)
+
+[node name="CeilingLight3" parent="Lobby" instance=ExtResource("41_vvd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54019, 4.99898, -3.98199)
+
+[node name="CeilingLight4" parent="Lobby" instance=ExtResource("41_vvd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54019, 4.99898, 3.60093)
+
+[node name="CeilingLight5" parent="Lobby" instance=ExtResource("41_vvd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49262, 4.99898, -3.98199)
+
+[node name="CeilingLight6" parent="Lobby" instance=ExtResource("41_vvd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49262, 4.99898, 3.60093)
+
+[node name="CeilingLight7" parent="Lobby" instance=ExtResource("41_vvd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6497, 4.99898, -3.98199)
+
+[node name="CeilingLight8" parent="Lobby" instance=ExtResource("41_vvd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6497, 4.99898, 3.60093)
 
 [node name="Bathroom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3313, 0, -7.67703)
@@ -738,6 +757,15 @@ transform = Transform3D(-0.741754, 0, -0.670673, 0, 1, 0, 0.670673, 0, -0.741754
 
 [node name="MoviePoster4" parent="Hallway" instance=ExtResource("38_7lqi2")]
 transform = Transform3D(1, 0, -1.98419e-09, 0, 1, 0, 1.98419e-09, 0, 1, -11.4542, 1.64309, 2.44185)
+
+[node name="CeilingLight" parent="Hallway" instance=ExtResource("41_vvd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43582, 3.9814, -0.344158)
+
+[node name="CeilingLight3" parent="Hallway" instance=ExtResource("41_vvd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7014, 3.9814, -0.344158)
+
+[node name="CeilingLight2" parent="Hallway" instance=ExtResource("41_vvd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09353, 3.9814, -0.344158)
 
 [node name="ScreenRoom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0421, 4.75973, -51.0298)
