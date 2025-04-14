@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://er55h5cit2jy"]
+[gd_scene load_steps=3 format=3 uid="uid://er55h5cit2jy"]
 
 [ext_resource type="Script" uid="uid://wegsouae2ifu" path="res://scenes/singleton/settings_manager/settings_manager.gd" id="1_pe4m4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pe4m4"]
+bg_color = Color(0, 0, 0, 0.27451)
 
 [node name="SettingsManager" type="Node" node_paths=PackedStringArray("menu_parent", "master_volume_slider", "master_volume_percentage_label", "microphone_option_button", "mouse_sensitivity_slider", "mouse_sensitivity_label", "controller_sensitivity_slider", "controller_sensitivity_label")]
 script = ExtResource("1_pe4m4")
@@ -23,6 +26,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pe4m4")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control"]
 layout_mode = 1

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://1fk8h0auvwg2" path="res://scenes/objects/triggers/interaction/ui/interaction_ui.gd" id="1_7pklp"]
 [ext_resource type="Texture2D" uid="uid://cn8lvy3eit5tt" path="res://scenes/objects/triggers/interaction/ui/crosshair.png" id="1_mjecr"]
 
-[node name="InteractionUi" type="Control" node_paths=PackedStringArray("interaction_label")]
+[node name="InteractionUi" type="Control" node_paths=PackedStringArray("crosshair_parent", "interaction_label")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -13,9 +13,16 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7pklp")
+crosshair_parent = NodePath("Control")
 interaction_label = NodePath("InteractionLabel")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
 texture_filter = 1
 texture = ExtResource("1_mjecr")
 
@@ -26,4 +33,5 @@ offset_top = 4.0
 offset_right = 251.0
 offset_bottom = 40.0
 theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
 scroll_active = false

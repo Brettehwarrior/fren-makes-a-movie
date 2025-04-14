@@ -25,17 +25,29 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Label3" type="Label" parent="VBoxContainer"]
+[node name="Label3" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "[Hold RMB]: record"
+theme_override_colors/default_color = Color(1, 1, 1, 0.607843)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "Hold[img={30}]uid://cwur6c0i12vw5[/img]: record"
+fit_content = true
+autowrap_mode = 0
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "[R]: grab/drop cam"
+theme_override_colors/default_color = Color(1, 1, 1, 0.607843)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[img={30}]uid://c14pxu8bqsnt8[/img]: grab/drop cam"
+fit_content = true
+autowrap_mode = 0
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
+[node name="Label2" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "[←/→]: filter"
+theme_override_colors/default_color = Color(1, 1, 1, 0.607843)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[img={30}]uid://bodop5jmmfvr0[/img]/[img={30}]uid://bi8qltdybgbbh[/img]: filter"
+fit_content = true
+autowrap_mode = 0
