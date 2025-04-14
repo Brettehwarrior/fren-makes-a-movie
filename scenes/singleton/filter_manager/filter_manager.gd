@@ -1,3 +1,4 @@
+class_name FilterManager
 extends Node
 
 # To add a filter:
@@ -12,10 +13,21 @@ var _current_filter : Control
 
 @export var filters: Array[PackedScene]
 
+var _original_parent : Node
+
+static var instance : FilterManager
+
 func _ready() -> void:
+	_original_parent = get_parent()
 	_index = 0
 	set_filter(_index)
+	ReplayManager.playback_camera_created.connect(_on_replay_manager_playback_camera_created)
+	instance = self
 	
+func _on_replay_manager_playback_camera_created(viewport : SubViewport) -> void:
+	reparent(viewport)
+
+
 func _input(event: InputEvent) -> void:
 	if not ReplayManager.is_playing_back():
 		if event.is_action_pressed("previous_filter"):
@@ -39,7 +51,7 @@ func next_filter() -> void:
 func set_filter(index : int) -> void:
 	if _current_filter != null:
 		remove_child(_current_filter)
-	_current_filter = filters[_index].instantiate()
+	_current_filter = filters[index].instantiate()
 	_current_filter.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_current_filter)
 	filter_changed.emit()
