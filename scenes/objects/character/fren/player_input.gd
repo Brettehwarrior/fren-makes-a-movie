@@ -5,12 +5,16 @@ extends CharacterInput
 @onready var controller_sensitivity : float = SettingsManager.controller_sensitivity_slider.value
 
 var _mouse_input : Vector2
+var _ignore_mouse_input : bool
 
 func _ready() -> void:
+	_ignore_mouse_input = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	SettingsManager.changed_visibility.connect(_on_settings_changed_visibility)
 	SettingsManager.mouse_sensitivity_changed.connect(_on_settings_mouse_sensitivity_changed)
 	SettingsManager.controller_sensitivity_changed.connect(_on_settings_controller_sensitivity_changed)
+	await get_tree().create_timer(0.5).timeout
+	_ignore_mouse_input = false
 
 
 func _on_settings_changed_visibility(is_visible : bool) -> void:
@@ -30,7 +34,7 @@ func _on_settings_controller_sensitivity_changed(value : float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not _ignore_mouse_input:
 		_mouse_input += event.relative
 
 

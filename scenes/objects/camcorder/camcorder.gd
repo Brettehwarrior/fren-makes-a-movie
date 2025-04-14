@@ -79,6 +79,7 @@ func reset_follow_nodes() -> void:
 	AudioManager.play_oneshot(drop_stream, global_position)
 	EventBus.camcorder_dropped.emit()
 
+
 func set_follow_position_node(node : Node3D) -> void:
 	_parent_node = node
 	reparent(node)

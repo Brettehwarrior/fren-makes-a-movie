@@ -4,6 +4,7 @@ extends Node
 static var instance : MainScene
 
 @export var initial_world : PackedScene
+@export var story_world : PackedScene
 @export var main_level_world : PackedScene
 
 @onready var _world_root_node : Node3D = $World
@@ -30,3 +31,7 @@ static func load_world(world_scene : PackedScene) -> void:
 
 static func load_main_level_world() -> void:
 	instance._set_world(instance.main_level_world)
+
+
+static func load_story_world() -> void:
+	instance._set_world(instance.story_world)
