@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bw1tvapvx2eve"]
+[gd_scene load_steps=15 format=3 uid="uid://bw1tvapvx2eve"]
 
 [ext_resource type="Script" uid="uid://bwdpuqgwf4ot6" path="res://scenes/playback/playback_ui/playback_ui.gd" id="1_3dwwi"]
 [ext_resource type="Texture2D" uid="uid://dlaprxlk8bweb" path="res://scenes/playback/playback_ui/images/play_arrow.svg" id="1_w5pia"]
@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://b4l78dhnoil7e" path="res://themes/fecaltube-titlebar.tres" id="5_0kj7c"]
 [ext_resource type="Texture2D" uid="uid://y1d45wa7fjko" path="res://scenes/playback/playback_ui/images/fren-avatar.png" id="6_y8a5x"]
 [ext_resource type="FontFile" uid="uid://bkqeh171koaqc" path="res://themes/fonts/DynaPuff.ttf" id="8_y8a5x"]
+[ext_resource type="FontFile" uid="uid://c2uivd5haxrll" path="res://themes/fonts/PlaypenSans.ttf" id="10_ajfg7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8a5x"]
 
@@ -130,6 +131,23 @@ size_flags_vertical = 3
 texture = ExtResource("4_7l1r0")
 stretch_mode = 5
 
+[node name="PlaybackHint" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -87.0
+offset_right = 107.0
+offset_bottom = -12.0
+grow_vertical = 0
+theme_override_colors/default_color = Color(1, 1, 1, 0.517647)
+theme_override_fonts/normal_font = ExtResource("10_ajfg7")
+theme_override_fonts/italics_font = ExtResource("10_ajfg7")
+bbcode_enabled = true
+text = "[i]Mouse down here for timeline!"
+fit_content = true
+
 [node name="TimelineContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
@@ -187,6 +205,7 @@ layout_mode = 2
 text = "999"
 
 [node name="RestartPrompt" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
