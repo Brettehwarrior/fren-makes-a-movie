@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://dyerl776a5h5"]
+
+[ext_resource type="Texture2D" uid="uid://c0llwdaseu0n5" path="res://scenes/objects/character/npc/resources/chat/chat_back.png" id="1_m11lf"]
+[ext_resource type="Texture2D" uid="uid://xpmqkvwxlr3j" path="res://scenes/objects/character/npc/resources/chat/derp/derp.png" id="2_jcrjp"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="3_yhmhq"]
+
+[resource]
+script = ExtResource("3_yhmhq")
+front_texture = ExtResource("2_jcrjp")
+back_texture = ExtResource("1_m11lf")
+quote = "joey"
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"
