@@ -20,7 +20,6 @@ var _timeline_opacity : float
 var _timeline_hide_cooldown : float = 1.0
 var _timeline_hide_timer : float
 var _viewcount : int = 0
-var _maxviews : int = 1000000000
 
 
 func _ready() -> void:
@@ -42,8 +41,6 @@ func _process(delta: float) -> void:
 				_timeline_hide_timer -= delta
 	
 	timeline.modulate.a = lerp(timeline.modulate.a, _timeline_opacity, delta * 20)
-	_viewcount = lerp(_viewcount, _maxviews, delta * 0.000001)
-	viewcount_field.text = str(_viewcount) + " views"
 
 
 func _on_playback_camera_created(subviewport : SubViewport) -> void:
@@ -110,3 +107,25 @@ func _on_restart_button_pressed() -> void:
 
 func _on_cancel_restart_button_pressed() -> void:
 	restart_prompt_control.visible = false
+
+
+func _on_timer_timeout() -> void:
+	_viewcount += randi_range(7, 6883)
+	viewcount_field.text = format_with_commas(_viewcount) + " views"
+	$Timer.start(1)
+
+func format_with_commas(value: int) -> String:
+	var str_val := str(abs(value))
+	var result := ""
+	var count := 0
+	
+	for i in range(str_val.length() - 1, -1, -1):
+		result = str_val[i] + result
+		count += 1
+		if count % 3 == 0 and i != 0:
+			result = "," + result
+	
+	if value < 0:
+		result = "-" + result
+	
+	return result

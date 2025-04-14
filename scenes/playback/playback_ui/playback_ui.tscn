@@ -274,9 +274,13 @@ size_flags_horizontal = 3
 
 [node name="SubViewport" type="SubViewport" parent="."]
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="VideoPlaybackContainer/Navbar/NewMovie" to="." method="_on_new_movie_pressed"]
 [connection signal="pressed" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/PlayPauseButton" to="." method="_on_play_pause_button_pressed"]
 [connection signal="drag_started" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_drag_started"]
 [connection signal="value_changed" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_value_changed"]
 [connection signal="pressed" from="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CancelRestartButton" to="." method="_on_cancel_restart_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
