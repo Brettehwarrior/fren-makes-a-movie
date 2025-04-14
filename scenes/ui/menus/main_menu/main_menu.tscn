@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://buho77g7qakbu"]
 
-[ext_resource type="Texture2D" uid="uid://xekygxldijgt" path="res://scenes/ui/menus/logo.png" id="1_kx65a"]
 [ext_resource type="Script" uid="uid://dfn176rig7x82" path="res://scenes/ui/menus/main_menu/main_menu.gd" id="1_peecx"]
 [ext_resource type="PackedScene" uid="uid://ojpotsy5lnk3" path="res://scenes/objects/static/seat/seat.tscn" id="2_flk2s"]
+[ext_resource type="Texture2D" uid="uid://dj5687kx7is1e" path="res://scenes/ui/menus/fren_logo_cropped.png" id="2_ywmah"]
 [ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="3_gm7d7"]
 
 [sub_resource type="Environment" id="Environment_kx65a"]
@@ -42,7 +42,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_kx65a")
+texture = ExtResource("2_ywmah")
 expand_mode = 5
 stretch_mode = 5
 
@@ -65,6 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475577, 0, -2.98666)
 
 [node name="NPC" parent="." instance=ExtResource("3_gm7d7")]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0.404377, 0.888256, -2.14699)
+ghost = false
 can_interact = false
 gravity = 0.0
 
