@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://dlsl0einyhcby"]
+
+[ext_resource type="Texture2D" uid="uid://qfk6sox8lr3d" path="res://scenes/objects/character/npc/resources/skeletons/back.png" id="1_cttlv"]
+[ext_resource type="Texture2D" uid="uid://bpi8e3u5j4iin" path="res://scenes/objects/character/npc/resources/skeletons/skeleton3.png" id="2_cttlv"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="3_olvbb"]
+
+[resource]
+script = ExtResource("3_olvbb")
+front_texture = ExtResource("2_cttlv")
+back_texture = ExtResource("1_cttlv")
+quote = "Decided to see a movie on the spur of the moment"
