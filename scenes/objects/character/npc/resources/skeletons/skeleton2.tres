@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://b7v425anupds6"]
+
+[ext_resource type="Texture2D" uid="uid://qfk6sox8lr3d" path="res://scenes/objects/character/npc/resources/skeletons/back.png" id="1_g81s6"]
+[ext_resource type="Texture2D" uid="uid://blw6ali8kbfj3" path="res://scenes/objects/character/npc/resources/skeletons/skeleton2.png" id="2_g81s6"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="3_2utxk"]
+
+[resource]
+script = ExtResource("3_2utxk")
+front_texture = ExtResource("2_g81s6")
+back_texture = ExtResource("1_g81s6")
+quote = "This level design is pretty bare bones"

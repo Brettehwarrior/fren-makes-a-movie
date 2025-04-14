@@ -21,6 +21,7 @@ extends ReplayableCharacter
 @export var sit_height : float = 0.0
 @export var stand_height : float = -0.378
 @export var sit_height_speed : float = 1.2
+@export var ghost : bool = false
 
 @export var can_interact : bool = true
 
@@ -53,6 +54,17 @@ func _ready() -> void:
 	_target_look_angle = rad_to_deg(rotation.y)
 	if not can_interact:
 		$InteractionSphere.queue_free() # jam code moment
+		
+	if ghost:
+		front_sprite_top.set_layer_mask_value(1, false)
+		front_sprite_bottom.set_layer_mask_value(1, false)
+		back_sprite_top.set_layer_mask_value(1, false)
+		back_sprite_bottom.set_layer_mask_value(1, false)
+		
+		front_sprite_top.set_layer_mask_value(19, true)
+		front_sprite_bottom.set_layer_mask_value(19, true)
+		back_sprite_top.set_layer_mask_value(19, true)
+		back_sprite_bottom.set_layer_mask_value(19, true)
 
 
 
