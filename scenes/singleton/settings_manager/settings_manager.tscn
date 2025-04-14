@@ -14,6 +14,7 @@ controller_sensitivity_slider = NodePath("CanvasLayer/Control/PanelContainer/Mar
 controller_sensitivity_label = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ControllerSensitivityLabel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -48,6 +49,32 @@ theme_override_constants/margin_bottom = 20
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 
+[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SETTINGS" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_vertical = 4
+text = "×"
+
+[node name="Label3" type="RichTextLabel" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.431373)
+bbcode_enabled = true
+text = "[center][i]Access this menu any time with ESC/Start."
+fit_content = true
+
 [node name="AUDIO SETTINGS" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "AUDIO SETTINGS"
@@ -68,6 +95,14 @@ size_flags_vertical = 4
 [node name="MasterVolumePercentageLabel" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0%"
+
+[node name="Label2" type="RichTextLabel" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.431373)
+bbcode_enabled = true
+text = "[i]This game records microphone input.
+Please select your normal (or funniest) mic."
+fit_content = true
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -141,6 +176,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Save Settings"
 
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="value_changed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="item_selected" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/MicrophoneOptionButton" to="." method="_on_microphone_option_button_item_selected"]
 [connection signal="value_changed" from="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/MouseSensitivitySlider" to="." method="_on_mouse_sensitivity_slider_value_changed"]

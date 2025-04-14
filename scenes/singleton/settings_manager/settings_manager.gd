@@ -52,6 +52,7 @@ func _load_or_make_config_file() -> void:
 
 
 func _save_default_settings() -> void:
+	menu_parent.visible = true
 	_config_file.set_value("Audio", "master_volume", 1)
 	_config_file.set_value("Audio", "microphone_device_index", 1)
 	_config_file.set_value("Controls", "mouse_sensitvity", 1)
@@ -104,3 +105,7 @@ func _on_microphone_option_button_item_selected(index: int) -> void:
 
 func is_showing():
 	return menu_parent.visible
+
+
+func _on_close_button_pressed() -> void:
+	menu_parent.visible = false
