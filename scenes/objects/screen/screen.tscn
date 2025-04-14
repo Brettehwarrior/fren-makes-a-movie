@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bxvxxuqbfc443" path="res://scenes/objects/screen/screen.gd" id="1_btagw"]
 
 [sub_resource type="Curve" id="Curve_btagw"]
-_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+_data = [Vector2(0, 1), 0.0, -2.75079, 0, 0, Vector2(1, 0), -0.0244574, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_biywn"]
@@ -25,7 +25,7 @@ script = ExtResource("1_btagw")
 stream_player = NodePath("ScreenViewport/AspectRatioContainer/ScreenVideoStreamPlayer")
 audio_origin_node = NodePath("AudioPlaybackOrigin")
 volume_attenuation_curve = SubResource("Curve_btagw")
-max_attenuation_distance = 30.0
+max_attenuation_distance = 35.0
 
 [node name="ScreenMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(11.8307, 0, 0, 0, -3.23211e-08, -6.65479, 0, 0.739421, -2.9089e-07, 0, 0, 0)
@@ -51,4 +51,4 @@ expand = true
 loop = true
 
 [node name="AudioPlaybackOrigin" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.1212)

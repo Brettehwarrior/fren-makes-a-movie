@@ -6,7 +6,7 @@ static var instance : MainScene
 @export var initial_world : PackedScene
 @export var story_world : PackedScene
 @export var main_level_world_uid : String
-var main_level_world : PackedScene
+static var main_level_world : PackedScene
 
 @export var loading_screen_root : Control
 @export var loading_progress_bar : ProgressBar
@@ -54,7 +54,8 @@ static func load_world(world_scene : PackedScene) -> void:
 
 static func load_main_level_world() -> void:
 	# instance.loading_screen_root.visible = true
-	instance.main_level_world = ResourceLoader.load_threaded_get(instance.main_level_world_uid)
+	if main_level_world == null:
+		main_level_world = ResourceLoader.load_threaded_get(instance.main_level_world_uid)
 	instance._set_world(instance.main_level_world)
 
 
