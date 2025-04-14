@@ -1,16 +1,50 @@
-[gd_scene load_steps=6 format=3 uid="uid://buho77g7qakbu"]
+[gd_scene load_steps=9 format=4 uid="uid://buho77g7qakbu"]
 
 [ext_resource type="Script" uid="uid://dfn176rig7x82" path="res://scenes/ui/menus/main_menu/main_menu.gd" id="1_peecx"]
-[ext_resource type="PackedScene" uid="uid://ojpotsy5lnk3" path="res://scenes/objects/static/seat/seat.tscn" id="2_flk2s"]
+[ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="2_ubod5"]
 [ext_resource type="Texture2D" uid="uid://dj5687kx7is1e" path="res://scenes/ui/menus/fren_logo_cropped.png" id="2_ywmah"]
 [ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="3_gm7d7"]
+[ext_resource type="PackedScene" uid="uid://c5tvudte8qpog" path="res://scenes/objects/static/seat/full_seat_row.tscn" id="6_gltxh"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iqyne"]
+_surfaces = [{
+"aabb": AABB(-576, -2, -952, 1152, 4, 1904),
+"attribute_data": PackedByteArray("AAA4wQAAAL4AADjBAAAAAAAAxEEAAAAAAADEQQAAAL4AAKTBAAAAvgAAHEIAAAC+AAAcQgAAAAAAAKTBAAAAAAAApMEAAMTBAACkwQAAOEEAABxCAAA4QQAAHEIAAMTBAACkwQAAxMEAABxCAADEwQAAHEIAADhBAACkwQAAOEEAAKTBAAAAvgAApMEAAAAAAAAcQgAAAAAAABxCAAAAvgAAOMEAAAC+AADEQQAAAL4AAMRBAAAAAAAAOMEAAAAA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": ExtResource("2_ubod5"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAQxAAAAEAAAG7EAAAQxAAAAMAAAG7EAAAQRAAAAMAAAG7EAAAQRAAAAEAAAG7EAAAQxAAAAEAAAG7EAAAQxAAAAEAAAG5EAAAQxAAAAMAAAG5EAAAQxAAAAMAAAG7EAAAQRAAAAMAAAG7EAAAQxAAAAMAAAG7EAAAQxAAAAMAAAG5EAAAQRAAAAMAAAG5EAAAQRAAAAEAAAG7EAAAQRAAAAEAAAG5EAAAQxAAAAEAAAG5EAAAQxAAAAEAAAG7EAAAQRAAAAEAAAG7EAAAQRAAAAMAAAG7EAAAQRAAAAMAAAG5EAAAQRAAAAEAAAG5EAAAQxAAAAEAAAG5EAAAQRAAAAEAAAG5EAAAQRAAAAMAAAG5EAAAQxAAAAMAAAG5E/////////z//////////P/////////8//////////z8AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD/f/8//38AAP9//z//fwAA/3//P/9/AAD/f/8//3////9//7//f////3//v/9/////f/+//3////9//7////9//3//P////3//f/8/////f/9//z////9//3//P/9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bqob7"]
+data = PackedVector3Array(-576, 2, -952, -576, -2, -952, 576, -2, -952, -576, 2, -952, 576, -2, -952, 576, 2, -952, -576, 2, -952, -576, 2, 952, -576, -2, 952, -576, 2, -952, -576, -2, 952, -576, -2, -952, 576, -2, -952, -576, -2, -952, -576, -2, 952, 576, -2, -952, -576, -2, 952, 576, -2, 952, 576, 2, -952, 576, 2, 952, -576, 2, 952, 576, 2, -952, -576, 2, 952, -576, 2, -952, 576, 2, -952, 576, -2, -952, 576, -2, 952, 576, 2, -952, 576, -2, 952, 576, 2, 952, -576, 2, 952, 576, 2, 952, 576, -2, 952, -576, 2, 952, 576, -2, 952, -576, -2, 952)
 
 [sub_resource type="Environment" id="Environment_kx65a"]
 background_mode = 1
 background_color = Color(0.0962781, 0.0700394, 0.103372, 1)
+background_energy_multiplier = 0.39
+ambient_light_energy = 0.23
 
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_peecx")
+
+[node name="TBLoader" type="TBLoader" parent="."]
+map_resource = "res://scenes/world/menu_map/menu.map"
+
+[node name="Default Layer" type="Node3D" parent="TBLoader"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 2, 280)
+
+[node name="entity_0_geometry" type="MeshInstance3D" parent="TBLoader/Default Layer"]
+mesh = SubResource("ArrayMesh_iqyne")
+
+[node name="entity_0_geometry_col" type="StaticBody3D" parent="TBLoader/Default Layer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TBLoader/Default Layer/entity_0_geometry_col"]
+shape = SubResource("ConcavePolygonShape3D_bqob7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -55,22 +89,31 @@ layout_mode = 2
 text = "Quit :("
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64545, 2.11139, 1.35237)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64545, 5.67001, 1.35237)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kx65a")
 
-[node name="Seat" parent="." instance=ExtResource("2_flk2s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475577, 0, -2.98666)
-
 [node name="NPC" parent="." instance=ExtResource("3_gm7d7")]
-transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0.404377, 0.888256, -2.14699)
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0.613788, 5.0998, -1.82339)
 ghost = false
 can_interact = false
 gravity = 0.0
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.114, 3.00541, -0.34147)
+[node name="FullSeatRow" parent="." instance=ExtResource("6_gltxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.92415, 4.88113, -1.65262)
+
+[node name="FullSeatRow3" parent="." instance=ExtResource("6_gltxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.92415, 3.75491, 0.639908)
+
+[node name="FullSeatRow2" parent="." instance=ExtResource("6_gltxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.92415, 5.88944, -4.14114)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.369504, 0.929229, 0, -0.929229, 0.369504, 0.818279, 9.47541, 0.608231)
+light_color = Color(0.905882, 1, 1, 1)
+spot_range = 6.57436
+spot_angle = 34.6868
 
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
