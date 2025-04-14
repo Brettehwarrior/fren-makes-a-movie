@@ -22,6 +22,8 @@ extends ReplayableCharacter
 @export var stand_height : float = -0.378
 @export var sit_height_speed : float = 1.2
 
+@export var can_interact : bool = true
+
 var _target_sit_height : float = stand_height
 var _target_sit_angle : float = 0.0
 
@@ -49,6 +51,9 @@ func _ready() -> void:
 	_apply_resource_values(npc_resource)
 	quote_label.visible = false
 	_target_look_angle = rad_to_deg(rotation.y)
+	if not can_interact:
+		$InteractionSphere.queue_free() # jam code moment
+
 
 
 func _apply_resource_values(resource : NPCResource) -> void:
