@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://u7e8wy4hdxen"]
 
-[ext_resource type="Texture2D" uid="uid://bxa30av8q5yy4" path="res://scenes/objects/projector/projector.png" id="1_nm2xf"]
 [ext_resource type="Script" uid="uid://dlpmowg7ua81k" path="res://scenes/objects/projector/projector.gd" id="1_xk08h"]
 [ext_resource type="PackedScene" uid="uid://bsnaci63fmit2" path="res://scenes/objects/triggers/interaction/interaction_sphere.tscn" id="2_eqxdm"]
+[ext_resource type="Texture2D" uid="uid://cah86lsfgkv2g" path="res://scenes/objects/projector/projector-new.png" id="2_xk08h"]
 
 [node name="Projector" type="Node3D" node_paths=PackedStringArray("native_file_dialog")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
@@ -10,7 +10,8 @@ script = ExtResource("1_xk08h")
 native_file_dialog = NodePath("NativeFileDialog")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("1_nm2xf")
+transform = Transform3D(-3.22679, 0, -8.74228e-08, 0, 3.26532, 0, 2.82095e-07, 0, -1, 0, 0, 0)
+texture = ExtResource("2_xk08h")
 
 [node name="NativeFileDialog" type="NativeFileDialog" parent="."]
 title = "Open a File"
@@ -19,7 +20,7 @@ access = 2
 filters = PackedStringArray("*.mp4, *.m4v, *.mkv, *.mov ; Video files (*.mp4, *.m4v, *.mkv, *.mov)", "* ; All files")
 
 [node name="InteractionSphere" parent="." instance=ExtResource("2_eqxdm")]
-transform = Transform3D(15.3499, 0, 0, 0, 24.035, 0, 0, 0, 24.035, 0, 0, 0)
+transform = Transform3D(15.3499, 0, 0, 0, 24.035, 0, 0, 0, 13.633, 0, 0, 0)
 interaction_name = "select video from filesystem"
 
 [connection signal="canceled" from="NativeFileDialog" to="." method="_on_native_file_dialog_canceled"]
