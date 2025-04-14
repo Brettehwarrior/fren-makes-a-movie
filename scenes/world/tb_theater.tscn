@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=101 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://upqlw6vcngmn" path="res://scenes/objects/static/toilet/stalls.tscn" id="16_fb40d"]
 [ext_resource type="Resource" uid="uid://btny7r8c6dfuq" path="res://scenes/objects/character/npc/resources/kermit/kermit.tres" id="16_xswd7"]
 [ext_resource type="Resource" uid="uid://cclwv7v0o373r" path="res://scenes/objects/character/npc/resources/billy/billy.tres" id="17_h3qvi"]
+[ext_resource type="Resource" uid="uid://b5r3hofrn4run" path="res://scenes/objects/character/npc/resources/german/german.tres" id="18_7v8es"]
 [ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="19_biprm"]
 [ext_resource type="Resource" uid="uid://b7v425anupds6" path="res://scenes/objects/character/npc/resources/skeletons/skeleton2.tres" id="19_kj8i7"]
 [ext_resource type="Resource" uid="uid://dlsl0einyhcby" path="res://scenes/objects/character/npc/resources/skeletons/skeleton3.tres" id="20_aih61"]
@@ -496,28 +497,27 @@ transform = Transform3D(-0.741754, 0, -0.670673, 0, 1, 0, 0.670673, 0, -0.741754
 [node name="Genji" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.876643, 0, -0.481142, 0, 1, 0, 0.481142, 0, -0.876643, -0.208145, 1.04031, -5.71635)
 npc_resource = ExtResource("13_m7bad")
-ghost = false
 
 [node name="Bulk" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.838743, 0, -1.01279, 0, 1.315, 0, 1.01279, 0, -0.838743, -1.9861, 1.23917, -4.97155)
 npc_resource = ExtResource("14_ow31s")
-ghost = false
 
 [node name="Phoebe" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
-transform = Transform3D(-1.12649, 0.0956295, 0.800061, -0.0522548, 1.36365, -0.236569, -0.80406, -0.222599, -1.10551, 10.9666, 1.08626, -6.42441)
+transform = Transform3D(-1.02889, 0.0873437, 0.730742, -0.0477273, 1.2455, -0.216071, -0.734394, -0.203312, -1.00973, 10.9666, 1.08626, -6.42441)
 npc_resource = ExtResource("15_c6wbc")
 dialogue_timeout = 2.0
-ghost = false
 
 [node name="Kermit" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.77454, 0, 0.745461, 0, 1.075, 0, -0.745461, 0, 0.77454, 11.5191, 1.10913, -0.0207763)
 npc_resource = ExtResource("16_xswd7")
-ghost = false
+
+[node name="Jerma" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.683744, 0, 0.269665, 0, 0.735, 0, -0.269665, 0, 0.683744, 5.30966, 0.764201, 3.1522)
+npc_resource = ExtResource("18_7v8es")
 
 [node name="Billy" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.623061, 0, 1.05471, 0, 1.225, 0, -1.05471, 0, 0.623061, 10.882, 1.26796, 1.24361)
 npc_resource = ExtResource("17_h3qvi")
-ghost = false
 
 [node name="Skeleton1" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.67009, 0, -0.74228, 0, 1, 0, 0.74228, 0, 0.67009, -17.9567, -0.103561, -12.1857)
@@ -654,58 +654,47 @@ omni_range = 1.22587
 [node name="NPC" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_hi7ld")
-ghost = false
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0433, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_n0mjd")
-ghost = false
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79469, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_m0u34")
-ghost = false
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_beowk")
-ghost = false
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35024, -3.62458, 6.29053)
 npc_resource = SubResource("Resource_g1kxr")
-ghost = false
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45746, -3.62458, 6.28706)
 npc_resource = SubResource("Resource_e550p")
-ghost = false
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.65093, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_f2lrj")
-ghost = false
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9053, -3.62458, 6.18596)
 npc_resource = ExtResource("24_78r2x")
 dialogue_timeout = 2.0
-ghost = false
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9502, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="Row5" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.09666, -2.33657)
@@ -713,57 +702,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.09666, -2.33657)
 [node name="NPC" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_c6wbc")
-ghost = false
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0433, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_l063i")
-ghost = false
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.794653, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_xswd7")
-ghost = false
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = ExtResource("32_ya6id")
-ghost = false
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54947, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_8w7co")
-ghost = false
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05096, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_uidm7")
-ghost = false
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("24_g2t6t")
-ghost = false
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8699, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_ifrkn")
-ghost = false
 
 [node name="Row2" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17387, 2.72798)
@@ -771,47 +749,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17387, 2.72798)
 [node name="NPC3" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3701, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_eb0hy")
-ghost = false
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77397, -3.62458, 6.18596)
 npc_resource = ExtResource("26_nd616")
-ghost = false
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59712, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72554, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_vvd3d")
-ghost = false
 
 [node name="NPC12" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.306331, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_7lqi2")
-ghost = false
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_r77iw")
-ghost = false
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1069, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_h3qvi")
-ghost = false
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_iusvq")
-ghost = false
 
 [node name="Row3" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15356, 5.0533)
@@ -819,59 +788,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15356, 5.0533)
 [node name="NPC" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_ftjvy")
-ghost = false
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0433, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_3css8")
-ghost = false
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.794188, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_r4ygf")
-ghost = false
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_nj2fo")
-ghost = false
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35024, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_x1evf")
 dialogue_timeout = 2.0
-ghost = false
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = ExtResource("26_x6vav")
-ghost = false
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73685, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_qex1g")
 dialogue_timeout = 1.5
-ghost = false
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.50673, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_xtvxu")
-ghost = false
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9502, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="Row4" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32743, 7.78128)
@@ -880,52 +838,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32743, 7.78128)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.88855, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_31h2o")
 dialogue_timeout = 2.0
-ghost = false
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66889, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1618, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_pjqyx")
-ghost = false
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58976, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_7v8es")
-ghost = false
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05096, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_m7ta4")
-ghost = false
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_aih61")
-ghost = false
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1179, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_kj8i7")
-ghost = false
 
 [node name="Row6" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.27126, 10.3855)
@@ -933,67 +881,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.27126, 10.3855)
 [node name="NPC" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.999875, 0.0157946, 0, -0.0157946, 0.999875, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = ExtResource("25_78r2x")
-ghost = false
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81633, -3.62459, 6.18765)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.731223, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_sl7pw")
-ghost = false
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66184, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_8ox74")
-ghost = false
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_hiqbs")
-ghost = false
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57186, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_ic1bl")
-ghost = false
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61537, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80885, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_ftq80")
-ghost = false
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95308, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_0lg7f")
-ghost = false
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
-ghost = false
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8207, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_ya6id")
-ghost = false
 
 [node name="NPC2" parent="ScreenRoom/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.879, 0.718083, 19.3268)
 npc_resource = ExtResource("23_qlc2b")
-ghost = false
 
 [node name="NPC" parent="ScreenRoom/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.177445, 0, 0.984131, 0, 1, 0, -0.984131, 0, 0.177445, 9.29922, 2.71808, 25.2193)
 npc_resource = ExtResource("24_pnmlv")
-ghost = false
 
 [node name="HallLights" type="Node3D" parent="ScreenRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7593, -2.6739, 17.3143)
