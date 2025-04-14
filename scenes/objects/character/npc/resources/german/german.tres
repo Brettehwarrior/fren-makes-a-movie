@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://b5r3hofrn4run"]
+
+[ext_resource type="Texture2D" uid="uid://5x8dk7oypnu5" path="res://scenes/objects/character/npc/resources/german/german.png" id="1_22vka"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="3_bneig"]
+
+[resource]
+script = ExtResource("3_bneig")
+front_texture = ExtResource("1_22vka")
+back_texture = ExtResource("1_22vka")
+quote = "no chat i am not going to nuke the theater"

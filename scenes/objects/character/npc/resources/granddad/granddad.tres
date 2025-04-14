@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://2hb0c0gayiku"]
+
+[ext_resource type="Texture2D" uid="uid://dl4umb6olnbpi" path="res://scenes/objects/character/npc/resources/granddad/back.png" id="1_fgh6g"]
+[ext_resource type="Texture2D" uid="uid://bubmttcdfr5xf" path="res://scenes/objects/character/npc/resources/granddad/front.png" id="2_fdpro"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="3_0c4qf"]
+
+[resource]
+script = ExtResource("3_0c4qf")
+front_texture = ExtResource("2_fdpro")
+back_texture = ExtResource("1_fgh6g")
+quote = "It's always \"say the line joel\" and never \"how's the line joel\""
