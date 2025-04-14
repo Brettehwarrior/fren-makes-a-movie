@@ -493,7 +493,7 @@ transform = Transform3D(-0.637827, 0, -0.770179, 0, 1, 0, 0.770179, 0, -0.637827
 npc_resource = ExtResource("14_ow31s")
 
 [node name="Door" parent="Lobby" instance=ExtResource("12_j2kf4")]
-transform = Transform3D(-4.4315e-08, 0, 1.01381, 0, 1.01381, 0, -1.01381, 0, -4.4315e-08, -9.02771, 0.083692, 0.238165)
+transform = Transform3D(-4.4315e-08, 0, 1.01381, 0, 1.01381, 0, -1.01381, 0, -4.4315e-08, -9.1402, 0.0549996, 0.272289)
 
 [node name="Bathroom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3313, 0, -7.67703)
@@ -532,10 +532,10 @@ omni_range = 8.51463
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88589, 1.6573, 2.16264)
 
 [node name="Door" parent="Hallway" instance=ExtResource("12_j2kf4")]
-transform = Transform3D(1.01381, 0, 0, 0, 1.01381, 0, 0, 0, 1.01381, 0.810175, -0.902245, -3.58874)
+transform = Transform3D(1.01381, 0, 0, 0, 1.01381, 0, 0, 0, 1.01381, 0.810175, -0.965898, -3.74071)
 
 [node name="Door2" parent="Hallway" instance=ExtResource("12_j2kf4")]
-transform = Transform3D(1.01381, 0, 0, 0, 1.01381, 0, 0, 0, 1.01381, 5.27392, -0.902245, -3.58874)
+transform = Transform3D(1.01381, 0, 0, 0, 1.01381, 0, 0, 0, 1.01381, 5.27392, -0.983555, -3.7365)
 
 [node name="ScreenRoom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0421, 4.75973, -51.0298)
@@ -573,7 +573,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29305, 0.637353, 16.2151)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29305, -4.8028, 3.64929)
 
 [node name="Fren" parent="ScreenRoom" node_paths=PackedStringArray("camcorder") instance=ExtResource("2_mkgah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59317, -3.72545, 6.20137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59317, -3.72545, 5.98522)
 camcorder = NodePath("../Camcorder")
 
 [node name="Camcorder" parent="ScreenRoom" node_paths=PackedStringArray("fren") instance=ExtResource("3_m8yqr")]

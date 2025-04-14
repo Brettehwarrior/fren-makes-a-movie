@@ -9,6 +9,7 @@ func _ready() -> void:
 	replayable_character.started_walking.connect(_on_fren_started_walking)
 	replayable_character.stopped_walking.connect(_on_fren_stopped_walking)
 	animation_player.current_animation = "idle"
+	animation_player.advance(randf_range(0, 1))
 
 
 func _on_fren_started_walking() -> void:

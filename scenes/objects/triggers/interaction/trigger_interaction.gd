@@ -15,7 +15,6 @@ func on_interaction_range_entered():
 	if ReplayManager.is_playing_back():
 		return
 	InteractionManager.set_interaction_display(interaction_name, interaction_keybind)
-	print(get_path())
 	interaction_range_entered.emit()
 
 func on_interaction_range_exited():
