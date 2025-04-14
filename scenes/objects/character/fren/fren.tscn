@@ -303,6 +303,7 @@ transparency = 1
 albedo_texture = ExtResource("6_3nfu3")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apg5y"]
+radius = 0.3473
 
 [node name="Fren" type="CharacterBody3D" node_paths=PackedStringArray("camcorder_hold_position", "camera_pivot", "camera", "model", "input") groups=["player", "replayable"]]
 script = ExtResource("1_vfnkm")

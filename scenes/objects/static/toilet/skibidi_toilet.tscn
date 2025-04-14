@@ -13,7 +13,7 @@ transparency = 1
 albedo_texture = ExtResource("2_uyjit")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5neh1"]
-size = Vector3(2.27039, 1.7359, 1)
+size = Vector3(3.09039, 1.7359, 1)
 
 [node name="SkibidiToilet" type="Node3D" node_paths=PackedStringArray("skibidi_node")]
 script = ExtResource("1_pfp0b")
@@ -33,7 +33,7 @@ script = ExtResource("4_hdner")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.635193, 0.890533, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0452, 0.890533, 0)
 shape = SubResource("BoxShape3D_5neh1")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
