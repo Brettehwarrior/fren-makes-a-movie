@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://n7q54k0k1brj"]
+
+[ext_resource type="PackedScene" uid="uid://cbsk20muwxr5f" path="res://scenes/objects/static/poster/movie_poster.tscn" id="1_j53d6"]
+[ext_resource type="Texture2D" uid="uid://mxqvsnyqpxn4" path="res://scenes/objects/static/poster/textures/objectivekill.png" id="2_kk8q7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_robaq"]
+shading_mode = 0
+albedo_texture = ExtResource("2_kk8q7")
+
+[node name="MoviePoster" instance=ExtResource("1_j53d6")]
+
+[node name="MeshInstance3D" parent="Model/Movie-poster" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_robaq")

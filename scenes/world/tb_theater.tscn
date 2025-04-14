@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=116 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://cisujb7vby336" path="res://scenes/objects/character/npc/resources/chat/joey/joey.png" id="36_e550p"]
 [ext_resource type="PackedScene" uid="uid://dt82afg5h5da4" path="res://scenes/objects/static/counter.tscn" id="36_qex1g"]
 [ext_resource type="ArrayMesh" uid="uid://bg7k2tqedcw88" path="res://assets/models/1.obj" id="37_r4ygf"]
+[ext_resource type="PackedScene" uid="uid://n7q54k0k1brj" path="res://scenes/objects/static/poster/movie_poster_objective_kill.tscn" id="38_7lqi2"]
 [ext_resource type="Texture2D" uid="uid://y1nmithpixd0" path="res://scenes/objects/static/outside/parkinglot.png" id="42_n0mjd"]
 [ext_resource type="PackedScene" uid="uid://8brep5qbcog0" path="res://scenes/objects/static/outside/tree.tscn" id="43_hi7ld"]
 [ext_resource type="PackedScene" uid="uid://bfebo0xsrp5pr" path="res://scenes/objects/static/exit_sign.tscn" id="43_x1evf"]
@@ -639,10 +640,10 @@ npc_resource = SubResource("Resource_m6rl5")
 transform = Transform3D(-4.4315e-08, 0, 1.01381, 0, 1.01381, 0, -1.01381, 0, -4.4315e-08, -9.1402, 0.0549996, 0.272289)
 
 [node name="MoviePoster" parent="Lobby" instance=ExtResource("15_6ftul")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.16411, 2.27246, -6.89392)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.53054, 2.27246, -6.89392)
 
 [node name="MoviePoster2" parent="Lobby" instance=ExtResource("32_3css8")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3.03187, 2.27114, -6.96955)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3.77923, 2.27114, -6.96955)
 
 [node name="ExitSign2" parent="Lobby" instance=ExtResource("43_x1evf")]
 transform = Transform3D(-2.2391e-08, 0, -1.18263, 0, 1.12539, 0, 0.512247, 0, -5.16944e-08, 3.1375, 2.48183, 7.00076)
@@ -655,6 +656,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.70165, 0.532924, -4.28956)
 
 [node name="MoviePoster3" parent="Lobby" instance=ExtResource("33_nj2fo")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.00045, 2.2592, -6.92745)
+
+[node name="MoviePoster4" parent="Lobby" instance=ExtResource("38_7lqi2")]
+transform = Transform3D(-4.56956e-08, 0, -1, 0, 1, 0, 1, 0, -4.56956e-08, -8.8375, 2.27191, 3.84217)
 
 [node name="Bathroom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3313, 0, -7.67703)
@@ -699,7 +703,7 @@ transform = Transform3D(1.01381, 0, 0, 0, 1.01381, 0, 0, 0, 1.01381, 0.810175, -
 transform = Transform3D(1.01381, 0, 0, 0, 1.01381, 0, 0, 0, 1.01381, 5.27392, -0.983555, -3.7365)
 
 [node name="MoviePoster2" parent="Hallway" instance=ExtResource("32_3css8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5099, 1.65599, 2.42087)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.49074, 1.65599, 2.42087)
 
 [node name="MoviePoster3" parent="Hallway" instance=ExtResource("33_nj2fo")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.2624, 1.15897, -3.4829)
@@ -731,6 +735,9 @@ transform = Transform3D(-0.335381, 0, -0.463634, 0, 0.572221, 0, 0.463634, 0, -0
 
 [node name="RigidBodyCube4" parent="Hallway" instance=ExtResource("11_52h8a")]
 transform = Transform3D(-0.741754, 0, -0.670673, 0, 1, 0, 0.670673, 0, -0.741754, -6.42513, 0.56252, 1.53155)
+
+[node name="MoviePoster4" parent="Hallway" instance=ExtResource("38_7lqi2")]
+transform = Transform3D(1, 0, -1.98419e-09, 0, 1, 0, 1.98419e-09, 0, 1, -11.4542, 1.64309, 2.44185)
 
 [node name="ScreenRoom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0421, 4.75973, -51.0298)
