@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://btny7r8c6dfuq"]
+
+[ext_resource type="Texture2D" uid="uid://cinr0j3axog87" path="res://scenes/objects/character/npc/resources/kermit/back.png" id="1_v2jr7"]
+[ext_resource type="Texture2D" uid="uid://bubato80vtv8x" path="res://scenes/objects/character/npc/resources/kermit/front.png" id="2_j0l8w"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="3_43kcj"]
+
+[resource]
+script = ExtResource("3_43kcj")
+front_texture = ExtResource("2_j0l8w")
+back_texture = ExtResource("1_v2jr7")
+quote = "Come on, pretty mama"

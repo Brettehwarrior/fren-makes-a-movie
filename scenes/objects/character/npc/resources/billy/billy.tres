@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://cclwv7v0o373r"]
+
+[ext_resource type="Texture2D" uid="uid://3fjqywcqtgbs" path="res://scenes/objects/character/npc/resources/billy/back.png" id="1_ptxs3"]
+[ext_resource type="Texture2D" uid="uid://cwcy8q0unc0ud" path="res://scenes/objects/character/npc/resources/billy/front.png" id="2_slqwc"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="3_yava6"]
+
+[resource]
+script = ExtResource("3_yava6")
+front_texture = ExtResource("2_slqwc")
+back_texture = ExtResource("1_ptxs3")
+quote = "QUACK QUACK"
