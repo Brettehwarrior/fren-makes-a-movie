@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=96 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -20,7 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://bs6u4l08gmv0e" path="res://scenes/objects/static/exit_door/exit_door.tscn" id="14_a6wf5"]
 [ext_resource type="Resource" uid="uid://gevmoasx08f7" path="res://scenes/objects/character/npc/resources/bogan/bogan.tres" id="14_ow31s"]
 [ext_resource type="PackedScene" uid="uid://cbsk20muwxr5f" path="res://scenes/objects/static/poster/movie_poster.tscn" id="15_6ftul"]
+[ext_resource type="Resource" uid="uid://icvaylmmx8li" path="res://scenes/objects/character/npc/resources/phoebe/phoebe.tres" id="15_c6wbc"]
 [ext_resource type="PackedScene" uid="uid://upqlw6vcngmn" path="res://scenes/objects/static/toilet/stalls.tscn" id="16_fb40d"]
+[ext_resource type="Resource" uid="uid://btny7r8c6dfuq" path="res://scenes/objects/character/npc/resources/kermit/kermit.tres" id="16_xswd7"]
+[ext_resource type="Resource" uid="uid://cclwv7v0o373r" path="res://scenes/objects/character/npc/resources/billy/billy.tres" id="17_h3qvi"]
 [ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="19_biprm"]
 [ext_resource type="Resource" uid="uid://wors64s8nbl4" path="res://scenes/objects/character/npc/resources/chat/smile/chat_smile.tres" id="20_m7bad"]
 [ext_resource type="Resource" uid="uid://c8swyj5aswisl" path="res://scenes/objects/character/npc/resources/goku/goku.tres" id="23_qlc2b"]
@@ -484,13 +487,26 @@ transform = Transform3D(-0.741754, 0, -0.670673, 0, 1, 0, 0.670673, 0, -0.741754
 
 [node name="NPCs" type="Node3D" parent="Lobby"]
 
-[node name="NPC12" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+[node name="Genji" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.876643, 0, -0.481142, 0, 1, 0, 0.481142, 0, -0.876643, -0.208145, 1.04031, -5.71635)
 npc_resource = ExtResource("13_m7bad")
 
-[node name="NPC" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
-transform = Transform3D(-0.637827, 0, -0.770179, 0, 1, 0, 0.770179, 0, -0.637827, -1.9861, 1.04031, -4.97155)
+[node name="Bulk" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+transform = Transform3D(-0.838743, 0, -1.01279, 0, 1.315, 0, 1.01279, 0, -0.838743, -1.9861, 1.23917, -4.97155)
 npc_resource = ExtResource("14_ow31s")
+
+[node name="Phoebe" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+transform = Transform3D(-1.12649, 0.0956295, 0.800061, -0.0522548, 1.36365, -0.236569, -0.80406, -0.222599, -1.10551, 10.9666, 1.08626, -6.42441)
+npc_resource = ExtResource("15_c6wbc")
+dialogue_timeout = 2.0
+
+[node name="Kermit" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.77454, 0, 0.745461, 0, 1.075, 0, -0.745461, 0, 0.77454, 11.5191, 1.10913, -0.0207763)
+npc_resource = ExtResource("16_xswd7")
+
+[node name="Billy" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.623061, 0, 1.05471, 0, 1.225, 0, -1.05471, 0, 0.623061, 10.882, 1.26796, 1.24361)
+npc_resource = ExtResource("17_h3qvi")
 
 [node name="Door" parent="Lobby" instance=ExtResource("12_j2kf4")]
 transform = Transform3D(-4.4315e-08, 0, 1.01381, 0, 1.01381, 0, -1.01381, 0, -4.4315e-08, -9.1402, 0.0549996, 0.272289)
