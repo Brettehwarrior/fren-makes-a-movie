@@ -13,6 +13,8 @@ extends Control
 @export var current_frame_label : Label
 @export var total_frames_label : Label
 
+@export var restart_prompt_control : Control
+
 var _is_playing : bool = false
 var _timeline_opacity : float
 var _timeline_hide_cooldown : float = 1.0
@@ -22,6 +24,7 @@ var _maxviews : int = 1000000000
 
 
 func _ready() -> void:
+	restart_prompt_control.visible = false
 	visible = false
 	ReplayManager.started_playback.connect(_initialize)
 	ReplayManager.playback_camera_created.connect(_on_playback_camera_created)
@@ -97,5 +100,13 @@ func _on_frame_slider_drag_started() -> void:
 
 
 func _on_new_movie_pressed() -> void:
+	restart_prompt_control.visible = true
+
+
+func _on_restart_button_pressed() -> void:
 	ReplayManager.reset()
 	MainScene.load_initial_world()
+
+
+func _on_cancel_restart_button_pressed() -> void:
+	restart_prompt_control.visible = false

@@ -23,7 +23,7 @@ bg_color = Color(1, 1, 1, 1)
 content_margin_right = 77.0
 bg_color = Color(1, 1, 1, 1)
 
-[node name="PlaybackUI" type="Control" node_paths=PackedStringArray("video_playback_texture", "timeline", "viewcount_field", "play_pause_button", "frame_slider", "current_frame_label", "total_frames_label") groups=["tickable"]]
+[node name="PlaybackUI" type="Control" node_paths=PackedStringArray("video_playback_texture", "timeline", "viewcount_field", "play_pause_button", "frame_slider", "current_frame_label", "total_frames_label", "restart_prompt_control") groups=["tickable"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,6 +40,7 @@ pause_icon = ExtResource("3_vm3ey")
 frame_slider = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider")
 current_frame_label = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer/CurrentFrameLabel")
 total_frames_label = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer/TotalFramesLabel")
+restart_prompt_control = NodePath("RestartPrompt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -185,9 +186,78 @@ text = "/"
 layout_mode = 2
 text = "999"
 
+[node name="RestartPrompt" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="RestartPrompt"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.658824)
+
+[node name="PanelContainer" type="PanelContainer" parent="RestartPrompt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RestartPrompt/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RestartPrompt/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Done watching your movie?"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Once you leave this screen, your movie won't save. You can use screen recording software if you want to watch it again later."
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RestartButton" type="Button" parent="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "I'm Done!"
+
+[node name="CancelRestartButton" type="Button" parent="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="Control2" type="Control" parent="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="SubViewport" type="SubViewport" parent="."]
 
 [connection signal="pressed" from="VideoPlaybackContainer/Navbar/NewMovie" to="." method="_on_new_movie_pressed"]
 [connection signal="pressed" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/PlayPauseButton" to="." method="_on_play_pause_button_pressed"]
 [connection signal="drag_started" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_drag_started"]
 [connection signal="value_changed" from="TimelineContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider" to="." method="_on_frame_slider_value_changed"]
+[connection signal="pressed" from="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="RestartPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CancelRestartButton" to="." method="_on_cancel_restart_button_pressed"]

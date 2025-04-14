@@ -72,3 +72,4 @@ gravity = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.114, 3.00541, -0.34147)
 
 [connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
