@@ -10,6 +10,8 @@ extends ReplayableCharacter
 @export var camcorder : Camcorder
 
 func _ready() -> void:
+	super()
+	
 	assert(camcorder != null, "Camcorder node is not attached to fren! This will break things!!")
 	EventBus.global_fren_reference = self
 	

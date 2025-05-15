@@ -47,6 +47,8 @@ func _load_state(state : Dictionary) -> void:
 
 
 func _ready() -> void:
+	super()
+	
 	if Engine.is_editor_hint():
 		return
 	_apply_resource_values(npc_resource)

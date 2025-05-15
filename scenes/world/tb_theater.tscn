@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=123 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -484,6 +484,9 @@ metadata/_custom_type_script = "uid://djhn27qp2g1mq"
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi7ld"]
 albedo_texture = ExtResource("42_n0mjd")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g1kxr"]
+size = Vector3(89.0066, 0.494141, 22.8242)
+
 [sub_resource type="Resource" id="Resource_mskm0"]
 script = ExtResource("31_hiqbs")
 front_texture = ExtResource("67_m0u34")
@@ -582,71 +585,101 @@ transform = Transform3D(-0.741754, 0, -0.670673, 0, 1, 0, 0.670673, 0, -0.741754
 [node name="Genji" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.876643, 0, -0.481142, 0, 1, 0, 0.481142, 0, -0.876643, -0.208145, 1.04031, -5.71635)
 npc_resource = ExtResource("13_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Bulk" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.838743, 0, -1.01279, 0, 1.315, 0, 1.01279, 0, -0.838743, -1.9861, 1.23917, -4.97155)
 npc_resource = ExtResource("14_ow31s")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Phoebe" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-1.02889, 0.0873437, 0.730742, -0.0477273, 1.2455, -0.216071, -0.734394, -0.203312, -1.00973, 10.9666, 1.08626, -6.42441)
 npc_resource = ExtResource("15_c6wbc")
 dialogue_timeout = 2.0
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Kermit" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.77454, 0, 0.745461, 0, 1.075, 0, -0.745461, 0, 0.77454, 11.5191, 1.10913, -0.0207763)
 npc_resource = ExtResource("16_xswd7")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Jerma" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.103283, 0, 0.727707, 0, 0.735, 0, -0.727707, 0, -0.103283, -14.1165, -0.354791, -15.8225)
 npc_resource = ExtResource("18_7v8es")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="GrandDad" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.0123851, 0, -1.24494, 0, 1.245, 0, 1.24494, 0, -0.0123851, -18.0226, 1.22457, -4.71471)
 npc_resource = ExtResource("19_pjqyx")
 dialogue_timeout = 2.0
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Billy" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.623061, 0, 1.05471, 0, 1.225, 0, -1.05471, 0, 0.623061, 10.882, 1.26796, 1.24361)
 npc_resource = ExtResource("17_h3qvi")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Skeleton1" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.67009, 0, -0.74228, 0, 1, 0, 0.74228, 0, 0.67009, -17.9567, -0.103561, -12.1857)
 npc_resource = ExtResource("14_ftq80")
 ghost = true
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Skeleton2" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.113082, 0, -0.993586, 0, 1, 0, 0.993586, 0, -0.113082, -20.4315, -0.103561, -13.998)
 npc_resource = ExtResource("19_kj8i7")
 ghost = true
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Skeleton3" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.755911, 0, -0.654674, 0, 1, 0, 0.654674, 0, -0.755911, -17.6688, -0.103561, -16.1454)
 npc_resource = ExtResource("20_aih61")
 ghost = true
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Chat1" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.732507, 0, -0.680759, 0, 1, 0, 0.680759, 0, 0.732507, -0.525178, 0.75127, 0.754412)
 npc_resource = SubResource("Resource_hrp27")
 dialogue_timeout = 2.0
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Chat2" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-0.841859, 0, -0.539696, 0, 1, 0, 0.539696, 0, -0.841859, 3.45193, -0.256363, -16.6032)
 npc_resource = SubResource("Resource_mx3nu")
 dialogue_timeout = 2.0
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Chat3" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.489854, 0, 0.871804, 0, 1, 0, -0.871804, 0, 0.489854, 6.47178, 0.75127, -2.63957)
 npc_resource = SubResource("Resource_hu2l4")
 dialogue_timeout = 2.0
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Chat4" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.670957, 0, -0.741496, 0, 1, 0, 0.741496, 0, 0.670957, -8.15609, 0.75127, 6.08169)
 npc_resource = SubResource("Resource_ctw8i")
 dialogue_timeout = 2.0
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.06076, 1.04025, -1.57575)
 npc_resource = SubResource("Resource_m6rl5")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Door" parent="Lobby" instance=ExtResource("12_j2kf4")]
 transform = Transform3D(-4.4315e-08, 0, 1.01381, 0, 1.01381, 0, -1.01381, 0, -4.4315e-08, -9.1402, 0.0549996, 0.272289)
@@ -781,6 +814,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09353, 3.9814, -0.344158)
 [node name="NPC" parent="Hallway" instance=ExtResource("19_biprm")]
 transform = Transform3D(-7.51685e-08, 0, 1.71965, 0, 1.71965, 0, -1.71965, 0, -7.51685e-08, 8.2764, 1.95266, 9.99234)
 npc_resource = ExtResource("42_r77iw")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="ScreenRoom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0421, 4.75973, -51.0298)
@@ -835,47 +870,69 @@ transform = Transform3D(1, 0, 0, 0, 2.19697, 0, 0, 0, 2.30871, 16.0931, -0.47909
 [node name="NPC" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_hi7ld")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0433, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_n0mjd")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79469, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_m0u34")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_beowk")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35024, -3.62458, 6.29053)
 npc_resource = SubResource("Resource_g1kxr")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45746, -3.62458, 6.28706)
 npc_resource = SubResource("Resource_e550p")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.65093, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_f2lrj")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9053, -3.62458, 6.18596)
 npc_resource = ExtResource("24_78r2x")
 dialogue_timeout = 2.0
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9502, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Row5" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.09666, -2.33657)
@@ -883,46 +940,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.09666, -2.33657)
 [node name="NPC" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_c6wbc")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0433, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_l063i")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.794653, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_xswd7")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = ExtResource("32_ya6id")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54947, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_8w7co")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05096, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_uidm7")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("24_g2t6t")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row5" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8699, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_ifrkn")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Row2" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17387, 2.72798)
@@ -930,38 +1009,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17387, 2.72798)
 [node name="NPC3" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3701, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_eb0hy")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77397, -3.62458, 6.18596)
 npc_resource = ExtResource("26_nd616")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59712, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72554, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_vvd3d")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC12" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.306331, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_7lqi2")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_r77iw")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1069, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_h3qvi")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row2" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_iusvq")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Row3" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15356, 5.0533)
@@ -969,48 +1066,70 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15356, 5.0533)
 [node name="NPC" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_ftjvy")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0433, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_3css8")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.794188, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_r4ygf")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_nj2fo")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35024, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_x1evf")
 dialogue_timeout = 2.0
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = ExtResource("26_x6vav")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73685, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_qex1g")
 dialogue_timeout = 1.5
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.50673, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_xtvxu")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row3" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9502, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Row4" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32743, 7.78128)
@@ -1019,42 +1138,62 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32743, 7.78128)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.88855, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_31h2o")
 dialogue_timeout = 2.0
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66889, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1618, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18476, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_pjqyx")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58976, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_7v8es")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85748, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05096, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_m7ta4")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19519, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_aih61")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row4" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1179, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_kj8i7")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="Row6" type="Node3D" parent="ScreenRoom/NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.27126, 10.3855)
@@ -1062,54 +1201,80 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.27126, 10.3855)
 [node name="NPC" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.999875, 0.0157946, 0, -0.0157946, 0.999875, 0, 0, 0, 1, 9.26296, -3.62458, 6.18596)
 npc_resource = ExtResource("25_78r2x")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC2" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81633, -3.62459, 6.18765)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC3" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.731223, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_sl7pw")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC4" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66184, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_8ox74")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC5" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00791, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_hiqbs")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC6" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57186, -3.62458, 6.18596)
 npc_resource = SubResource("Resource_ic1bl")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC7" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61537, -3.62459, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC8" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80885, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_ftq80")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC9" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95308, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_0lg7f")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC10" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.697, -3.62458, 6.18596)
 npc_resource = ExtResource("20_m7bad")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC11" parent="ScreenRoom/NPCs/Row6" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8207, -3.62459, 6.18596)
 npc_resource = SubResource("Resource_ya6id")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC2" parent="ScreenRoom/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.879, 0.718083, 19.3268)
 npc_resource = ExtResource("23_qlc2b")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="NPC" parent="ScreenRoom/NPCs" instance=ExtResource("19_biprm")]
 transform = Transform3D(0.177445, 0, 0.984131, 0, 1, 0, -0.984131, 0, 0.177445, 9.29922, 2.71808, 25.2193)
 npc_resource = ExtResource("24_pnmlv")
+enable_safety_net = null
+max_fall_time = null
 
 [node name="HallLights" type="Node3D" parent="ScreenRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7593, -2.6739, 17.3143)
@@ -1166,6 +1331,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hi7ld")
 transform = Transform3D(-11.8111, 0, 1.03256e-06, 0, 11.8111, 0, -1.03256e-06, 0, -11.8111, -25.9016, -0.126374, 7.31157)
 mesh = SubResource("PlaneMesh_e550p")
 surface_material_override/0 = SubResource("StandardMaterial3D_hi7ld")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Outside/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02005, 0, 9.28653)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Outside/Ground/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.750401, -0.378929, -1.55223)
+shape = SubResource("BoxShape3D_g1kxr")
 
 [node name="Trees" type="Node3D" parent="Outside"]
 
@@ -1301,20 +1473,26 @@ transform = Transform3D(1.1223, 0, 0, 0, 1.1223, 0, 0, 0, 1.1223, -13.078, -1.43
 [node name="Tree14" parent="Outside/Trees2" instance=ExtResource("43_hi7ld")]
 transform = Transform3D(1.1223, 0, 0, 0, 1.1223, 0, 0, 0, 1.1223, 13.0097, -2.38419e-06, 14.7716)
 
-[node name="NPC2" parent="Outside" instance=ExtResource("19_biprm")]
-transform = Transform3D(0.995983, 0, 0.0895375, 0, 1, 0, -0.0895375, 0, 0.995983, -1.06966, 0.998159, 11.7326)
+[node name="Alien1" parent="Outside" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.995983, 0, 0.0895375, 0, 1, 0, -0.0895375, 0, 0.995983, -1.06966, 1.30337, 11.7326)
 npc_resource = ExtResource("22_iusvq")
 ghost = true
+enable_safety_net = null
+max_fall_time = null
 
-[node name="NPC3" parent="Outside" instance=ExtResource("19_biprm")]
-transform = Transform3D(0.995983, 0, 0.0895375, 0, 1, 0, -0.0895375, 0, 0.995983, -2.87714, 0.998159, 11.7326)
+[node name="Alien2" parent="Outside" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.995983, 0, 0.0895375, 0, 1, 0, -0.0895375, 0, 0.995983, -2.87714, 1.31795, 11.7326)
 npc_resource = ExtResource("22_iusvq")
 ghost = true
+enable_safety_net = null
+max_fall_time = null
 
-[node name="NPC4" parent="Outside" instance=ExtResource("19_biprm")]
-transform = Transform3D(0.99642, 0, -0.0845474, 0, 1, 0, 0.0845474, 0, 0.99642, -4.72365, 0.998159, 11.7326)
+[node name="Alien3" parent="Outside" instance=ExtResource("19_biprm")]
+transform = Transform3D(0.99642, 0, -0.0845474, 0, 1, 0, 0.0845474, 0, 0.99642, -4.72365, 1.37327, 11.7326)
 npc_resource = ExtResource("22_iusvq")
 ghost = true
+enable_safety_net = null
+max_fall_time = null
 
 [node name="ReplayableAudioStreamPlayer" parent="." instance=ExtResource("60_xtvxu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70494, 4.52532, -6.24456)
@@ -1326,3 +1504,5 @@ max_distance = 28.0
 [node name="NPC" parent="." instance=ExtResource("19_biprm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.1944, 1.04025, -5.41957)
 npc_resource = SubResource("Resource_mskm0")
+enable_safety_net = null
+max_fall_time = null

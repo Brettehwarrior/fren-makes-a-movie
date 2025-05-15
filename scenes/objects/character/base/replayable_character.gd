@@ -7,6 +7,8 @@ signal jumped
 
 var _is_walking : bool = false
 var _was_walking_last_check : bool = false
+var _fall_time : float = 0.0
+var _respawn_position : Vector3
 
 @export var input : CharacterInput
 @export var gravity : float = -50
@@ -16,6 +18,12 @@ var _was_walking_last_check : bool = false
 @export var max_walk_speed : float
 @export_range(0, 1) var walk_friction : float
 @export var rigid_body_push_force : float
+@export var enable_safety_net : bool = true
+@export var max_fall_time : float = 3.5
+
+
+func _ready() -> void:
+	call_deferred("_set_respawn_position")
 
 
 func _save_state() -> Dictionary:
@@ -38,11 +46,12 @@ func _physics_process(delta: float) -> void:
 	if ReplayManager.is_playing_back():
 		return
 
+	_process_safety_net(delta)
 	_process_vertical_velocity(delta)
 	_process_horizontal_velocity(delta)
 	move_and_slide()
 	_push_rigid_bodies()
-
+	
 
 func _process_vertical_velocity(delta : float) -> void:
 	velocity.y += gravity * delta
@@ -93,3 +102,19 @@ func _push_rigid_bodies() -> void:
 			var push_amount = -collision.get_normal() * rigid_body_push_force
 			collider.velocity += Vector3(push_amount.x, 0, push_amount.z)
 			# velocity += Vector3(push_amount.x, 0, push_amount.z)
+
+
+func _set_respawn_position() -> void:
+	_respawn_position = global_transform.origin
+
+
+func _process_safety_net(delta : float) -> void:
+	# Bring character back to safety if they fall out of bounds
+	if not is_on_floor() and name == "Fren": # TODO: make this apply to all characters
+		_fall_time += delta
+		if _fall_time >= max_fall_time:
+			print("safety net caught " + name)
+			_fall_time = 0
+			global_transform.origin = _respawn_position
+	else:
+		_fall_time = 0
