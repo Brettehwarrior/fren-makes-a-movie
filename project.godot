@@ -13,6 +13,7 @@ config_version=5
 config/name="fren makes a movie"
 run/main_scene="uid://clk7jbnw3l2uv"
 config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/image="uid://q3k8gn7sm4b3"
 config/icon="uid://crlxq4wslqjmp"
 config/windows_native_icon="res://assets/icons/frenvlc.ico"
 

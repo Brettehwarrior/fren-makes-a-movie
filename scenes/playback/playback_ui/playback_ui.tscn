@@ -78,7 +78,7 @@ color = Color(0.0823529, 0.372549, 0.85098, 1)
 [node name="NewMovie" type="Button" parent="VideoPlaybackContainer/Navbar"]
 layout_mode = 2
 theme = ExtResource("5_0kj7c")
-text = "Make Another Movie      "
+text = "      Make Another Movie      "
 
 [node name="TextureRect2" type="TextureRect" parent="VideoPlaybackContainer/Navbar"]
 layout_mode = 2
