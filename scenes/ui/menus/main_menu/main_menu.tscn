@@ -96,7 +96,6 @@ environment = SubResource("Environment_kx65a")
 
 [node name="NPC" parent="." instance=ExtResource("3_gm7d7")]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0.613788, 5.0998, -1.82339)
-ghost = false
 can_interact = false
 gravity = 0.0
 
