@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://buho77g7qakbu"]
+[gd_scene load_steps=11 format=4 uid="uid://buho77g7qakbu"]
 
 [ext_resource type="Script" uid="uid://dfn176rig7x82" path="res://scenes/ui/menus/main_menu/main_menu.gd" id="1_peecx"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="2_ubod5"]
 [ext_resource type="Texture2D" uid="uid://dj5687kx7is1e" path="res://scenes/ui/menus/fren_logo_cropped.png" id="2_ywmah"]
 [ext_resource type="PackedScene" uid="uid://b4uxs0tqsqujo" path="res://scenes/objects/character/npc/npc.tscn" id="3_gm7d7"]
+[ext_resource type="Texture2D" uid="uid://cxf6a6xh2jvmx" path="res://scenes/ui/menus/main_menu/images/link.png" id="4_ubod5"]
+[ext_resource type="Texture2D" uid="uid://ct4twau3jwjtw" path="res://scenes/ui/menus/main_menu/images/discord-qrcode.png" id="5_gltxh"]
 [ext_resource type="PackedScene" uid="uid://c5tvudte8qpog" path="res://scenes/objects/static/seat/full_seat_row.tscn" id="6_gltxh"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_iqyne"]
@@ -56,7 +58,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+[node name="Menu" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -70,23 +72,55 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_right = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Menu"]
 custom_minimum_size = Vector2(500.135, 0)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Menu/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_ywmah")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="StartButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="CanvasLayer/Control/Menu/VBoxContainer"]
 layout_mode = 2
 text = "Make a Movie!"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/Control/Menu/VBoxContainer"]
 layout_mode = 2
 text = "Quit :("
+
+[node name="Shoutouts" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Shoutouts"]
+layout_mode = 2
+
+[node name="Authors" type="Label" parent="CanvasLayer/Control/Shoutouts/VBoxContainer"]
+layout_mode = 2
+text = "A game by Trent and Andrew"
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/Shoutouts/VBoxContainer"]
+layout_mode = 2
+text = "Source on GitHub"
+icon = ExtResource("4_ubod5")
+icon_alignment = 2
+expand_icon = true
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/Shoutouts/VBoxContainer"]
+layout_mode = 2
+text = "Join
+the
+Discord!"
+icon = ExtResource("5_gltxh")
+icon_alignment = 2
+expand_icon = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64545, 5.67001, 1.35237)
@@ -114,5 +148,5 @@ light_color = Color(0.905882, 1, 1, 1)
 spot_range = 6.57436
 spot_angle = 34.6868
 
-[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
