@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://buho77g7qakbu"]
+[gd_scene load_steps=14 format=4 uid="uid://buho77g7qakbu"]
 
 [ext_resource type="Script" uid="uid://dfn176rig7x82" path="res://scenes/ui/menus/main_menu/main_menu.gd" id="1_peecx"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="2_ubod5"]
@@ -24,6 +24,49 @@ _surfaces = [{
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bqob7"]
 data = PackedVector3Array(-576, 2, -952, -576, -2, -952, 576, -2, -952, -576, 2, -952, 576, -2, -952, 576, 2, -952, -576, 2, -952, -576, 2, 952, -576, -2, 952, -576, 2, -952, -576, -2, 952, -576, -2, -952, 576, -2, -952, -576, -2, -952, -576, -2, 952, 576, -2, -952, -576, -2, 952, 576, -2, 952, 576, 2, -952, 576, 2, 952, -576, 2, 952, 576, 2, -952, -576, 2, 952, -576, 2, -952, 576, 2, -952, 576, -2, -952, 576, -2, 952, 576, 2, -952, 576, -2, 952, 576, 2, 952, -576, 2, 952, 576, 2, 952, 576, -2, 952, -576, 2, 952, 576, -2, 952, -576, -2, 952)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqyne"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.620353, 0.506473, 0.746599, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.924835, 0.787024, 0.384477, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqob7"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.36645, 0.300097, 0.558077, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.861867, 0.588121, 0.282293, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gltxh"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.506317, 0.389318, 0.631227, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="Environment" id="Environment_kx65a"]
 background_mode = 1
@@ -90,37 +133,63 @@ text = "Make a Movie!"
 layout_mode = 2
 text = "Quit :("
 
-[node name="Shoutouts" type="MarginContainer" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Buttons" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -165.0
+offset_right = 252.0
+grow_vertical = 0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Shoutouts"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Buttons"]
 layout_mode = 2
 
-[node name="Authors" type="Label" parent="CanvasLayer/Control/Shoutouts/VBoxContainer"]
+[node name="GitHubButton" type="Button" parent="CanvasLayer/Control/Buttons/VBoxContainer"]
 layout_mode = 2
-text = "A game by Trent and Andrew"
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/Shoutouts/VBoxContainer"]
-layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_iqyne")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqob7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gltxh")
 text = "Source on GitHub"
 icon = ExtResource("4_ubod5")
 icon_alignment = 2
 expand_icon = true
 
-[node name="Button2" type="Button" parent="CanvasLayer/Control/Shoutouts/VBoxContainer"]
+[node name="DiscordButton" type="Button" parent="CanvasLayer/Control/Buttons/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_iqyne")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqob7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gltxh")
 text = "Join
 the
 Discord!"
 icon = ExtResource("5_gltxh")
 icon_alignment = 2
 expand_icon = true
+
+[node name="Shoutouts" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Authors" type="Label" parent="CanvasLayer/Control/Shoutouts"]
+layout_mode = 2
+text = "A game by Trent and Andrew"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64545, 5.67001, 1.35237)
@@ -150,3 +219,5 @@ spot_angle = 34.6868
 
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/VBoxContainer/GitHubButton" to="." method="_on_git_hub_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/VBoxContainer/DiscordButton" to="." method="_on_discord_button_pressed"]
