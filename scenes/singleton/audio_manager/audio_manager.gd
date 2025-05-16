@@ -11,8 +11,9 @@ func _ready() -> void:
 	await get_tree().root.ready
 	music_player.play()
 
-	MainScene.instance.loaded_menu.connect(_on_main_scene_loaded_menu)
-	MainScene.instance.loaded_level.connect(_on_main_scene_loaded_level)
+	if MainScene.instance:
+		MainScene.instance.loaded_menu.connect(_on_main_scene_loaded_menu)
+		MainScene.instance.loaded_level.connect(_on_main_scene_loaded_level)
 
 	for i in range(audio_stream_player_count):
 		var stream_player = audio_stream_player_scene.instantiate()
