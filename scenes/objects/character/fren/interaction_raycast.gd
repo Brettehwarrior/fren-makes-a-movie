@@ -3,7 +3,7 @@ extends RayCast3D
 var _target_trigger : Node3D
 
 func _physics_process(delta: float) -> void:
-	if is_colliding():
+	if is_colliding() and not ReplayManager.is_playing_back():
 		# Check if there's a new target trigger
 		if _target_trigger != get_collider().get_parent():
 			# Tell the old target trigger it's been neglected :(
