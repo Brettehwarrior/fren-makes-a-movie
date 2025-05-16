@@ -106,6 +106,10 @@ func _push_rigid_bodies() -> void:
 
 func _set_respawn_position() -> void:
 	_respawn_position = global_transform.origin
+	
+	
+func _reset_position() -> void:
+	global_transform.origin = _respawn_position
 
 
 func _process_safety_net(delta : float) -> void:

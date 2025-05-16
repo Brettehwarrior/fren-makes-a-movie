@@ -55,3 +55,10 @@ func _on_continue_filming_pressed() -> void:
 func _on_forgor_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_hide_idiot()
+
+
+func _input(event: InputEvent) -> void:
+	# DEBUG STUFF
+	if SettingsManager.debug_enabled:
+		if event.is_action_pressed("debug_finish_movie") and ReplayManager.get_current_recording_frame() > 0:
+			ReplayManager.start_playback()

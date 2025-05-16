@@ -47,3 +47,17 @@ func start_sitting() -> void:
 
 func stop_sitting() -> void:
 	model.stop_sitting()
+
+
+func _input(event: InputEvent) -> void:
+	# DEBUG STUFF
+	if SettingsManager.debug_enabled:
+		if event.is_action_pressed("debug_reset_position"):
+			_reset_position()
+		
+		if event.is_action_pressed("debug_teleport_oob"):
+			position.y = -50
+			
+		if event.is_action_pressed("debug_teleport_roof"):
+			_reset_position()
+			position.y = 12

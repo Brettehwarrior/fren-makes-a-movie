@@ -5,8 +5,9 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pe4m4"]
 bg_color = Color(0, 0, 0, 0.27451)
 
-[node name="SettingsManager" type="Node" node_paths=PackedStringArray("menu_parent", "master_volume_slider", "master_volume_percentage_label", "microphone_option_button", "mouse_sensitivity_slider", "mouse_sensitivity_label", "controller_sensitivity_slider", "controller_sensitivity_label")]
+[node name="SettingsManager" type="Node" node_paths=PackedStringArray("debug_label", "menu_parent", "master_volume_slider", "master_volume_percentage_label", "microphone_option_button", "mouse_sensitivity_slider", "mouse_sensitivity_label", "controller_sensitivity_slider", "controller_sensitivity_label")]
 script = ExtResource("1_pe4m4")
+debug_label = NodePath("CanvasLayer/DebugLabel")
 menu_parent = NodePath("CanvasLayer/Control")
 master_volume_slider = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider")
 master_volume_percentage_label = NodePath("CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterVolumePercentageLabel")
@@ -18,6 +19,17 @@ controller_sensitivity_label = NodePath("CanvasLayer/Control/PanelContainer/Marg
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
+
+[node name="DebugLabel" type="Label" parent="CanvasLayer"]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 167.0
+offset_bottom = 31.0
+text = "!!! Debug mode enabled !!!
+0- reset position
+1- teleport oob
+2- teleport roof
+3- finish movie"
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3

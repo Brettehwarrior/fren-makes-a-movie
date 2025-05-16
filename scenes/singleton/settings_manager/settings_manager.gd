@@ -6,6 +6,9 @@ signal controller_sensitivity_changed(value : float)
 
 const CONFIG_FILE_PATH = "user://settings.cfg"
 
+@export var debug_label : Label
+var debug_enabled : bool = false
+
 @export var menu_parent : Control
 @export var master_volume_slider : Slider
 @export var master_volume_percentage_label : Label
@@ -25,9 +28,14 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		menu_parent.visible = not menu_parent.visible
 		changed_visibility.emit(menu_parent.visible)
+		
+	if event.is_action_pressed("enable_debug"):
+		debug_enabled = not debug_enabled
+		debug_label.visible = debug_enabled
 
 
 func _ready() -> void:
+	debug_label.visible = false
 	menu_parent.visible = false
 	_load_microphone_devices()
 	_load_or_make_config_file()
