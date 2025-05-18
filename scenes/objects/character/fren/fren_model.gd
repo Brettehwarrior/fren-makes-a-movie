@@ -76,12 +76,10 @@ func _process_sit(delta) -> void:
 
 
 func start_sitting() -> void:
-	print("i am starting to sit now")
 	_target_sit_angle = sit_angle
 	_target_sit_height = sit_height
 
 
 func stop_sitting() -> void:
-	print("i am stopping to sit now")
 	_target_sit_angle = 0
 	_target_sit_height = stand_height
