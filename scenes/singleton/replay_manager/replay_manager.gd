@@ -44,15 +44,9 @@ func _process(delta: float) -> void:
 func _process_tick(delta : float) -> void:
 	_time_since_last_tick += delta
 
-	if _time_since_last_tick >= _tick_rate:
+	while _time_since_last_tick >= _tick_rate:
 		_tick()
-		_time_since_last_tick = 0
-
-	# var ticks_to_run : int = floor(_time_since_last_tick / _tick_rate)
-
-	# for _i in range(ticks_to_run):
-	# 	_tick()
-	# 	_time_since_last_tick = 0
+		_time_since_last_tick -= _tick_rate
 
 
 func _tick() -> void:
@@ -107,6 +101,7 @@ func _record_node_state(node : Node) -> void:
 func _get_node_id(node : Node) -> String:
 	var id = str(node)
 	return id
+
 
 func load_game_state(frame : int) -> void:
 	var replayable_nodes : Array[Node] = get_tree().get_nodes_in_group("replayable")
