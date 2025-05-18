@@ -108,8 +108,6 @@ func _on_interaction_sphere_interaction_triggered() -> void:
 
 	_target_look_angle = - 90 - rad_to_deg((fren_h_global_position - h_global_position).angle())
 
-	print("new angle = %f" % _target_look_angle)
-
 	_look_angle_time = 0
 	await get_tree().create_timer(dialogue_timeout).timeout
 	quote_label.visible = false

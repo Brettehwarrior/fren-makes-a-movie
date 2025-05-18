@@ -47,7 +47,6 @@ func _load_state(state : Dictionary) -> void:
 		load_movie(state.movie)
 	
 	if stream_player.paused or abs(stream_player.stream_position - _previously_loaded_stream_position) >= ReplayManager.get_tick_rate() * 2:
-		# print("setting stream position to %f!" % [state.stream_position])
 		stream_player.stream_position = (state.stream_position)
 		set_paused(false)
 	

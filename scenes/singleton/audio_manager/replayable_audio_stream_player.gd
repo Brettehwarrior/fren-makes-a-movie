@@ -22,7 +22,6 @@ func _save_state() -> Dictionary:
 	if playing:
 		state.audio_clip_index = _get_cached_audio_clip_index(stream)
 		state.playback_position = get_playback_position()
-		# print("%s: saving playback pos = %f" % [self, state.playback_position])
 	else:
 		state.audio_clip_index = -1
 		state.playback_position = 0
@@ -36,7 +35,6 @@ func _load_state(state : Dictionary) -> void:
 		playing = false
 
 	if state.playing and not playing and state.audio_clip_index >= 0:
-		# print("%s: playing! position: %f" % [self, state.playback_position])
 		stream = _cached_audio_clips[state.audio_clip_index]
 		play(state.playback_position)
 
@@ -53,6 +51,5 @@ func _get_cached_audio_clip_index(audio_stream : AudioStream) -> int:
 	
 	if i >= len(_cached_audio_clips):
 		_cached_audio_clips.append(audio_stream)
-		# print("%s adding new clip at index %d" % [self, i])
 	
 	return i

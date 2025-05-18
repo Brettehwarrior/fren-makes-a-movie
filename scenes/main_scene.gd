@@ -24,19 +24,6 @@ func _ready() -> void:
 	loading_screen_root.visible = false
 
 
-# func _process(_delta: float) -> void:
-# 	if not loading_screen_root.visible:
-# 		return
-	
-# 	var progress = []
-# 	var load_status = ResourceLoader.load_threaded_get_status(main_level_world_uid, progress)
-# 	print(progress[0])
-# 	if load_status == ResourceLoader.ThreadLoadStatus.THREAD_LOAD_IN_PROGRESS:
-# 		loading_progress_bar.value = progress[0] * 100
-# 	elif load_status == ResourceLoader.ThreadLoadStatus.THREAD_LOAD_LOADED:
-# 		loading_screen_root.visible = false
-
-
 func _set_world(world_scene : PackedScene) -> void:
 	_clear_world_scene()
 	var world_node = world_scene.instantiate()
@@ -57,9 +44,9 @@ static func load_world(world_scene : PackedScene) -> void:
 
 
 static func load_main_level_world() -> void:
-	# instance.loading_screen_root.visible = true
 	if main_level_world == null:
 		main_level_world = ResourceLoader.load_threaded_get(instance.main_level_world_uid)
+	
 	instance._set_world(instance.main_level_world)
 	instance.loaded_level.emit()
 
