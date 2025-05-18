@@ -24,7 +24,7 @@ bg_color = Color(1, 1, 1, 1)
 content_margin_right = 77.0
 bg_color = Color(1, 1, 1, 1)
 
-[node name="PlaybackUI" type="Control" node_paths=PackedStringArray("video_playback_texture", "timeline", "viewcount_field", "play_pause_button", "frame_slider", "current_frame_label", "total_frames_label", "restart_prompt_control") groups=["tickable"]]
+[node name="PlaybackUI" type="Control" node_paths=PackedStringArray("video_playback_texture", "timeline", "viewcount_field", "play_pause_button", "frame_slider", "current_time_label", "total_time_label", "restart_prompt_control") groups=["tickable"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,8 +39,8 @@ play_pause_button = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxCon
 play_icon = ExtResource("1_w5pia")
 pause_icon = ExtResource("3_vm3ey")
 frame_slider = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxContainer/FrameSlider")
-current_frame_label = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer/CurrentFrameLabel")
-total_frames_label = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer/TotalFramesLabel")
+current_time_label = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer/CurrentTimeLabel")
+total_time_label = NodePath("TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer/TotalTimeLabel")
 restart_prompt_control = NodePath("RestartPrompt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -184,15 +184,13 @@ icon = ExtResource("1_w5pia")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TimelineContainer/Timeline/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Frame"
-
-[node name="CurrentFrameLabel" type="Label" parent="TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="CurrentTimeLabel" type="Label" parent="TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "999"
 
@@ -200,7 +198,7 @@ text = "999"
 layout_mode = 2
 text = "/"
 
-[node name="TotalFramesLabel" type="Label" parent="TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="TotalTimeLabel" type="Label" parent="TimelineContainer/Timeline/MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "999"
 
