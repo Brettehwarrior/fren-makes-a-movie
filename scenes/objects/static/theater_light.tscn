@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d31asox2n08ro"]
+[gd_scene load_steps=4 format=3 uid="uid://d31asox2n08ro"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_beuv2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_beuv2"]
+shading_mode = 0
+albedo_color = Color(0.83822, 0.899939, 0.725186, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mmf5"]
+albedo_color = Color(0.23, 0.23, 0.23, 1)
 
 [node name="TheaterLight" type="Node3D"]
 
@@ -12,6 +19,22 @@ light_bake_mode = 1
 spot_range = 30.5705
 spot_angle = 29.5395
 
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.47382, 0)
+light_color = Color(0.99878, 0.939898, 0.845472, 1)
+light_energy = 8.795
+light_indirect_energy = 5.452
+light_size = 0.495
+light_bake_mode = 1
+spot_range = 1.82118
+spot_angle = 35.9057
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.802198, 0, 0, 0, 0.161551, 0, 0, 0, 0.802198, 0, 0, 0)
+transform = Transform3D(0.802198, 0, 0, 0, 0.161551, 0, 0, 0, 0.802198, 0, -0.0642297, 0)
 mesh = SubResource("CylinderMesh_beuv2")
+surface_material_override/0 = SubResource("StandardMaterial3D_beuv2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.182, 0, 0, 0, 0.9, 0, 0.0613512, 0)
+mesh = SubResource("CylinderMesh_beuv2")
+surface_material_override/0 = SubResource("StandardMaterial3D_0mmf5")
