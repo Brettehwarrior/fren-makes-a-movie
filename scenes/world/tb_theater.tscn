@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=128 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -13,6 +13,7 @@
 [ext_resource type="Material" uid="uid://f47gn3m7vkgs" path="res://textures/blackwall.tres" id="5_ba6py"]
 [ext_resource type="Texture2D" uid="uid://brgtv2vftxxem" path="res://textures/bluewall.png" id="7_3css8"]
 [ext_resource type="Material" uid="uid://caquklvkv28x8" path="res://scenes/objects/static/outside/sky_material.tres" id="8_m0u34"]
+[ext_resource type="Texture2D" uid="uid://nkxb5sv42x24" path="res://scenes/objects/static/outside/sun.png" id="9_beowk"]
 [ext_resource type="PackedScene" uid="uid://chij8vpv2gkup" path="res://scenes/ui/tutorial_prompts/tutorial_prompts.tscn" id="9_ml43g"]
 [ext_resource type="PackedScene" uid="uid://c1wj5xj5equ7k" path="res://scenes/singleton/filter_manager/filter_manager.tscn" id="10_ftq80"]
 [ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube/rigid_body_cube.tscn" id="11_52h8a"]
@@ -174,6 +175,14 @@ ambient_light_color = Color(0.140447, 0.140447, 0.140447, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_m0u34"]
 material = ExtResource("8_m0u34")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l063i"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("9_beowk")
+
+[sub_resource type="QuadMesh" id="QuadMesh_m0u34"]
+material = SubResource("StandardMaterial3D_l063i")
 
 [sub_resource type="Resource" id="Resource_hrp27"]
 script = ExtResource("31_hiqbs")
@@ -528,6 +537,10 @@ shadow_enabled = true
 transform = Transform3D(-1147.25, 0, 1101.25, 0, 668.392, 0, -1101.25, 0, -1147.25, 0, 34.2401, 0)
 mesh = SubResource("CylinderMesh_m0u34")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lighting"]
+transform = Transform3D(-190.907, 91.6187, 226.23, 1.01686e-05, 287.211, -116.315, -244.078, -71.6602, -176.947, -368.036, 508.153, 332.834)
+mesh = SubResource("QuadMesh_m0u34")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="FilterManager" parent="CanvasLayer" instance=ExtResource("10_ftq80")]
@@ -636,7 +649,7 @@ npc_resource = ExtResource("20_aih61")
 ghost = true
 
 [node name="Chat1" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
-transform = Transform3D(0.732507, 0, -0.680759, 0, 1, 0, 0.680759, 0, 0.732507, -0.525178, 0.75127, 0.754412)
+transform = Transform3D(0.732507, 0, -0.680759, 0, 1, 0, 0.680759, 0, 0.732507, -1.02718, 0.224158, -12.3243)
 npc_resource = SubResource("Resource_hrp27")
 dialogue_timeout = 2.0
 
@@ -646,7 +659,7 @@ npc_resource = SubResource("Resource_mx3nu")
 dialogue_timeout = 2.0
 
 [node name="Chat3" parent="Lobby/NPCs" instance=ExtResource("19_biprm")]
-transform = Transform3D(0.489854, 0, 0.871804, 0, 1, 0, -0.871804, 0, 0.489854, 6.47178, 0.75127, -2.63957)
+transform = Transform3D(0.841624, 0, -0.540064, 0, 1, 0, 0.540064, 0, 0.841624, 0.353728, 0.75127, 0.470016)
 npc_resource = SubResource("Resource_hu2l4")
 dialogue_timeout = 2.0
 
