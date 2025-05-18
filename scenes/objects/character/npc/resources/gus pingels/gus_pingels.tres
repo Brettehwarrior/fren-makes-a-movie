@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://lbq1diqcn12b"]
+
+[ext_resource type="Texture2D" uid="uid://c2a6wvt5v37qu" path="res://scenes/objects/character/npc/resources/gus pingels/gusback.png" id="1_4jelf"]
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="1_087dj"]
+[ext_resource type="Texture2D" uid="uid://cu3wgcg4a2tx5" path="res://scenes/objects/character/npc/resources/gus pingels/gus.png" id="2_rt0mm"]
+
+[resource]
+script = ExtResource("1_087dj")
+front_texture = ExtResource("2_rt0mm")
+back_texture = ExtResource("1_4jelf")
+quote = "Hey guys, it's me!\\nIconic Vinesauce character Gus Pengals!"
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"
