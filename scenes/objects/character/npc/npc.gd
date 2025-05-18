@@ -83,6 +83,8 @@ func _apply_resource_values(resource : NPCResource) -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
+	if ReplayManager.is_playing_back():
+		return
 	_process_sit(delta)
 	_process_look_angle(delta)
 
