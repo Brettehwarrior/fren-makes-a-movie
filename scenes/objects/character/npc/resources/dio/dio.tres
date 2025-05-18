@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://ct2oj6vmepc3"]
+
+[ext_resource type="Script" uid="uid://djhn27qp2g1mq" path="res://scenes/objects/character/npc/npc_resource.gd" id="1_xka02"]
+[ext_resource type="Texture2D" uid="uid://vmc87gqj5ky4" path="res://scenes/objects/character/npc/resources/dio/back.png" id="1_ytkvr"]
+[ext_resource type="Texture2D" uid="uid://dofkduopaetw5" path="res://scenes/objects/character/npc/resources/dio/dio.png" id="2_sdf2e"]
+
+[resource]
+script = ExtResource("1_xka02")
+front_texture = ExtResource("2_sdf2e")
+back_texture = ExtResource("1_ytkvr")
+quote = "I, DIO, ENJOY WATCHING MOVIES"
+metadata/_custom_type_script = "uid://djhn27qp2g1mq"

@@ -240,6 +240,7 @@ _data = {
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("3_cha3l")
+texture_repeat = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duoge"]
 resource_local_to_scene = true

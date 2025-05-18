@@ -303,6 +303,7 @@ albedo_texture = ExtResource("5_wj63f")
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("6_3nfu3")
+texture_repeat = false
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_apg5y"]
 radius = 0.3473

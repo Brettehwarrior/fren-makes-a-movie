@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=130 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -70,6 +70,7 @@
 [ext_resource type="Texture2D" uid="uid://b1ciyj8dx707s" path="res://scenes/objects/character/npc/resources/alien/alien-back.png" id="66_g1kxr"]
 [ext_resource type="Texture2D" uid="uid://bddgkdd06g72c" path="res://scenes/objects/character/npc/resources/alien/alien-front.png" id="67_m0u34"]
 [ext_resource type="Resource" uid="uid://lbq1diqcn12b" path="res://scenes/objects/character/npc/resources/gus pingels/gus_pingels.tres" id="70_l063i"]
+[ext_resource type="Resource" uid="uid://ct2oj6vmepc3" path="res://scenes/objects/character/npc/resources/dio/dio.tres" id="71_8w7co"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_beowk"]
 albedo_texture = ExtResource("3_ftjvy")
@@ -1356,10 +1357,14 @@ autoplay = true
 max_distance = 28.0
 
 [node name="NPC" parent="." instance=ExtResource("19_biprm")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.1944, 1.04025, -5.41957)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.2113, 1.04025, -5.47595)
 npc_resource = SubResource("Resource_mskm0")
 
 [node name="Gus" parent="." instance=ExtResource("19_biprm")]
 transform = Transform3D(0.994661, 0, 0.103192, 0, 1, 0, -0.103192, 0, 0.994661, -9.39949, 15.4778, -43.4737)
 npc_resource = ExtResource("70_l063i")
 dialogue_timeout = 3.0
+
+[node name="Gus2" parent="." instance=ExtResource("19_biprm")]
+transform = Transform3D(-1.54347, 0, -0.0180768, 0, 1.54357, 0, 0.0180768, 0, -1.54347, -9.21592, 1.81226, -12.9937)
+npc_resource = ExtResource("71_8w7co")
