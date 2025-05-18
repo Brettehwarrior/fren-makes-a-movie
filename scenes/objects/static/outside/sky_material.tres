@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://caquklvkv28x8"]
+
+[ext_resource type="Texture2D" uid="uid://skbiifbxkfmk" path="res://scenes/objects/static/outside/sky.png" id="1_tvhsc"]
+
+[resource]
+cull_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_tvhsc")
+uv1_scale = Vector3(2.035, 2.035, 2.035)

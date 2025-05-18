@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=125 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -12,6 +12,7 @@
 [ext_resource type="Material" uid="uid://cpud2mcvl3ddr" path="res://textures/yellowwall.tres" id="4_fb40d"]
 [ext_resource type="Material" uid="uid://f47gn3m7vkgs" path="res://textures/blackwall.tres" id="5_ba6py"]
 [ext_resource type="Texture2D" uid="uid://brgtv2vftxxem" path="res://textures/bluewall.png" id="7_3css8"]
+[ext_resource type="Material" uid="uid://caquklvkv28x8" path="res://scenes/objects/static/outside/sky_material.tres" id="8_m0u34"]
 [ext_resource type="PackedScene" uid="uid://chij8vpv2gkup" path="res://scenes/ui/tutorial_prompts/tutorial_prompts.tscn" id="9_ml43g"]
 [ext_resource type="PackedScene" uid="uid://c1wj5xj5equ7k" path="res://scenes/singleton/filter_manager/filter_manager.tscn" id="10_ftq80"]
 [ext_resource type="PackedScene" uid="uid://b7u8dyskxyrx6" path="res://scenes/objects/physics/rigid_body_cube/rigid_body_cube.tscn" id="11_52h8a"]
@@ -170,6 +171,9 @@ background_mode = 2
 sky = SubResource("Sky_vsdhb")
 ambient_light_source = 2
 ambient_light_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m0u34"]
+material = ExtResource("8_m0u34")
 
 [sub_resource type="Resource" id="Resource_hrp27"]
 script = ExtResource("31_hiqbs")
@@ -519,6 +523,10 @@ environment = SubResource("Environment_d01wl")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(0.730019, 0.469531, -0.496601, 0, 0.726635, 0.687024, 0.683427, -0.501541, 0.530457, 0, 0, 0)
 shadow_enabled = true
+
+[node name="SkyMesh" type="MeshInstance3D" parent="Lighting"]
+transform = Transform3D(-1147.25, 0, 1101.25, 0, 668.392, 0, -1101.25, 0, -1147.25, 0, 34.2401, 0)
+mesh = SubResource("CylinderMesh_m0u34")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
