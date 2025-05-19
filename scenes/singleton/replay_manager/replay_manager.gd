@@ -21,6 +21,10 @@ var _playback_subviewport : SubViewport
 var _playback_camera : Camera3D
 var _playback_object_id : String
 
+var _exporting = false
+var _current_export_frame
+var _export_byte_array : PackedByteArray
+
 class NodeFrameDataHistory:
 	var list : Array[NodeFrameData]
 	func _init() -> void:
@@ -39,6 +43,9 @@ var _recorded_objects : Dictionary[String, NodeFrameDataHistory]
 
 func _process(delta: float) -> void:
 	_process_tick(delta)
+	
+	if (_exporting):
+		_process_export_frame()
 
 
 func _process_tick(delta : float) -> void:
@@ -223,3 +230,32 @@ func reset() -> void:
 	_playback_object_id = ""
 	
 	_recorded_objects = {}
+
+
+func start_export() -> void:
+	_current_export_frame = 0
+	_export_byte_array.clear()
+	_exporting = true
+
+
+func _process_export_frame() -> void:
+	if _current_export_frame <= _current_recording_frame:
+		# load frame
+		load_game_state(_current_export_frame)
+		
+		# get frame buffer
+		var frame_texture = _playback_subviewport.get_viewport().get_texture().get_image().save_jpg_to_buffer(1.0)
+		_export_byte_array.append_array(frame_texture)
+		
+		# increment frame index and schedule next step
+		_current_export_frame += 1
+	else:
+		# Write frame buffer to disk once all frames are processed
+		var file = FileAccess.open(OS.get_user_data_dir() + "/framebuffer_" + str(Time.get_unix_time_from_system()) + ".bin", FileAccess.WRITE)
+		if file:
+			file.store_buffer(_export_byte_array)
+			file.close()
+			print("framebuffer saved to disk")
+		else:
+			printerr("error opening file for writing framebuffer!!")
+		_exporting = false

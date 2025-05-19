@@ -146,3 +146,7 @@ func _format_time(seconds: float) -> String:
 	var minutes = int(seconds / 60)
 	var seconds_remaining = int(int(seconds) % 60)
 	return "%02d:%02d" % [minutes, seconds_remaining]
+
+
+func _on_export_pressed() -> void:
+	ReplayManager.start_export()
