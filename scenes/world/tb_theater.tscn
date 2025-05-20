@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=4 uid="uid://b0yn02quwna2s"]
+[gd_scene load_steps=131 format=4 uid="uid://b0yn02quwna2s"]
 
 [ext_resource type="PackedScene" uid="uid://bw1tvapvx2eve" path="res://scenes/playback/playback_ui/playback_ui.tscn" id="1_babun"]
 [ext_resource type="Material" uid="uid://b60loshpxje1m" path="res://textures/frenfloor.tres" id="1_lexdd"]
@@ -67,6 +67,7 @@
 [ext_resource type="PackedScene" uid="uid://bfebo0xsrp5pr" path="res://scenes/objects/static/exit_sign.tscn" id="43_x1evf"]
 [ext_resource type="PackedScene" uid="uid://c3spu8f0xv2yi" path="res://scenes/singleton/audio_manager/replayable_audio_stream_player.tscn" id="60_xtvxu"]
 [ext_resource type="AudioStream" uid="uid://dv02vxy63d50b" path="res://assets/sounds/theelevatorbossanova.mp3" id="61_eb0hy"]
+[ext_resource type="PackedScene" uid="uid://cun5n0w183hwm" path="res://scenes/objects/projector/projector_effect/projector_effect.tscn" id="63_uidm7"]
 [ext_resource type="Texture2D" uid="uid://b1ciyj8dx707s" path="res://scenes/objects/character/npc/resources/alien/alien-back.png" id="66_g1kxr"]
 [ext_resource type="Texture2D" uid="uid://bddgkdd06g72c" path="res://scenes/objects/character/npc/resources/alien/alien-front.png" id="67_m0u34"]
 [ext_resource type="Resource" uid="uid://lbq1diqcn12b" path="res://scenes/objects/character/npc/resources/gus pingels/gus_pingels.tres" id="70_l063i"]
@@ -1172,6 +1173,9 @@ transform = Transform3D(0.974975, 0, -0.222314, 0, 1, 0, 0.222314, 0, 0.974975, 
 light_energy = 4.787
 spot_range = 32.8658
 spot_angle = 18.446
+
+[node name="ProjectorEffect" parent="ScreenRoom" instance=ExtResource("63_uidm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.50097, 19.6654)
 
 [node name="Outside" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79156, 2.38419e-07, 4.29879)

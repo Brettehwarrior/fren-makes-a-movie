@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cun5n0w183hwm"]
+
+[ext_resource type="ArrayMesh" uid="uid://i4hwx0srx45s" path="res://assets/models/pyramid_cone_open.obj" id="1_g0j2k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uidm7"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.027451)
+
+[node name="ProjectorEffect" type="Node3D"]
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(17.1458, 0, 0, 0, 9.58223, 0.723247, 0, -0.448702, 15.4453, 0, 0, 0)
+mesh = ExtResource("1_g0j2k")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_uidm7")
