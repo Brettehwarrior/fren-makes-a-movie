@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://5d5x68q4v4h8"]
+
+[ext_resource type="Script" uid="uid://dg53wn0pc0ysb" path="res://scenes/singleton/settings_manager/debug_overlay.gd" id="1_egfcb"]
+
+[sub_resource type="SystemFont" id="SystemFont_egfcb"]
+font_names = PackedStringArray("Consolas")
+
+[node name="DebugOverlay" type="Control" node_paths=PackedStringArray("fren_position_label", "fren_velocity_label")]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 170.0
+offset_right = 202.0
+offset_bottom = 170.0
+script = ExtResource("1_egfcb")
+fren_position_label = NodePath("VBoxContainer/HBoxContainer/FrenPosition")
+fren_velocity_label = NodePath("VBoxContainer/HBoxContainer2/FrenVelocity")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 202.0
+offset_bottom = 166.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "!!! Debug mode enabled !!!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Fren Position:"
+
+[node name="FrenPosition" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_egfcb")
+text = "???"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Fren Velocity:"
+
+[node name="FrenVelocity" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_egfcb")
+text = "???"
+
+[node name="DebugLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "
+SHORTCUTS
+0: reset position
+1: teleport oob
+2: teleport roof
+3: finish movie"

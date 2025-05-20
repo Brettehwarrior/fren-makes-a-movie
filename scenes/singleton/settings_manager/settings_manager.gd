@@ -6,7 +6,7 @@ signal controller_sensitivity_changed(value : float)
 
 const CONFIG_FILE_PATH = "user://settings.cfg"
 
-@export var debug_label : Label
+@export var debug_overlay : Control
 var debug_enabled : bool = false
 
 @export var menu_parent : Control
@@ -31,11 +31,11 @@ func _input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("enable_debug"):
 		debug_enabled = not debug_enabled
-		debug_label.visible = debug_enabled
+		debug_overlay.visible = debug_enabled
 
 
 func _ready() -> void:
-	debug_label.visible = false
+	debug_overlay.visible = false
 	menu_parent.visible = false
 	_load_microphone_devices()
 	_load_or_make_config_file()
