@@ -1,8 +1,10 @@
 # Fren Makes a Movie Changelog
 
-## 0.2.1
+## 0.2.1 - Bugfixes
 
 - Fixed NPCs processing during playback
+- Fixed issue with player view flying off into the distance in low performance conditions
+- Switched physics engine to Jolt
 
 ## 0.2.0 - Post-jam Patch
 
