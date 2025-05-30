@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c3wlgaxilkv0i" path="res://scenes/objects/filters/mugmoment.tscn" id="3_3b76f"]
 [ext_resource type="PackedScene" uid="uid://dk2ksv6bcgne3" path="res://scenes/objects/filters/fisheye.tscn" id="3_8iqdp"]
 
-[node name="FilterManager" type="Control" groups=["replayable"]]
+[node name="FilterManager" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

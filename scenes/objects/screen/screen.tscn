@@ -20,7 +20,7 @@ albedo_texture_force_srgb = true
 [sub_resource type="FFmpegVideoStream" id="FFmpegVideoStream_btagw"]
 file = "res://scenes/test/andrew/screen_test/blueshell-h264.mp4"
 
-[node name="Screen" type="Node3D" node_paths=PackedStringArray("stream_player", "audio_origin_node") groups=["replayable"]]
+[node name="Screen" type="Node3D" node_paths=PackedStringArray("stream_player", "audio_origin_node")]
 script = ExtResource("1_btagw")
 stream_player = NodePath("ScreenViewport/AspectRatioContainer/ScreenVideoStreamPlayer")
 audio_origin_node = NodePath("AudioPlaybackOrigin")

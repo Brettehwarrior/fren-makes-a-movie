@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://fummbphajlig" path="res://scenes/objects/utility/replayable_animation_player/replayable_animation_player.gd" id="1_glbkh"]
 
-[node name="ReplayableAnimationPlayer" type="AnimationPlayer" groups=["replayable"]]
+[node name="ReplayableAnimationPlayer" type="AnimationPlayer"]
 script = ExtResource("1_glbkh")

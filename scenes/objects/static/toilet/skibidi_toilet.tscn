@@ -23,7 +23,7 @@ skibidi_node = NodePath("skibidi_mesh")
 [node name="Toilet3" parent="." instance=ExtResource("1_5neh1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="skibidi_mesh" type="MeshInstance3D" parent="." groups=["replayable"]]
+[node name="skibidi_mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5.5961e-08, 0, 1.28024, 0, 1.28024, 0, -1.28024, 0, -5.5961e-08, 0.201863, 1.08636, -0.0567212)
 visible = false
 mesh = SubResource("QuadMesh_5neh1")

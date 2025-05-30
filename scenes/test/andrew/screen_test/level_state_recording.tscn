@@ -41,7 +41,7 @@ environment = SubResource("Environment_kpg22")
 
 [node name="Environment" type="Node3D" parent="."]
 
-[node name="Screen" parent="Environment" groups=["replayable"] instance=ExtResource("6_c1oou")]
+[node name="Screen" parent="Environment" instance=ExtResource("6_c1oou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.377937, -0.989176, 8.97223, -9.96532)
 
 [node name="Ground" type="StaticBody3D" parent="Environment"]

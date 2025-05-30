@@ -43,7 +43,7 @@ albedo_texture = SubResource("ViewportTexture_o6cc1")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_aa2of"]
 
-[node name="Camcorder" type="Node3D" node_paths=PackedStringArray("camera", "viewfinder", "viewport", "audio_listener") groups=["replayable"]]
+[node name="Camcorder" type="Node3D" node_paths=PackedStringArray("camera", "viewfinder", "viewport", "audio_listener")]
 script = ExtResource("1_aa2of")
 camera = NodePath("SubViewport/Camera3D")
 viewfinder = NodePath("Model/Viewfinder")

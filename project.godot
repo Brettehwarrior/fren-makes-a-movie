@@ -36,7 +36,6 @@ enabled=PackedStringArray("res://addons/native_dialogs/plugin.cfg", "res://addon
 
 [global_group]
 
-replayable=""
 tickable=""
 player=""
 interactable=""

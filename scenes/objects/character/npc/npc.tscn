@@ -257,7 +257,7 @@ resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("4_uimbq")
 
-[node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("front_sprite_top", "front_sprite_bottom", "back_sprite_top", "back_sprite_bottom", "quote_label", "sit_pivot", "sit_body_slide_node", "input") groups=["replayable"]]
+[node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("front_sprite_top", "front_sprite_bottom", "back_sprite_top", "back_sprite_bottom", "quote_label", "sit_pivot", "sit_body_slide_node", "input")]
 script = ExtResource("1_uimbq")
 front_sprite_top = NodePath("Model/SpriteParentParent/SpriteParent/Top/FrontSpriteTop")
 front_sprite_bottom = NodePath("Model/SpriteParentParent/SpriteParent/Bottom/FrontSpriteBottom")
@@ -287,12 +287,12 @@ metadata/_custom_type_script = "uid://vc6ry8e4vpdd"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_so5ra")
 
-[node name="Model" type="Node3D" parent="." node_paths=PackedStringArray("replayable_character", "animation_player") groups=["replayable"]]
+[node name="Model" type="Node3D" parent="." node_paths=PackedStringArray("replayable_character", "animation_player")]
 script = ExtResource("3_uimbq")
 replayable_character = NodePath("..")
 animation_player = NodePath("ReplayableAnimationPlayer")
 
-[node name="ReplayableAnimationPlayer" type="AnimationPlayer" parent="Model" groups=["replayable"]]
+[node name="ReplayableAnimationPlayer" type="AnimationPlayer" parent="Model"]
 libraries = {
 &"": SubResource("AnimationLibrary_svos0")
 }

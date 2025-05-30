@@ -9,7 +9,7 @@ albedo_texture = ExtResource("2_a3ocg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jjdui"]
 
-[node name="RigidBodyCube" type="RigidBody3D" groups=["replayable"]]
+[node name="RigidBodyCube" type="RigidBody3D"]
 script = ExtResource("1_ngpwt")
 metadata/_custom_type_script = "uid://cmpp18xjewi4y"
 

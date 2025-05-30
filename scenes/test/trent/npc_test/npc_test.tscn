@@ -43,7 +43,7 @@ environment = SubResource("Environment_3lfuh")
 
 [node name="Environment" type="Node3D" parent="."]
 
-[node name="Screen" parent="Environment" groups=["replayable"] instance=ExtResource("4_38qgj")]
+[node name="Screen" parent="Environment" instance=ExtResource("4_38qgj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.377937, -0.989176, 8.97223, -9.96532)
 
 [node name="Ground" type="StaticBody3D" parent="Environment"]
