@@ -4,6 +4,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_egfcb"]
 font_names = PackedStringArray("Consolas")
+subpixel_positioning = 0
 
 [node name="DebugOverlay" type="Control" node_paths=PackedStringArray("fren_position_label", "fren_velocity_label")]
 layout_mode = 3
@@ -16,6 +17,7 @@ fren_position_label = NodePath("VBoxContainer/HBoxContainer/FrenPosition")
 fren_velocity_label = NodePath("VBoxContainer/HBoxContainer2/FrenVelocity")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 202.0
 offset_bottom = 166.0
 

@@ -26,7 +26,6 @@ func _ready() -> void:
 	restart_prompt_control.visible = false
 	visible = false
 	ReplayManager.started_playback.connect(_initialize)
-	ReplayManager.playback_camera_created.connect(_on_playback_camera_created)
 	
 
 func _process(delta: float) -> void:
@@ -58,13 +57,8 @@ func _process_playback(delta : float) -> void:
 	current_time_label.text = _format_time(frame_slider.value * ReplayManager.get_current_seconds())
 
 
-func _on_playback_camera_created(subviewport : SubViewport) -> void:
-	video_playback_texture.texture = subviewport.get_texture()
-
-
 func _initialize() -> void:
 	visible = true
-	# frame_slider.max_value = ReplayManager.get_current_recording_frame() - 1
 	total_time_label.text = _format_time(ReplayManager.get_current_seconds())
 	_timeline_opacity = 1.0
 	_timeline_hide_timer = _timeline_hide_cooldown
@@ -93,12 +87,11 @@ func _on_frame_slider_value_changed(value:float) -> void:
 		_update_play_pause_button_icon()
 
 
-	_load_game_state(value / frame_slider.max_value)
+	_load_frame(value / frame_slider.max_value)
 
 
-func _load_game_state(time_percentage : float) -> void:
-	var tick = int(time_percentage * ReplayManager.get_current_recording_frame())
-	ReplayManager.load_game_state(tick)
+func _load_frame(time_percentage : float) -> void:
+	var frame = int(time_percentage * ReplayManager.get_current_recording_frame())
 
 
 func _on_frame_slider_drag_started() -> void:

@@ -19,7 +19,6 @@ var _original_parent_node : Node
 
 func _ready() -> void:
 	ReplayManager.started_playback.connect(_on_replay_manager_started_playback)
-	ReplayManager.register_playback_camera(self)
 	_original_parent_node = get_parent()
 	_parent_node = _original_parent_node
 	

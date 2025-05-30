@@ -21,11 +21,7 @@ func _ready() -> void:
 	_original_parent = get_parent()
 	_index = 0
 	set_filter(_index)
-	ReplayManager.playback_camera_created.connect(_on_replay_manager_playback_camera_created)
 	instance = self
-	
-func _on_replay_manager_playback_camera_created(viewport : SubViewport) -> void:
-	reparent(viewport)
 
 
 func _input(event: InputEvent) -> void:

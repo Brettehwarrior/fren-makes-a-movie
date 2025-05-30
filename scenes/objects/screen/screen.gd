@@ -18,15 +18,10 @@ func _ready():
 	add_child(_playback_pause_timer)
 	
 	ReplayManager.started_playback.connect(_on_replay_manager_start_playback)
-	ReplayManager.playback_camera_created.connect(_on_replay_manager_playback_camera_created)
 
 
 func _on_replay_manager_start_playback() -> void:
 	stream_player.bus = "CameraRecordedPlayback"
-
-
-func _on_replay_manager_playback_camera_created(viewport : SubViewport) -> void:
-	_active_camera = viewport.get_camera_3d()
 
 
 func _process(_delta: float) -> void:
