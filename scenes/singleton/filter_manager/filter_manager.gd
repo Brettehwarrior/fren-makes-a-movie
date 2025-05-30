@@ -51,12 +51,3 @@ func set_filter(index : int) -> void:
 	_current_filter.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_current_filter)
 	filter_changed.emit()
-
-func _save_state() -> Dictionary:
-	var state = {}
-	state.index = _index
-	return state
-	
-func _load_state(state : Dictionary) -> void:
-	_index = state.index
-	set_filter(_index)

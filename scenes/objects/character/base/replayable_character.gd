@@ -26,20 +26,6 @@ func _ready() -> void:
 	call_deferred("_set_respawn_position")
 
 
-func _save_state() -> Dictionary:
-	var state : Dictionary = {}
-	state.position = position
-	state.rotation = rotation
-	state.velocity = velocity
-	return state
-
-
-func _load_state(state : Dictionary) -> void:
-	position = state.position
-	rotation = state.rotation
-	velocity = state.velocity
-
-
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return

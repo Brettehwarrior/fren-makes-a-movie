@@ -31,20 +31,6 @@ var _target_sit_angle : float = 0.0
 var _look_angle_time : float = 0
 var _target_look_angle : float
 
-func _save_state() -> Dictionary:
-	var state : Dictionary = super._save_state()
-	state.quote_visible = quote_label.visible
-	state.stand_height = sit_body_slide_node.position.y
-	state.sit_angle = sit_pivot.rotation.x
-	return state
-
-
-func _load_state(state : Dictionary) -> void:
-	super._load_state(state)
-	quote_label.visible = state.quote_visible
-	sit_body_slide_node.position.y = state.stand_height
-	sit_pivot.rotation.x = state.sit_angle
-
 
 func _ready() -> void:
 	super()

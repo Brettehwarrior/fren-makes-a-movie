@@ -34,25 +34,6 @@ func _on_fren_stopped_walking() -> void:
 	animation_player.current_animation = "idle"
 
 
-func _save_state() -> Dictionary:
-	var state = {}
-	state.sit_angle = sit_pivot.rotation.x
-	state.stand_height = sit_body_slide_node.position.y
-	state.is_speaking = front_sprite_top.get_active_material(0).albedo_texture == speaking_texture
-	return state
-
-
-func _load_state(state : Dictionary) -> void:
-	sit_pivot.rotation.x = state.sit_angle
-	sit_body_slide_node.position.y = state.stand_height
-	if state.is_speaking:
-		if front_sprite_top.get_active_material(0).albedo_texture == normal_texture:
-			front_sprite_top.get_active_material(0).albedo_texture = speaking_texture
-	else:
-		if front_sprite_top.get_active_material(0).albedo_texture == speaking_texture:
-			front_sprite_top.get_active_material(0).albedo_texture = normal_texture
-
-
 func _process(delta: float) -> void:
 	if ReplayManager.is_playing_back():
 		return

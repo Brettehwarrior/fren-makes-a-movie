@@ -60,18 +60,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		ReplayManager.stop_recording()
 
 
-func _save_state() -> Dictionary:
-	var state : Dictionary = {}
-	state.position = global_position
-	state.rotation = global_rotation
-	return state
-
-
-func _load_state(state : Dictionary) -> void:
-	global_position = state.position
-	global_rotation = state.rotation
-
-
 func reset_follow_nodes() -> void:
 	_parent_node = _original_parent_node
 	reparent(_original_parent_node)
