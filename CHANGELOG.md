@@ -2,7 +2,7 @@
 
 ## 0.2.1 - Bugfixes
 
-- Fixed NPCs processing during playback
+- Fixed NPCs trying to do things during playback
 - Fixed issue with player view flying off into the distance in low performance conditions
 - Switched physics engine to Jolt
 
